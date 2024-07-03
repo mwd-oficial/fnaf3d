@@ -38,6 +38,62 @@ function cliqueModelo(modelo, iModelo) {
     intensidadeInput.value = 0
     corInput.value = "#ffffff"
 
+    document.querySelectorAll(".tela-modelos-especiais").forEach((audio) => {
+        audio.volume = 0.25
+    })
+    if (modelos[iModelo].fnaf == "ffps" || modelos[iModelo].fnaf == "sb" || modelos[iModelo].fnaf == "sbr" || modelos[iModelo].fnaf == "w") {
+        telaModelosAudio.pause()
+    } else {
+        if (telaModelosAudio.paused) {
+            document.querySelectorAll(".tela-modelos-especiais").forEach((audio) => {
+                audio.pause()
+                audio.currentTime = "0"
+            })
+            telaModelosAudio.currentTime = "0"
+            sortearTelaModelosAudio()
+        }
+    }
+
+    switch (modelos[iModelo].fnaf) {
+        case "ffps":
+            if (telaModelosFfps.paused) {
+                telaModelosFfps.currentTime = 0
+                telaModelosFfps.play()
+                telaModelosSb.pause()
+                telaModelosSbr.pause()
+                telaModelosW.pause()
+            }
+            break
+        case "sb":
+            if (telaModelosSb.paused) {
+                telaModelosSb.currentTime = 0
+                telaModelosSb.play()
+                telaModelosFfps.pause()
+                telaModelosSbr.pause()
+                telaModelosW.pause()
+            }
+            break
+        case "sbr":
+            if (telaModelosSbr.paused) {
+                telaModelosSbr.currentTime = 0
+                telaModelosSbr.volume = 0.125
+                telaModelosSbr.play()
+                telaModelosFfps.pause()
+                telaModelosSb.pause()
+                telaModelosW.pause()
+            }
+            break
+        case "w":
+            if (telaModelosW.paused) {
+                telaModelosW.currentTime = 0
+                telaModelosW.play()
+                telaModelosFfps.pause()
+                telaModelosSb.pause()
+                telaModelosSbr.pause()
+            }
+            break
+    }
+
 }
 
 function defineModelo(iModelo) {
@@ -67,7 +123,7 @@ function defineModelo(iModelo) {
 
     audioModelo.pause()
     audioModelo.currentTime = 0
-    
+
 
     document.querySelectorAll(".audios-btn-p").forEach((btn, iAudio) => {
         iconeAudios[iAudio].innerHTML = "volume_up"
@@ -118,11 +174,16 @@ function carregarModelo(iModelo) {
     }
 
     setTimeout(() => {
-        if (primeiraVez) {
-            primeiraVez = false
+        if (!tutorialVisto) {
+            tutorialVisto = true
+            localStorage.setItem('tutorialVisto', JSON.stringify(tutorialVisto))
             setTimeout(() => {
                 tutorialBotoes()
             }, 1000);
+        } else {
+            animacoesContainer.style.pointerEvents = "all"
+            audiosContainer.style.pointerEvents = "all"
+            inputAlturaDiv.style.pointerEvents = "all"
         }
 
         divMenu.style.display = "flex"
@@ -204,6 +265,14 @@ function carregarModelo(iModelo) {
             audiosBtnPP[iAudio].innerHTML = modelos[iModelo].audios[audio].nome;
         })
     }
+    setTimeout(() => {
+        if (modelos[iModelo].fnaf == "w") {
+            clearInterval(animacaoWorld)
+            animacaoWorldf()
+        } else {
+            clearInterval(animacaoWorld)
+        }
+    }, 100)
 }
 
 // Desfaz as alterações feiras com configEx()

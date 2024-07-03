@@ -19,6 +19,12 @@ var toyFreddy = {
             mudaOrbitaCamera: true,
             orbitaCamera: "180deg 0 0",
         },
+        jumpscare: {
+            src: "RIG_ToyFreddy|ToyFreddy_Jumpscare_01_RIG_ToyFreddy",
+            nome: "Jumpscare",
+            alvoCamera: "0m -0.4m -1m",
+            estatico: false,
+        },
         desligado: {
             src: "RIG_ToyFreddy|ToyFreddy_Pos_Desk_RIG_ToyFreddy",
             nome: "Desligado",
@@ -26,12 +32,6 @@ var toyFreddy = {
             estatico: true,
             mudaOrbitaCamera: true,
             orbitaCamera: "180deg 0 0",
-        },
-        jumpscare: {
-            src: "RIG_ToyFreddy|ToyFreddy_Jumpscare_01_RIG_ToyFreddy",
-            nome: "Jumpscare",
-            alvoCamera: "0m -0.4m -1m",
-            estatico: false,
         },
         andando: {
             src: "RIG_ToyFreddy|ToyFreddy_MainHallway_Walk_RIG_ToyFreddy",
@@ -503,8 +503,10 @@ var witheredBonnie = {
             nome: "Andando",
             alvoCamera: "0m 1.75m 0m",
             estatico: false,
-             mudaOrbitaCamera: true,
+            mudaOrbitaCamera: true,
             orbitaCamera: "180deg 1.5rad 0",
+            mudaOrbitaCameraMaxima: true,
+            orbitaCameraMaxima: "0 0 8m",
         },
     },
     audios: {

@@ -6,16 +6,16 @@ function sortearTelaModelosAudio() {
         telaModelosAudio.currentTime = 0
     }
     do {
-        newSort = Math.floor(Math.random() * document.querySelectorAll(".tela-modelos-audios").length)
+        newSort = Math.floor(Math.random() * telaModelosAudios.length)
     } while (sort === newSort)
     sort = newSort
-    telaModelosAudio = document.querySelectorAll(".tela-modelos-audios")[sort]
+    telaModelosAudio = telaModelosAudios[sort]
     telaModelosAudio.volume = 0.25
     telaModelosAudio.playbackRate = 10.0;
     telaModelosAudio.play()
 }
 
-document.querySelectorAll(".tela-modelos-audios").forEach(function(audio) {
+telaModelosAudios.forEach(function(audio) {
     audio.addEventListener("ended", sortearTelaModelosAudio);
 });
 */
@@ -26,18 +26,18 @@ function sortearTelaModelosAudio() {
     }
 
     do {
-        newSort = Math.floor(Math.random() * document.querySelectorAll(".tela-modelos-audios").length);
+        newSort = Math.floor(Math.random() * telaModelosAudios.length);
     } while (sort === newSort);
 
     sort = newSort;
-    telaModelosAudio = document.querySelectorAll(".tela-modelos-audios")[sort];
+    telaModelosAudio = telaModelosAudios[sort];
     telaModelosAudio.volume = 0.25;
 
     // Verifica se o src foi definido corretamente
     if (telaModelosAudio.src) {
         // Tenta tocar o áudio após ter certeza de que está carregado
         telaModelosAudio.load(); // Garante que o áudio está carregado
-        telaModelosAudio.play().catch(function(error) {
+        telaModelosAudio.play().catch(function (error) {
             console.error("Erro ao tentar tocar o áudio: ", error);
             setTimeout(sortearTelaModelosAudio, 1000); // Tenta sortear novamente após 1 segundo
         });
@@ -48,7 +48,7 @@ function sortearTelaModelosAudio() {
 }
 
 // Adicione o ouvinte de evento fora da função
-document.querySelectorAll(".tela-modelos-audios").forEach(function(audio) {
+telaModelosAudios.forEach(function (audio) {
     audio.addEventListener("ended", sortearTelaModelosAudio);
 });
 
@@ -154,7 +154,23 @@ function audioAcabou() {
         iconeAudios[i].innerHTML = "volume_up"
         btn.classList.remove("active")
     })
-    telaModelosAudio.play()
+    switch (modelos[iModeloVar].fnaf) {
+        case "ffps":
+            telaModelosFfps.play()
+            break
+        case "sb":
+            telaModelosSb.play()
+            break
+        case "sbr":
+            telaModelosSbr.play()
+            break
+        case "w":
+            telaModelosW.play()
+            break
+        default:
+            telaModelosAudio.play()
+            break
+    }
 }
 
 // Muda os ícones de play e pause dos áudios
@@ -162,13 +178,45 @@ function playPauseAudio(iAudio) {
     if (iconeAudios[iAudio].innerHTML == "play_arrow" || iconeAudios[iAudio].innerHTML == "volume_up") {
         iconeAudios[iAudio].innerHTML = "pause"
         audioModelo.play()
-        telaModelosAudio.pause()
+        switch (modelos[iModeloVar].fnaf) {
+            case "ffps":
+                telaModelosFfps.pause()
+                break
+            case "sb":
+                telaModelosSb.pause()
+                break
+            case "sbr":
+                telaModelosSbr.pause()
+                break
+            case "w":
+                telaModelosW.pause()
+                break
+            default:
+                telaModelosAudio.pause()
+                break
+        }
     } else {
         iconeAudios[iAudio].innerHTML = "play_arrow"
         audioModelo.pause()
-        telaModelosAudio.play().catch(function(error) {
-            console.error("Erro ao tentar tocar o áudio: ", error);
-            setTimeout(sortearTelaModelosAudio, 1000); // Tenta sortear novamente após 1 segundo
-        });
+        switch (modelos[iModeloVar].fnaf) {
+            case "ffps":
+                telaModelosFfps.play()
+                break
+            case "sb":
+                telaModelosSb.play()
+                break
+            case "sbr":
+                telaModelosSbr.play()
+                break
+            case "w":
+                telaModelosW.play()
+                break
+            default:
+                telaModelosAudio.play().catch(function (error) {
+                    console.error("Erro ao tentar tocar o áudio: ", error);
+                    setTimeout(sortearTelaModelosAudio, 1000); // Tenta sortear novamente após 1 segundo
+                });
+                break
+        }
     }
 }

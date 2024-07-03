@@ -1,8 +1,10 @@
 var modelos = [
 
+    // logos
     logo,
     logomwd,
 
+    // fnaf 1
     freddy,
     bonnie,
     chica,
@@ -10,6 +12,7 @@ var modelos = [
     foxy,
     goldenFreddy,
 
+    // fnaf 2
     toyFreddy,
     toyBonnie,
     toyChica,
@@ -23,6 +26,7 @@ var modelos = [
     witheredFoxy,
     witheredGoldenFreddy,
 
+    // fnaf 3
     phantomFreddy,
     phantomChica,
     phantomFoxy,
@@ -31,6 +35,7 @@ var modelos = [
     phantomPuppet,
     springtrap,
 
+    // fnaf 4
     nightmareFreddy,
     freddles,
     nightmareBonnie,
@@ -46,17 +51,17 @@ var modelos = [
     plushtrap,
     nightmarionne,
 
+    // fnaf sl
     circusBaby,
     funtimeFreddy,
+    bonBon,
     ballora,
     funtimeFoxy,
     ennard,
-    lolbit,
-    puppetBonnie,
-    bonnet,
     bidybab,
     minireena,
 
+    // fnaf ffps
     trashAndTheGang,
     helpy,
     happyFrog,
@@ -76,15 +81,91 @@ var modelos = [
     scraptrap,
     lefty,
 
+    // fnaf sb
+    glamrockFreddy,
+    glamrockChica,
+    roxanneWolf,
+    montgomeryGator,
+    shatteredGlamrockChica,
+    shatteredRoxanneWolf,
+    shatteredMontgomeryGator,
+    sun,
+    moon,
+    glamrockEndo,
+    djMusicMan,
+    miniMusicMan,
+    wetFloorBot,
+    gregory,
+    vanessa,
+    vanny,
+    blob,
+    burntrap,
+
+    // fnaf sbr
+    ruinedGlamrockFreddy,
+    ruinedGlamrockChica,
+    ruinedMontgomeryGator,
+    ruinedRoxanneWolf,
+
+    // fnaf 1 (world)
+    adventureFreddy,
+    adventureBonnie,
+    adventureChica,
+    adventureFoxy,
+    adventureGoldenFreddy,
+
+    // fnaf 2 (world)
+    adventureToyFreddy,
+    adventureToyBonnie,
+    adventureToyChica,
+    adventureMangle,
+    adventureBalloonBoy,
+    adventurePuppet,
+    adventureWitheredFreddy,
+    adventureWitheredBonnie,
+    adventureWitheredChica,
+    adventureWitheredFoxy,
+
+    // fnaf 3 (world)
+    adventurePhantomFreddy,
+    adventurePhantomChica,
+    adventurePhantomFoxy,
+    adventurePhantomMangle,
+    adventurePhantomBalloonBoy,
+    adventurePhantomPuppet,
+    adventureSpringtrap,
+
+    // fnaf 4 (world)
+    adventureNightmareFreddy,
+    adventureNightmareBonnie,
+    adventureNightmareChica,
+    adventureNightmareFoxy,
+    adventureNightmareFredbear,
+    adventureNightmare,
+    adventureJackOBonnie,
+    adventureJackOChica,
+    adventureNightmareBalloonBoy,
+    adventurePlushtrap,
+    adventureNightmarionne,
+
 ]
 
 var modelosExtras = [
+    // Pra comprar
     moeda3d,
     purpleGuy,
+
+    // Pra Encontrar
     poster,
     ventilador,
     mascaraFreddy,
-    telefone,
+    phoneGuy,
+    lolbit,
+    bonnet,
+    pizzaria,
+    springBonnieFilme,
+    springBonniePixel,
+    balloonBoyFilme,
 ]
 
 for (let i = 0; i < modelosExtras.length; i++) {

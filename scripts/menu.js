@@ -283,16 +283,26 @@ function fnafInfo(iModelo) {
     textoFnafInfo.forEach((texto) => {
         texto.style.display = "none"
     })
+    fnafImg.style.width = "100%"
+    fnafImg.style.height = "initial"
+    jogarFnaf.style.display = "none"
+    fnafffpsDownload.style.display = "none"
+    fnafwDownload.style.display = "none"
+    fnafsbSteam.style.display = "none"
+    fnafsbrSteam.style.display = "none"
+    fnafFilme.style.display = "none"
+    downloadP.style.display = "none"
     switch (modelos[iModelo].fnaf) {
         case "l":
-            iNomeFnaf = 0
             fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 0
             break
         case "1":
 
             textoFnafInfo[0].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[1].innerHTML
             fnafImg.src = "assets/images/fnaf1/fnaf1.webp"
+            jogarFnaf.style.display = "flex"
             iNomeFnaf = 1
 
             break
@@ -301,6 +311,7 @@ function fnafInfo(iModelo) {
             textoFnafInfo[1].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[2].innerHTML
             fnafImg.src = "assets/images/fnaf2/fnaf2.webp"
+            jogarFnaf.style.display = "flex"
             iNomeFnaf = 2
 
             break
@@ -309,6 +320,7 @@ function fnafInfo(iModelo) {
             textoFnafInfo[2].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[3].innerHTML
             fnafImg.src = "assets/images/fnaf3/fnaf3.webp"
+            jogarFnaf.style.display = "flex"
             iNomeFnaf = 3
 
             break
@@ -317,6 +329,7 @@ function fnafInfo(iModelo) {
             textoFnafInfo[3].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[4].innerHTML
             fnafImg.src = "assets/images/fnaf4/fnaf4.webp"
+            jogarFnaf.style.display = "flex"
             iNomeFnaf = 4
 
             break
@@ -325,6 +338,7 @@ function fnafInfo(iModelo) {
             textoFnafInfo[4].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[5].innerHTML
             fnafImg.src = "assets/images/fnafsl/fnafsl.webp"
+            jogarFnaf.style.display = "flex"
             iNomeFnaf = 5
 
             break
@@ -333,6 +347,11 @@ function fnafInfo(iModelo) {
             textoFnafInfo[5].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[6].innerHTML
             fnafImg.src = "assets/images/fnafffps/fnafffps.webp"
+            if (isCelular) {
+                downloadP.style.display = "block"
+            } else {
+                fnafffpsDownload.style.display = "flex"
+            }
             iNomeFnaf = 6
 
             break
@@ -341,9 +360,8 @@ function fnafInfo(iModelo) {
             textoFnafInfo[6].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[7].innerHTML
             fnafImg.src = "assets/images/fnafsb/fnafsb.webp"
+            fnafsbSteam.style.display = "flex"
             iNomeFnaf = 7
-            jogarFnaf.classList.remove("active")
-            jogarFnaf.innerHTML = "Este fnaf não possui um jogo."
 
             break
         case "sbr":
@@ -351,9 +369,8 @@ function fnafInfo(iModelo) {
             textoFnafInfo[7].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[8].innerHTML
             fnafImg.src = "assets/images/fnafsbr/fnafsbr.webp"
+            fnafsbrSteam.style.display = "flex"
             iNomeFnaf = 8
-            jogarFnaf.classList.remove("active")
-            jogarFnaf.innerHTML = "Este fnaf não possui um jogo."
 
             break
         case "w":
@@ -361,14 +378,30 @@ function fnafInfo(iModelo) {
             textoFnafInfo[8].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[9].innerHTML
             fnafImg.src = "assets/images/fnafw/fnafw.webp"
+            if (isCelular) {
+                downloadP.style.display = "block"
+            } else {
+                fnafwDownload.style.display = "flex"
+            }
             iNomeFnaf = 9
-            jogarFnaf.classList.remove("active")
-            jogarFnaf.innerHTML = "Este fnaf não possui um jogo."
 
             break
         case "ex":
-            iNomeFnaf = 10
+
             fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 10
+            
+            break
+        case "exf":
+
+            textoFnafInfo[9].style.display = "block"
+            nomeFnafInfo.innerHTML = "Five Nights At Freddy's: O Pesadelo Sem Fim"
+            fnafImg.src = "assets/images/extras/fnaf-filme.webp"
+            fnafImg.style.width = "initial"
+            fnafImg.style.height = "100%"
+            fnafFilme.style.display = "flex"
+            iNomeFnaf = 11
+
             break
     }
 }
@@ -397,8 +430,8 @@ jogarFnaf.addEventListener("click", function () {
 // Moeda 3D
 function gerarMoeda3d() {
     moeda3dImg.style.display = "block"
-    moeda3dImg.style.top = (Math.random() * window.innerHeight) + "px"
-    moeda3dImg.style.left = (Math.random() * window.innerHeight) + "px"
+    moeda3dImg.style.top = ((Math.random() * window.innerHeight)) + "px"
+    moeda3dImg.style.left = ((Math.random() * window.innerWidth)) + "px"
 }
 
 moeda3dImg.addEventListener("click", function () {
@@ -491,7 +524,7 @@ function praEncontrarf(iPraEncontrar) {
 function aparecerUcnInfo() {
     ucnInfoImgDiv.style.display = "flex"
     ucnDesbloqueado = true
-    localStorage.setItem('ucnDesbloqueado', String(ucnDesbloqueado))
+    localStorage.setItem('ucnDesbloqueado', JSON.stringify(ucnDesbloqueado))
     if (isCelular) {
         document.querySelector("#ucn-info-div>p").style.display = "block"
     } else {

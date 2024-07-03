@@ -17,12 +17,6 @@ var freddy = {
             alvoCamera: "0m 1.25m 0m",
             estatico: true,
         },
-        parado: {
-            src: "RIG_Freddy|Freddy_Pos03_Door_RIG_Freddy",
-            nome: "Parado",
-            alvoCamera: "-0.35m 1.25m -1.25m",
-            estatico: true,
-        },
         jumpscare: {
             src: "RIG_Freddy|Freddy_Jumpscare_01_RIG_Freddy",
             nome: "Jumpscare",
@@ -30,6 +24,12 @@ var freddy = {
             alvoCameraJogo: "0m 0m -1m",
             orbitaCameraJogo: "-0.004831221105499585rad 1.5716068512153272rad 1.7707877722717378m",
             orbitaMinimaCameraJogo: "0 0 0.5m",
+        },
+        parado: {
+            src: "RIG_Freddy|Freddy_Pos03_Door_RIG_Freddy",
+            nome: "Parado",
+            alvoCamera: "-0.35m 1.25m -1.25m",
+            estatico: true,
         },
         horaDoShow: {
             src: "RIG_Freddy|Freddy_Showtime_Loop_Tom_RIG_Freddy",
@@ -97,6 +97,11 @@ var bonnie = {
             alvoCamera: "0m 1.5m 0.05m",
             estatico: true,
         },
+        jumpscare: {
+            src: "RIG_Bonnie|Bonnie_Jumpscare_01_RIG_Bonnie",
+            nome: "Jumpscare",
+            alvoCamera: "0m -0.6m -0.25m",
+        },
         parado: {
             src: "RIG_Bonnie|Bonnie_Pos010_Hidden_RIG_Bonnie",
             nome: "Parado",
@@ -109,11 +114,6 @@ var bonnie = {
             src: "RIG_Bonnie|Bonnie_Hallway_LookAt_RIG_Bonnie",
             nome: "Olhar",
             alvoCamera: "-0.2050278084228601m 1.3311434445932575m -1.5990312308357566m",
-        },
-        jumpscare: {
-            src: "RIG_Bonnie|Bonnie_Jumpscare_01_RIG_Bonnie",
-            nome: "Jumpscare",
-            alvoCamera: "0m -0.6m -0.25m",
         },
         horaDoShow: {
             src: "RIG_Bonnie|Bonnie_Showtime_Loop_Tom_RIG_Bonnie",
@@ -152,7 +152,7 @@ var bonnie = {
 
 var chica = {
     src: "assets/models/fnaf1/chica.glb",
-    corFundo: "radial-gradient(#DCC863, #000)",
+    corFundo: "radial-gradient(#DCC863, #856d1a)",
     fnaf: "1",
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
@@ -167,6 +167,11 @@ var chica = {
             nome: "Posição Inicial",
             alvoCamera: "0m 1.25m 0m",
             estatico: true,
+        },
+        jumpscare: {
+            src: "RIG_Chica|Chica_Jumpscare_01_RIG_Chica",
+            nome: "Jumpscare",
+            alvoCamera: "0m -0.5m 0.25m",
         },
         parado: {
             src: "RIG_Chica|Chica_Pos06_HallwayA_RIG_Chica",
@@ -189,11 +194,6 @@ var chica = {
             alvoCamera: "-57m 1.25m 53.6m",
             mudaOrbitaCamera: true,
             orbitaCamera: "-120deg 0 0",
-        },
-        jumpscare: {
-            src: "RIG_Chica|Chica_Jumpscare_01_RIG_Chica",
-            nome: "Jumpscare",
-            alvoCamera: "0m -0.5m 0.25m",
         },
         horaDoShow: {
             src: "RIG_Chica|Chica_Showtime_Loop_Tom_RIG_Chica",
@@ -272,6 +272,11 @@ var foxy = {
             alvoCamera: "17.25m 2m -9m",
             estatico: true,
         },
+        jumpscare: {
+            src: "RIG_Foxy_Clean|Foxy_Jumpscare_01_RIG_Foxy_Clean",
+            nome: "Jumpscare",
+            alvoCamera: "0m -0.75m -0.5m",
+        },
         olhar: {
             src: "RIG_Foxy_Clean|Foxy_Pos03_RIG_Foxy_Clean",
             nome: "Olhar",
@@ -284,11 +289,6 @@ var foxy = {
             src: "RIG_Foxy_Clean|FoxyRepair_HeadMotion_RIG_Foxy_Clean",
             nome: "Sentado",
             alvoCamera: "0m 1m 0.25m",
-        },
-        jumpscare: {
-            src: "RIG_Foxy_Clean|Foxy_Jumpscare_01_RIG_Foxy_Clean",
-            nome: "Jumpscare",
-            alvoCamera: "0m -0.75m -0.5m",
         },
         horaDoShow: {
             src: "RIG_Foxy_Clean|Foxy_Showtime_Loop_RIG_Foxy_Clean",

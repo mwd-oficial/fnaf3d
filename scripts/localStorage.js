@@ -21,7 +21,9 @@ function getLocalStorage() {
         document.querySelectorAll(".pra-encontrar ~ p")[praEncontrarArray[i]].innerHTML = modelosExtras[iModeloExtra].nome
     }
 
-    ucnDesbloqueado = Boolean(localStorage.getItem('ucnDesbloqueado'))
+    ucnDesbloqueado = JSON.parse(localStorage.getItem('ucnDesbloqueado'))
+
+    tutorialVisto = JSON.parse(localStorage.getItem('tutorialVisto'))
 
 }
 
@@ -47,7 +49,10 @@ function resetLocalStorageGeral() {
     praEncontrarArray = []
 
     ucnDesbloqueado = false
-    localStorage.setItem('ucnDesbloqueado', String(ucnDesbloqueado))
+    localStorage.setItem('ucnDesbloqueado', JSON.stringify(ucnDesbloqueado))
+
+    tutorialVisto = false
+    localStorage.setItem('tutorialVisto', JSON.stringify(tutorialVisto))
 
     resetLocalStorageFnaf()
 }

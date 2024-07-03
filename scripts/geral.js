@@ -1,5 +1,5 @@
 // TIRAR ISSO DEPOIS!!!!
-
+/*
 aviso.style.display = "none"
 telaInicial.style.display = "flex"
 document.querySelector("#conteudo").style.display = "block"
@@ -10,7 +10,7 @@ primeiraVez = false
 animacoesContainer.style.pointerEvents = "all"
 audiosContainer.style.pointerEvents = "all"
 inputAlturaDiv.style.pointerEvents = "all"
-
+*/
 ////////////////////////////////////
 
 // API tela cheia
@@ -26,6 +26,18 @@ function launchFullscreen(element) {
     }
 }
 
+function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+    }
+}
+
 telaCheia.addEventListener("click", function () {
     // Ativar o modo de tela cheia para navegadores que suportam!
     launchFullscreen(document.documentElement); // a página inteira
@@ -38,11 +50,56 @@ document.addEventListener("fullscreenchange", function () {
             siteCarregado = false
             aviso.style.opacity = 1
         }
+        despausarAudios()
     } else {
         telaCheia.style.display = "flex"
+        if (!midiaPausada) {
+            pausarAudios()
+        }
     }
 })
 
+
+// Visibilidade da página
+document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') {
+        if (!midiaPausada) {
+            pausarAudios()
+        }
+    } else {
+        if (document.fullscreenElement) {
+            despausarAudios()
+        }
+    }
+})
+
+function pausarAudios() {
+    midiaPausada = true
+    audiosTocando = []; // Limpa o array
+    for (let i = 0; i < audioGeral.length; i++) {
+        if (!audioGeral[i].paused) {
+            audiosTocando.push(i); // Armazena o índice do áudio que estava tocando
+            audioGeral[i].pause();
+        }
+    }
+    videosRodando = []; // Limpa o array
+    for (let i = 0; i < videoGeral.length; i++) {
+        if (!videoGeral[i].paused) {
+            videosRodando.push(i); // Armazena o índice do áudio que estava tocando
+            videoGeral[i].pause();
+        }
+    }
+}
+
+function despausarAudios() {
+    midiaPausada = false
+    for (let i of audiosTocando) {
+        audioGeral[i].play()
+    }
+    for (let i of videosRodando) {
+        videoGeral[i].play()
+    }
+}
 
 
 // Tirar o arrastar imagem com o cursor
@@ -153,7 +210,7 @@ document.querySelector("#iniciar-btn").addEventListener("click", function () {
 
         setTimeout(() => {
             //cliqueModelo(btnModelos[0], 0)
-            cliqueModelo(btnModelos[35], 35)
+            cliqueModelo(btnModelos[0], 0)
         }, 100);
     }, 1);
 })

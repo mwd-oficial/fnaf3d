@@ -53,6 +53,12 @@ function comecarAnimacao(iModelo, iAnimacao) {
         modelViewer.maxCameraOrbit = modelos[iModelo].orbitaCameraMaxima
     }
 
+    if (modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].mudaOrbitaCameraMinima) {
+        modelViewer.minCameraOrbit = modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].orbitaCameraMinima;
+    } else {
+        modelViewer.minCameraOrbit = modelos[iModelo].orbitaCameraMinima
+    }
+
     if (modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].mudaOrbitaCamera) {
         modelViewer.cameraOrbit = modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].orbitaCamera;
     } else {

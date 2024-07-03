@@ -1,5 +1,5 @@
 // Tela inicial e associados
-var siteCarregado = true, primeiraVez = true, isCelular = false
+var siteCarregado = true, isCelular = false
 var conteudo = document.querySelector("#conteudo")
 var telaCheia = document.querySelector("#tela-cheia")
 var aviso = document.querySelector("#aviso")
@@ -15,6 +15,11 @@ var telaCarregamento = document.querySelector("#tela-carregamento")
 var modelViewer
 
 var telaModelosAudio, sort = -1, newSort
+var telaModelosAudios = document.querySelectorAll(".tela-modelos-audios")
+var telaModelosFfps = document.querySelector("#tela-modelos-ffps")
+var telaModelosSb = document.querySelector("#tela-modelos-sb")
+var telaModelosSbr = document.querySelector("#tela-modelos-sbr")
+var telaModelosW = document.querySelector("#tela-modelos-w")
 
 
 
@@ -41,6 +46,8 @@ var tutorialBotoesDiv = document.querySelector("#tutorial-botoes-div")
 var tutorialBotoesContent = document.querySelector("#tutorial-botoes-content")
 var tutorialBotoesContentP = document.querySelector("#tutorial-botoes-content p")
 var passoTutorial = 1
+
+var tutorialVisto = false
 
 
 // Rotação e efeitos do tutorial
@@ -97,16 +104,29 @@ var semAudios = document.querySelector("#sem-audios")
 var audiosKeys, audiosAberto = false
 var audioModelo = document.querySelector("#audio-modelo")
 
+var audioGeral = document.querySelectorAll("audio")
+var videoGeral = document.querySelectorAll("video")
+var audiosTocando = []
+var videosRodando = []
+var midiaPausada = false
+
 
 
 // Fnaf info
-var jogarFnaf = document.querySelector("#jogar-fnaf")
 var fnafInfoImgDiv = document.querySelector("#fnaf-info-img-div")
 var nomeFnafInfo = document.querySelector("#nome-fnaf-info")
 var nomeFnaf = document.querySelectorAll(".nome-fnaf")
 var textoFnafInfo = document.querySelectorAll(".texto-fnaf-info")
 var fnafImg = document.querySelector("#fnaf-img")
 var iNomeFnaf
+
+var jogarFnaf = document.querySelector("#jogar-fnaf")
+var fnafffpsDownload = document.querySelector("#fnafffps-download")
+var fnafwDownload = document.querySelector("#fnafw-download")
+var fnafsbSteam = document.querySelector("#fnafsb-steam")
+var fnafsbrSteam = document.querySelector("#fnafsbr-steam")
+var fnafFilme = document.querySelector("#fnaf-filme")
+var downloadP = document.querySelector("#download-p")
 
 var ucnInfoImgDiv = document.querySelector("#ucn-info-img-div")
 var ucnBtn = document.querySelector("#ucn-btn")
@@ -129,3 +149,8 @@ var numSort
 var praEncontrarArray = []
 var praEncontrar = document.querySelectorAll(".pra-encontrar")
 var iModeloExtra
+
+
+
+var verificacao = true
+var animacaoWorld, targetWorld, targetWorldInicial

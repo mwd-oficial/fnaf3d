@@ -173,6 +173,12 @@ var phantomBalloonBoy = {
             alvoCamera: "-1.85m 0.85m -10.1m",
             estatico: false,
         },
+        jumpscare: {
+            src: "RIG_BalloonBoy|BalloonBoy_Jumpscare_01_RIG_BalloonBoy",
+            nome: "Jumpscare",
+            alvoCamera: "0m -0.25m -0.3m",
+            estatico: false,
+        },
         bbVoando: {
             src: "RIG_BalloonBoy|BalloonBoy_Idle_03_RIG_BalloonBoy",
             nome: "Voando",
@@ -186,12 +192,6 @@ var phantomBalloonBoy = {
             estatico: true,
             mudaOrbitaCamera: true,
             orbitaCamera: "-80deg 0 0",
-        },
-        jumpscare: {
-            src: "RIG_BalloonBoy|BalloonBoy_Jumpscare_01_RIG_BalloonBoy",
-            nome: "Jumpscare",
-            alvoCamera: "0m -0.25m -0.3m",
-            estatico: false,
         },
         bbCorrendo: {
             src: "RIG_BalloonBoy|BalloonBoy_Path_IN_04_RIG_BalloonBoy",
@@ -288,7 +288,7 @@ var springtrap = {
             nome: "Jumpscare",
         },
         iAlwaysComeBack: {
-            src: "assets/audios/extras/purple-guy/i-always-come-back.ogg",
+            src: "assets/audios/extras/pra-comprar/purple-guy/i-always-come-back.ogg",
             volume: 0.5,
             nome: "I always come back",
         },
