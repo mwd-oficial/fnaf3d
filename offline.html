@@ -9,6 +9,11 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="shortcut icon" href="assets/images/logos/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="manifest.json">
+    <script>
+        if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('scripts/pwabuilder-sw.js')
+        }
+    </script>
     <title>Fnaf 3D</title>
 </head>
 
