@@ -390,7 +390,7 @@ function fnafInfo(iModelo) {
 
             fnafInfoImgDiv.style.display = "none"
             iNomeFnaf = 10
-            
+
             break
         case "exf":
 
@@ -460,6 +460,7 @@ function verificaPraComprar() {
             localStorage.setItem("praComprar", JSON.stringify(praComprarArray))
 
             extraDesbloqueado.style.display = "flex"
+            extraDesbloqueadoH2.innerHTML = "Novo Extra Desbloqueado!"
             extraDesbloqueadoImg.src = modelosExtras[iPraComprar].imgSrc
             extraDesbloqueadoP.innerHTML = modelosExtras[iPraComprar].nome
 
@@ -474,7 +475,7 @@ extraDesbloqueado.addEventListener("click", function () {
     this.style.display = "none"
     if (extraDesbloqueado.contains(confete)) extraDesbloqueado.removeChild(confete)
     setTimeout(() => {
-        if ((praEncontrarArray.length + praComprarArray.length) == modelosExtras.length) {
+        if ((praComprarArray.length + praEncontrarArray.length + praEncontrarDouradoArray.length) == modelosExtras.length) {
             aparecerUcnInfo()
         }
     }, 1);
@@ -511,12 +512,56 @@ function praEncontrarf(iPraEncontrar) {
     iModeloExtra = iPraEncontrar + (praComprar.length)
     localStorage.setItem("praEncontrar", JSON.stringify(praEncontrarArray))
 
-    extraDesbloqueado.style.display = "flex"
-    extraDesbloqueadoImg.src = modelosExtras[iModeloExtra].imgSrc
-    extraDesbloqueadoP.innerHTML = modelosExtras[iModeloExtra].nome
+    extraDesbloqueado.classList.remove("dourado")
+    setTimeout(() => {
+        extraDesbloqueado.style.display = "flex"
+        extraDesbloqueadoH2.innerHTML = "Novo Extra Desbloqueado!"
+        extraDesbloqueadoImg.src = modelosExtras[iModeloExtra].imgSrc
+        extraDesbloqueadoP.innerHTML = modelosExtras[iModeloExtra].nome
+    }, 1);
 
     document.querySelectorAll(".pra-encontrar img")[iPraEncontrar].src = modelosExtras[iModeloExtra].imgSrc
     document.querySelectorAll(".pra-encontrar ~ p")[iPraEncontrar].innerHTML = modelosExtras[iModeloExtra].nome
+
+    aparecerConfete()
+}
+
+function sortearPraEncontrarDourado() {
+    if ("botaoDouradoDesativado" in modelos[iModeloVar]) {
+        if (!modelos[iModeloVar].botaoDouradoDesativado) {
+            modelos[iModeloVar].botaoDouradoDesativado = true
+            botaoDouradoDesativadoArray[geralSorteado.indexOf(iModeloVar)] = true
+            localStorage.setItem("botaoDouradoDesativadoArray", JSON.stringify(botaoDouradoDesativadoArray))
+            document.querySelector("#botao-dourado").classList.add("desativado")
+        }
+    }
+    numSort = Math.floor(Math.random() * praEncontrarDourado.length);
+    if (praEncontrarDouradoArray.indexOf(numSort) == -1) {
+        if (praEncontrarDouradoArray.length < praEncontrarDourado.length) {
+            praEncontrarDouradoArray.push(numSort);
+            praEncontrarDouradof(numSort)
+        }
+    } else {
+        if (praEncontrarDouradoArray.length < praEncontrarDourado.length) {
+            sortearPraEncontrarDourado()
+        }
+    }
+    console.log(praEncontrarDouradoArray);
+}
+
+function praEncontrarDouradof(iPraEncontrarDourado) {
+    praEncontrarDourado[iPraEncontrarDourado].classList.remove("bloqueado")
+    iModeloExtra = iPraEncontrarDourado + (praComprar.length + praEncontrar.length)
+    localStorage.setItem("praEncontrarDourado", JSON.stringify(praEncontrarDouradoArray))
+
+    extraDesbloqueado.classList.add("dourado")
+    extraDesbloqueado.style.display = "flex"
+    extraDesbloqueadoH2.innerHTML = "Novo Extra Dourado Desbloqueado!"
+    extraDesbloqueadoImg.src = modelosExtras[iModeloExtra].imgSrc
+    extraDesbloqueadoP.innerHTML = modelosExtras[iModeloExtra].nome
+
+    document.querySelectorAll(".pra-encontrar-dourado img")[iPraEncontrarDourado].src = modelosExtras[iModeloExtra].imgSrc
+    document.querySelectorAll(".pra-encontrar-dourado ~ p")[iPraEncontrarDourado].innerHTML = modelosExtras[iModeloExtra].nome
 
     aparecerConfete()
 }

@@ -78,7 +78,7 @@ function abaAudios() {
         if (isCelular) {
             fecharAbaCel.style.display = "block"
         }
-        if (tutorialBotoesDiv.style.display == "none") audiosContainer.style.zIndex = 12
+        audiosContainer.style.zIndex = 12
 
         if (!isCelular) {
             audiosContainer.removeEventListener("mouseover", abaAudios)

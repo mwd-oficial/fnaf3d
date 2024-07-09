@@ -26,7 +26,7 @@ function abaAnimacoes() {
         if (isCelular) {
             fecharAbaCel.style.display = "block"
         }
-        if (tutorialBotoesDiv.style.display == "none") animacoesContainer.style.zIndex = 11
+        animacoesContainer.style.zIndex = 11
 
         if (!isCelular) {
             animacoesContainer.removeEventListener("mouseover", abaAnimacoes)

@@ -13,7 +13,7 @@ var freddy = {
     animacoes: {
         posicaoInicial: {
             src: "RIG_Freddy|Freddy_MenuPose_01_RIG_Freddy",
-            nome: "Posição Inicial",
+            nome: "Posição inicial",
             alvoCamera: "0m 1.25m 0m",
             estatico: true,
         },
@@ -33,7 +33,7 @@ var freddy = {
         },
         horaDoShow: {
             src: "RIG_Freddy|Freddy_Showtime_Loop_Tom_RIG_Freddy",
-            nome: "Hora do Show",
+            nome: "Hora do show",
             alvoCamera: "0m 1.25m 0.1m",
         },
         andando: {
@@ -93,7 +93,7 @@ var bonnie = {
     animacoes: {
         posicaoInicial: {
             src: "RIG_Bonnie|Bonnie_StagePose_Guitar_RIG_Bonnie",
-            nome: "Posição Inicial",
+            nome: "Posição inicial",
             alvoCamera: "0m 1.5m 0.05m",
             estatico: true,
         },
@@ -117,7 +117,7 @@ var bonnie = {
         },
         horaDoShow: {
             src: "RIG_Bonnie|Bonnie_Showtime_Loop_Tom_RIG_Bonnie",
-            nome: "Hora do Show",
+            nome: "Hora do show",
             alvoCamera: "0m 1.35m 0.1m",
         },
         andando: {
@@ -164,7 +164,7 @@ var chica = {
     animacoes: {
         posicaoInicial: {
             src: "RIG_Chica|Chica_MenuPose_01_RIG_Chica",
-            nome: "Posição Inicial",
+            nome: "Posição inicial",
             alvoCamera: "0m 1.25m 0m",
             estatico: true,
         },
@@ -197,7 +197,7 @@ var chica = {
         },
         horaDoShow: {
             src: "RIG_Chica|Chica_Showtime_Loop_Tom_RIG_Chica",
-            nome: "Hora do Show",
+            nome: "Hora do show",
             alvoCamera: "0m 1.3m 0m",
         },
         perseguicao: {
@@ -268,7 +268,7 @@ var foxy = {
     animacoes: {
         posicaoInicial: {
             src: "RIG_Foxy_Clean|Foxy_Office01_Pos01_RIG_Foxy_Clean",
-            nome: "Posição Inicial",
+            nome: "Posição inicial",
             alvoCamera: "17.25m 2m -9m",
             estatico: true,
         },
@@ -292,7 +292,7 @@ var foxy = {
         },
         horaDoShow: {
             src: "RIG_Foxy_Clean|Foxy_Showtime_Loop_RIG_Foxy_Clean",
-            nome: "Hora do Show",
+            nome: "Hora do show",
             alvoCamera: "0m 1.5m 0m",
         },
         correndo: {

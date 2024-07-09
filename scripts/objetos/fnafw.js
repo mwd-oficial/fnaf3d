@@ -552,10 +552,10 @@ var adventureNightmarionne = {
     alturaMinima: -30,
     descricao: "Adventure Nightmarionne é um personagem em FNaF World. Ele é baseado na Nightmare Marionette, a versão aterrorizante do Marionete da série Five Nights at Freddy's 4. Adventure Nightmarionne é um fantoche com olhos brilhantes e garras afiadas. Seus ataques incluem \"Mystery Box\", \"Haunting\" e \"Regen Song\". Além disso, ele representa os pesadelos do protagonista do quarto jogo.",
 };
-/*
+
 var adventureFuntimeFoxy = {
     src: "assets/models/fnafw/adventure-funtime-foxy.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#C73B7C, #000)",
     fnaf: "w",
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 15m",
@@ -563,76 +563,11 @@ var adventureFuntimeFoxy = {
     temAltura: true,
     alturaMaxima: 2,
     alturaMinima: -2,
-    descricao: "Adventure Funtime Foxy é um personagem em FNaF World. Ele é a versão intacta do Mangle. Alguns acreditam que seja o Funtime Foxy de Sister Location, mas isso é improvável, pois ele está faltando muitos recursos-chave. Em FNaF World, o Adventure Funtime Foxy começa com 305 de saúde no nível 1 e ganha 5 de saúde a cada nível. Ele é um personagem muito útil, pois pode causar alto dano, curar drasticamente o grupo e reviver membros caídos.",
+    descricao: "Adventure Funtime Foxy é uma raposa animatrônica que se assemelha a um animatrônico \"Toy\", com bochechas coradas. Ele tem três tufos de pelo acima da cabeça e usa uma grande gravata borboleta vermelha. <br><br> Embora seja baseado no Funtime Foxy de Five Nights at Freddy's: Sister Location, há algumas diferenças de design entre os dois. Em FNaF World, Adventure Funtime Foxy começa com 305 pontos de vida no nível 1 e ganha 5 pontos de vida a cada nível, chegando a 505 pontos de vida no nível 40. <br><br> Suas habilidades incluem o ataque rosa \"Cosmic Song\", que cura mais do que o Happy Jam regular, o ataque branco que invoca estrelas para atacar todos os inimigos e o ataque amarelo \"Gift Boxes\", que concede uma vida extra à equipe. Adventure Funtime Foxy é um personagem muito útil, capaz de causar alto dano, curar drasticamente o grupo e reviver membros caídos da equipe.",
 };
 
-var adventureEnnard = {
-    src: "assets/models/fnafw/adventure-ennard.glb",
-    corFundo: "radial-gradient(#fff, #000)",
-    fnaf: "w",
-    orbitaCameraMaxima: "0 0 15m",
-    orbitaCameraMinima: "0 0 15m",
-    alvoCamera: "0m 3m 0.25m",
-    temAltura: true,
-    alturaMaxima: 2,
-    alturaMinima: -2,
-    descricao: "Adventure Ennard é um personagem em FNaF World. Ele é baseado no Ennard, o animatrônico composto por partes de outros animatrônicos da série Five Nights at Freddy's: Sister Location. Adventure Ennard é uma figura complexa com olhos brilhantes e uma aparência intrigante. Seus ataques incluem \"Mystery Box\", \"Haunting\" e \"Regen Song\". Além disso, ele representa a fusão de várias entidades robóticas.",
-};
 
-var adventureMinireena = {
-    src: "assets/models/fnafw/adventure-minireena.glb",
-    corFundo: "radial-gradient(#fff, #000)",
-    fnaf: "w",
-    orbitaCameraMaxima: "0 0 15m",
-    orbitaCameraMinima: "0 0 15m",
-    alvoCamera: "0m 3m 0.25m",
-    temAltura: true,
-    alturaMaxima: 2,
-    alturaMinima: -2,
-    descricao: "Adventure Minireena é uma versão \"Adventure\" das Minireenas, de Five Nights at Freddy's: Sister Location. Elas são pequenas dançarinas animatrônicas com cabelos loiros e vestidos rosa. Adventure Minireena tem ataques como \"Ballet\" e \"Cosmic Song\"."
-};
 
-var adventureElectrobab = {
-    src: "assets/models/fnafw/adventure-electrobab.glb",
-    corFundo: "radial-gradient(#fff, #000)",
-    fnaf: "w",
-    orbitaCameraMaxima: "0 0 15m",
-    orbitaCameraMinima: "0 0 15m",
-    alvoCamera: "0m 3m 0.25m",
-    temAltura: true,
-    alturaMaxima: 2,
-    alturaMinima: -2,
-    descricao: "Adventure Electrobab é uma versão \"Adventure\" dos Electrobabs, de Five Nights at Freddy's: Sister Location. Eles são pequenos animatrônicos amarelos com olhos vermelhos. Adventure Electrobab tem ataques como \"Bite\" e \"Cosmic Song\"."
-};
-
-var adventureCircusBaby = {
-    src: "assets/models/fnafw/adventure-circus-baby.glb",
-    corFundo: "radial-gradient(#fff, #000)",
-    fnaf: "w",
-    orbitaCameraMaxima: "0 0 15m",
-    orbitaCameraMinima: "0 0 15m",
-    alvoCamera: "0m 3m 0.25m",
-    temAltura: true,
-    alturaMaxima: 2,
-    alturaMinima: -2,
-    descricao: "Adventure Circus Baby é uma versão \"Adventure\" de Circus Baby, de Five Nights at Freddy's: Sister Location. Ela é uma animatrônica com cabelos loiros e um vestido rosa. Adventure Circus Baby tem ataques como \"Scoop\" e \"Cosmic Song\"."
-};
-
-var adventureCoffee = {
-    src: "assets/models/fnafw/adventure-coffee.glb",
-    corFundo: "radial-gradient(#fff, #000)",
-    fnaf: "w",
-    orbitaCameraMaxima: "0 0 15m",
-    orbitaCameraMinima: "0 0 15m",
-    alvoCamera: "0m 3m 0.25m",
-    temAltura: true,
-    alturaMaxima: 2,
-    alturaMinima: -2,
-    descricao: "Adventure Coffee é um personagem em FNaF World. Ele é baseado em uma xícara de café, representando um elemento humorístico e inusitado no jogo. Adventure Coffee não possui ataques específicos, mas sua presença adiciona um toque peculiar ao mundo dos animatrônicos.",
-};
-*/
-
-// Arrumar isso!!!!!!!!!!!!!
 function animacaoWorldf() {
     targetWorldInicial = modelViewer.getCameraTarget()
     animacaoWorld = setInterval(() => {

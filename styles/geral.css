@@ -366,9 +366,43 @@ body {
             }
         }
     }
+
+    &.dourado {
+        & #modelo-div {
+            & h2 {
+                color: #ff0;
+            }
+
+            & #btn-modelo {
+                border: 3px solid #ff0;
+
+                &+p {
+                    color: #ff0;
+                }
+            }
+        }
+    }
 }
 
+#botao-dourado {
+    background-color: #aa0;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px #aa08;
+    cursor: pointer;
+    transition-duration: .5s;
 
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 5px 5px #aa08;
+    }
+
+    &.desativado {
+        filter: grayscale(100%);
+        pointer-events: none;
+    }
+}
 
 
 
@@ -645,7 +679,9 @@ model-viewer {
                     height: 110% !important;
                 }
 
-                & .steam-div, #fnaf-filme, #jogar-fnaf {
+                & .steam-div,
+                #fnaf-filme,
+                #jogar-fnaf {
                     margin-top: 0px;
                     transform: scale(0.75);
                 }
@@ -674,6 +710,7 @@ model-viewer {
 
                 & h2 {
                     margin-bottom: 20px;
+                    text-align: center;
                 }
 
                 & #fnaf-info {
@@ -737,11 +774,22 @@ model-viewer {
                 color: #aaa;
             }
 
+            &.pra-encontrar-dourado+p {
+                color: #aa0;
+            }
+
             &:hover {
                 border: 3px solid #aaa;
                 transform: scale(1.05);
                 box-shadow: 0px 0px 10px 0px #aaa,
                     inset 0px 0px 10px 0px #aaa;
+            }
+
+            &.pra-encontrar-dourado:hover {
+                border: 3px solid #aa0;
+                transform: scale(1.05);
+                box-shadow: 0px 0px 10px 0px #aa0,
+                    inset 0px 0px 10px 0px #aa0;
             }
 
             &:hover img {
@@ -753,13 +801,22 @@ model-viewer {
                     0px 0px 10px #aaa;
             }
 
+            &.pra-encontrar-dourado:hover+p {
+                text-shadow: 0px 0px 10px #aa0,
+                    0px 0px 10px #aa0;
+            }
+
             &.active {
                 border: 3px solid #fff;
                 cursor: no-drop;
             }
 
+            &.pra-encontrar-dourado.active {
+                border: 3px solid #ff0;
+            }
+
             &.bloqueado {
-                border: none;
+                border: none !important;
                 cursor: no-drop;
 
                 &~.valor-div,
@@ -768,6 +825,10 @@ model-viewer {
                 }
 
                 .bloqueio-pra-encontrar {
+                    display: flex;
+                }
+
+                .bloqueio-pra-encontrar-dourado {
                     display: flex;
                 }
             }
@@ -787,10 +848,15 @@ model-viewer {
                 color: #fff;
             }
 
+            &.pra-encontrar-dourado.active+p {
+                color: #ff0;
+            }
+
 
 
             & .bloqueio-pra-comprar,
-            .bloqueio-pra-encontrar {
+            .bloqueio-pra-encontrar,
+            .bloqueio-pra-encontrar-dourado {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -810,7 +876,15 @@ model-viewer {
                     color: #aaa;
                     font-size: 50px;
                 }
+            }
 
+            & .bloqueio-pra-encontrar-dourado {
+                background-color: rgba(102, 95, 0, 0.533);
+                border: 3px solid #aa0;
+
+                & span {
+                    color: #aa0;
+                }
             }
 
             &~.valor-div {
@@ -947,6 +1021,7 @@ model-viewer {
 
         & h2 {
             margin-bottom: 30px;
+            text-align: center;
         }
 
         & #descricao-div {
@@ -962,6 +1037,10 @@ model-viewer {
 
             & p {
                 text-align: justify;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
             }
         }
 
@@ -1184,10 +1263,13 @@ model-viewer {
         flex-wrap: wrap;
         gap: 10px 25px;
         width: 100%;
+        max-height: 65vh;
         background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
         backdrop-filter: blur(10px);
         padding: 15px;
+        padding-bottom: 0;
         border-top-right-radius: 10px;
+        overflow-y: scroll;
 
         & #sem-animacoes {
             color: #fff;
@@ -1628,6 +1710,13 @@ model-viewer {
 
 #animacoes-range-div {
     margin: 0;
+    position: sticky;
+    bottom: 0;
+    background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2.5px 2.5px 5px 0px #0008;
 }
 
 .audios-range,

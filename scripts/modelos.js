@@ -148,24 +148,21 @@ function carregarModeloEvento() {
 function carregarModelo(iModelo) {
 
     console.log(modelViewer.availableAnimations);
-    /*
-    
-    */
-
-    // setInterval(() => {
-    //     console.log(modelViewer.getCameraOrbit())
-    // }, 1000);
-    //modelViewer.animationName = "RIG_Freddy|Freddy_Walk_Office03_RIG_Freddy"
-    // setInterval(() => {
-    //      console.log(modelViewer.getCameraTarget())
-    //  }, 1000);
-    //modelViewer.cameraTarget = "0m 1.5m 0.05m"
 
     desConfigEx()
     if (modelos[iModelo].temConfigEx) modelos[iModelo].configEx()
 
     document.querySelector("#nome-descricao-modelo").innerHTML = modelosDivP[iModelo].innerHTML
-    document.querySelector("#descricao-modelo").innerHTML = modelos[iModelo].descricao
+    descricaoModelo.innerHTML = modelos[iModelo].descricao
+    setTimeout(() => {
+        if ("botaoDouradoDesativado" in modelos[iModeloVar]) {
+            if (modelos[iModeloVar].botaoDouradoDesativado) {
+                document.querySelector("#botao-dourado").classList.add("desativado")
+            } else {
+                document.querySelector("#botao-dourado").classList.remove("desativado")
+            }
+        }
+    }, 10);
 
     if (modelos[iModelo].mudaOrbitaCamera) {
         modelViewer.cameraOrbit = modelos[iModelo].orbitaCamera;

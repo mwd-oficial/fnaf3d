@@ -41,6 +41,7 @@ var tutorialDescricaoContent = document.querySelector("#tutorial-descricao-conte
 var tutorialDescricaoDiv = document.querySelector("#tutorial-descricao-div")
 var tutorialDescricaoBtn = document.querySelector("#tutorial-descricao-btn")
 var tutorialIcon = document.querySelector("#tutorial-descricao-btn span")
+var descricaoModelo = document.querySelector("#descricao-modelo")
 
 var tutorialBotoesDiv = document.querySelector("#tutorial-botoes-div")
 var tutorialBotoesContent = document.querySelector("#tutorial-botoes-content")
@@ -142,6 +143,7 @@ var valor = document.querySelectorAll(".valor")
 var praComprarArray = []
 var praComprar = document.querySelectorAll(".pra-comprar")
 var extraDesbloqueado = document.querySelector("#extra-desbloqueado")
+var extraDesbloqueadoH2 = document.querySelector("#modelo-div h2")
 var extraDesbloqueadoImg = document.querySelector("#modelo-div #btn-modelo img")
 var extraDesbloqueadoP = document.querySelector("#modelo-div p")
 
@@ -150,7 +152,11 @@ var praEncontrarArray = []
 var praEncontrar = document.querySelectorAll(".pra-encontrar")
 var iModeloExtra
 
+var praEncontrarDouradoArray = []
+var praEncontrarDourado = document.querySelectorAll(".pra-encontrar-dourado")
 
+var geralSorteado = []
+var botaoDouradoDesativadoArray = []
 
 var verificacao = true
 var animacaoWorld, targetWorld, targetWorldInicial

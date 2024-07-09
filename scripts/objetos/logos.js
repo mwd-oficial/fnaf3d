@@ -9,7 +9,7 @@ var logo = {
     temAltura: true,
     alturaMaxima: 50,
     alturaMinima: -50,
-    descricao: "Logo oficial de Fnaf 3D. Possui o formato da cabeça de Freddy branca, sobre ele escrito FNAF em verde e 3D amarelo.",
+    descricao: "Logo oficial de Fnaf 3D. Possui o formato da cabeça de Freddy branca, sobre ele escrito FNAF em verde e 3D amarelo. <br><br> Este site possui mais de 150 modelos 3D de animatronics e afins. Procure por moedas 3D em volta do modelo para desbloquear modelos Extras. Existem ainda certos modelos sorteados que possuem um botão para desbloquear um Extra Dourado. Você terá que procurá-lo!",
 }
 
 

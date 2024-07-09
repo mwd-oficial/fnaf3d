@@ -1,5 +1,5 @@
 // TIRAR ISSO DEPOIS!!!!
-/*
+
 aviso.style.display = "none"
 telaInicial.style.display = "flex"
 document.querySelector("#conteudo").style.display = "block"
@@ -10,7 +10,7 @@ primeiraVez = false
 animacoesContainer.style.pointerEvents = "all"
 audiosContainer.style.pointerEvents = "all"
 inputAlturaDiv.style.pointerEvents = "all"
-*/
+
 ////////////////////////////////////
 
 // API tela cheia
@@ -210,7 +210,7 @@ document.querySelector("#iniciar-btn").addEventListener("click", function () {
 
         setTimeout(() => {
             //cliqueModelo(btnModelos[0], 0)
-            cliqueModelo(btnModelos[0], 0)
+            cliqueModelo(btnModelos[70], 70)
         }, 100);
     }, 1);
 })

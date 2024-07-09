@@ -408,6 +408,47 @@ var bonnet = {
     descricao: "Bonnet é uma versão recolorida de Bon-Bon, com um corpo rosa e olhos verdes. Possui bochechas vermelhas e um laço vermelho, semelhante a Toy Bonnie e Adventure Bonnie. Bonnet mede cerca de 1,7 pés de altura. Quando ela aparece no escritório, ela se move para a esquerda e começa a rir. <br<br> Para evitar o jumpscare, clique no nariz dela. Se você demorar muito, ela vai te assustar da mesma forma que Bon-Bon. Curiosamente, Bonnet é uma das poucas animatrônicas com animação de caminhada, apesar de não ter pernas. Ela é uma adição interessante à Custom Night!",
 }
 
+var headChefBot = {
+    imgSrc: "assets/images/extras/pra-encontrar/fnafsb/head-chef-bot.webp",
+    nome: "Head Chef Bot",
+    src: "assets/models/extras/pra-encontrar/fnafsb/head-chef-bot.glb",
+    corFundo: "radial-gradient(#E5AA3F, #000)",
+    fnaf: "ex",
+    orbitaCameraMaxima: "0 0 5m",
+    orbitaCameraMinima: "0 0 4m",
+    temAltura: true,
+    alturaMaxima: 0.75,
+    alturaMinima: -0.25,
+    temAnimacao: true,
+    temAudio: true,
+    animacoes: {
+        posicaoInicial: {
+            src: "SK_HeadChefBot|AS_FP_EC_HeadChefBot_Intro_SK_HeadChefBot",
+            nome: "Posição Inicial",
+            alvoCamera: "2m 0.5m 0.25m",
+            estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "-90deg 0 0",
+        },
+        jumpscare: {
+            src: "SK_HeadChefBot|AS_FP_EL_HeadChefBot_Jumpscare_SK_HeadChefBot",
+            nome: "Jumpscare",
+            alvoCamera: "0.5m 0.25m 0.25m",
+            estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "-90deg 0 0",
+        },
+    },
+    audios: {
+        teste: {
+            src: "",
+            volume: 0.5,
+            nome: "Teste",
+        },
+    },
+    descricao: "O Head Chef Bot é uma variante do S.T.A.F.F. Bot e o chef chefe do El Chip's do Mega Pizzaplex de Freddy Fazbear. Ele apareceu pela primeira vez em Five Nights at Freddy's: Help Wanted 2, e atua como um antagonista abrangente para o nível do El Chip.",
+}
+
 var pizzaria = {
     imgSrc: "assets/images/extras/pra-encontrar/filme/pizzaria.webp",
     nome: "Freddy Fazbear's Pizza",
@@ -522,3 +563,95 @@ var balloonBoyFilme = {
     },
     descricao: "Balloon Boy é um dos personagens icônicos. Ele é conhecido por sua aparência peculiar e por ser um dos animatrônicos do restaurante Freddy Fazbear's Pizza. No entanto, sua atuação no filme é mais sinistra do que parece. Quando a noite cai, os bonecos animatrônicos ganham vida e se tornam assassinos psicopatas. Balloon Boy não é exceção, e sua presença adiciona uma dose extra de suspense e terror à trama. Assim como nos jogos, ele é um personagem que causa arrepios e mantém os espectadores à beira de seus assentos.",
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Pra encontrar dourado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var fnaf1Mapa = {
+    imgSrc: "",
+    nome: "Mapa FNaF 1",
+    src: "assets/models/extras/pra-encontrar-dourado/fnaf1-mapa.glb",
+    corFundo: "radial-gradient(#fff, #000)",
+    fnaf: "ex",
+    orbitaCameraMaxima: "0 0 0m",
+    orbitaCameraMinima: "0 0 0m",
+    alvoCamera: "0m 0m 0m",
+    temAudio: true,
+    audios: {
+        teste: {
+            src: "",
+            volume: 0.5,
+            nome: "Teste",
+        },
+    },
+    descricao: "",
+}
+
+var mascaraVanny = {
+    imgSrc: "",
+    nome: "Máscara Vanny",
+    src: "assets/models/extras/pra-encontrar-dourado/mascara-vanny.glb",
+    corFundo: "radial-gradient(#815020, #000)",
+    fnaf: "ex",
+    orbitaCameraMaxima: "0 0 7.5m",
+    orbitaCameraMinima: "0 0 5m",
+    alvoCamera: "0m 0m 1m",
+    temAudio: true,
+    audios: {
+        teste: {
+            src: "",
+            volume: 0.5,
+            nome: "Teste",
+        },
+    },
+    descricao: "",
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

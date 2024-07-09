@@ -170,14 +170,14 @@ var rockstarFoxy = {
 
 var musicMan = {
     src: "assets/models/fnafffps/music-man.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#E9789A, #000)",
     fnaf: "ffps",
-    orbitaCameraMaxima: "0 0 100m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
+    orbitaCameraMaxima: "0 0 40m",
+    orbitaCameraMinima: "0 0 30m",
+    alvoCamera: "0m 5.5m 0m",
     temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
+    alturaMaxima: 3,
+    alturaMinima: -3,
     descricao: "Music Man é um animatrônico pesado disponível para compra no catálogo do jogo \"Freddy Fazbear's Pizzeria Simulator\" (FFPS). Seu preço é de $19000. Sua aparência é marcante: olhos grandes e negros, bochechas roxas, um nariz rosa, sobrancelhas também rosas, um queixo roxo com uma fileira longa de dentes. <br><br> Ele possui seis pernas semelhantes às pernas de uma aranha, um corpo arredondado e um torso listrado em rosa e branco com alto-falantes. Nas mãos, segura pratos de choque e usa um chapéu preto com uma faixa branca.",
 };
 
@@ -380,7 +380,7 @@ var scraptrap = {
             nome: "Jumpscare",
         },
         iAlwaysComeBack: {
-            src: "assets/audios/extras/pra-comprar/purple-guy/i-always-come-back.ogg",
+            src: "assets/audios/fnafffps/scraptrap/i-always-come-back.ogg",
             volume: 0.5,
             nome: "I always come back",
         },

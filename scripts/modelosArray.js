@@ -94,7 +94,16 @@ var modelos = [
     glamrockEndo,
     djMusicMan,
     miniMusicMan,
-    wetFloorBot,
+    staffBot,
+    shatteredBot,
+    securityBot,
+    mapBot,
+    partyBot,
+    chefBot,
+    serverBot,
+    sewerBot,
+    nightmarionneBot,
+    cautionBot,
     gregory,
     vanessa,
     vanny,
@@ -106,6 +115,7 @@ var modelos = [
     ruinedGlamrockChica,
     ruinedMontgomeryGator,
     ruinedRoxanneWolf,
+    maskBot,
 
     // fnaf 1 (world)
     adventureFreddy,
@@ -147,11 +157,12 @@ var modelos = [
     adventureNightmareBalloonBoy,
     adventurePlushtrap,
     adventureNightmarionne,
-
+    
+    adventureFuntimeFoxy,
 ]
 
 var modelosExtras = [
-    // Pra comprar
+    // Pra Comprar
     moeda3d,
     purpleGuy,
 
@@ -162,10 +173,15 @@ var modelosExtras = [
     phoneGuy,
     lolbit,
     bonnet,
+    headChefBot,
     pizzaria,
     springBonnieFilme,
     springBonniePixel,
     balloonBoyFilme,
+
+    // Pra Encontrar Dourado
+    fnaf1Mapa,
+    mascaraVanny,
 ]
 
 for (let i = 0; i < modelosExtras.length; i++) {

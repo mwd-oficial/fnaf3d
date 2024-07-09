@@ -21,6 +21,37 @@ function getLocalStorage() {
         document.querySelectorAll(".pra-encontrar ~ p")[praEncontrarArray[i]].innerHTML = modelosExtras[iModeloExtra].nome
     }
 
+    praEncontrarDouradoArray = JSON.parse(localStorage.getItem("praEncontrarDourado"))
+    if (praEncontrarDouradoArray == undefined) praEncontrarDouradoArray = []
+    for (let i = 0; i < praEncontrarDouradoArray.length; i++) {
+        praEncontrarDourado[praEncontrarDouradoArray[i]].classList.remove("bloqueado")
+        iModeloExtra = praEncontrarDouradoArray[i] + (praComprar.length + praEncontrar.length)
+        document.querySelectorAll(".pra-encontrar-dourado img")[praEncontrarDouradoArray[i]].src = modelosExtras[iModeloExtra].imgSrc
+        document.querySelectorAll(".pra-encontrar-dourado ~ p")[praEncontrarDouradoArray[i]].innerHTML = modelosExtras[iModeloExtra].nome
+    }
+
+    geralSorteado = JSON.parse(localStorage.getItem("geralSorteado"))
+    botaoDouradoDesativadoArray = JSON.parse(localStorage.getItem("botaoDouradoDesativadoArray"))
+    setTimeout(() => {
+        if (geralSorteado.length === 0) {
+            praEncontrarDourado.forEach((btn) => {
+                numSort = Math.floor(Math.random() * document.querySelectorAll(".geral").length);
+                modelos[numSort].descricao += "<div id='botao-dourado' onclick='sortearPraEncontrarDourado()'>Clique</div>"
+                modelos[numSort].botaoDouradoDesativado = false
+                geralSorteado.push(numSort)
+                botaoDouradoDesativadoArray.push(false)
+                localStorage.setItem("botaoDouradoDesativadoArray", JSON.stringify(botaoDouradoDesativadoArray))
+                localStorage.setItem("geralSorteado", JSON.stringify(geralSorteado))
+            })
+        } else {
+            geralSorteado.forEach((num, iNum) => {
+                modelos[num].descricao += "<div id='botao-dourado' onclick='sortearPraEncontrarDourado()'>Clique</div>"
+                modelos[num].botaoDouradoDesativado = botaoDouradoDesativadoArray[iNum]
+            })
+        }
+        console.log("geralSorteado: " + geralSorteado)
+    }, 1000);
+
     ucnDesbloqueado = JSON.parse(localStorage.getItem('ucnDesbloqueado'))
 
     tutorialVisto = JSON.parse(localStorage.getItem('tutorialVisto'))
@@ -47,6 +78,20 @@ function resetLocalStorageGeral() {
         document.querySelectorAll(".pra-encontrar ~ p")[iPraEncontrar].innerHTML = "???"
     })
     praEncontrarArray = []
+
+    localStorage.setItem("praEncontrarDourado", "[]")
+    praEncontrarDourado.forEach((praEncontrarDouradoEl, iPraEncontrarDourado) => {
+        praEncontrarDouradoEl.classList.add("bloqueado")
+        document.querySelectorAll(".pra-encontrar img")[iPraEncontrarDourado].src = ""
+        document.querySelectorAll(".pra-encontrar ~ p")[iPraEncontrarDourado].innerHTML = "???"
+    })
+    praEncontrarDouradoArray = []
+
+    geralSorteado = []
+    localStorage.setItem("geralSorteado", JSON.stringify(geralSorteado))
+
+    botaoDouradoDesativadoArray = []
+    localStorage.setItem("botaoDouradoDesativadoArray", JSON.stringify(botaoDouradoDesativadoArray))
 
     ucnDesbloqueado = false
     localStorage.setItem('ucnDesbloqueado', JSON.stringify(ucnDesbloqueado))

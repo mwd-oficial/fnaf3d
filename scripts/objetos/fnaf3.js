@@ -288,7 +288,7 @@ var springtrap = {
             nome: "Jumpscare",
         },
         iAlwaysComeBack: {
-            src: "assets/audios/extras/pra-comprar/purple-guy/i-always-come-back.ogg",
+            src: "assets/audios/fnafffps/scraptrap/i-always-come-back.ogg",
             volume: 0.5,
             nome: "I always come back",
         },
