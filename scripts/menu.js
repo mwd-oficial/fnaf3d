@@ -1,4 +1,4 @@
-// Menu, 
+// Menu,
 
 btnMenu.addEventListener("click", abrirFecharMenu)
 function abrirFecharMenu() {
@@ -14,9 +14,22 @@ function abrirFecharMenu() {
         }, 500);
         menuIcon.innerHTML = "menu"
         btnHome.style.display = "none"
+        pesquisaNaoVistoDiv.style.display = "none"
         ucnBtn.style.display = "none"
+        fecharPesquisa()
     } else {
+        pesquisaNaoVistoDiv.style.opacity = 0
+        pesquisaNaoVistoDiv.style.pointerEvents = "none"
+        pesquisaNaoVistoDiv.style.display = "flex"
         if (fnafInfoImgDiv.style.display == "flex") {
+            menuContent.removeEventListener('scroll', scrollPesquisaNaoVisto)
+            setTimeout(() => {
+                if (document.querySelector("#div-scroll").getBoundingClientRect().top <= 75) {
+                    pesquisaNaoVistoDiv.style.opacity = 1;
+                    pesquisaNaoVistoDiv.style.pointerEvents = "all"
+                }
+                menuContent.addEventListener('scroll', scrollPesquisaNaoVisto)
+            }, 1500);
             if (primeiraVezScroll) {
                 primeiraVezScroll = false
                 setTimeout(() => {
@@ -27,6 +40,11 @@ function abrirFecharMenu() {
                     nomeFnaf[iNomeFnaf].scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }, 1500);
             }
+        } else {
+            setTimeout(() => {
+                pesquisaNaoVistoDiv.style.opacity = 1
+                pesquisaNaoVistoDiv.style.pointerEvents = "all"
+            }, 1500);
         }
         divMenu.classList.add("active")
         menuContent.style.display = "block"
@@ -220,8 +238,7 @@ function tutorialBotoes() {
                 quantidadeMoedas3dDiv.style.opacity = 1
             }, 1);
             tutorialBotoesContentP.innerHTML = "Aqui mostra quantas moedas 3D você tem."
-            tutorialBotoesContentP.innerHTML += " Passe o mouse por cima"
-            tutorialBotoesContentP.innerHTML += " Clique"
+            tutorialBotoesContentP.innerHTML += isCelular ? " Toque" : " Passe o mouse por cima"
             tutorialBotoesContentP.innerHTML += " para vê-lo. <br> Dica: Cada modelo tem 1 moeda escondida. Tente encontrá-la! <br> (Clique)"
 
             break
@@ -232,11 +249,11 @@ function tutorialBotoes() {
             if (isCelular) {
                 tutorialBotoesContent.style.left = "50%"
                 tutorialBotoesContent.style.transform = "translate(-50%, -50%)"
-                quantidadeMoedas3dDiv.addEventListener("click", quantidadeMoedas3d)
+                quantidadeMoedas3dDiv.addEventListener("touchstart", quantidadeMoedas3d)
             } else {
                 quantidadeMoedas3dDiv.addEventListener("mouseover", quantidadeMoedas3d)
             }
-            tutorialBotoesContentP.innerHTML = "Aqui você pode ver as informações do modelo e tutorial de como interagir com ele <br> (Clique)"
+            tutorialBotoesContentP.innerHTML = "Aqui você pode ver a descrição do modelo e o tutorial de como interagir com ele <br> (Clique)"
             tutorialBotoesContentP.style.backdropFilter = "blur(10px) brightness(0.5)"
             tutorialBotoesDiv.style.backdropFilter = "none"
             if (!tutorialDescricaoDiv.classList.contains("active")) {
@@ -280,9 +297,7 @@ tutorialBotoesDiv.addEventListener("click", function () {
 
 function fnafInfo(iModelo) {
     fnafInfoImgDiv.style.display = "flex"
-    textoFnafInfo.forEach((texto) => {
-        texto.style.display = "none"
-    })
+    textoFnafInfo.style.display = "none"
     fnafImg.style.width = "100%"
     fnafImg.style.height = "initial"
     jogarFnaf.style.display = "none"
@@ -299,8 +314,11 @@ function fnafInfo(iModelo) {
             break
         case "1":
 
-            textoFnafInfo[0].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[1].innerHTML
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnaf1Info
+            trailer.src = "assets/videos/fnaf1/trailer.mp4"
+            trailer.poster = !isCelular ? "assets/images/fnaf1/trailer.webp" : ""
             fnafImg.src = "assets/images/fnaf1/fnaf1.webp"
             jogarFnaf.style.display = "flex"
             iNomeFnaf = 1
@@ -308,8 +326,11 @@ function fnafInfo(iModelo) {
             break
         case "2":
 
-            textoFnafInfo[1].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[2].innerHTML
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnaf2Info
+            trailer.src = "assets/videos/fnaf2/trailer.mp4"
+            trailer.poster = !isCelular ? "assets/images/fnaf2/trailer.webp" : ""
             fnafImg.src = "assets/images/fnaf2/fnaf2.webp"
             jogarFnaf.style.display = "flex"
             iNomeFnaf = 2
@@ -317,8 +338,11 @@ function fnafInfo(iModelo) {
             break
         case "3":
 
-            textoFnafInfo[2].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[3].innerHTML
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnaf3Info
+            trailer.src = "assets/videos/fnaf3/trailer.mp4"
+            trailer.poster = !isCelular ? "assets/images/fnaf3/trailer.webp" : ""
             fnafImg.src = "assets/images/fnaf3/fnaf3.webp"
             jogarFnaf.style.display = "flex"
             iNomeFnaf = 3
@@ -326,8 +350,11 @@ function fnafInfo(iModelo) {
             break
         case "4":
 
-            textoFnafInfo[3].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[4].innerHTML
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnaf4Info
+            trailer.src = "assets/videos/fnaf4/trailer.mp4"
+            trailer.poster = !isCelular ? "assets/images/fnaf4/trailer.webp" : ""
             fnafImg.src = "assets/images/fnaf4/fnaf4.webp"
             jogarFnaf.style.display = "flex"
             iNomeFnaf = 4
@@ -335,8 +362,11 @@ function fnafInfo(iModelo) {
             break
         case "sl":
 
-            textoFnafInfo[4].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[5].innerHTML
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnafslInfo
+            trailer.src = "assets/videos/fnafsl/trailer.mp4"
+            trailer.poster = !isCelular ? "assets/images/fnafsl/trailer.webp" : ""
             fnafImg.src = "assets/images/fnafsl/fnafsl.webp"
             jogarFnaf.style.display = "flex"
             iNomeFnaf = 5
@@ -344,8 +374,11 @@ function fnafInfo(iModelo) {
             break
         case "ffps":
 
-            textoFnafInfo[5].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[6].innerHTML
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnafffpsInfo
+            trailer.src = "assets/videos/fnafffps/trailer.mp4"
+            trailer.poster = !isCelular ? "assets/images/fnafffps/trailer.webp" : ""
             fnafImg.src = "assets/images/fnafffps/fnafffps.webp"
             if (isCelular) {
                 downloadP.style.display = "block"
@@ -357,8 +390,11 @@ function fnafInfo(iModelo) {
             break
         case "sb":
 
-            textoFnafInfo[6].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[7].innerHTML
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnafsbInfo
+            trailer.src = "assets/videos/fnafsb/trailer.mp4"
+            trailer.poster = !isCelular ? "assets/images/fnafsb/trailer.webp" : ""
             fnafImg.src = "assets/images/fnafsb/fnafsb.webp"
             fnafsbSteam.style.display = "flex"
             iNomeFnaf = 7
@@ -366,8 +402,11 @@ function fnafInfo(iModelo) {
             break
         case "sbr":
 
-            textoFnafInfo[7].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[8].innerHTML
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnafsbrInfo
+            trailer.src = "assets/videos/fnafsbr/trailer.mp4"
+            trailer.poster = !isCelular ? "assets/images/fnafsbr/trailer.webp" : ""
             fnafImg.src = "assets/images/fnafsbr/fnafsbr.webp"
             fnafsbrSteam.style.display = "flex"
             iNomeFnaf = 8
@@ -375,8 +414,11 @@ function fnafInfo(iModelo) {
             break
         case "w":
 
-            textoFnafInfo[8].style.display = "block"
             nomeFnafInfo.innerHTML = nomeFnaf[9].innerHTML
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnafwInfo
+            trailer.src = "assets/videos/fnafw/trailer.mp4"
+            trailer.poster = !isCelular ? "assets/images/fnafw/trailer.webp" : ""
             fnafImg.src = "assets/images/fnafw/fnafw.webp"
             if (isCelular) {
                 downloadP.style.display = "block"
@@ -392,20 +434,95 @@ function fnafInfo(iModelo) {
             iNomeFnaf = 10
 
             break
+        case "ex1":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 11
+
+            break
+        case "ex2":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 12
+
+            break
+        case "ex3":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 13
+
+            break
+        case "ex4":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 14
+
+            break
+        case "exsl":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 15
+
+            break
+        case "exffps":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 16
+
+            break
+        case "exsb":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 17
+
+            break
+        case "exsbr":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 18
+
+            break
+        case "exw":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 19
+
+            break
+        case "exo":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 20
+
+            break
+        case "exd":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 21
+
+            break
         case "exf":
 
-            textoFnafInfo[9].style.display = "block"
             nomeFnafInfo.innerHTML = "Five Nights At Freddy's: O Pesadelo Sem Fim"
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnafexfInfo
+            trailer.src = "assets/videos/trailer-filme.mp4"
+            trailer.poster = !isCelular ? "assets/images/extras/trailer.webp" : ""
             fnafImg.src = "assets/images/extras/fnaf-filme.webp"
             fnafImg.style.width = "initial"
             fnafImg.style.height = "100%"
             fnafFilme.style.display = "flex"
-            iNomeFnaf = 11
+            iNomeFnaf = 20
 
             break
     }
+    if (isCelular) {
+        document.querySelectorAll(".ajustar-font-size-info").forEach(function (el) {
+            var fontSizeAtual = parseFloat(window.getComputedStyle(el).fontSize);
+            var fontSizeNovo = fontSizeAtual * 0.75;
+            el.style.fontSize = fontSizeNovo + 'px';
+        });
+    }
 }
-
 
 jogarFnaf.addEventListener("click", function () {
     window.open(`../jogos/fnaf${modelos[iModeloVar].fnaf}/fnaf${modelos[iModeloVar].fnaf}.html`, "_blank")
@@ -586,3 +703,182 @@ function aparecerUcnInfo() {
 }
 
 document.querySelector("#fechar-ucn-info-btn").addEventListener("click", () => { ucnInfoImgDiv.style.display = "none" })
+
+document.querySelector("#ainda-nao-visto-div label").addEventListener("click", checkarAindaNaoVisto)
+aindaNaoVistoInput.addEventListener("click", checkarAindaNaoVisto)
+aindaNaoVistoDiv.addEventListener("click", checkarAindaNaoVisto)
+function checkarAindaNaoVisto() {
+    if (aindaNaoVistoInput.checked) {
+        aindaNaoVistoInput.checked = false
+    } else {
+        aindaNaoVistoInput.checked = true
+    }
+    atualizarVistos()
+}
+function atualizarVistos() {
+    if (aindaNaoVistoInput.checked) {
+        vistosArray.forEach(iModelo => {
+            var img = btnModelosImg[iModelo];
+            var brilhoOriginal = parseFloat(img.getAttribute('data-original-brightness')) || 1;
+            var novoBrilho = brilhoOriginal - 3 * brilhoOriginal / 4; // Ajusta o brilho proporcionalmente
+            img.style.filter = `brightness(${novoBrilho})`;
+        });
+    } else {
+        vistosArray.forEach(iModelo => {
+            var img = btnModelosImg[iModelo];
+            var brilhoOriginal = parseFloat(img.getAttribute('data-original-brightness')) || 1;
+            img.style.filter = `brightness(${brilhoOriginal})`; // Restaura o brilho original
+        });
+    }
+}
+
+function scrollPesquisaNaoVisto() {
+    if (document.querySelector("#div-scroll").getBoundingClientRect().top <= 75) {
+        pesquisaNaoVistoDiv.style.opacity = 1;
+        pesquisaNaoVistoDiv.style.pointerEvents = "all"
+    } else {
+        pesquisaNaoVistoDiv.style.opacity = 0;
+        pesquisaNaoVistoDiv.style.pointerEvents = "none"
+        pesquisaInput.blur()
+    }
+}
+
+
+modelosDivP.forEach(nome => {
+    if (nome.innerText.length > maiorLength) maiorLength = nome.innerText.length
+})
+
+maiorLength += 15
+pesquisaInput.maxLength = maiorLength;
+
+pesquisaBtn.addEventListener("click", function () {
+    if (pesquisaInput.classList.contains("active")) {
+        fecharPesquisa()
+    } else {
+        pesquisaInput.classList.add("active")
+        pesquisaInput.style.width = maiorLength * 10.75 + "px"
+        pesquisaInput.focus()
+        pesquisaInput.style.paddingRight = "50px"
+        pesquisaInput.style.border = "3px solid #333"
+    }
+})
+
+function fecharPesquisa() {
+    pesquisaInput.classList.remove("active")
+    pesquisaInput.style.width = "0px"
+    pesquisaInput.style.paddingRight = "0px"
+    pesquisaInput.style.border = "0px solid #0000"
+    pesquisaInput.value = ""
+    pesquisa()
+}
+
+pesquisaInput.addEventListener("input", pesquisa)
+function pesquisa() {
+    var valor = pesquisaInput.value
+    modelosDiv.forEach(btn => btn.style.display = "none")
+    nomeFnaf.forEach(nome => nome.style.display = "none")
+    nenhumResul.style.display = "block"
+    if (fnafInfoImgDiv.style.display == "flex") {
+        //nenhumResul.style.m
+    }
+    modelosDivP.forEach((nome, iNome) => {
+        var textoNome = nome.innerText;
+        if (textoNome.toLocaleLowerCase().includes(valor.toLocaleLowerCase()) && valor.toLocaleLowerCase() !== "") {
+            var valorOriginal = textoNome.match(new RegExp(escapeRegExp(valor), 'i'))[0];
+            textoNome = textoNome.replace(new RegExp(escapeRegExp(valorOriginal), 'g'), `<mark>${valorOriginal}</mark>`);
+            nome.innerHTML = textoNome;
+
+            modelosDiv[iNome].style.display = "block"
+
+            switch (modelos[iNome].fnaf) {
+                case "l":
+                    nomeFnaf[0].style.display = "block"
+                    break
+                case "1":
+                    nomeFnaf[1].style.display = "block"
+                    break
+                case "2":
+                    nomeFnaf[2].style.display = "block"
+                    break
+                case "3":
+                    nomeFnaf[3].style.display = "block"
+                    break
+                case "4":
+                    nomeFnaf[4].style.display = "block"
+                    break
+                case "sl":
+                    nomeFnaf[5].style.display = "block"
+                    break
+                case "ffps":
+                    nomeFnaf[6].style.display = "block"
+                    break
+                case "sb":
+                    nomeFnaf[7].style.display = "block"
+                    break
+                case "sbr":
+                    nomeFnaf[8].style.display = "block"
+                    break
+                case "w":
+                    nomeFnaf[9].style.display = "block"
+                    break
+                case "ex1":
+                    nomeFnaf[11].style.display = "block"
+                    break
+                case "ex2":
+                    nomeFnaf[12].style.display = "block"
+                    break
+                case "ex3":
+                    nomeFnaf[13].style.display = "block"
+                    break
+                case "ex4":
+                    nomeFnaf[14].style.display = "block"
+                    break
+                case "exsl":
+                    nomeFnaf[15].style.display = "block"
+                    break
+                case "exffps":
+                    nomeFnaf[16].style.display = "block"
+                    break
+                case "exsb":
+                    nomeFnaf[17].style.display = "block"
+                    break
+                case "exsbr":
+                    nomeFnaf[18].style.display = "block"
+                    break
+                case "exw":
+                    nomeFnaf[19].style.display = "block"
+                    break
+                case "exo":
+                    nomeFnaf[20].style.display = "block"
+                    break
+                case "exf":
+                    nomeFnaf[20].style.display = "block"
+                    break
+                case "exd":
+                    nomeFnaf[21].style.display = "block"
+                    break
+            }
+            if (modelos[iNome].fnaf.includes("ex")) nomeFnaf[10].style.display = "block"
+
+        } else {
+            textoNome = textoNome.replace(new RegExp("<mark>", 'g'), "");
+            textoNome = textoNome.replace(new RegExp("</mark>", 'g'), "");
+            nome.innerHTML = textoNome;
+        }
+        if (modelosDiv[iNome].style.display == "block") nenhumResul.style.display = "none"
+        if (valor.toLocaleLowerCase() === "") {
+            modelosDiv.forEach(btn => btn.style.display = "block")
+            nomeFnaf.forEach(nome => nome.style.display = "block")
+        }
+    })
+}
+
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+window.addEventListener("keydown", function (event) {
+    if (event.key === 'Enter') {
+        pesquisaInput.blur()
+    }
+})

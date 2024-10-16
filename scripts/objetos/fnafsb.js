@@ -4,6 +4,12 @@ var glamrockFreddy = {
     src: "assets/models/fnafsb/glamrock-freddy.glb",
     corFundo: "radial-gradient(#E5A632, #000)",
     fnaf: "sb",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/glamrock-freddy/cursores/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 4m",
     temAltura: true,
@@ -137,6 +143,12 @@ var glamrockChica = {
     src: "assets/models/fnafsb/glamrock-chica.glb",
     corFundo: "radial-gradient(#B9007C, #000)",
     fnaf: "sb",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/glamrock-chica/cursores/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 3m",
     temAltura: true,
@@ -238,7 +250,13 @@ var roxanneWolf = {
     src: "assets/models/fnafsb/roxanne-wolf.glb",
     corFundo: "radial-gradient(#8C54D0, #000)",
     fnaf: "sb",
-    orbitaCameraMaxima: "0 0 7m",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/roxanne-wolf/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
+    orbitaCameraMaxima: "0 0 7mcursores/",
     orbitaCameraMinima: "0 0 5m",
     temAltura: true,
     alturaMaxima: 0.75,
@@ -347,204 +365,18 @@ var roxanneWolf = {
     descricao: "Roxanne Wolf, também conhecida como \"Roxy\", é uma animatrônica glamrock que aparece em \"Five Nights at Freddy's: Security Breach\" como uma das principais antagonistas. Ela é a autoconfiante tecladista da banda glamrock, apresentando-se como uma loba de pelagem cinza com olhos amarelos brilhantes. <br><br> Roxanne usa maquiagem preta nas bochechas e batom roxo. Seus pés têm garras pintadas de roxo, enquanto as garras das mãos são verdes. Seu cabelo é longo e prateado, com uma mecha verde brilhante. <br><br> Além disso, ela veste um top vermelho, shorts curtos e ombreiras adornadas com padrões de estrelas pretas. Após ser atropelada por um mini kart no Roxy Raceway, Roxanne fica gravemente danificada, com os olhos removidos para aprimorar Glamrock Freddy.",
 };
 
-/*
-0
-: 
-"RIG_Glamrock_Roxy|Glamrock_Roxy_PounceAntic_Loop_RIG_Glamrock_Roxy"
-1
-: 
-"RIG_Glamrock_Roxy|Glamrock_Roxy_PounceAntic_RIG_Glamrock_Roxy"
-2
-: 
-"RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_In_RIG_Glamrock_Roxy"
-3
-: 
-
-4
-: 
-"RIG_Glamrock_Roxy|Glamrock_Roxy_PounceJump_Out_RIG_Glamrock_Roxy"
-5
-: 
-"RIG_Glamrock_Roxy|Glamrock_Roxy_PounceLand_RIG_Glamrock_Roxy"
-6
-: 
-"RIG_Glamrock_Roxy|Glamrock_Roxy_PounceStun_Loop_RIG_Glamrock_Roxy"
-7
-: 
-"RIG_Glamrock_Roxy|Glamrock_Roxy_PounceStunToIdle_RIG_Glamrock_Roxy"
-67
-: 
-
-68
-: 
-"RIG_Glamrock_Roxy|Roxy_GolfPose_RIG_Glamrock_Roxy"
-69
-: 
-"RIG_Glamrock_Roxy|Roxy_Idle_LOOP_add_RIG_Glamrock_Roxy"
-70
-: 
-
-71
-: 
-"RIG_Glamrock_Roxy|Roxy_Idle_ScanLeft_RIG_Glamrock_Roxy"
-72
-: 
-"RIG_Glamrock_Roxy|Roxy_Idle_ScanRight_RIG_Glamrock_Roxy"
-73
-: 
-"RIG_Glamrock_Roxy|Roxy_Idle_Thrash_RIG_Glamrock_Roxy"
-74
-: 
-
-75
-: 
-
-76
-: 
-"RIG_Glamrock_Roxy|Roxy_PepTalk_02_RIG_Glamrock_Roxy"
-77
-: 
-"RIG_Glamrock_Roxy|Roxy_PepTalk_Idle_RIG_Glamrock_Roxy"
-78
-: 
-
-79
-: 
-"RIG_Glamrock_Roxy|Roxy_Play_00_Slow_RIG_Glamrock_Roxy"
-80
-: 
-"RIG_Glamrock_Roxy|Roxy_Raceway_IDLE_Location_01_RIG_Glamrock_Roxy"
-81
-: 
-"RIG_Glamrock_Roxy|Roxy_Raceway_IDLE_Location_03_RIG_Glamrock_Roxy"
-82
-: 
-"RIG_Glamrock_Roxy|Roxy_Raceway_JUMP_Location_03_RIG_Glamrock_Roxy"
-83
-: 
-"RIG_Glamrock_Roxy|Roxy_Raceway_Location02_RIG_Glamrock_Roxy"
-84
-: 
-"RIG_Glamrock_Roxy|Roxy_Raceway_Location_01_RIG_Glamrock_Roxy"
-85
-: 
-"RIG_Glamrock_Roxy|Roxy_Raceway_Location_03_RIG_Glamrock_Roxy"
-86
-: 
-"RIG_Glamrock_Roxy|Roxy_Raceway_Location_04_RIG_Glamrock_Roxy"
-87
-: 
-"RIG_Glamrock_Roxy|Roxy_Raceway_RUN_Location_01_RIG_Glamrock_Roxy"
-88
-: 
-
-89
-: 
-"RIG_Glamrock_Roxy|Roxy_RunToStop_L_RIG_Glamrock_Roxy"
-90
-: 
-"RIG_Glamrock_Roxy|Roxy_RunToStop_R_RIG_Glamrock_Roxy"
-91
-: 
-
-92
-: 
-
-93
-: 
-"RIG_Glamrock_Roxy|Roxy_Search_FirstAid_RIG_Glamrock_Roxy"
-94
-: 
-"RIG_Glamrock_Roxy|Roxy_Search_Kiosk_RIG_Glamrock_Roxy"
-95
-: 
-"RIG_Glamrock_Roxy|Roxy_Search_Locker_RIG_Glamrock_Roxy"
-96
-: 
-
-97
-: 
-
-98
-: 
-"RIG_Glamrock_Roxy|Roxy_Search_Stroller_RIG_Glamrock_Roxy"
-99
-: 
-
-100
-: 
-"RIG_Glamrock_Roxy|Roxy_Stun_Loop_RIG_Glamrock_Roxy"
-101
-: 
-"RIG_Glamrock_Roxy|Roxy_Stun_OUT_RIG_Glamrock_Roxy"
-102
-: 
-"RIG_Glamrock_Roxy|Roxy_TailPos_RIG_Glamrock_Roxy"
-103
-: 
-"RIG_Glamrock_Roxy|Roxy_TailPosAdd_RIG_Glamrock_Roxy"
-104
-: 
-
-105
-: 
-
-106
-: 
-"RIG_Glamrock_Roxy|Roxy_Walk_Look_Both_RIG_Glamrock_Roxy"
-107
-: 
-"RIG_Glamrock_Roxy|Roxy_Walk_Look_L_RIG_Glamrock_Roxy"
-108
-: 
-"RIG_Glamrock_Roxy|Roxy_Walk_Look_R_RIG_Glamrock_Roxy"
-109
-: 
-
-110
-: 
-"RIG_Glamrock_Roxy|Roxy_WalkToStop_L_RIG_Glamrock_Roxy"
-111
-: 
-"RIG_Glamrock_Roxy|Roxy_WalkToStop_R_RIG_Glamrock_Roxy"
-112
-: 
-"RIG_Glamrock_Roxy|Roxy_ZeroPos_RIG_Glamrock_Roxy"
-113
-: 
-"RIG_Glamrock_Roxy|RoxyIntro_Roxy_Shot_100_RIG_Glamrock_Roxy"
-114
-: 
-"RIG_Glamrock_Roxy|RoxyIntro_Roxy_Shot_200_RIG_Glamrock_Roxy"
-115
-: 
-"RIG_Glamrock_Roxy|RoxyIntro_Roxy_Shot_300_RIG_Glamrock_Roxy"
-116
-: 
-"RIG_Glamrock_Roxy|RoxyIntro_Roxy_Shot_400_RIG_Glamrock_Roxy"
-117
-: 
-"RIG_Glamrock_Roxy|RoxyIntro_Roxy_Shot_500_RIG_Glamrock_Roxy"
-118
-: 
-"RIG_Glamrock_Roxy|RoxyIntro_Roxy_Shot_600_RIG_Glamrock_Roxy"
-119
-: 
-"RIG_Glamrock_Roxy|RoxyIntro_Roxy_Shot_900_RIG_Glamrock_Roxy"
-120
-: 
-"RIG_Glamrock_Roxy|RoxyIntro_ShatteredRoxy_Shot_700_RIG_Glamrock_Roxy"
-121
-: 
-"RIG_Glamrock_Roxy|RoxyIntro_ShatteredRoxy_Shot_800_RIG_Glamrock_Roxy"
-*/
-
 var montgomeryGator = {
     src: "assets/models/fnafsb/montgomery-gator.glb",
     corFundo: "radial-gradient(#5D9D17, #000)",
     fnaf: "sb",
-    orbitaCameraMaxima: "0 0 5m",
-    orbitaCameraMinima: "0 0 4m",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/montgomery-gator/cursores/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
+    orbitaCameraMaxima: "0 0 5.5m",
+    orbitaCameraMinima: "0 0 4.5m",
     temAltura: true,
     alturaMaxima: 0.75,
     alturaMinima: -0.75,
@@ -560,7 +392,7 @@ var montgomeryGator = {
         jumpscare: {
             src: "RIG_Montgomery_Gator|Monty_Jumpscare_RIG_Montgomery_Gator",
             nome: "Jumpscare",
-            alvoCamera: "0m 1.2m 0m",
+            alvoCamera: "0m 1.2m -0.2m",
             estatico: false,
         },
         horaDoShow1: {
@@ -576,7 +408,7 @@ var montgomeryGator = {
             estatico: false,
         },
         batendoNaPorta: {
-            src: "RIG_Glamrock_Roxy|Roxy_DoorSlam_RIG_Glamrock_Roxy",
+            src: "RIG_Montgomery_Gator|Monty_DoorSlam_RIG_Montgomery_Gator",
             nome: "Batendo na porta",
             alvoCamera: "0m 1.1m 0.25m",
             estatico: false,
@@ -590,7 +422,7 @@ var montgomeryGator = {
         rugindo: {
             src: "RIG_Montgomery_Gator|Monty_PounceStunToIdle_RIG_Montgomery_Gator",
             nome: "Rugindo",
-            alvoCamera: "0m 1.1m 0.25m",
+            alvoCamera: "0m 1.1m 0.1m",
             estatico: false,
         },
         quebrando: {
@@ -620,32 +452,34 @@ var montgomeryGator = {
         atordoado: {
             src: "RIG_Montgomery_Gator|Monty_Stun_In_RIG_Montgomery_Gator",
             nome: "Atordoado",
-            alvoCamera: "0m 1.1m 0m",
+            alvoCamera: "0m 1.15m 0.1m",
             estatico: false,
         },
         pulando: {
             src: "RIG_Montgomery_Gator|Monty_Jump_RIG_Montgomery_Gator",
             nome: "Pulando",
-            alvoCamera: "0m 1m 0m",
+            alvoCamera: "0m 1.1m 0.25m",
             estatico: false,
         },
         noAr: {
             src: "RIG_Montgomery_Gator|Monty_PounceJump_Loop_RIG_Montgomery_Gator",
             nome: "No ar",
-            alvoCamera: "0m 1m 0m",
+            alvoCamera: "0.2m 1.5m -0.5m",
             estatico: false,
         },
         caindo1: {
             src: "RIG_Montgomery_Gator|Monty_Land_RIG_Montgomery_Gator",
             nome: "Caindo 1",
-            alvoCamera: "0m 1m 0m",
+            alvoCamera: "0m 1.1m 0m",
             estatico: false,
         },
         caindo2: {
             src: "RIG_Montgomery_Gator|MontyOutro_Monty_Shot300_RIG_Montgomery_Gator",
             nome: "Caindo 2",
-            alvoCamera: "0m 1m 0m",
+            alvoCamera: "34.25m 18.75m -6.85m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "-90deg 0 0",
         },
         andando: {
             src: "RIG_Montgomery_Gator|Monty_Walk_LOOP_RIG_Montgomery_Gator",
@@ -670,244 +504,76 @@ var montgomeryGator = {
     descricao: "Montgomery Gator, também conhecido como Monty, é um animatrônico glamrock que aparece em Five Nights at Freddy's: Security Breach e RUIN como um dos principais antagonistas. <br><br> Ele é o baixista da banda glamrock, tendo substituído Glamrock Bonnie antes de ser derrubado das passarelas acima de sua atração por Gregory e ter suas garras removidas por Glamrock Freddy. <br><br> Sua aparência normal inclui dentes pontiagudos, garras pretas, um moicano vermelho, calças com textura de escamas verdes e manchas nos braços e bochechas.",
 };
 
-/*
-30
-: 
-
-31
-: 
-
-32
-: 
-"RIG_Montgomery_Gator|Monty_GolfPose_RIG_Montgomery_Gator"
-33
-: 
-"RIG_Montgomery_Gator|Monty_Idle_LOOP_Add_RIG_Montgomery_Gator"
-34
-: 
-
-35
-: 
-
-36
-: 
-"RIG_Montgomery_Gator|Monty_Idle_ScanLeft_RIG_Montgomery_Gator"
-37
-: 
-"RIG_Montgomery_Gator|Monty_Idle_ScanRight_RIG_Montgomery_Gator"
-38
-: 
-"RIG_Montgomery_Gator|Monty_InAir_RIG_Montgomery_Gator"
-39
-: 
-
-40
-: 
-
-41
-: 
-
-42
-: 
-
-43
-: 
-"RIG_Montgomery_Gator|Monty_Play_00_Slow_RIG_Montgomery_Gator"
-44
-: 
-"RIG_Montgomery_Gator|Monty_PounceAntic_Loop_RIG_Montgomery_Gator"
-45
-: 
-"RIG_Montgomery_Gator|Monty_PounceAntic_RIG_Montgomery_Gator"
-46
-: 
-"RIG_Montgomery_Gator|Monty_PounceJump_In_RIG_Montgomery_Gator"
-47
-: 
-
-48
-: 
-"RIG_Montgomery_Gator|Monty_PounceJump_Out_RIG_Montgomery_Gator"
-49
-: 
-"RIG_Montgomery_Gator|Monty_PounceLand_RIG_Montgomery_Gator"
-50
-: 
-"RIG_Montgomery_Gator|Monty_PounceStun_Loop_RIG_Montgomery_Gator"
-51
-: 
-
-52
-: 
-
-53
-: 
-"RIG_Montgomery_Gator|Monty_RunToStop_L_RIG_Montgomery_Gator"
-54
-: 
-"RIG_Montgomery_Gator|Monty_RunToStop_R_RIG_Montgomery_Gator"
-55
-: 
-"RIG_Montgomery_Gator|Monty_Scan_Down_Left_RIG_Montgomery_Gator"
-56
-: 
-"RIG_Montgomery_Gator|Monty_Scan_Down_Right_RIG_Montgomery_Gator"
-57
-: 
-
-58
-: 
-"RIG_Montgomery_Gator|Monty_Search_FirstAidBooth_RIG_Montgomery_Gator"
-59
-: 
-"RIG_Montgomery_Gator|Monty_Search_Kiosk_RIG_Montgomery_Gator"
-60
-: 
-"RIG_Montgomery_Gator|Monty_Search_Locker_RIG_Montgomery_Gator"
-61
-: 
-
-62
-: 
-
-63
-: 
-"RIG_Montgomery_Gator|Monty_Search_Stroller_RIG_Montgomery_Gator"
-64
-: 
-
-65
-: 
-
-66
-: 
-"RIG_Montgomery_Gator|Monty_Stun_Loop_RIG_Montgomery_Gator"
-67
-: 
-"RIG_Montgomery_Gator|Monty_Stun_OUT_RIG_Montgomery_Gator"
-68
-: 
-"RIG_Montgomery_Gator|Monty_Tail_Pose_RIG_Montgomery_Gator"
-69
-: 
-"RIG_Montgomery_Gator|Monty_Walk_IP_RIG_Montgomery_Gator"
-70
-: 
-"RIG_Montgomery_Gator|Monty_Walk_Look_Both_RIG_Montgomery_Gator"
-71
-: 
-"RIG_Montgomery_Gator|Monty_Walk_Look_L_RIG_Montgomery_Gator"
-72
-: 
-"RIG_Montgomery_Gator|Monty_Walk_Look_R_RIG_Montgomery_Gator"
-73
-: 
-
-74
-: 
-"RIG_Montgomery_Gator|Monty_WalkToStop_L_RIG_Montgomery_Gator"
-75
-: 
-"RIG_Montgomery_Gator|Monty_WalkToStop_R_RIG_Montgomery_Gator"
-76
-: 
-"RIG_Montgomery_Gator|Monty_ZeroPose_RIG_Montgomery_Gator"
-77
-: 
-"RIG_Montgomery_Gator|MontyIntro_Monty_Shot200_RIG_Montgomery_Gator"
-78
-: 
-"RIG_Montgomery_Gator|MontyIntro_Monty_Shot300_RIG_Montgomery_Gator"
-79
-: 
-"RIG_Montgomery_Gator|MontyIntro_Monty_Shot400_RIG_Montgomery_Gator"
-80
-: 
-"RIG_Montgomery_Gator|MontyIntro_Monty_Shot500_RIG_Montgomery_Gator"
-81
-: 
-"RIG_Montgomery_Gator|MontyOutro_Monty_Shot100_RIG_Montgomery_Gator"
-82
-: 
-"RIG_Montgomery_Gator|MontyOutro_Monty_Shot200_RIG_Montgomery_Gator"
-83
-: 
-
-84
-: 
-"RIG_Montgomery_Gator|MontyOutro_Monty_Shot400_RIG_Montgomery_Gator"
-85
-: 
-"RIG_Montgomery_Gator|MontyOutro_Monty_Shot500_RIG_Montgomery_Gator"
-86
-: 
-"RIG_Montgomery_Gator|MontyOutro_Monty_Shot600_RIG_Montgomery_Gator"
-*/
-
 var shatteredGlamrockChica = {
     src: "assets/models/fnafsb/shattered-glamrock-chica.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#B9007C, #000)",
     fnaf: "sb",
-    orbitaCameraMaxima: "0 0 100m",
-    orbitaCameraMinima: "0 0 0m",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/shattered-glamrock-chica/cursores/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
+    orbitaCameraMaxima: "0 0 13m",
+    orbitaCameraMinima: "0 0 10m",
     temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
+    alturaMaxima: 2,
+    alturaMinima: -2,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Shattered_Chica|ShatteredChica_Idle_RIG_Shattered_Chica",
             nome: "Posição inicial",
-            alvoCamera: "0m 1.1m 0m",
+            alvoCamera: "0m 2.75m 0m",
             estatico: false,
         },
         jumpscare: {
             src: "RIG_Shattered_Chica|ShatteredChica_Jumpscare_RIG_Shattered_Chica",
             nome: "Jumpscare",
-            alvoCamera: "0m 1.2m 0m",
+            alvoCamera: "0m 3m 0m",
             estatico: false,
         },
         olhar: {
             src: "RIG_Shattered_Chica|ShatteredChica_Idle_LookL_RIG_Shattered_Chica",
             nome: "Olhar",
-            alvoCamera: "0m 1.1m 0m",
+            alvoCamera: "0m 2.75m 0m",
             estatico: false,
         },
         procurando1: {
             src: "RIG_Shattered_Chica|ShatteredChica_Search_Kiosk_RIG_Shattered_Chica",
             nome: "Procurando 1",
-            alvoCamera: "0m 1.1m 0.5m",
+            alvoCamera: "0m 2.75m 0.25m",
             estatico: false,
         },
         procurando2: {
             src: "RIG_Shattered_Chica|ShatteredChica_Search_FirstAid_RIG_Shattered_Chica",
             nome: "Procurando 2",
-            alvoCamera: "0m 1.1m 0.5m",
+            alvoCamera: "0m 2.75m 0.5m",
             estatico: false,
         },
         procurando3: {
             src: "RIG_Shattered_Chica|ShatteredChica_Search_ServiceCart_RIG_Shattered_Chica",
             nome: "Procurando 3",
-            alvoCamera: "0m 1.1m 0.5m",
+            alvoCamera: "0m 2.75m 0.5m",
             estatico: false,
         },
         atordoada: {
             src: "RIG_Shattered_Chica|ShatteredChica_Stun_out_RIG_Shattered_Chica",
             nome: "Atordoada",
-            alvoCamera: "0m 1.1m 0m",
+            alvoCamera: "0m 2.75m 0m",
             estatico: false,
         },
         andando: {
             src: "RIG_Shattered_Chica|ShatteredChica_Walk_RIG_Shattered_Chica",
             nome: "Andando",
-            alvoCamera: "0m 1m 0m",
+            alvoCamera: "0m 3m 0m",
             estatico: false,
         },
         correndo: {
             src: "RIG_Shattered_Chica|ShatteredChica_Run_RIG_Shattered_Chica",
             nome: "Correndo",
-            alvoCamera: "0m 1m 0m",
+            alvoCamera: "0m 3m 0m",
             estatico: false,
         },
     },
@@ -921,86 +587,31 @@ var shatteredGlamrockChica = {
     descricao: "Shattered Glamrock Chica é a versão despedaçada de Glamrock Chica que aparece em Five Nights at Freddy's: Security Breach. <br><br> Ela é a guitarrista da banda glamrock, mas após ser esmagada por um compactador de lixo, sua aparência se deteriora drasticamente. Seu bico é arrancado, revelando o endoesqueleto, e seu corpo está repleto de rachaduras e buracos.",
 };
 
-/*
-0
-: 
-"RIG_Shattered_Chica|ShatteredChica_Idle_Add_RIG_Shattered_Chica"
-1
-: 
-
-2
-: 
-"RIG_Shattered_Chica|ShatteredChica_Idle_LookR_RIG_Shattered_Chica"
-3
-: 
-"RIG_Shattered_Chica|ShatteredChica_Idle_Pose_RIG_Shattered_Chica"
-4
-: 
-
-5
-: 
-
-6
-: 
-"RIG_Shattered_Chica|ShatteredChica_Run_IP_RIG_Shattered_Chica"
-7
-: 
-
-8
-: 
-"RIG_Shattered_Chica|ShatteredChica_RunToStop_L_RIG_Shattered_Chica"
-9
-: 
-"RIG_Shattered_Chica|ShatteredChica_RunToStop_R_RIG_Shattered_Chica"
-10
-: 
-
-11
-: 
-
-12
-: 
-"RIG_Shattered_Chica|ShatteredChica_Search_Locker_RIG_Shattered_Chica"
-13
-: 
-
-14
-: 
-"RIG_Shattered_Chica|ShatteredChica_Search_Stroller_RIG_Shattered_Chica"
-15
-: 
-
-16
-: 
-"RIG_Shattered_Chica|ShatteredChica_Walk_IP_RIG_Shattered_Chica"
-17
-: 
-
-18
-: 
-"RIG_Shattered_Chica|ShatteredChica_WalkToStop_L_RIG_Shattered_Chica"
-19
-: 
-"RIG_Shattered_Chica|ShatteredChica_WalkToStop_R_RIG_Shattered_Chica"
-*/
-
 var shatteredRoxanneWolf = {
     src: "assets/models/fnafsb/shattered-roxanne-wolf.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#8C54D0, #000)",
     fnaf: "sb",
-    orbitaCameraMaxima: "0 0 100m",
-    orbitaCameraMinima: "0 0 0m",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/shattered-roxanne-wolf/cursores/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
+    orbitaCameraMaxima: "0 0 5m",
+    orbitaCameraMinima: "0 0 4m",
     temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
+    alturaMaxima: 0.5,
+    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Shattered_Roxy|Shattered_Roxy_Idle_RIG_Shattered_Roxy",
             nome: "Posição inicial",
-            alvoCamera: "0m 1.1m 0m",
+            alvoCamera: "0m 1m 0m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "-20deg 1.5rad 0",
         },
         jumpscare: {
             src: "RIG_Shattered_Roxy|ShatteredRoxy_Jumpscare_RIG_Shattered_Roxy",
@@ -1011,13 +622,13 @@ var shatteredRoxanneWolf = {
         olhar: {
             src: "RIG_Shattered_Roxy|Shattered_Roxy_PounceStun_Loop_RIG_Shattered_Roxy",
             nome: "Olhar",
-            alvoCamera: "0m 1.1m 0m",
+            alvoCamera: "0m 0.85m -0.1m",
             estatico: false,
         },
         procurando1: {
             src: "RIG_Shattered_Roxy|ShatteredRoxy_Search_Kiosk_RIG_Shattered_Roxy",
             nome: "Procurando 1",
-            alvoCamera: "0m 1.1m 0.5m",
+            alvoCamera: "0m 1.1m 0.25m",
             estatico: false,
         },
         procurando2: {
@@ -1032,23 +643,19 @@ var shatteredRoxanneWolf = {
             alvoCamera: "0m 1.1m 0.5m",
             estatico: false,
         },
-        atordoada: {
-            src: "RIG_Shattered_Chica|ShatteredChica_Stun_out_RIG_Shattered_Chica",
-            nome: "Atordoada",
-            alvoCamera: "0m 1.1m 0m",
-            estatico: false,
-        },
         noAr: {
             src: "RIG_Shattered_Roxy|Shattered_Roxy_PounceJump_Loop_RIG_Shattered_Roxy",
             nome: "No ar",
-            alvoCamera: "0m 1.1m 0m",
+            alvoCamera: "0m 1m -0.5m",
             estatico: false,
         },
         chorando: {
             src: "RIG_Shattered_Roxy|ShatteredRoxy_WeepIdle_RIG_Shattered_Roxy",
             nome: "Chorando",
-            alvoCamera: "0m 1m 0m",
+            alvoCamera: "0m 1.1m 0m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "-20deg 1.5rad 0",
         },
         andando: {
             src: "RIG_Shattered_Roxy|Shattered_Roxy_Walk_RIG_Shattered_Roxy",
@@ -1065,7 +672,7 @@ var shatteredRoxanneWolf = {
         correndo: {
             src: "RIG_Shattered_Roxy|ShatteredRoxy_BipedalRun_Loop_RIG_Shattered_Roxy",
             nome: "Correndo",
-            alvoCamera: "0m 1m 0m",
+            alvoCamera: "0m 1m 0.25m",
             estatico: false,
         },
     },
@@ -1079,142 +686,55 @@ var shatteredRoxanneWolf = {
     descricao: "Shattered Roxanne Wolf é uma animatrônica glamrock que aparece em Five Nights at Freddy's: Security Breach. <br><br> Ela é a autoproclamada tecladista egocêntrica da banda glamrock, com um visual de lobo cinza, olhos amarelos e maquiagem preta nas bochechas. Após ser atropelada pelo Driver Assist Bot, seus olhos são removidos para aprimorar Glamrock Freddy, deixando-a cega e com danos severos. <br><br> Seu cabelo prateado está emaranhado, e partes de sua carcaça estão quebradas, expondo o endoesqueleto.",
 };
 
-/*
-0
-: 
-"RIG_Shattered_Roxy|RoxyIntro_ShatteredRoxy_Shot_700_RIG_Shattered_Roxy"
-1
-: 
-"RIG_Shattered_Roxy|RoxyIntro_ShatteredRoxy_Shot_800_RIG_Shattered_Roxy"
-2
-: 
-"RIG_Shattered_Roxy|Shattered_Roxy_Idle_Add_RIG_Shattered_Roxy"
-3
-: 
-
-4
-: 
-"RIG_Shattered_Roxy|Shattered_Roxy_PounceAntic_Loop_RIG_Shattered_Roxy"
-5
-: 
-"RIG_Shattered_Roxy|Shattered_Roxy_PounceAntic_RIG_Shattered_Roxy"
-6
-: 
-"RIG_Shattered_Roxy|Shattered_Roxy_PounceJump_In_RIG_Shattered_Roxy"
-7
-: 
-
-8
-: 
-"RIG_Shattered_Roxy|Shattered_Roxy_PounceJump_Out_RIG_Shattered_Roxy"
-9
-: 
-"RIG_Shattered_Roxy|Shattered_Roxy_PounceLand_RIG_Shattered_Roxy"
-10
-: 
-
-11
-: 
-"RIG_Shattered_Roxy|Shattered_Roxy_PounceStunToIdle_RIG_Shattered_Roxy"
-12
-: 
-"RIG_Shattered_Roxy|Shattered_Roxy_Walk_IP_RIG_Shattered_Roxy"
-13
-: 
-
-14
-: 
-"RIG_Shattered_Roxy|Shattered_Roxy_WalkToStop_L_RIG_Shattered_Roxy"
-15
-: 
-"RIG_Shattered_Roxy|Shattered_Roxy_WalkToStop_R_RIG_Shattered_Roxy"
-16
-: 
-
-17
-: 
-
-18
-: 
-"RIG_Shattered_Roxy|ShatteredRoxy_RunToStop_L_RIG_Shattered_Roxy"
-19
-: 
-"RIG_Shattered_Roxy|ShatteredRoxy_RunToStop_R_RIG_Shattered_Roxy"
-20
-: 
-"RIG_Shattered_Roxy|ShatteredRoxy_Search_FirstAid_RIG_Shattered_Roxy"
-21
-: 
-
-22
-: 
-"RIG_Shattered_Roxy|ShatteredRoxy_Search_Locker_RIG_Shattered_Roxy"
-23
-: 
-
-24
-: 
-
-25
-: 
-"RIG_Shattered_Roxy|ShatteredRoxy_Search_Stroller_RIG_Shattered_Roxy"
-26
-: 
-
-27
-: 
-
-28
-: 
-"RIG_Shattered_Roxy|ShatterRoxy_Broken_RIG_Shattered_Roxy"
-*/
-
 var shatteredMontgomeryGator = {
     src: "assets/models/fnafsb/shattered-montgomery-gator.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#5D9D17, #000)",
     fnaf: "sb",
-    orbitaCameraMaxima: "0 0 100m",
-    orbitaCameraMinima: "0 0 0m",
-    temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/shattered-montgomery-gator/cursores/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
+    orbitaCameraMaxima: "0 0 4m",
+    orbitaCameraMinima: "0 0 4m",
     temAnimacao: true,
     temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Shattered_Montgomery|Shattered_Monty_Idle_RIG_Shattered_Montgomery",
             nome: "Posição inicial",
-            alvoCamera: "0m 1.1m 0m",
+            alvoCamera: "0m 0.4m 0m",
             estatico: false,
         },
         jumpscare: {
             src: "RIG_Shattered_Montgomery|ShatteredMonty_Jumpscare_RIG_Shattered_Montgomery",
             nome: "Jumpscare",
-            alvoCamera: "0m 1.2m 0m",
+            alvoCamera: "0m 0.65m -0.5m",
             estatico: false,
         },
         olhar: {
             src: "RIG_Shattered_Montgomery|Shattered_Monty_Scan_RIG_Shattered_Montgomery",
             nome: "Olhar",
-            alvoCamera: "0m 1.1m 0m",
+            alvoCamera: "0m 0.4m 0m",
             estatico: false,
         },
         atordoado: {
             src: "RIG_Shattered_Montgomery|Shattered_Monty_Stun_In_RIG_Shattered_Montgomery",
             nome: "Atordoado",
-            alvoCamera: "0m 1.1m 0m",
+            alvoCamera: "0m 0.4m 0m",
             estatico: false,
         },
         seRastejando: {
             src: "RIG_Shattered_Montgomery|ShatteredMonty_Crawl_RIG_Shattered_Montgomery",
             nome: "Se rastejando",
-            alvoCamera: "0m 1m 0m",
+            alvoCamera: "0m 0.3m 0m",
             estatico: false,
         },
         seRastejandoRapido: {
             src: "RIG_Shattered_Montgomery|ShatteredMonty_Crawl_Fast_RIG_Shattered_Montgomery",
             nome: "Se rastejando rápido",
-            alvoCamera: "0m 1m 0m",
+            alvoCamera: "0m 0.4m 0m",
             estatico: false,
         },
     },
@@ -1228,77 +748,17 @@ var shatteredMontgomeryGator = {
     descricao: "Shattered Montgomery Gator, também conhecido como \"Monty\", é um animatrônico glamrock que aparece em Five Nights at Freddy's: Security Breach. Ele foi derrubado das passarelas acima de sua atração por Gregory para remover suas garras e dar para Glamrock Freddy. <br><br> Após ser jogado das passarelas, ele fica gravemente danificado, com a mandíbula deslocada, um braço faltando e partes expostas do endoesqueleto.",
 };
 
-/*
-0
-: 
-"RIG_Shattered_Montgomery|Shattered_Monty_Idle_Pose_RIG_Shattered_Montgomery"
-1
-: 
-
-2
-: 
-"RIG_Shattered_Montgomery|Shattered_Monty_PounceAntic_Loop_RIG_Shattered_Montgomery"
-3
-: 
-"RIG_Shattered_Montgomery|Shattered_Monty_PounceAntic_RIG_Shattered_Montgomery"
-4
-: 
-"RIG_Shattered_Montgomery|Shattered_Monty_PounceJump_In_RIG_Shattered_Montgomery"
-5
-: 
-"RIG_Shattered_Montgomery|Shattered_Monty_PounceJump_Out_RIG_Shattered_Montgomery"
-6
-: 
-"RIG_Shattered_Montgomery|Shattered_Monty_PounceLand_RIG_Shattered_Montgomery"
-7
-: 
-"RIG_Shattered_Montgomery|Shattered_Monty_PounceStun_Loop_RIG_Shattered_Montgomery"
-8
-: 
-"RIG_Shattered_Montgomery|Shattered_Monty_PounceStunToIdle_RIG_Shattered_Montgomery"
-9
-: 
-
-10
-: 
-
-11
-: 
-"RIG_Shattered_Montgomery|Shattered_Monty_Stun_Loop_RIG_Shattered_Montgomery"
-12
-: 
-"RIG_Shattered_Montgomery|Shattered_Monty_Stun_Out_RIG_Shattered_Montgomery"
-13
-: 
-"RIG_Shattered_Montgomery|ShatteredMonty_CrashPose_RIG_Shattered_Montgomery"
-14
-: 
-"RIG_Shattered_Montgomery|ShatteredMonty_Crawl_Fast_IP_RIG_Shattered_Montgomery"
-15
-: 
-
-16
-: 
-"RIG_Shattered_Montgomery|ShatteredMonty_Crawl_IP_RIG_Shattered_Montgomery"
-17
-: 
-
-18
-: 
-"RIG_Shattered_Montgomery|ShatteredMonty_Crawl_RM_RIG_Shattered_Montgomery"
-19
-: 
-"RIG_Shattered_Montgomery|ShatteredMonty_ExitVent_RM_RIG_Shattered_Montgomery"
-20
-: 
-
-*/
-
 var sun = {
     src: "assets/models/fnafsb/sun.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "sb",
-    orbitaCameraMaxima: "0 0 100m",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/sun/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
+    orbitaCameraMaxima: "0 0 100mcursores/",
     orbitaCameraMinima: "0 0 0m",
     temAltura: true,
     alturaMaxima: 0,
@@ -1307,10 +767,58 @@ var sun = {
     temAudio: true,
     animacoes: {
         posicaoInicial: {
-            src: "",
+            src: "RIG_Sunman|Sunman_Blocking_Idle_RIG_Sunman",
             nome: "Posição inicial",
             alvoCamera: "0m 0m 0m",
-            estatico: true,
+            estatico: false,
+        },
+        pulando: {
+            src: "RIG_Sunman|SunMan_Cinematic_Intro_RIG_Sunman",
+            nome: "Pulando",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        bracosLevantados: {
+            src: "RIG_Sunman|SunMan_GatorGolf_Idle_RIG_Sunman",
+            nome: "Braços levantados",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        carregandoGregory: {
+            src: "RIG_Sunman|SunMan_Walk_Carry_RIG_Sunman",
+            nome: "Carregando Gregory",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        agachado: {
+            src: "RIG_Sunman|SunMan_NoiseMaker_Panic_RIG_Sunman",
+            nome: "Agachado",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        montandoBrinquedo: {
+            src: "RIG_Sunman|SunMan_NoiseMaker_Reset_03_RIG_Sunman",
+            nome: "Montando brinquedo",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        chorando: {
+            src: "RIG_Sunman|Sunman_Idle_Sad_RIG_Sunman",
+            nome: "Chorando",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        seTransformandoEmMoon: {
+            src: "RIG_Sunman|SunMan_Cinematic_Transformation_RIG_Sunman",
+            nome: "Se transformando em Moon",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        andando: {
+            src: "RIG_Sunman|SunMan_Walk_RIG_Sunman",
+            nome: "Andando",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
         },
     },
     audios: {
@@ -1327,7 +835,13 @@ var moon = {
     src: "assets/models/fnafsb/moon.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "sb",
-    orbitaCameraMaxima: "0 0 100m",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/moon/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
+    orbitaCameraMaxima: "0 0 100mcursores/",
     orbitaCameraMinima: "0 0 0m",
     temAltura: true,
     alturaMaxima: 0,
@@ -1338,6 +852,12 @@ var moon = {
         posicaoInicial: {
             src: "",
             nome: "Posição inicial",
+            alvoCamera: "0m 0m 0m",
+            estatico: true,
+        },
+        sunTransformadoEmMoon: {
+            src: "RIG_MoonMan|MoonMan_Cinematic_Transformation_RIG_MoonMan",
+            nome: "Sun transformado em Moon",
             alvoCamera: "0m 0m 0m",
             estatico: true,
         },
@@ -1352,94 +872,251 @@ var moon = {
     descricao: "Moon é uma versão de Daycare Attendant, animatrônico do Five Nights at Freddy's: Security Breach. Depois de se transformar em Moon, os raios solares que cercam o rosto de Sun são retraídos em sua cabeça. <br><br> A metade esquerda de seu rosto fica preta com os detalhes em seus dentes e olhos ainda visíveis, e o lado direito de seu rosto, em forma de lua crescente, fica branco, dando à ilusão da lua sorridente mais contraste e destaque."
 };
 
+/*
+0
+: 
+"RIG_MoonMan|MoonMan_Cinematic_CarryPlayer_RIG_MoonMan"
+1
+: 
+
+2
+: 
+"RIG_MoonMan|MoonMan_Cinematic_Understage_MMAttack_RIG_MoonMan"
+3
+: 
+"RIG_MoonMan|MoonMan_Crawl_To_Walk_RIG_MoonMan"
+4
+: 
+"RIG_MoonMan|MoonMan_Exit_RIG_MoonMan"
+5
+: 
+"RIG_MoonMan|MoonMan_GatorGolf_Idle_RIG_MoonMan"
+6
+: 
+"RIG_MoonMan|MoonMan_Hat_Pos_RIG_MoonMan"
+7
+: 
+"RIG_MoonMan|MoonMan_Idle_CeilingLedge_01_IN_RIG_MoonMan"
+8
+: 
+"RIG_MoonMan|MoonMan_Idle_CeilingLedge_01_Loop_RIG_MoonMan"
+9
+: 
+"RIG_MoonMan|MoonMan_Idle_CeilingLedge_01_OUT_RIG_MoonMan"
+10
+: 
+"RIG_MoonMan|MoonMan_Idle_Creepy_01_RIG_MoonMan"
+11
+: 
+"RIG_MoonMan|MoonMan_Idle_Creepy_02_RIG_MoonMan"
+12
+: 
+"RIG_MoonMan|Moonman_Idle_Creepy_03_RIG_MoonMan"
+13
+: 
+"RIG_MoonMan|Moonman_Idle_Creepy_04_RIG_MoonMan"
+14
+: 
+"RIG_MoonMan|Moonman_IdLe_Creepy_06_Cieling_RIG_MoonMan"
+15
+: 
+"RIG_MoonMan|MoonMan_Idle_Creepy_08_RIG_MoonMan"
+16
+: 
+"RIG_MoonMan|MoonMan_Idle_FloorLedge_01_IN_RIG_MoonMan"
+17
+: 
+"RIG_MoonMan|MoonMan_Idle_FloorLedge_01_Loop_RIG_MoonMan"
+18
+: 
+"RIG_MoonMan|MoonMan_Idle_FloorLedge_01_OUT_RIG_MoonMan"
+19
+: 
+"RIG_MoonMan|MoonMan_Idle_FloorLedge_02_IN_RIG_MoonMan"
+20
+: 
+"RIG_MoonMan|MoonMan_Idle_FloorLedge_02_Loop_RIG_MoonMan"
+21
+: 
+"RIG_MoonMan|MoonMan_Idle_FloorLedge_02_OUT_RIG_MoonMan"
+22
+: 
+"RIG_MoonMan|Moonman_Idle_LCorner_01_IN_RIG_MoonMan"
+23
+: 
+"RIG_MoonMan|Moonman_Idle_LCorner_01_Loop_RIG_MoonMan"
+24
+: 
+"RIG_MoonMan|Moonman_Idle_LCorner_01_OUT_RIG_MoonMan"
+25
+: 
+"RIG_MoonMan|MoonMan_Idle_LCorner_02_OUT_RIG_MoonMan"
+26
+: 
+"RIG_MoonMan|MoonMan_Idle_LCorner_03_OUT_RIG_MoonMan"
+27
+: 
+"RIG_MoonMan|Moonman_Idle_RCorner_01_IN_RIG_MoonMan"
+28
+: 
+"RIG_MoonMan|Moonman_Idle_RCorner_01_Loop_RIG_MoonMan"
+29
+: 
+"RIG_MoonMan|Moonman_Idle_RCorner_01_OUT_RIG_MoonMan"
+30
+: 
+"RIG_MoonMan|Moonman_Idle_RCorner_01_RIG_MoonMan"
+31
+: 
+"RIG_MoonMan|MoonMan_Idle_RCorner_02_Loop_RIG_MoonMan"
+32
+: 
+"RIG_MoonMan|MoonMan_Idle_RCorner_02_OUT_RIG_MoonMan"
+33
+: 
+"RIG_MoonMan|MoonMan_Idle_RCorner_03_OUT_RIG_MoonMan"
+34
+: 
+"RIG_MoonMan|MoonMan_Jumpscare_Add_RIG_MoonMan"
+35
+: 
+"RIG_MoonMan|MoonMan_Jumpscare_RIG_MoonMan"
+36
+: 
+"RIG_MoonMan|MoonMan_MarketingVId_RIG_MoonMan"
+37
+: 
+"RIG_MoonMan|MoonMan_NoiseMaker_Panic_RIG_MoonMan"
+38
+: 
+"RIG_MoonMan|MoonMan_NoiseMaker_Reset_01_RIG_MoonMan"
+39
+: 
+"RIG_MoonMan|MoonMan_NoiseMaker_Reset_02_RIG_MoonMan"
+40
+: 
+"RIG_MoonMan|MoonMan_NoiseMaker_Reset_03_RIG_MoonMan"
+41
+: 
+"RIG_MoonMan|MoonMan_Panic2Swim_RIG_MoonMan"
+42
+: 
+"RIG_MoonMan|MoonMan_Run_RIG_MoonMan"
+43
+: 
+"RIG_MoonMan|Moonman_Skitter_Flat_RIG_MoonMan"
+44
+: 
+"RIG_MoonMan|MoonMan_Swim2Panic_RIG_MoonMan"
+45
+: 
+"RIG_MoonMan|MoonMan_Swimmy_RIG_MoonMan"
+46
+: 
+"RIG_MoonMan|MoonMan_Teaser_RIG_MoonMan"
+47
+: 
+"RIG_MoonMan|MoonMan_Walk_00_RIG_MoonMan"
+48
+: 
+"RIG_MoonMan|MoonMan_WalK_OnHands_RIG_MoonMan"
+49
+: 
+"RIG_MoonMan|MoonMan_Walk_To_Crawl_RIG_MoonMan"
+*/
+
 var glamrockEndo = {
     src: "assets/models/fnafsb/glamrock-endo.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#3E3B3C, #000)",
     fnaf: "sb",
-    orbitaCameraMaxima: "0 0 100m",
-    orbitaCameraMinima: "0 0 0m",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
+    orbitaCameraMaxima: "0 0 6.5m",
+    orbitaCameraMinima: "0 0 4m",
     temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
+    alturaMaxima: 1,
+    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Endo.ao|Endo_Idle_01_LOOP",
             nome: "Posição inicial",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
         jumpscare: {
             src: "RIG_Endo.ao|Endo_Jumpscare",
             nome: "Jumpscare",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
-        preso: {
+        pendurado: {
             src: "RIG_Endo.ao|Endo_HangingPose_12",
-            nome: "Preso",
-            alvoCamera: "0m 0m 0m",
+            nome: "Pendurado",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
-        seSoltando: {
+        seDespendurando: {
             src: "RIG_Endo.ao|Endo_OffHook",
-            nome: "Se soltando",
-            alvoCamera: "0m 0m 0m",
+            nome: "Se despendurando",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
         olhar: {
             src: "RIG_Endo.ao|Endo_Idle_LOOP03",
             nome: "Olhar",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
         atordoado: {
             src: "RIG_Endo.ao|Endo_Stun_Loop_01",
             nome: "Atordoado",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
         engatinhando: {
             src: "RIG_Endo.ao|Endo_Crawl",
             nome: "Engatinhando",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 0.5m 0m",
             estatico: false,
         },
         oAndarDaChica: {
             src: "RIG_Endo.ao|Endo_Walk_01_LOOP",
             nome: "O andar da Chica",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
         oAndarDaRoxy: {
             src: "RIG_Endo.ao|Endo_Walk_LOOP02",
             nome: "O andar da Roxy",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
         oAndarDoMonty: {
             src: "RIG_Endo.ao|Endo_Walk_LOOP03",
             nome: "O andar do Monty",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
         oCorrerDaChica: {
             src: "RIG_Endo.ao|Endo_Run_01",
             nome: "O correr da Chica",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
         oCorrerDaRoxy: {
             src: "RIG_Endo.ao|Endo_Run_LOOP02",
             nome: "O correr da Roxy",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
         oCorrerDoMonty: {
             src: "RIG_Endo.ao|Endo_Run_LOOP03",
             nome: "O correr do Monty",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
         },
     },
@@ -1453,106 +1130,17 @@ var glamrockEndo = {
     descricao: "O Glamrock Endo, também conhecido como Glamrock Endoskeleton, são os endoesqueletos projetados para os animatrônicos glamrock do Mega Pizzaplex e aparecem em Five Nights at Freddy's: Security Breach e RUIN como um grupo de inimigos hostis. <br><br> Ele é uma versão muito high-tech do endoesqueleto original, sendo de cor cinza como de costume como Endo-01 e Endo-02, mas tendo uma construção muito mais forte, com seu tronco sendo coberto por fios de ouro, e seus olhos brilhando vermelho. <br><br> Os Glamrock Endos só se movem quando o jogador não está olhando para eles, permanecendo em suas posições originais quando está sendo olhado. Quando o jogador desvia o olhar, ele se move em direção a eles para atacar em alta velocidade.",
 };
 
-/*
-0
-: 
-
-1
-: 
-"RIG_Endo.ao|Endo_HangingPose_01"
-2
-: 
-"RIG_Endo.ao|Endo_HangingPose_02"
-3
-: 
-"RIG_Endo.ao|Endo_HangingPose_03"
-4
-: 
-"RIG_Endo.ao|Endo_HangingPose_04"
-5
-: 
-"RIG_Endo.ao|Endo_HangingPose_05"
-6
-: 
-"RIG_Endo.ao|Endo_HangingPose_06"
-7
-: 
-"RIG_Endo.ao|Endo_HangingPose_07"
-8
-: 
-"RIG_Endo.ao|Endo_HangingPose_08"
-9
-: 
-"RIG_Endo.ao|Endo_HangingPose_09"
-10
-: 
-"RIG_Endo.ao|Endo_HangingPose_10"
-11
-: 
-"RIG_Endo.ao|Endo_HangingPose_11"
-12
-: 
-
-13
-: 
-"RIG_Endo.ao|Endo_Idle_01"
-14
-: 
-
-15
-: 
-"RIG_Endo.ao|Endo_Idle_02"
-16
-: 
-"RIG_Endo.ao|Endo_Idle_LOOP02"
-17
-: 
-
-18
-: 
-
-19
-: 
-
-20
-: 
-
-21
-: 
-
-22
-: 
-
-23
-: 
-"RIG_Endo.ao|Endo_SpawnIN_Bowling"
-24
-: 
-25
-: 
-"RIG_Endo.ao|Endo_Stun_Loop_02"
-26
-: 
-"RIG_Endo.ao|Endo_Stun_Out_01"
-27
-: 
-"RIG_Endo.ao|Endo_Stun_OUT_02"
-28
-: 
-
-29
-: 
-
-30
-: 
-
-*/
-
 var djMusicMan = {
     src: "assets/models/fnafsb/dj-music-man.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "sb",
-    orbitaCameraMaxima: "0 0 100m",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/dj-music-man/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
+    orbitaCameraMaxima: "0 0 100mcursores/",
     orbitaCameraMinima: "0 0 0m",
     temAltura: true,
     alturaMaxima: 0,
@@ -1577,10 +1165,115 @@ var djMusicMan = {
     descricao: "DJ Music Man, conhecido como DJMM, é um animatrônico gigante que apareceu pela primeira vez em Five Nights at Freddy's: Security Breach como um antagonista menor. Ele reside em Fazcade como o DJ principal. <br><br> DJ Music Man é drasticamente diferente em comparação com sua contraparte original no Freddy Fazbear's Pizzeria Simulator. Toda a sua estrutura corporal foi completamente renovada, agora muito mais parecida com uma aranha do que sua contraparte anterior. Seus olhos são pretos e funcionam como LEDs para várias imagens diferentes. <br><br> Suas texturas em seu rosto também são alteradas, com suas sobrancelhas e bochechas sendo um azul claro em vez de roxo e rosa. Ele parece não ter as listras rosas nas laterais de seu rosto, e em vez de duas manchas rosas em seu queixo, ele tem uma única faixa azul clara.",
 };
 
+/*
+0
+: 
+"RIG_DJ_Music_Man|DJMM_Idle_Disabled_RIG_DJ_Music_Man"
+1
+: 
+"RIG_DJ_Music_Man|DJMM_Idle_DJing_SingleLoop_RIG_DJ_Music_Man"
+2
+: 
+"RIG_DJ_Music_Man|DJMM_Idle_Hallway_RIG_DJ_Music_Man"
+3
+: 
+"RIG_DJ_Music_Man|DJMM_Idle_Loop_L_RIG_DJ_Music_Man"
+4
+: 
+"RIG_DJ_Music_Man|DJMM_Idle_Loop_R_RIG_DJ_Music_Man"
+5
+: 
+"RIG_DJ_Music_Man|DJMM_Idle_LtoR_RIG_DJ_Music_Man"
+6
+: 
+"RIG_DJ_Music_Man|DJMM_Idle_RtoL_RIG_DJ_Music_Man"
+7
+: 
+"RIG_DJ_Music_Man|DJMM_Jumpscare_RIG_DJ_Music_Man"
+8
+: 
+"RIG_DJ_Music_Man|DJMM_Kill2Exit_L1_RIG_DJ_Music_Man"
+9
+: 
+"RIG_DJ_Music_Man|DJMM_Kill2Exit_R1_RIG_DJ_Music_Man"
+10
+: 
+"RIG_DJ_Music_Man|DJMM_Kill2Idle_L_RIG_DJ_Music_Man"
+11
+: 
+"RIG_DJ_Music_Man|DJMM_Kill2Idle_R_RIG_DJ_Music_Man"
+12
+: 
+"RIG_DJ_Music_Man|DJMM_MarketingVid_RIG_DJ_Music_Man"
+13
+: 
+"RIG_DJ_Music_Man|DJMM_Reach2Kill_L_RIG_DJ_Music_Man"
+14
+: 
+"RIG_DJ_Music_Man|DJMM_Reach2Kill_R_RIG_DJ_Music_Man"
+15
+: 
+"RIG_DJ_Music_Man|DJMM_Reach_L_RIG_DJ_Music_Man"
+16
+: 
+"RIG_DJ_Music_Man|DJMM_Reach_Loop_L_RIG_DJ_Music_Man"
+17
+: 
+"RIG_DJ_Music_Man|DJMM_Reach_Loop_R_RIG_DJ_Music_Man"
+18
+: 
+"RIG_DJ_Music_Man|DJMM_Reach_R_RIG_DJ_Music_Man"
+19
+: 
+"RIG_DJ_Music_Man|DJMM_TubeScare_Body_Phase1_Idle_RIG_DJ_Music_Man"
+20
+: 
+"RIG_DJ_Music_Man|DJMM_TubeScare_Body_Phase1_IN_RIG_DJ_Music_Man"
+21
+: 
+"RIG_DJ_Music_Man|DJMM_TubeScare_Body_Phase1_OUT_RIG_DJ_Music_Man"
+22
+: 
+"RIG_DJ_Music_Man|DJMM_TubeScare_Body_Phase2_Idle_RIG_DJ_Music_Man"
+23
+: 
+"RIG_DJ_Music_Man|DJMM_TubeScare_Body_Phase2_IN_RIG_DJ_Music_Man"
+24
+: 
+"RIG_DJ_Music_Man|DJMM_TubeScare_Body_Phase2_OUT_RIG_DJ_Music_Man"
+25
+: 
+"RIG_DJ_Music_Man|DJMM_Walk_RIG_DJ_Music_Man"
+26
+: 
+"RIG_DJ_Music_Man|DJMM_Workshop_Chase_RIG_DJ_Music_Man"
+27
+: 
+"RIG_DJ_Music_Man|DJMM_WS_Tubes_01_RIG_DJ_Music_Man"
+28
+: 
+"RIG_DJ_Music_Man|DJMM_WS_Tubes_02_RIG_DJ_Music_Man"
+29
+: 
+"RIG_DJ_Music_Man|DJMM_WS_Tubes_03_RIG_DJ_Music_Man"
+30
+: 
+"RIG_DJ_Music_Man|DJMM_WS_Tubes_04_RIG_DJ_Music_Man"
+31
+: 
+"RIG_DJ_Music_Man|DJMM_ZeroPose_RIG_DJ_Music_Man"
+*/
+
 var miniMusicMan = {
     src: "assets/models/fnafsb/mini-music-man.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "sb",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/mini-music-man/cursores/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 100m",
     orbitaCameraMinima: "0 0 0m",
     temAltura: true,
@@ -1590,10 +1283,34 @@ var miniMusicMan = {
     temAudio: true,
     animacoes: {
         posicaoInicial: {
-            src: "",
+            src: "RIG_Little_DJ_Music_Man|LMM_Cinematic_Spawn_IN_RIG_Little_DJ_Music_Man",
             nome: "Posição inicial",
             alvoCamera: "0m 0m 0m",
-            estatico: true,
+            estatico: false,
+        },
+        jumpscare: {
+            src: "RIG_Little_DJ_Music_Man|LMM_Jumpscare_RIG_Little_DJ_Music_Man",
+            nome: "Jumpscare",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        pulando: {
+            src: "RIG_Little_DJ_Music_Man|LMM_Spawn_OUT_RIG_Little_DJ_Music_Man",
+            nome: "Pulando",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        caindo: {
+            src: "RIG_Little_DJ_Music_Man|LMM_Spawn_IN_RIG_Little_DJ_Music_Man",
+            nome: "Caindo",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        andando: {
+            src: "RIG_Little_DJ_Music_Man|LMM_Walk_RIG_Little_DJ_Music_Man",
+            nome: "Andando",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
         },
     },
     audios: {
@@ -1606,10 +1323,37 @@ var miniMusicMan = {
     descricao: "Mini Music Man é um pequeno animatrônico que aparece em Five Nights at Freddy's: Security Breach como um antagonista menor que persegue Gregory na ventilação. <br><br> Mini Music Man é um pequeno brinquedo de relógio semelhante ao seu homólogo original, mas ele parece estar muito mais sujo e quebrado, tendo um dente ausente e vários dentes rachados ou danificados. Ele tem uma chave de enrolar na parte de trás do corpo.",
 };
 
+
+/*
+0
+: 
+
+1
+: 
+"RIG_Little_DJ_Music_Man|LMM_Cymbals_RIG_Little_DJ_Music_Man"
+2
+: 
+
+3
+: 
+
+4
+: 
+"
+5
+: 
+
+*/
+
+
 var staffBot = {
     src: "assets/models/fnafsb/staff-bots/staff-bot.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 100m",
     orbitaCameraMinima: "0 0 0m",
     temAltura: true,
@@ -1639,6 +1383,10 @@ var shatteredBot = {
     src: "assets/models/fnafsb/staff-bots/shattered-bot.glb",
     corFundo: "radial-gradient(#6979A1, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 4m",
     orbitaCameraMinima: "0 0 3m",
     alvoCamera: "0m 0.5m 0.1m",
@@ -1660,6 +1408,10 @@ var securityBot = {
     src: "assets/models/fnafsb/staff-bots/security-bot.glb",
     corFundo: "radial-gradient(#767F8A, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 10m",
     alvoCamera: "0m 3.5m 0.5m",
@@ -1683,6 +1435,10 @@ var mapBot = {
     src: "assets/models/fnafsb/staff-bots/map-bot.glb",
     corFundo: "radial-gradient(#755007, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 10m",
     alvoCamera: "0m 3.5m 0m",
@@ -1706,6 +1462,10 @@ var partyBot = {
     src: "assets/models/fnafsb/staff-bots/party-bot.glb",
     corFundo: "radial-gradient(#4B259C, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 10m",
     alvoCamera: "0m 3.5m 0m",
@@ -1729,6 +1489,10 @@ var chefBot = {
     src: "assets/models/fnafsb/staff-bots/chef-bot.glb",
     corFundo: "radial-gradient(#717171, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 10m",
     alvoCamera: "0m 3.5m 0m",
@@ -1752,6 +1516,10 @@ var serverBot = {
     src: "assets/models/fnafsb/staff-bots/server-bot.glb",
     corFundo: "radial-gradient(#810B1A, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 10m",
     alvoCamera: "0m 3.5m 0m",
@@ -1775,6 +1543,10 @@ var sewerBot = {
     src: "assets/models/fnafsb/staff-bots/sewer-bot.glb",
     corFundo: "radial-gradient(#2C2F26, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 10m",
     alvoCamera: "0m 3.25m 0m",
@@ -1798,6 +1570,10 @@ var nightmarionneBot = {
     src: "assets/models/fnafsb/staff-bots/nightmarionne-bot.glb",
     corFundo: "radial-gradient(#453830, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 12.5m",
     orbitaCameraMinima: "0 0 7.5m",
     alvoCamera: "0m 2.75m 0m",
@@ -1821,6 +1597,10 @@ var cautionBot = {
     src: "assets/models/fnafsb/caution-bot.glb",
     corFundo: "radial-gradient(#C8AB29, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 3m",
     orbitaCameraMinima: "0 0 4m",
     alvoCamera: "0m 0.5m 0m",
@@ -1844,6 +1624,10 @@ var gregory = {
     src: "assets/models/fnafsb/gregory.glb",
     corFundo: "radial-gradient(#1F396A, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 3m",
     orbitaCameraMinima: "0 0 2m",
     temAltura: true,
@@ -1897,6 +1681,10 @@ var vanessa = {
     src: "assets/models/fnafsb/vanessa.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "sb",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 100m",
     orbitaCameraMinima: "0 0 0m",
     temAltura: true,
@@ -1906,10 +1694,52 @@ var vanessa = {
     temAudio: true,
     animacoes: {
         posicaoInicial: {
-            src: "",
+            src: "Vanessa|Vanessa_Idle_00",
             nome: "Posição inicial",
             alvoCamera: "0m 0m 0m",
-            estatico: true,
+            estatico: false,
+        },
+        jumpscare: {
+            src: "Vanessa|Vanessa_Jumpscare",
+            nome: "Jumpscare",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        procurando1: {
+            src: "Vanessa|Vanessa_Idle_Scanning_01",
+            nome: "Procurando 1",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        procurando2: {
+            src: "Vanessa|Vanessa_Idle_Scanning_02",
+            nome: "Procurando 2",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        atordoada: {
+            src: "Vanessa|Vanessa_Stunned_IN",
+            nome: "Atordoada",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        andando: {
+            src: "Vanessa|Vanessa_Walk",
+            nome: "Andando",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        procurandoEAndando: {
+            src: "Vanessa|Vanessa_Walk_L180Scan",
+            nome: "Procurando e andando",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        correndo: {
+            src: "Vanessa|Vanessa_Jog",
+            nome: "Correndo",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
         },
     },
     audios: {
@@ -1922,11 +1752,122 @@ var vanessa = {
     descricao: "Vanessa é uma antagonista menor de Five Nights at Freddy's: Security Breach. Ela é a chefe de segurança no Freddy Fazbear's Mega Pizzaplex. Vanessa é uma jovem mulher de pele clara, cabelos loiros na altura dos ombros, sardas, olhos verdes e lábios brilhantes.",
 };
 
+/*
+0
+: 
+"Vanessa|Vanessa_Blink"
+1
+: 
+
+2
+: 
+"Vanessa|Vanessa_Idle_Aiming"
+3
+: 
+"Vanessa|Vanessa_Idle_Scan_00"
+4
+: 
+"Vanessa|Vanessa_Idle_Scan_01"
+5
+: 
+"Vanessa|Vanessa_Idle_Scan_R"
+6
+: 
+
+7
+: 
+
+8
+: 
+
+9
+: 
+
+10
+: 
+"Vanessa|Vanessa_Run_00"
+11
+: 
+"Vanessa|Vanessa_RuntoStop_L"
+12
+: 
+"Vanessa|Vanessa_RuntoStop_R"
+13
+: 
+"Vanessa|Vanessa_Scan__Neg90"
+14
+: 
+"Vanessa|Vanessa_Scan__Pos45"
+15
+: 
+"Vanessa|Vanessa_Scan__Pos90"
+16
+: 
+"Vanessa|Vanessa_Scan__Zero"
+17
+: 
+"Vanessa|Vanessa_Stun"
+18
+: 
+
+19
+: 
+"Vanessa|Vanessa_Stunned_Loop"
+20
+: 
+"Vanessa|Vanessa_Stunned_OUT"
+21
+: 
+"Vanessa|Vanessa_Turn_Head_Neg45"
+22
+: 
+"Vanessa|Vanessa_Turn_Head_Neg90"
+23
+: 
+"Vanessa|Vanessa_Turn_Head_Pos45"
+24
+: 
+"Vanessa|Vanessa_Turn_Head_Pos90"
+25
+: 
+"Vanessa|Vanessa_Turn_Head_Zero"
+26
+: 
+"Vanessa|Vanessa_TurntablePose"
+27
+: 
+
+28
+: 
+"Vanessa|Vanessa_Walk_IP"
+29
+: 
+
+30
+: 
+"Vanessa|Vanessa_Walk_LookL"
+31
+: 
+"Vanessa|Vanessa_Walk_LookR"
+32
+: 
+"Vanessa|Vanessa_WalktoStop_L"
+33
+: 
+"Vanessa|Vanessa_WalktoStop_R"
+*/
+
 var vanny = {
     src: "assets/models/fnafsb/vanny.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "sb",
-    orbitaCameraMaxima: "0 0 100m",
+    temCursor: true,
+    urlCursor: "assets/images/fnafsb/vanny/",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
+    orbitaCameraMaxima: "0 0 100mcursores/",
     orbitaCameraMinima: "0 0 0m",
     temAltura: true,
     alturaMaxima: 0,
@@ -1935,10 +1876,34 @@ var vanny = {
     temAudio: true,
     animacoes: {
         posicaoInicial: {
-            src: "",
+            src: "RIG_Vanny|Vanny_Ears_Pos_add_RIG_Vanny",
             nome: "Posição inicial",
             alvoCamera: "0m 0m 0m",
-            estatico: true,
+            estatico: false,
+        },
+        jumpscare: {
+            src: "RIG_Vanny|Vanny_JumpScare_RIG_Vanny",
+            nome: "Jumpscare",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        acenando: {
+            src: "RIG_Vanny|Vanny_WindowWave_LS_RIG_Vanny",
+            nome: "Acenando",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        saltitando: {
+            src: "RIG_Vanny|Vanny_Skip_00_RIG_Vanny",
+            nome: "Saltitando",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
+        },
+        correndo: {
+            src: "RIG_Vanny|Vanny_Run_00_RIG_Vanny",
+            nome: "Correndo",
+            alvoCamera: "0m 0m 0m",
+            estatico: false,
         },
     },
     audios: {
@@ -1951,72 +1916,29 @@ var vanny = {
     descricao: "Vanny é uma antagonista de Five Nights at Freddy's: Security Breach. Ela é uma seguidora de Glitchtrap e uma vilã sinistra que não usa um traje animatrônico, mas sim um disfarce de coelho feito à mão enquanto percorre os corredores do Pizzaplex. <br><br> Sua presença misteriosa e habilidade de sempre encontrar o jogador tornam-a uma figura intrigante e assustadora no jogo",
 };
 
-var blob = {
-    src: "assets/models/fnafsb/blob.glb",
-    corFundo: "radial-gradient(#fff, #000)",
-    fnaf: "sb",
-    orbitaCameraMaxima: "0 0 100m",
-    orbitaCameraMinima: "0 0 0m",
-    temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
-    temAnimacao: true,
-    temAudio: true,
-    animacoes: {
-        posicaoInicial: {
-            src: "RIG_Blob|Blob_Idle_RIG_Blob",
-            nome: "Posição inicial",
-            alvoCamera: "0m 0m 0m",
-            estatico: false,
-        },
-        jumpscare1: {
-            src: "RIG_Blob|Blob_Office_Jumpscare_RIG_Blob",
-            nome: "Jumpscare 1",
-            alvoCamera: "0m 0m 0m",
-            estatico: false,
-        },
-        jumpscare2: {
-            src: "RIG_Blob|Blob_Sinkhole_Jumpscare_RIG_Blob",
-            nome: "Jumpscare 2",
-            alvoCamera: "0m 0m 0m",
-            estatico: false,
-        },
-    },
-    audios: {
-        teste: {
-            src: "",
-            volume: 0.5,
-            nome: "Teste",
-        },
-    },
-    descricao: "Blob, também conhecido como Tangle, é uma fusão de vários animatrônicos que aparece em Five Nights at Freddy's: Security Breach como um antagonista secreto. Como o próprio nome sugere, Tangle é uma enorme massa de tentáculos de arame e partes animatrônicas, possuindo muitos olhos vermelhos brilhantes. <br><br> A cabeça principal de Tangle é uma máscara que parece ser Funtime Freddy. Parece ser uma versão maior de Molten Freddy após o incêndio do Freddy Fazbear's Pizzeria Simulator.",
-};
+/*
+0
+: 
 
-var burntrap = {
-    src: "assets/models/fnafsb/burntrap.glb",
-    corFundo: "radial-gradient(#fff, #000)",
-    fnaf: "sb",
-    orbitaCameraMaxima: "0 0 100m",
-    orbitaCameraMinima: "0 0 0m",
-    temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
-    temAnimacao: true,
-    temAudio: true,
-    animacoes: {
-        posicaoInicial: {
-            src: "",
-            nome: "Posição inicial",
-            alvoCamera: "0m 0m 0m",
-            estatico: true,
-        },
-    },
-    audios: {
-        teste: {
-            src: "",
-            volume: 0.5,
-            nome: "Teste",
-        },
-    },
-    descricao: "Burntrap é um antagonista secreto em Five Nights at Freddy's: Security Breach . Ele é um animatrônico de origem enigmática que residia nas ruínas subterrâneas da Freddy Fazbear's Pizza Place , aparecendo no final do jogo base \"Burn It All Down\". <br><br> Burntrap tem uma aparência física que lembra Springtrap e Scraptrap , embora com diferenças significativas. Seu traje é verde-oliva e amarelo escuro, com uma mandíbula humana exposta com dentes.",
-};
+1
+: 
+"RIG_Vanny|Vanny_Idle_01_RIG_Vanny"
+2
+: 
+"RIG_Vanny|Vanny_Idle_RIG_Vanny"
+3
+: 
+
+4
+: 
+"RIG_Vanny|Vanny_MarketingVid_RIG_Vanny"
+5
+: 
+
+6
+: 
+
+7
+: 
+
+*/

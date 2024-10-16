@@ -4,6 +4,10 @@ var ruinedGlamrockFreddy = {
     src: "assets/models/logos/logo.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "sbr",
+    srcImg: "assets/images/fnaf1/freddy/",
+    swiperDescricao: [
+        "",
+    ],
     orbitaCameraMaxima: "0 0 0m",
     orbitaCameraMinima: "0 0 0m",
     alvoCamera: "0m 0m 0m",

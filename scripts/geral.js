@@ -1,5 +1,5 @@
 // TIRAR ISSO DEPOIS!!!!
-
+/*
 aviso.style.display = "none"
 telaInicial.style.display = "flex"
 document.querySelector("#conteudo").style.display = "block"
@@ -10,7 +10,7 @@ primeiraVez = false
 animacoesContainer.style.pointerEvents = "all"
 audiosContainer.style.pointerEvents = "all"
 inputAlturaDiv.style.pointerEvents = "all"
-
+*/
 ////////////////////////////////////
 
 // API tela cheia
@@ -50,11 +50,11 @@ document.addEventListener("fullscreenchange", function () {
             siteCarregado = false
             aviso.style.opacity = 1
         }
-        despausarAudios()
+        despausarMidia()
     } else {
         telaCheia.style.display = "flex"
         if (!midiaPausada) {
-            pausarAudios()
+            pausarMidia()
         }
     }
 })
@@ -64,24 +64,24 @@ document.addEventListener("fullscreenchange", function () {
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === 'hidden') {
         if (!midiaPausada) {
-            pausarAudios()
+            pausarMidia()
         }
     } else {
         if (document.fullscreenElement) {
-            despausarAudios()
+            despausarMidia()
         }
     }
 })
 
-function pausarAudios() {
+document.querySelectorAll(".videos").forEach((video) => {
+    video.addEventListener("play", pausarAudios)
+    video.addEventListener("pause", despausarAudios)
+    video.addEventListener("ended", despausarAudios)
+})
+
+function pausarMidia() {
     midiaPausada = true
-    audiosTocando = []; // Limpa o array
-    for (let i = 0; i < audioGeral.length; i++) {
-        if (!audioGeral[i].paused) {
-            audiosTocando.push(i); // Armazena o índice do áudio que estava tocando
-            audioGeral[i].pause();
-        }
-    }
+    pausarAudios()
     videosRodando = []; // Limpa o array
     for (let i = 0; i < videoGeral.length; i++) {
         if (!videoGeral[i].paused) {
@@ -91,26 +91,38 @@ function pausarAudios() {
     }
 }
 
-function despausarAudios() {
-    midiaPausada = false
-    for (let i of audiosTocando) {
-        audioGeral[i].play()
+function pausarAudios() {
+    audiosTocando = []; // Limpa o array
+    for (let i = 0; i < audioGeral.length; i++) {
+        if (!audioGeral[i].paused) {
+            audiosTocando.push(i); // Armazena o índice do áudio que estava tocando
+            audioGeral[i].pause();
+        }
     }
+}
+
+function despausarMidia() {
+    midiaPausada = false
+    despausarAudios()
     for (let i of videosRodando) {
         videoGeral[i].play()
     }
 }
 
+function despausarAudios() {
+    for (let i of audiosTocando) {
+        audioGeral[i].play()
+    }
+}
+
 
 // Tirar o arrastar imagem com o cursor
-var images = document.getElementsByTagName('img');
-for (let i = 0; i < images.length; i++) {
-    images[i].onmousedown = function (e) {
+for (let i = 0; i < imagemGeral.length; i++) {
+    imagemGeral[i].onmousedown = function (e) {
         if (e.preventDefault) e.preventDefault();
         return false;
     }
 }
-
 
 
 // Ajusta width, height e font size para celular
@@ -123,6 +135,7 @@ if (navigator.userAgentData != undefined && navigator.userAgentData.mobile) {
     audiosContainer.classList.add("celular")
     fnafInfoImgDiv.classList.add("celular")
     ucnInfoImgDiv.classList.add("celular")
+    document.querySelector("#modelos").classList.add("celular")
 
     resetarConfig.innerHTML = "Resetar<br>configurações"
 
@@ -157,7 +170,7 @@ function ajustesCelular() {
     });
 }
 
-fecharAbaCel.addEventListener("click", function () {
+fecharAbaCel.addEventListener("touchstart", function () {
     if (animacoesAberto) abaAnimacoes()
     if (audiosAberto) abaAudios()
     fecharAbaCel.style.display = "none"
@@ -166,12 +179,33 @@ fecharAbaCel.addEventListener("click", function () {
 
 
 // Início do site
+
+progressoInterval = setInterval(function () {
+    if (progressBar.value < 100) {
+        progressBar.value += 0.1
+    } else {
+        clearInterval(progressoInterval);
+    }
+}, 1);
+
 window.addEventListener("load", function () {
-    document.querySelector("#tela-carregamento-site").style.display = "none"
-    getLocalStorage()
+    progressBar.value = 100
+    setTimeout(() => {
+        document.querySelector("#tela-carregamento-site").style.display = "none"
+        getLocalStorage()
+    }, 500);
 })
 
-document.querySelector("#continuar-btn").addEventListener("click", function () {
+if (isCelular) {
+    continuarBtn.innerHTML = "Continuar <span class='material-symbols-rounded'>east</span>"
+    continuarBtn.addEventListener("touchstart", continuar)
+} else {
+    continuarBtn.innerHTML = "Continuar (Enter) <span class='material-symbols-rounded'>east</span>"
+    window.addEventListener("keydown", function (event) {
+        if (event.key === 'Enter' && aviso.style.display != "none") continuar()
+    })
+}
+function continuar() {
     aviso.style.opacity = 0
     setTimeout(() => {
         telaInicial.style.display = "block"
@@ -179,7 +213,7 @@ document.querySelector("#continuar-btn").addEventListener("click", function () {
         telaInicialVideo.play()
         telaInicialAudio.play()
     }, 2500);
-})
+}
 
 
 
@@ -208,9 +242,19 @@ document.querySelector("#iniciar-btn").addEventListener("click", function () {
         }
         btnModelos[0].classList.remove("active")
 
+        if (!isCelular) {
+            modelViewer.removeEventListener("mouseover", aparecerCursorImg)
+            modelViewer.addEventListener("mouseover", aparecerCursorImg)
+            modelViewer.removeEventListener("mouseleave", sumirCursorImg)
+            modelViewer.addEventListener("mouseleave", sumirCursorImg)
+            extraDesbloqueado.addEventListener("mouseover", sumirCursorImg)
+            moeda3dImg.removeEventListener("mouseover", aparecerCursorImg)
+            moeda3dImg.addEventListener("mouseover", aparecerCursorImg)
+        }
+
         setTimeout(() => {
             //cliqueModelo(btnModelos[0], 0)
-            cliqueModelo(btnModelos[70], 70)
+            cliqueModelo(btnModelos[2], 2)
         }, 100);
     }, 1);
 })
@@ -222,3 +266,37 @@ document.querySelector("#voltar-btn").addEventListener("click", () => { avisoLoc
 document.querySelector("#prosseguir-btn").addEventListener("click", resetLocalStorageGeral)
 
 
+function aparecerCursorImg() { cursorImg.style.display = "block" }
+function sumirCursorImg() { cursorImg.style.display = "none" }
+
+document.addEventListener('mousemove', (event) => {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    // Ajuste a posição da imagem conforme necessário
+    cursorImg.style.left = `${mouseX}px`;
+    cursorImg.style.top = `${mouseY}px`;
+});
+
+function pointarCursor(btn) {
+    if (modelos[iModeloVar].temCursor) {
+        btn.style.cursor = `url(../${modelos[iModeloVar].urlCursor}pointer.webp), auto`
+    } else {
+        btn.style.cursor = "pointer"
+    }
+}
+
+setInterval(() => {
+    if (telaCarregamento.style.display == "flex") {
+        dicaP.style.opacity = 0
+        setTimeout(() => {
+            do {
+                newSortDica = Math.floor(Math.random() * telaModelosAudios.length);
+            } while (sortDica === newSortDica);
+
+            sortDica = newSortDica;
+            dicaP.innerHTML = dicas[sortDica]
+            dicaP.style.opacity = 1
+        }, 1000);
+    }
+}, 4000);

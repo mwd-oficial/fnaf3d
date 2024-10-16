@@ -8,7 +8,7 @@ var modelos = [
     freddy,
     bonnie,
     chica,
-    cupcake,
+    mrCupcake,
     foxy,
     goldenFreddy,
 
@@ -17,7 +17,7 @@ var modelos = [
     toyBonnie,
     toyChica,
     toyCupcake,
-    Mangle,
+    mangle,
     balloonBoy,
     puppet,
     witheredFreddy,
@@ -107,8 +107,6 @@ var modelos = [
     gregory,
     vanessa,
     vanny,
-    blob,
-    burntrap,
 
     // fnaf sbr
     ruinedGlamrockFreddy,
@@ -167,13 +165,24 @@ var modelosExtras = [
     purpleGuy,
 
     // Pra Encontrar
+    // Fnaf 1
     poster,
-    ventilador,
+
+    // Fnaf 2
     mascaraFreddy,
-    phoneGuy,
+
+    // Fnaf sl
     lolbit,
     bonnet,
+
+    // Fnaf sb
     headChefBot,
+    blob,
+    burntrap,
+    
+    // Outros
+    ventilador,
+    phoneGuy,
     pizzaria,
     springBonnieFilme,
     springBonniePixel,

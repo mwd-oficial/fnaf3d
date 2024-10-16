@@ -2,18 +2,15 @@
 //console.log(JSON.parse(localStorage.getItem("teste")));
 
 function getLocalStorage() {
-    moedas3dNum = localStorage.getItem("moedas-3d")
-    if (moedas3dNum == undefined) moedas3dNum = 0
+    moedas3dNum = localStorage.getItem("moedas-3d") ?? 0
     moedas3dNumDiv.innerHTML = moedas3dNum
 
-    praComprarArray = JSON.parse(localStorage.getItem("praComprar"))
-    if (praComprarArray == undefined) praComprarArray = []
+    praComprarArray = JSON.parse(localStorage.getItem("praComprar")) ?? []
     for (let i = 0; i < praComprarArray.length; i++) {
         praComprar[praComprarArray[i]].classList.remove("bloqueado")
     }
 
-    praEncontrarArray = JSON.parse(localStorage.getItem("praEncontrar"))
-    if (praEncontrarArray == undefined) praEncontrarArray = []
+    praEncontrarArray = JSON.parse(localStorage.getItem("praEncontrar")) ?? []
     for (let i = 0; i < praEncontrarArray.length; i++) {
         praEncontrar[praEncontrarArray[i]].classList.remove("bloqueado")
         iModeloExtra = praEncontrarArray[i] + (praComprar.length)
@@ -21,8 +18,7 @@ function getLocalStorage() {
         document.querySelectorAll(".pra-encontrar ~ p")[praEncontrarArray[i]].innerHTML = modelosExtras[iModeloExtra].nome
     }
 
-    praEncontrarDouradoArray = JSON.parse(localStorage.getItem("praEncontrarDourado"))
-    if (praEncontrarDouradoArray == undefined) praEncontrarDouradoArray = []
+    praEncontrarDouradoArray = JSON.parse(localStorage.getItem("praEncontrarDourado")) ?? []
     for (let i = 0; i < praEncontrarDouradoArray.length; i++) {
         praEncontrarDourado[praEncontrarDouradoArray[i]].classList.remove("bloqueado")
         iModeloExtra = praEncontrarDouradoArray[i] + (praComprar.length + praEncontrar.length)
@@ -30,13 +26,13 @@ function getLocalStorage() {
         document.querySelectorAll(".pra-encontrar-dourado ~ p")[praEncontrarDouradoArray[i]].innerHTML = modelosExtras[iModeloExtra].nome
     }
 
-    geralSorteado = JSON.parse(localStorage.getItem("geralSorteado"))
-    botaoDouradoDesativadoArray = JSON.parse(localStorage.getItem("botaoDouradoDesativadoArray"))
+    geralSorteado = JSON.parse(localStorage.getItem("geralSorteado")) ?? []
+    botaoDouradoDesativadoArray = JSON.parse(localStorage.getItem("botaoDouradoDesativadoArray")) ?? []
     setTimeout(() => {
         if (geralSorteado.length === 0) {
             praEncontrarDourado.forEach((btn) => {
                 numSort = Math.floor(Math.random() * document.querySelectorAll(".geral").length);
-                modelos[numSort].descricao += "<div id='botao-dourado' onclick='sortearPraEncontrarDourado()'>Clique</div>"
+                modelos[numSort].temBotaoDourado = true
                 modelos[numSort].botaoDouradoDesativado = false
                 geralSorteado.push(numSort)
                 botaoDouradoDesativadoArray.push(false)
@@ -45,7 +41,7 @@ function getLocalStorage() {
             })
         } else {
             geralSorteado.forEach((num, iNum) => {
-                modelos[num].descricao += "<div id='botao-dourado' onclick='sortearPraEncontrarDourado()'>Clique</div>"
+                modelos[num].temBotaoDourado = true
                 modelos[num].botaoDouradoDesativado = botaoDouradoDesativadoArray[iNum]
             })
         }
@@ -55,6 +51,8 @@ function getLocalStorage() {
     ucnDesbloqueado = JSON.parse(localStorage.getItem('ucnDesbloqueado'))
 
     tutorialVisto = JSON.parse(localStorage.getItem('tutorialVisto'))
+
+    vistosArray = JSON.parse(localStorage.getItem("vistosArray")) ?? []
 
 }
 
@@ -98,6 +96,9 @@ function resetLocalStorageGeral() {
 
     tutorialVisto = false
     localStorage.setItem('tutorialVisto', JSON.stringify(tutorialVisto))
+
+    vistosArray = []
+    localStorage.setItem("vistosArray", JSON.stringify(vistosArray))
 
     resetLocalStorageFnaf()
 }

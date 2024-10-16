@@ -2,7 +2,7 @@
 
 // Maximiza ou minimiza a aba de animações
 if (isCelular) {
-    animacoesH3.addEventListener("click", abaAnimacoes)
+    animacoesH3.addEventListener("touchstart", abaAnimacoes)
 } else {
     animacoesContainer.addEventListener("mouseover", abaAnimacoes)
 }
@@ -12,6 +12,7 @@ function abaAnimacoes() {
         animacoesAberto = false
         animacoesContainer.style.bottom = -(animacoesDiv.offsetHeight) + "px";
         h3SetaAnimacoes.style.transform = "rotate(0deg)"
+        animacoesH3.style.border = "3px solid #333"
         animacoesContainer.style.zIndex = 10
 
         if (!isCelular) {
@@ -23,6 +24,7 @@ function abaAnimacoes() {
         animacoesContainer.style.bottom = "0px";
         h3SetaAnimacoes.style.transform = "rotate(180deg)"
         animacoesContainer.classList.add("active")
+        animacoesH3.style.border = "0px solid #0000"
         if (isCelular) {
             fecharAbaCel.style.display = "block"
         }
