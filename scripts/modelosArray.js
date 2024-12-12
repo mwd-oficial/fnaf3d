@@ -10,7 +10,6 @@ var modelos = [
     chica,
     mrCupcake,
     foxy,
-    goldenFreddy,
 
     // fnaf 2
     toyFreddy,
@@ -89,13 +88,12 @@ var modelos = [
     shatteredGlamrockChica,
     shatteredRoxanneWolf,
     shatteredMontgomeryGator,
-    sun,
-    moon,
+    daycareAttendantSun,
+    daycareAttendantMoon,
     glamrockEndo,
     djMusicMan,
     miniMusicMan,
     staffBot,
-    shatteredBot,
     securityBot,
     mapBot,
     partyBot,
@@ -107,13 +105,21 @@ var modelos = [
     gregory,
     vanessa,
     vanny,
-
+    
     // fnaf sbr
-    ruinedGlamrockFreddy,
+    prototypeGlamrockFreddy,
     ruinedGlamrockChica,
     ruinedMontgomeryGator,
     ruinedRoxanneWolf,
+    daycareAttendantEclipse,
+    ruinedMiniMusicMan1, 
+    ruinedMiniMusicMan2, 
+    shatteredBot,
     maskBot,
+    cassie,
+    entidade,
+    mimic,
+
 
     // fnaf 1 (world)
     adventureFreddy,
@@ -166,6 +172,7 @@ var modelosExtras = [
 
     // Pra Encontrar
     // Fnaf 1
+    goldenFreddy,
     poster,
 
     // Fnaf 2
@@ -179,22 +186,35 @@ var modelosExtras = [
     headChefBot,
     blob,
     burntrap,
+
+    // Fnaf sbr
+    // Glamrock bonnie
+    // mascots
+    // mascot mimic
+    // candy cadet
+    // ruined music man
+    // Chica feeder
+    // hologram ruined roxy
+    // Roxy walkie talky
+    // Freddy Talky ruin
+    // Faz-Wench
     
-    // Outros
-    ventilador,
-    phoneGuy,
+    // Fnaf filme
     pizzaria,
     springBonnieFilme,
     springBonniePixel,
     balloonBoyFilme,
+
+    // Outros
+    ventilador,
+    phoneGuy,
+    // Pit bonnie
 
     // Pra Encontrar Dourado
     fnaf1Mapa,
     mascaraVanny,
 ]
 
-for (let i = 0; i < modelosExtras.length; i++) {
-    modelos.push(modelosExtras[i])
-}
+modelos = modelos.concat(modelosExtras);
 
 console.log(modelos)

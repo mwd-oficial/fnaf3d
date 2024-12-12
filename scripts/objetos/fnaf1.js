@@ -4,7 +4,6 @@ var freddy = {
     corFundo: "radial-gradient(#5B3C21, #000)",
     fnaf: "1",
     temCursor: true,
-    urlCursor: "assets/images/fnaf1/freddy/cursores/",
     srcImg: "assets/images/fnaf1/freddy/",
     swiperDescricao: [
         "Botão de Freddy para seu modelo 3D",
@@ -28,7 +27,6 @@ var freddy = {
     ],
     temJumpscare: true,
     srcJumpscare: "assets/videos/fnaf1/freddy.mp4",
-    srcPoster: "assets/images/fnaf1/freddy/poster.webp",
     orbitaCameraMaxima: "0 0 6.5m",
     orbitaCameraMinima: "0 0 5m",
     temAltura: true,
@@ -69,7 +67,7 @@ var freddy = {
         },
     },
     audios: {
-        jumpscareAudio: {
+        jumpscare: {
             src: "assets/audios/fnaf1/jumpscare.ogg",
             volume: 0.5,
             nome: "Jumpscare",
@@ -110,7 +108,6 @@ var bonnie = {
     corFundo: "radial-gradient(#2D3A75, #000)",
     fnaf: "1",
     temCursor: true,
-    urlCursor: "assets/images/fnaf1/bonnie/cursores/",
     srcImg: "assets/images/fnaf1/bonnie/",
     swiperDescricao: [
         "Botão de Bonnie para seu modelo 3D",
@@ -130,7 +127,6 @@ var bonnie = {
     ],
     temJumpscare: true,
     srcJumpscare: "assets/videos/fnaf1/bonnie.mp4",
-    srcPoster: "assets/images/fnaf1/bonnie/poster.webp",
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 5m",
     temAltura: true,
@@ -177,7 +173,7 @@ var bonnie = {
         },
     },
     audios: {
-        jumpscareAudio: {
+        jumpscare: {
             src: "assets/audios/fnaf1/jumpscare.ogg",
             volume: 0.5,
             nome: "Jumpscare",
@@ -203,7 +199,6 @@ var chica = {
     corFundo: "radial-gradient(#DCC863, #856d1a)",
     fnaf: "1",
     temCursor: true,
-    urlCursor: "assets/images/fnaf1/chica/cursores/",
     srcImg: "assets/images/fnaf1/chica/",
     swiperDescricao: [
         "Botão de Chica para seu modelo 3D",
@@ -221,7 +216,6 @@ var chica = {
     ],
     temJumpscare: true,
     srcJumpscare: "assets/videos/fnaf1/chica.mp4",
-    srcPoster: "assets/images/fnaf1/chica/poster.webp",
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
     temAltura: true,
@@ -284,7 +278,7 @@ var chica = {
         },
     },
     audios: {
-        jumpscareAudio: {
+        jumpscare: {
             src: "assets/audios/fnaf1/jumpscare.ogg",
             volume: 0.5,
             nome: "Jumpscare",
@@ -315,7 +309,6 @@ var mrCupcake = {
     corFundo: "radial-gradient(#f89cb5, #ca6882, #9c5164)",
     fnaf: "1",
     temCursor: true,
-    urlCursor: "assets/images/fnaf1/mr-cupcake/cursores/",
     srcImg: "assets/images/fnaf1/mr-cupcake/",
     swiperDescricao: [
         "Botão de Mr. Cupcake para seu modelo 3D",
@@ -334,7 +327,6 @@ var foxy = {
     corFundo: "radial-gradient(#D25A37, #000)",
     fnaf: "1",
     temCursor: true,
-    urlCursor: "assets/images/fnaf1/foxy/cursores/",
     srcImg: "assets/images/fnaf1/foxy/",
     swiperDescricao: [
         "Botão de Foxy para seu modelo 3D",
@@ -344,7 +336,6 @@ var foxy = {
     ],
     temJumpscare: true,
     srcJumpscare: "assets/videos/fnaf1/foxy.mp4",
-    srcPoster: "assets/images/fnaf1/foxy/poster.webp",
     orbitaCameraMaxima: "0 0 7.5m",
     orbitaCameraMinima: "0 0 5m",
     temAltura: true,
@@ -391,7 +382,7 @@ var foxy = {
         },
     },
     audios: {
-        jumpscareAudio: {
+        jumpscare: {
             src: "assets/audios/fnaf1/jumpscare.ogg",
             volume: 0.5,
             nome: "Jumpscare",
@@ -416,47 +407,3 @@ var foxy = {
 }
 
 
-
-var goldenFreddy = {
-    src: "assets/models/fnaf1/golden-freddy.glb",
-    corFundo: "radial-gradient(#4E4A03, #000)",
-    fnaf: "1",
-    temCursor: true,
-    urlCursor: "assets/images/fnaf1/golden-freddy/cursores/",
-    srcImg: "assets/images/fnaf1/golden-freddy/",
-    swiperDescricao: [
-        "Botão de Golden Freddy para seu modelo 3D",
-        "O pôster alternativo no Canto do Corredor Oeste, com um close do rosto de Golden Freddy",
-        "Golden Freddy no escritório",
-    ],
-    temJumpscare: true,
-    srcJumpscare: "assets/videos/fnaf1/golden-freddy.mp4",
-    srcPoster: "assets/images/fnaf1/golden-freddy/poster.webp",
-    orbitaCameraMaxima: "0 0 200m",
-    orbitaCameraMinima: "0 0 200m",
-    alvoCamera: "0m 60m 15m",
-    temAudio: true,
-    temConfigEx: true,
-    configEx: () => {
-        modelViewer.exposure = 0.2
-        modelViewer.style.filter = "hue-rotate(10deg)"
-    },
-    audios: {
-        jumpscareAudio: {
-            src: "assets/audios/fnaf1/golden-freddy/jumpscare-golden-freddy.ogg",
-            volume: 0.5,
-            nome: "Jumpscare",
-        },
-        voz: {
-            src: "assets/audios/fnaf1/golden-freddy/voz-golden-freddy.ogg",
-            volume: 0.5,
-            nome: "Voz",
-        },
-        garotinha: {
-            src: "assets/audios/fnaf1/golden-freddy/risada-garotinha.ogg",
-            volume: 0.5,
-            nome: "Risada do Poster",
-        },
-    },
-    descricao: "Golden Freddy é um dos cinco principais antagonistas e um animatrônico secreto em Five Nights at Freddy's.<br><br>Ele é uma versão dourada de Freddy Fazbear que aparece no Escritório depois de uma certa sequência de eventos. Golden Freddy é conhecido por sua aparência fantasmagórica e por causar alucinações.",
-}

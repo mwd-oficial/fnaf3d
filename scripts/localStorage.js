@@ -14,7 +14,7 @@ function getLocalStorage() {
     for (let i = 0; i < praEncontrarArray.length; i++) {
         praEncontrar[praEncontrarArray[i]].classList.remove("bloqueado")
         iModeloExtra = praEncontrarArray[i] + (praComprar.length)
-        document.querySelectorAll(".pra-encontrar img")[praEncontrarArray[i]].src = modelosExtras[iModeloExtra].imgSrc
+        document.querySelectorAll(".pra-encontrar img")[praEncontrarArray[i]].src = modelosExtras[iModeloExtra].srcImg + "0.webp"
         document.querySelectorAll(".pra-encontrar ~ p")[praEncontrarArray[i]].innerHTML = modelosExtras[iModeloExtra].nome
     }
 
@@ -22,7 +22,7 @@ function getLocalStorage() {
     for (let i = 0; i < praEncontrarDouradoArray.length; i++) {
         praEncontrarDourado[praEncontrarDouradoArray[i]].classList.remove("bloqueado")
         iModeloExtra = praEncontrarDouradoArray[i] + (praComprar.length + praEncontrar.length)
-        document.querySelectorAll(".pra-encontrar-dourado img")[praEncontrarDouradoArray[i]].src = modelosExtras[iModeloExtra].imgSrc
+        document.querySelectorAll(".pra-encontrar-dourado img")[praEncontrarDouradoArray[i]].src = modelosExtras[iModeloExtra].srcImg + "0.webp"
         document.querySelectorAll(".pra-encontrar-dourado ~ p")[praEncontrarDouradoArray[i]].innerHTML = modelosExtras[iModeloExtra].nome
     }
 
@@ -48,15 +48,16 @@ function getLocalStorage() {
         console.log("geralSorteado: " + geralSorteado)
     }, 1000);
 
-    ucnDesbloqueado = JSON.parse(localStorage.getItem('ucnDesbloqueado'))
-
-    tutorialVisto = JSON.parse(localStorage.getItem('tutorialVisto'))
+    ucnDesbloqueado = JSON.parse(localStorage.getItem('ucnDesbloqueado')) ?? false
+    if (ucnDesbloqueado) ucnBtn.style.display = "flex"
 
     vistosArray = JSON.parse(localStorage.getItem("vistosArray")) ?? []
 
 }
 
 function resetLocalStorageGeral() {
+    alerta("Progresso resetado")
+
     avisoLocalStorageDiv.style.display = "none"
     localStorage.setItem("moedas-3d", 0)
     moedas3dNum = 0
@@ -93,9 +94,7 @@ function resetLocalStorageGeral() {
 
     ucnDesbloqueado = false
     localStorage.setItem('ucnDesbloqueado', JSON.stringify(ucnDesbloqueado))
-
-    tutorialVisto = false
-    localStorage.setItem('tutorialVisto', JSON.stringify(tutorialVisto))
+    ucnBtn.style.display = "none"
 
     vistosArray = []
     localStorage.setItem("vistosArray", JSON.stringify(vistosArray))

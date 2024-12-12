@@ -65,7 +65,6 @@ function abaAudios() {
         audiosAberto = false
         audiosContainer.style.left = -(audiosDiv.offsetWidth) + "px";
         h3SetaAudios.style.transform = "rotate(0deg)"
-        audiosH3.style.border = "3px solid #333"
         audiosContainer.style.zIndex = 10
 
         if (!isCelular) {
@@ -76,7 +75,6 @@ function abaAudios() {
         audiosAberto = true
         audiosContainer.style.left = "0px";
         h3SetaAudios.style.transform = "rotate(180deg)"
-        audiosH3.style.border = "0px solid #0000"
         if (isCelular) {
             fecharAbaCel.style.display = "block"
         }

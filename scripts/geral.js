@@ -1,17 +1,71 @@
 // TIRAR ISSO DEPOIS!!!!
-/*
+
 aviso.style.display = "none"
 telaInicial.style.display = "flex"
 document.querySelector("#conteudo").style.display = "block"
 //document.querySelector("#tela-carregamento-site").style.display = "none"
 telaCheia.style.display = "none"
+tutorialVisto = true
 
-primeiraVez = false
-animacoesContainer.style.pointerEvents = "all"
-audiosContainer.style.pointerEvents = "all"
-inputAlturaDiv.style.pointerEvents = "all"
-*/
+
 ////////////////////////////////////
+
+
+// Ajusta width, height e font size para celular
+if (navigator.userAgentData != undefined && navigator.userAgentData.mobile) {
+    isCelular = true
+    document.querySelector("#tela-cheia > p").innerHTML = "Toque para ativar a tela cheia"
+
+    tutorialDescricaoContent.classList.add("celular")
+    logomwdEl.classList.add("celular")
+    inputAlturaDiv.classList.add("celular")
+    audiosContainer.classList.add("celular")
+    fnafInfoImgDiv.classList.add("celular")
+    ucnInfoImgDiv.classList.add("celular")
+    document.querySelector("#modelos").classList.add("celular")
+    menuJogos.classList.add("celular")
+
+    imgAlternativaDiv.classList.remove("naocelular")
+    voltarCarregamento.classList.remove("naocelular")
+    document.querySelector("#problemas-swiper-div").classList.remove("naocelular")
+
+    fecharExtraDesbloqueado.style.fontSize = "50px"
+    document.querySelector("#fechar-swiper-div-btn").style.fontSize = "50px"
+
+    resetarConfig.innerHTML = "Resetar<br>configurações"
+
+    document.querySelector("#modelo-div").style.transform = "scale(1)"
+
+
+    document.querySelectorAll(".ajustar-width-50").forEach(function (el) {
+        var widthAtual = parseFloat(window.getComputedStyle(el).width);
+        var widthNovo = widthAtual * 0.5;
+        el.style.width = widthNovo + 'px';
+    });
+
+    document.querySelectorAll(".ajustar-width-75").forEach(function (el) {
+        var widthAtual = parseFloat(window.getComputedStyle(el).width);
+        var widthNovo = widthAtual * 0.75;
+        el.style.width = widthNovo + 'px';
+    });
+
+    document.querySelectorAll(".ajustar-height").forEach(function (el) {
+        var heightAtual = parseFloat(window.getComputedStyle(el).height);
+        var heightNovo = heightAtual * 0.75;
+        el.style.height = heightNovo + 'px';
+    });
+
+    document.querySelectorAll(".ajustar-font-size").forEach(function (el) {
+        ajustarFontSize(el)
+    });
+}
+
+function ajustarFontSize(el) {
+    var fontSizeAtual = parseFloat(window.getComputedStyle(el).fontSize);
+    var fontSizeNovo = fontSizeAtual * 0.75;
+    el.style.fontSize = fontSizeNovo + 'px';
+}
+
 
 // API tela cheia
 function launchFullscreen(element) {
@@ -115,6 +169,49 @@ function despausarAudios() {
     }
 }
 
+if (!isCelular) {
+    var timeoutSumir = []
+    videosUsuario.forEach((el, i) => {
+        playPause[i].style.display = "flex"
+
+        el.addEventListener("play", () => { playVideo(i) })
+        el.addEventListener("pause", () => { pauseVideo(i) })
+
+        divVideo[i].addEventListener("mousemove", () => { sumirPlayPause(i) })
+        divVideo[i].addEventListener("mouseleave", () => { sumirPlayPauseLeave(i) })
+    })
+
+    function playVideo(i) {
+        playPauseIcon[i].innerHTML = "pause"
+        sumirPlayPause(i)
+    }
+
+    function pauseVideo(i) {
+        playPauseIcon[i].innerHTML = "play_arrow"
+        playPause[i].style.transitionDuration = ".5s"
+        clearTimeout(timeoutSumir[i])
+        setTimeout(() => { playPause[i].style.opacity = 0.75 }, 1);
+    }
+
+    function sumirPlayPause(i) {
+        playPause[i].style.transitionDuration = ".05s"
+        setTimeout(() => { playPause[i].style.opacity = 0.75 }, 1);
+        clearTimeout(timeoutSumir[i])
+        if (!videosUsuario[i].paused) {
+            playPause[i].style.transitionDuration = ".5s"
+            timeoutSumir[i] = setTimeout(() => { playPause[i].style.opacity = 0 }, 2500);
+        }
+    }
+
+    function sumirPlayPauseLeave(i) {
+        if (!videosUsuario[i].paused) {
+            clearTimeout(timeoutSumir[i])
+            playPause[i].style.transitionDuration = ".5s"
+            timeoutSumir[i] = setTimeout(() => { playPause[i].style.opacity = 0 }, 1);
+        }
+    }
+}
+
 
 // Tirar o arrastar imagem com o cursor
 for (let i = 0; i < imagemGeral.length; i++) {
@@ -125,60 +222,34 @@ for (let i = 0; i < imagemGeral.length; i++) {
 }
 
 
-// Ajusta width, height e font size para celular
-if (navigator.userAgentData != undefined && navigator.userAgentData.mobile) {
-    isCelular = true
-
-    tutorialDescricaoContent.classList.add("celular")
-    document.querySelector("#logomwd").classList.add("celular")
-    inputAlturaDiv.classList.add("celular")
-    audiosContainer.classList.add("celular")
-    fnafInfoImgDiv.classList.add("celular")
-    ucnInfoImgDiv.classList.add("celular")
-    document.querySelector("#modelos").classList.add("celular")
-
-    resetarConfig.innerHTML = "Resetar<br>configurações"
-
-    document.querySelector("#modelo-div").style.transform = "scale(1)"
-
-    ajustesCelular()
-}
-
-function ajustesCelular() {
-    document.querySelectorAll(".ajustar-width-50").forEach(function (el) {
-        var widthAtual = parseFloat(window.getComputedStyle(el).width);
-        var widthNovo = widthAtual * 0.5;
-        el.style.width = widthNovo + 'px';
-    });
-
-    document.querySelectorAll(".ajustar-width-75").forEach(function (el) {
-        var widthAtual = parseFloat(window.getComputedStyle(el).width);
-        var widthNovo = widthAtual * 0.75;
-        el.style.width = widthNovo + 'px';
-    });
-
-    document.querySelectorAll(".ajustar-height").forEach(function (el) {
-        var heightAtual = parseFloat(window.getComputedStyle(el).height);
-        var heightNovo = heightAtual * 0.75;
-        el.style.height = heightNovo + 'px';
-    });
-
-    document.querySelectorAll(".ajustar-font-size").forEach(function (el) {
-        var fontSizeAtual = parseFloat(window.getComputedStyle(el).fontSize);
-        var fontSizeNovo = fontSizeAtual * 0.75;
-        el.style.fontSize = fontSizeNovo + 'px';
-    });
-}
-
 fecharAbaCel.addEventListener("touchstart", function () {
     if (animacoesAberto) abaAnimacoes()
     if (audiosAberto) abaAudios()
     fecharAbaCel.style.display = "none"
 })
 
+var timeoutAlerta
+function alerta(txt) {
+    alertaDiv.innerHTML = txt
+
+    alertaDiv.style.top = isCelular ? "25px" : "50px"
+    alertaDiv.style.transform = "translateX(-50%) scale(1)"
+    alertaDiv.style.opacity = 1
+
+    clearTimeout(timeoutAlerta)
+
+    timeoutAlerta = setTimeout(() => {
+        alertaDiv.style.top = isCelular ? "-25px" : "-50px"
+        alertaDiv.style.transform = "translateX(-50%) scale(0.75)"
+        alertaDiv.style.opacity = 0
+    }, 5000);
+}
+
 
 
 // Início do site
+
+
 
 progressoInterval = setInterval(function () {
     if (progressBar.value < 100) {
@@ -197,13 +268,12 @@ window.addEventListener("load", function () {
 })
 
 if (isCelular) {
-    continuarBtn.innerHTML = "Continuar <span class='material-symbols-rounded'>east</span>"
-    continuarBtn.addEventListener("touchstart", continuar)
+    continuarAviso.innerHTML = "Continuar <span class='material-symbols-rounded'>east</span>"
+    continuarAviso.addEventListener("touchstart", continuar)
 } else {
-    continuarBtn.innerHTML = "Continuar (Enter) <span class='material-symbols-rounded'>east</span>"
-    window.addEventListener("keydown", function (event) {
-        if (event.key === 'Enter' && aviso.style.display != "none") continuar()
-    })
+    continuarAviso.innerHTML = "Continuar (Enter) <span class='material-symbols-rounded'>east</span>"
+    pularTutorial.innerHTML = "Pular tutorial (Enter) <span class='material-symbols-rounded'>east</span>"
+    window.addEventListener("keydown", function (event) {if (event.key === 'Enter' && aviso.style.display != "none") continuar()})
 }
 function continuar() {
     aviso.style.opacity = 0
@@ -218,7 +288,9 @@ function continuar() {
 
 
 document.querySelector("#iniciar-btn").addEventListener("click", function () {
+    telaCarregamento.style.display = "flex"
     telaInicial.style.display = "none"
+
     document.querySelector("#conteudo").style.display = "block"
     telaInicialVideo.pause()
     telaInicialAudio.pause()
@@ -252,9 +324,11 @@ document.querySelector("#iniciar-btn").addEventListener("click", function () {
             moeda3dImg.addEventListener("mouseover", aparecerCursorImg)
         }
 
+
         setTimeout(() => {
             //cliqueModelo(btnModelos[0], 0)
             cliqueModelo(btnModelos[2], 2)
+            clearTimeout(timeoutVoltar)
         }, 100);
     }, 1);
 })
@@ -280,7 +354,7 @@ document.addEventListener('mousemove', (event) => {
 
 function pointarCursor(btn) {
     if (modelos[iModeloVar].temCursor) {
-        btn.style.cursor = `url(../${modelos[iModeloVar].urlCursor}pointer.webp), auto`
+        btn.style.cursor = `url(../${modelos[iModeloVar].srcImg}pointer.webp), auto`
     } else {
         btn.style.cursor = "pointer"
     }

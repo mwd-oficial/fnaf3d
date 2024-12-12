@@ -12,7 +12,6 @@ function abaAnimacoes() {
         animacoesAberto = false
         animacoesContainer.style.bottom = -(animacoesDiv.offsetHeight) + "px";
         h3SetaAnimacoes.style.transform = "rotate(0deg)"
-        animacoesH3.style.border = "3px solid #333"
         animacoesContainer.style.zIndex = 10
 
         if (!isCelular) {
@@ -24,10 +23,7 @@ function abaAnimacoes() {
         animacoesContainer.style.bottom = "0px";
         h3SetaAnimacoes.style.transform = "rotate(180deg)"
         animacoesContainer.classList.add("active")
-        animacoesH3.style.border = "0px solid #0000"
-        if (isCelular) {
-            fecharAbaCel.style.display = "block"
-        }
+        if (isCelular) fecharAbaCel.style.display = "block"
         animacoesContainer.style.zIndex = 11
 
         if (!isCelular) {
@@ -39,9 +35,10 @@ function abaAnimacoes() {
 
 function comecarAnimacao(iModelo, iAnimacao) {
     animacoesKeys = Object.keys(modelos[iModelo].animacoes);
-    modelViewer.animationName = modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].src;
+    var animacaoSel = modelos[iModelo].animacoes[animacoesKeys[iAnimacao]]
+    modelViewer.animationName = animacaoSel.src;
     modelViewer.currentTime = 0
-    modelViewer.cameraTarget = modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].alvoCamera;
+    modelViewer.cameraTarget = animacaoSel.alvoCamera;
     iconeAnimacoes.innerHTML = "pause"
     modelViewer.play();
 
@@ -49,26 +46,26 @@ function comecarAnimacao(iModelo, iAnimacao) {
         defineAltura(iModelo)
     }, 1);
 
-    if (modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].mudaOrbitaCameraMaxima) {
-        modelViewer.maxCameraOrbit = modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].orbitaCameraMaxima;
+    if (animacaoSel.mudaOrbitaCameraMaxima) {
+        modelViewer.maxCameraOrbit = animacaoSel.orbitaCameraMaxima;
     } else {
         modelViewer.maxCameraOrbit = modelos[iModelo].orbitaCameraMaxima
     }
 
-    if (modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].mudaOrbitaCameraMinima) {
-        modelViewer.minCameraOrbit = modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].orbitaCameraMinima;
+    if (animacaoSel.mudaOrbitaCameraMinima) {
+        modelViewer.minCameraOrbit = animacaoSel.orbitaCameraMinima;
     } else {
         modelViewer.minCameraOrbit = modelos[iModelo].orbitaCameraMinima
     }
 
-    if (modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].mudaOrbitaCamera) {
-        modelViewer.cameraOrbit = modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].orbitaCamera;
+    if (animacaoSel.mudaOrbitaCamera) {
+        modelViewer.cameraOrbit = animacaoSel.orbitaCamera;
     } else {
         modelViewer.cameraOrbit = "auto auto auto"
     }
 
     // Se a animação não for estática, mostra o range e o tempo atual
-    if (!modelos[iModelo].animacoes[animacoesKeys[iAnimacao]].estatico) {
+    if (!animacaoSel.estatico) {
         animacoesRangeDiv.style.display = "flex"
 
         // Pega a duração da animação e define no mostrador

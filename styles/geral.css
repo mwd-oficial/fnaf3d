@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    /* background-image: radial-gradient(#E2E085, #D8A117) !important;   */
+    /* background-image: radial-gradient(#F78BE4, #000) !important;      */
     background-color: #000;
     font-family: 'titulo', Arial, Helvetica, sans-serif;
     scroll-behavior: smooth !important;
@@ -69,6 +69,21 @@ body {
 :root {
     --cor-interna: #333333aa;
     --cor-externa: #000000aa;
+}
+
+#alerta-div {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.75);
+    font-size: 14px;
+    font-weight: bolder;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 100px;
+    opacity: 0;
+    transition-duration: .5s;
+    z-index: 99999999;
 }
 
 #tela-cheia {
@@ -150,17 +165,18 @@ body {
     z-index: 1000;
     transition: opacity 2.5s;
 
-    & #continuar-btn {
-        position: absolute;
-        bottom: 25px;
-        right: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        color: #C0C0C0;
-        transition-duration: .5s;
-    }
+}
+
+.continuar-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #C0C0C0;
+    transition-duration: .5s;
 }
 
 #tela-inicial {
@@ -318,7 +334,7 @@ body {
     height: 100vh;
     background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
     backdrop-filter: blur(10px);
-    z-index: 50;
+    z-index: 10000;
     display: none;
 
     & #confete {
@@ -327,6 +343,20 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         height: 100vh;
+    }
+
+    & #fechar-extra-desbloqueado {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 80px;
+        color: #fff;
+        transition-duration: .5s;
+        z-index: 10;
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 
     & #modelo-div {
@@ -474,7 +504,29 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 10;
+    z-index: 45;
+    display: none;
+
+    & #voltar-carregamento {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #ddd;
+        font-size: 12px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1;
+        transition-duration: .5s;
+        opacity: 0;
+        pointer-events: none;
+
+        &.naocelular p:hover {
+            text-decoration: underline;
+        }
+    }
 
     & #aviso-progresso {
         position: absolute;
@@ -603,7 +655,9 @@ progress::-webkit-progress-value {
 }
 
 @keyframes anima-3d-logo {
-    0% {
+
+    0%,
+    100% {
         text-shadow: none;
     }
 
@@ -614,10 +668,6 @@ progress::-webkit-progress-value {
             0px 0px 10px #b3b61e,
             0px 0px 12.5px #a3a51d,
             0px 0px 15px #7f8116;
-    }
-
-    100% {
-        text-shadow: none;
     }
 }
 
@@ -682,6 +732,7 @@ model-viewer {
     transition-duration: 0.5s;
     z-index: 101;
     display: none;
+    opacity: 0;
 
     & span {
         transition-duration: .5s;
@@ -774,7 +825,7 @@ model-viewer {
             width: 0;
             max-width: calc(100vw - 75px);
             height: 50px;
-            padding: 0 15px;
+            padding: 0 15px 0 30px;
             color: #fff;
             font-size: 15px;
             font-family: 'titulo', Arial, Helvetica, sans-serif;
@@ -795,13 +846,13 @@ model-viewer {
         border: 3px solid #333;
         transition-duration: .5s;
 
-        & label {
+        &>p {
             text-align: center;
             font-size: 12px;
             color: #fff;
         }
 
-        & input {
+        & #ainda-nao-visto-input {
             position: relative;
             width: calc(32px * 1.25);
             height: calc(16px * 1.25);
@@ -825,7 +876,7 @@ model-viewer {
                 transition-duration: .5s;
             }
 
-            &:checked {
+            &.active {
                 background-color: #ddd;
 
                 &::before {
@@ -836,6 +887,107 @@ model-viewer {
         }
     }
 }
+
+#menu-jogos {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    z-index: 101;
+    opacity: 0;
+    transition-duration: .5s;
+
+    display: none;
+
+
+    & #img-jogos {
+        padding: 0px 5px;
+        border-radius: 15px 15px 0 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+
+        background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
+        backdrop-filter: blur(10px);
+        border: 0px solid #333;
+
+        height: 0;
+        width: initial;
+        overflow: hidden;
+        transition-duration: .5s;
+
+        & img {
+            width: 35px;
+            border-radius: 10px;
+            transition-duration: .5s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    & #jogos-btn {
+        border-radius: 15px;
+        width: 50.5px;
+        height: 50px;
+        background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
+        backdrop-filter: blur(10px);
+        color: #fff;
+        border: 3px solid #333;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition-duration: .5s;
+
+        & span {
+            transition-duration: .5s;
+        }
+
+        &:hover span {
+            transform: scale(1.1);
+        }
+
+        &.active {
+            border-radius: 0 0 15px 15px;
+            border-top: none;
+        }
+    }
+
+    &.celular {
+        flex-direction: row-reverse;
+
+        & #img-jogos {
+            padding: 5px 0px;
+            width: 0;
+            height: initial;
+            flex-direction: row;
+            border-radius: 0 15px 15px 0;
+        }
+
+        & #jogos-btn {
+            width: 50px;
+            height: 50.5px;
+
+            &.active {
+                border-radius: 15px 0 0 15px;
+                border: 3px solid #333;
+                border-right: none;
+            }
+        }
+    }
+}
+
+
 
 #div-menu {
     background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
@@ -853,7 +1005,7 @@ model-viewer {
         border: 0px solid #0000;
 
         &>#menu-content {
-            padding: 20px 50px 50px 60px;
+            padding: 20px 50px 50px 75px;
         }
     }
 
@@ -938,16 +1090,9 @@ model-viewer {
                             margin-bottom: 30px;
                         }
 
-                        & h4 {
+                        & h3 {
                             text-align: center;
                             margin-bottom: 10px;
-                        }
-
-                        & #trailer {
-                            border-radius: 20px;
-                            box-shadow: 2.5px 2.5px 10px 0px #0008;
-                            margin-bottom: 10px;
-                            width: 90%;
                         }
                     }
                 }
@@ -956,8 +1101,8 @@ model-viewer {
 
         & #modelos {
             width: 100%;
-            min-height: 90vh;
-            
+            min-height: calc(90vh + 10px);
+
             &.celular {
                 min-height: 77.5vh;
             }
@@ -966,7 +1111,7 @@ model-viewer {
             & h3,
             h4,
             #nenhum-resul {
-                margin: 35px 0 10px 0;
+                margin: 25px 0 10px 0;
                 display: none;
             }
 
@@ -975,11 +1120,28 @@ model-viewer {
                 justify-content: flex-start;
                 align-items: flex-start;
                 flex-wrap: wrap;
-                gap: 25px;
+                gap: 0 25px;
             }
 
             & .modelos-div {
                 width: 100px;
+                transition-duration: .5s;
+                opacity: 0;
+                pointer-events: none;
+                
+                &.visivel {
+                    opacity: 1;
+                    transform: translateY(0);
+                    pointer-events: all;
+                }
+                
+                &.acima {
+                    transform: translateY(-50px);
+                }
+
+                &.abaixo {
+                    transform: translateY(50px);
+                }
 
                 & .btn-modelos {
                     position: relative;
@@ -1158,7 +1320,44 @@ model-viewer {
 }
 
 
+.div-video {
+    position: relative;
+    width: 90%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    & video {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 2.5px 2.5px 10px 0px #0008;
+    }
+
+    & .play-pause {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 75px;
+        height: 75px;
+        background-color: #fff;
+        border-radius: 10000px;
+        opacity: 0.75;
+        pointer-events: none;
+        display: none;
+
+        & span {
+            font-size: 40px;
+            color: #000;
+        }
+    }
+}
 
 
 
@@ -1266,7 +1465,7 @@ model-viewer {
             flex-direction: column;
             width: 50%;
             height: 100%;
-            padding: 0 50px;
+            padding: 0 50px 20px 50px;
             border-right: 1px solid #fff;
             overflow-y: scroll;
 
@@ -1293,14 +1492,6 @@ model-viewer {
             }
 
             & #h3-jumpscare {
-                display: none;
-            }
-
-            & #jumpscare-video {
-                border-radius: 20px;
-                box-shadow: 2.5px 2.5px 10px 0px #0008;
-                margin-bottom: 10px;
-                width: 90%;
                 display: none;
             }
         }
@@ -1414,7 +1605,7 @@ model-viewer {
         font-size: 14px;
         color: #fff;
 
-        & p:hover {
+        &.naocelular p:hover {
             text-decoration: underline;
         }
 
@@ -1531,7 +1722,8 @@ model-viewer {
     width: 75%;
     display: none;
 
-    &:hover {
+    &.naocelular:hover,
+    &.active {
         box-shadow: 0px 0px 10px 0px #111, inset 0px 0px 10px 0px #111, 0px 0px 20px 0px #111, inset 0px 0px 20px 0px #111;
 
         & #descricao-alternativa {
@@ -1580,30 +1772,7 @@ model-viewer {
 
 
 
-#ucn-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 15px;
-    z-index: 35;
-    overflow: hidden;
-    transition-duration: .5s;
-    z-index: 101;
-    display: none;
 
-    img {
-        width: 100%;
-    }
-
-    &:hover {
-        transform: scale(1.05)
-    }
-}
 
 
 
@@ -1693,6 +1862,7 @@ model-viewer {
         background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
         backdrop-filter: blur(10px);
         border: 3px solid #333;
+        border-bottom: 0px solid #333;
         color: #fff;
         padding: 5px;
         border-top-right-radius: 10px;
@@ -1715,6 +1885,7 @@ model-viewer {
         max-height: 65vh;
         background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
         backdrop-filter: blur(10px);
+        border: 3px solid #333;
         padding: 15px;
         padding-bottom: 5px;
         border-top-right-radius: 10px;
@@ -1805,6 +1976,7 @@ model-viewer {
         background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
         backdrop-filter: blur(10px);
         border: 3px solid #333;
+        border-left: 0px solid #333;
         color: #fff;
         padding: 15px 5px;
         border-radius: 0 10px 10px 0;
@@ -1844,6 +2016,7 @@ model-viewer {
         min-width: 275px;
         background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
         backdrop-filter: blur(10px);
+        border: 3px solid #333;
         padding: 15px;
         padding-right: 50px;
         border-bottom-right-radius: 10px;
@@ -1979,6 +2152,7 @@ model-viewer {
         font-size: 80px;
         color: #fff;
         transition-duration: .5s;
+        z-index: 10;
 
         &:hover {
             transform: scale(1.05);
@@ -2236,6 +2410,8 @@ a {
     padding: 10px;
     border-radius: 20px;
     z-index: 1000;
+    display: none;
+    opacity: 0;
 
     &:hover {
         transform: scale(1.1);

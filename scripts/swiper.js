@@ -61,6 +61,7 @@ function aparecerBotoesSlide(i) {
 }
 
 function aparecerBotoes() {
+    estadoBotoes = false
     buttonDisabled = document.querySelector(".swiper-button-disabled")
     pagination.style.opacity = 1
     buttonPrev.style.opacity = 1
@@ -78,6 +79,7 @@ function aparecerConfig() {
 
 function sumirBotoes() {
     if (!mouseSobreBotao) {
+        estadoBotoes = true
         buttonDisabled = document.querySelector(".swiper-button-disabled")
         pagination.style.opacity = 0
         buttonPrev.style.opacity = 0
@@ -104,8 +106,10 @@ document.querySelector("#problemas-swiper").addEventListener("click", function (
         setaVoltar.style.display = "none"
         setaAvancar.style.display = "none"
         swiper.slideTo(iAlternativo);
+        sumirBotoes()
     } else {
         this.innerHTML = "Voltar"
+        imgAlternativaDiv.classList.remove("active")
         document.querySelector("#problemas-swiper-div span").style.display = "block"
         swiperEl.style.display = "none"
         imgAlternativaDiv.style.display = "flex"
@@ -113,9 +117,21 @@ document.querySelector("#problemas-swiper").addEventListener("click", function (
         setaAvancar.style.display = "block"
         imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + ".webp"
         descricaoAlternativa.innerHTML = modelos[iModeloVar].swiperDescricao[iAlternativo]
+        sumirBotoes()
         verificaSetas()
     }
 })
+
+if (isCelular) imgAlternativaDiv.addEventListener("click", imgAltHover)
+function imgAltHover() {
+    if (estadoBotoes) {
+        imgAlternativaDiv.classList.add("active")
+    } else {
+        imgAlternativaDiv.classList.remove("active")
+    }
+    estadoBotoes = !estadoBotoes
+}
+
 
 setaVoltar.addEventListener("click", function () {
     if (iAlternativo > 0) {

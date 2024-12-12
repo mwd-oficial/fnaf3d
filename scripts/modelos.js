@@ -14,19 +14,25 @@ btnModelos.forEach((modelo, iModelo) => {
             efeitoPixelado()
             efeitoGlitch()
             efeitoOutline()
+        } else {
+            if (modelo.classList.contains("active")) alerta("Você já está vendo esse modelo!")
+            if (modelo.classList.contains("bloqueado")) alerta("Este modelo ainda está bloqueado")
         }
     })
 })
 
+// variável para ser limpada qundo o botão de voltar o carregamento for apertado
+var timeoutMenu
 function cliqueModelo(modelo, iModelo) {
     for (let i = 0; i < btnModelos.length; i++) {
         btnModelos[i].classList.remove("active")
     }
     modelo.classList.add("active")
-    setTimeout(() => {
+    timeoutMenu = setTimeout(() => {
         divMenu.style.display = "none"
         btnMenu.style.display = "none"
-    }, 1000);
+    }, 1500);
+    telaCarregamento.style.display = "flex"
     defineModelo(iModelo)
 
     rotacaoInput.checked = false
@@ -102,6 +108,7 @@ function cliqueModelo(modelo, iModelo) {
 
 }
 
+var timeoutVoltar
 function defineModelo(iModelo) {
     modelViewer.src = modelos[iModelo].src
     document.body.style.backgroundImage = modelos[iModelo].corFundo
@@ -113,7 +120,6 @@ function defineModelo(iModelo) {
     modelViewer.resetTurntableRotation(0)
 
     dicaP.style.opacity = 1
-    telaCarregamento.style.display = "flex"
     nomeModelo.style.display = "none"
     inputAlturaDiv.style.display = "none"
     animacoesContainer.style.display = "none"
@@ -141,8 +147,8 @@ function defineModelo(iModelo) {
     tutorialDescricaoDiv.style.display = "none"
 
     if (modelos[iModelo].temCursor) {
-        cursorImg.src = modelos[iModelo].urlCursor + "default.webp"
-        document.body.style.cursor = `url(../${modelos[iModelo].urlCursor}default.webp), auto`
+        cursorImg.src = modelos[iModelo].srcImg + "default.webp"
+        document.body.style.cursor = `url(../${modelos[iModelo].srcImg}default.webp), auto`
     } else {
         cursorImg.src = ""
         document.body.style.cursor = "default"
@@ -158,11 +164,10 @@ function defineModelo(iModelo) {
 
     if (vistosArray.indexOf(iModelo) == -1) vistosArray.push(iModelo)
     localStorage.setItem("vistosArray", JSON.stringify(vistosArray))
-    if (aindaNaoVistoInput.checked) atualizarVistos()
+    if (aindaNaoVistoInput.classList.contains("active")) atualizarVistos()
 
     iModeloVar = iModelo
 
-    progressBarModelo.value = 0
     progressoModeloInterval = setInterval(function () {
         if (progressBarModelo.value < 100) {
             progressBarModelo.value += 0.1
@@ -175,6 +180,10 @@ function defineModelo(iModelo) {
 
     if (divMenu.classList.contains("active")) abrirFecharMenu()
     if (tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
+    timeoutVoltar = setTimeout(() => {
+        voltarCarregamento.style.opacity = 1
+        voltarCarregamento.style.pointerEvents = "all"
+    }, 1500);
 }
 
 function carregarModeloEvento() {
@@ -209,117 +218,122 @@ function carregarModelo(iModelo) {
         modelViewer.cameraOrbit = "auto auto auto"
     }
 
+    
+    
     setTimeout(() => {
+        clearTimeout(timeoutMenu)
+        telaCarregamento.style.display = "none"
+        progressBarModelo.value = 0
+        voltarCarregamento.style.opacity = 0
+        voltarCarregamento.style.pointerEvents = "none"
+        divMenu.style.display = "flex"
+        btnMenu.style.display = "flex"
+        
         if (!tutorialVisto) {
             tutorialVisto = true
-            localStorage.setItem('tutorialVisto', JSON.stringify(tutorialVisto))
-            setTimeout(() => {
                 tutorialBotoes()
-            }, 1000);
         } else {
             animacoesContainer.style.pointerEvents = "all"
             audiosContainer.style.pointerEvents = "all"
             inputAlturaDiv.style.pointerEvents = "all"
         }
+    }, 500);
 
-        divMenu.style.display = "flex"
-        btnMenu.style.display = "flex"
+    nomeModelo.innerHTML = modelosDivP[iModelo].innerText
+    nomeModelo.style.display = "block"
 
-        telaCarregamento.style.display = "none"
-        nomeModelo.innerHTML = modelosDivP[iModelo].innerText
-        nomeModelo.style.display = "block"
+    tutorialDescricaoBtn.style.display = "flex"
+    tutorialDescricaoDiv.style.display = "flex"
 
-        tutorialDescricaoBtn.style.display = "flex"
-        tutorialDescricaoDiv.style.display = "flex"
+    if (modelos[iModelo].temAltura) {
+        inputAlturaDiv.style.display = "flex"
+    }
+    animacoesContainer.style.display = "block"
+    audiosContainer.style.display = "flex"
 
-        if (modelos[iModelo].temAltura) {
-            inputAlturaDiv.style.display = "flex"
-        }
-        animacoesContainer.style.display = "block"
-        audiosContainer.style.display = "flex"
+    if (modelos[iModelo].temAnimacao) {
+        comecarAnimacao(iModelo, 0) // Animação posição inicial
+        semAnimacoes.style.display = "none"
+    } else {
+        semAnimacoes.style.display = "block"
+        animacoesRangeDiv.style.display = "none"
+    }
 
-        if (modelos[iModelo].temAnimacao) {
-            comecarAnimacao(iModelo, 0) // Animação posição inicial
-            semAnimacoes.style.display = "none"
+    if (modelos[iModelo].temAudio) {
+        semAudios.style.display = "none"
+    } else {
+        semAudios.style.display = "block"
+    }
+
+
+
+    imagemCards.src = modelos[iModelo].srcImg + "cards.webp"
+    swiperSlide = document.querySelectorAll(".swiper-slide")
+    swiperSlide.forEach(slide => {
+        slide.remove()
+    })
+    for (let i = 0; i < modelos[iModelo].swiperDescricao.length; i++) {
+        novoSlide = document.createElement("div")
+        novoSlide.classList.add("swiper-slide")
+        novoSlide.classList.add("pointers")
+
+        novaImg = document.createElement("img")
+        novaImg.src = modelos[iModelo].srcImg + i + ".webp"
+
+        novaDescricao = document.createElement("div")
+        novaDescricao.classList.add("swiper-descricao")
+        novaDescricao.classList.add("ajustar-font-size")
+        novaDescricao.innerHTML = modelos[iModelo].swiperDescricao[i]
+
+        novoSlide.appendChild(novaImg)
+        novoSlide.appendChild(novaDescricao)
+        document.querySelector(".swiper-wrapper").appendChild(novoSlide)
+    }
+    swiperSlide = document.querySelectorAll(".swiper-slide")
+    swiperDescricao = document.querySelectorAll(".swiper-descricao")
+    swiperImg = document.querySelectorAll(".swiper-slide img")
+
+
+    swiperSlide.forEach((slide, i) => {
+        if (isCelular) {
+            slide.removeEventListener("click", function () { aparecerBotoesSlide(i) })
+            slide.removeEventListener("click", sumirBotoes)
+            slide.addEventListener("click", function () { botoes(i) })
         } else {
-            semAnimacoes.style.display = "block"
-            animacoesRangeDiv.style.display = "none"
-        }
-
-        if (modelos[iModelo].temAudio) {
-            semAudios.style.display = "none"
-        } else {
-            semAudios.style.display = "block"
-        }
-
-
-
-        imagemCards.src = modelos[iModelo].srcImg + "cards.webp"
-        swiperSlide = document.querySelectorAll(".swiper-slide")
-        swiperSlide.forEach(slide => {
-            slide.remove()
-        })
-        for (let i = 0; i < modelos[iModelo].swiperDescricao.length; i++) {
-            novoSlide = document.createElement("div")
-            novoSlide.classList.add("swiper-slide")
-            novoSlide.classList.add("pointers")
-
-            novaImg = document.createElement("img")
-            novaImg.src = modelos[iModelo].srcImg + i + ".webp"
-
-            novaDescricao = document.createElement("div")
-            novaDescricao.classList.add("swiper-descricao")
-            novaDescricao.classList.add("ajustar-font-size")
-            novaDescricao.innerHTML = modelos[iModelo].swiperDescricao[i]
-
-            novoSlide.appendChild(novaImg)
-            novoSlide.appendChild(novaDescricao)
-            document.querySelector(".swiper-wrapper").appendChild(novoSlide)
-        }
-        swiperSlide = document.querySelectorAll(".swiper-slide")
-        swiperDescricao = document.querySelectorAll(".swiper-descricao")
-        swiperImg = document.querySelectorAll(".swiper-slide img")
-        swiperSlide.forEach((slide, i) => {
             slide.removeEventListener("mouseenter", function () { aparecerBotoesSlide(i) })
-            slide.removeEventListener("mouseleave", function () { sumirBotoes() })
             slide.addEventListener("mouseenter", function () { aparecerBotoesSlide(i) })
-            slide.addEventListener("mouseleave", function () { sumirBotoes() })
-            slide.removeEventListener("mouseover", function () { pointarCursor(slide) })
-            slide.addEventListener("mouseover", function () { pointarCursor(slide) })
-        })
-        swiper.slideTo(0)
-
-
-
-
-
-        if (modelos[iModelo].temJumpscare) {
-            h3Jumpscare.style.display = "block"
-            jumpscareVideo.style.display = "block"
-            jumpscareVideo.src = modelos[iModelo].srcJumpscare
-            jumpscareVideo.poster = !isCelular ? modelos[iModelo].srcPoster : ""
-        } else {
-            h3Jumpscare.style.display = "none"
-            jumpscareVideo.style.display = "none"
-            jumpscareVideo.src = ""
-            jumpscareVideo.poster = ""
+            slide.removeEventListener("mouseleave", sumirBotoes)
+            slide.addEventListener("mouseleave", sumirBotoes)
         }
 
-        botaoDourado.style.display = "none"
-        if (modelos[iModelo].temBotaoDourado) botaoDourado.style.display = "block"
+        slide.removeEventListener("mouseover", function () { pointarCursor(slide) })
+        slide.addEventListener("mouseover", function () { pointarCursor(slide) })
+        if (isCelular) ajustarFontSize(swiperDescricao[i])
+    })
+    swiper.slideTo(0)
 
 
-        fnafInfo(iModelo)
-        gerarMoeda3d()
 
-        // Faz a animação de aparecer os conteiners abertos e serem fechados após 0.5 segundos, toda vez que um modelo for clicado
-        animacoesAberto = true
-        audiosAberto = true
-        setTimeout(() => {
-            abaAnimacoes()
-            abaAudios()
-        }, 500);
-    }, 2000);
+
+    if (modelos[iModelo].temJumpscare) {
+        h3Jumpscare.style.display = "block"
+        jumpscareDivVideo.style.display = "flex"
+        jumpscareVideo.src = modelos[iModelo].srcJumpscare
+        jumpscareVideo.poster = modelos[iModelo].srcImg + "poster.webp"
+    } else {
+        h3Jumpscare.style.display = "none"
+        jumpscareDivVideo.style.display = "none"
+        jumpscareVideo.src = ""
+        jumpscareVideo.poster = ""
+    }
+
+    botaoDourado.style.display = "none"
+    if (modelos[iModelo].temBotaoDourado) botaoDourado.style.display = "block"
+
+
+    fnafInfo(iModelo)
+    gerarMoeda3d()
+
 
     if (modelos[iModelo].temAnimacao) {
         animacoesKeys = Object.keys(modelos[iModelo].animacoes); // Pega todos os objetos dentro de .animacoes
@@ -347,7 +361,7 @@ function carregarModelo(iModelo) {
                         comecarAnimacao(iModelo, iAnimacao)
                         setTimeout(() => {
                             defineAltura(iModelo)
-                        }, 1);
+                        }, 500);
                     }
                 })
             })
@@ -356,7 +370,7 @@ function carregarModelo(iModelo) {
         modelViewer.cameraTarget = modelos[iModelo].alvoCamera
         setTimeout(() => {
             defineAltura(iModelo)
-        }, 1);
+        }, 500);
     }
 
     if (modelos[iModelo].temAudio) {
@@ -374,6 +388,33 @@ function carregarModelo(iModelo) {
             clearInterval(animacaoWorld)
         }
     }, 100)
+
+    animacoesAberto = true
+    audiosAberto = true
+    abaAnimacoes()
+    abaAudios()
+
+    setTimeout(() => {
+        iModeloAntigo = iModelo
+        voltarCarregamento.addEventListener("click", voltarCarregamentof)
+    }, 2500);
+}
+
+function botoes(i) {
+    if (estadoBotoes) {
+        aparecerBotoesSlide(i)
+    } else {
+        sumirBotoes()
+    }
+}
+
+
+voltarCarregamento.addEventListener("click", voltarCarregamentof)
+function voltarCarregamentof() {
+    voltarCarregamento.removeEventListener("click", voltarCarregamentof)
+    alerta("Voltando...")
+    cliqueModelo(btnModelos[iModeloAntigo], iModeloAntigo)
+    clearTimeout(timeoutMenu)
 }
 
 // Desfaz as alterações feiras com configEx()

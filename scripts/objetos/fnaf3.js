@@ -4,28 +4,37 @@ var phantomFreddy = {
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
     temCursor: true,
-    urlCursor: "assets/images/fnaf3/phantom-freddy/cursores/",
-     srcImg: "assets/images/fnaf1/freddy/",
+    srcImg: "assets/images/fnaf3/phantom-freddy/",
     swiperDescricao: [
-        "",
+        "Botão de Phantom Freddy para seu modelo 3D",
     ],
-    srcImg: "assets/images/fnaf1/freddy/",
-    swiperDescricao: [
-        "",
-    ],
-    orbitaCameraMaxima: "0 0 350m",
+    orbitaCameraMaxima: "0 0 250m",
     orbitaCameraMinima: "0 0 250m",
-    alvoCamera: "0m 65m 0m",
     temAltura: true,
-    alturaMaxima: 50,
-    alturaMinima: -50,
-    temConfigEx: true,
-    configEx: () => {
-        modelViewer.exposure = 2
-        modelViewer.style.filter = "hue-rotate(15deg)"
-    },
-    temAnimacao: false,
+    alturaMaxima: 25,
+    alturaMinima: -25,
+    temAnimacao: true,
     temAudio: true,
+    animacoes: {
+        posicaoInicial: {
+            src: "phantomfreddy_Bowtie_skeleton|idle",
+            nome: "Posição inicial",
+            alvoCamera: "0m 55m 0m",
+            estatico: false,
+        },
+        seAbaixando: {
+            src: "phantomfreddy_Bowtie_skeleton|cloack",
+            nome: "Se abaixando",
+            alvoCamera: "0m 55m 0m",
+            estatico: false,
+        },
+        andando: {
+            src: "phantomfreddy_Bowtie_skeleton|walk",
+            nome: "Andando",
+            alvoCamera: "0m 55m 10m",
+            estatico: false,
+        },
+    },
     audios: {
         jumpscare: {
             src: "assets/audios/fnaf3/jumpscare.ogg",
@@ -33,7 +42,7 @@ var phantomFreddy = {
             nome: "Jumpscare",
         },
     },
-    descricao: "(Este modelo 3D não é exatamente igual ao animatronic original)<br><br>Phantom Freddy é um dos antagonistas secundários e seis animatrônicos fantasmas que apareceram pela primeira vez em Five Nights at Freddy's 3. Ele é uma alucinação de um Freddy Fazbear danificado e queimado do segundo jogo.<br><br> Ele tem a mesma aparência de Golden Freddy, mas com pupilas brancas. Ele parece estar chamuscado ou queimado, possivelmente prenunciando o incêndio que ocorreu no estabelecimento.",
+    descricao: "Phantom Freddy é um dos antagonistas secundários e seis animatrônicos fantasmas que apareceram pela primeira vez em Five Nights at Freddy's 3. Ele é uma alucinação de um Freddy Fazbear danificado e queimado do segundo jogo.<br><br> Ele tem a mesma aparência de Golden Freddy, mas com pupilas brancas. Ele parece estar chamuscado ou queimado, possivelmente prenunciando o incêndio que ocorreu no estabelecimento.",
 }
 
 var phantomChica = {
@@ -41,10 +50,9 @@ var phantomChica = {
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
     temCursor: true,
-    urlCursor: "assets/images/fnaf3/phantom-chica/cursores/",
-     srcImg: "assets/images/fnaf1/freddy/",
+    srcImg: "assets/images/fnaf3/phantom-chica/",
     swiperDescricao: [
-        "",
+        "Botão de Phantom Chica para seu modelo 3D",
     ],
     orbitaCameraMaxima: "0 0 300m",
     orbitaCameraMinima: "0 0 250m",
@@ -57,7 +65,6 @@ var phantomChica = {
         modelViewer.exposure = 0.5
         modelViewer.style.filter = "hue-rotate(35deg)"
     },
-    temAnimacao: false,
     temAudio: true,
     audios: {
         jumpscare: {
@@ -74,10 +81,9 @@ var phantomFoxy = {
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
     temCursor: true,
-    urlCursor: "assets/images/fnaf3/phantom-foxy/cursores/",
-     srcImg: "assets/images/fnaf1/freddy/",
+    srcImg: "assets/images/fnaf3/phantom-foxy/",
     swiperDescricao: [
-        "",
+        "Botão de Phantom Foxy para seu modelo 3D",
     ],
     orbitaCameraMaxima: "0 0 300m",
     orbitaCameraMinima: "0 0 250m",
@@ -89,7 +95,6 @@ var phantomFoxy = {
     configEx: () => {
         modelViewer.style.filter = "hue-rotate(60deg)"
     },
-    temAnimacao: false,
     temAudio: true,
     audios: {
         jumpscare: {
@@ -106,10 +111,9 @@ var phantomMangle = {
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
     temCursor: true,
-    urlCursor: "assets/images/fnaf3/phantom-mangle/cursores/",
-     srcImg: "assets/images/fnaf1/freddy/",
+    srcImg: "assets/images/fnaf3/phantom-mangle/",
     swiperDescricao: [
-        "",
+        "Botão de Phantom Mangle para seu modelo 3D",
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
@@ -183,10 +187,9 @@ var phantomBalloonBoy = {
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
     temCursor: true,
-    urlCursor: "assets/images/fnaf3/phantom-balloon-boy/cursores/",
-     srcImg: "assets/images/fnaf1/freddy/",
+    srcImg: "assets/images/fnaf3/phantom-balloon-boy/",
     swiperDescricao: [
-        "",
+        "Botão de Phantom Balloon Boy para seu modelo 3D",
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
@@ -249,10 +252,9 @@ var phantomPuppet = {
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
     temCursor: true,
-    urlCursor: "assets/images/fnaf3/phantom-puppet/cursores/",
-     srcImg: "assets/images/fnaf1/freddy/",
+    srcImg: "assets/images/fnaf3/phantom-puppet/",
     swiperDescricao: [
-        "",
+        "Botão de Phantom Puppet para seu modelo 3D",
     ],
     orbitaCameraMaxima: "0m 0m 250m",
     orbitaCameraMinima: "0m 0m 150m",
@@ -266,7 +268,6 @@ var phantomPuppet = {
         modelViewer.style.mixBlendMode = "hard-light"
         modelViewer.exposure = 2.5
     },
-    temAnimacao: false,
     temAudio: true,
     audios: {
         ruido: {
@@ -283,10 +284,9 @@ var springtrap = {
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
     temCursor: true,
-    urlCursor: "assets/images/fnaf3/springtrap/cursores/",
-     srcImg: "assets/images/fnaf1/freddy/",
+    srcImg: "assets/images/fnaf3/springtrap/",
     swiperDescricao: [
-        "",
+        "Botão de Springtrap para seu modelo 3D",
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 3m",

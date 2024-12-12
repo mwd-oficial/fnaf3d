@@ -1,10 +1,10 @@
 // Logos
+
 var logo = {
     src: "assets/models/logos/logo.glb",
     corFundo: "radial-gradient(#949494, #d3d3d3)",
     fnaf: "l",
     temCursor: true,
-    urlCursor: "assets/images/logos/logo/cursores/",
     srcImg: "assets/images/logos/logo/",
     swiperDescricao: [
         "Botão da Logo para seu modelo 3D",
@@ -18,14 +18,11 @@ var logo = {
     descricao: "Logo oficial de Fnaf 3D. Possui o formato da cabeça de Freddy branca, sobre ele escrito FNAF em verde e 3D amarelo.",
 }
 
-
-
 var logomwd = {
     src: "assets/models/logos/logomwd.glb",
     corFundo: "radial-gradient(#4e7abd, #0000b3)",
     fnaf: "l",
     temCursor: true,
-    urlCursor: "assets/images/logos/logomwd/cursores/",
     srcImg: "assets/images/logos/logomwd/",
     swiperDescricao: [
         "Botão da Logo MWD para seu modelo 3D",
