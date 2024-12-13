@@ -582,7 +582,7 @@ var montgomeryGator = {
             nome: "Fala 4",
         },
     },
-    descricao: "Montgomery Gator, também conhecido como Monty, é um animatrônico glamrock que aparece em Five Nights at Freddy's: Security Breach e RUIN como um dos principais antagonistas. <br><br> Ele é o baixista da banda glamrock, tendo substituído Glamrock Bonnie antes de ser derrubado das passarelas acima de sua atração por Gregory e ter suas garras removidas por Glamrock Freddy. <br><br> Sua aparência normal inclui dentes pontiagudos, garras pretas, um moicano vermelho, calças com textura de escamas verdes e manchas nos braços e bochechas.",
+    descricao: "Montgomery Gator, também conhecido como Monty, é um animatrônico glamrock que aparece em Five Nights at Freddy's: Security Breach como um dos principais antagonistas. <br><br> Ele é o baixista da banda glamrock, tendo substituído Glamrock Bonnie antes de ser derrubado das passarelas acima de sua atração por Gregory e ter suas garras removidas por Glamrock Freddy. <br><br> Sua aparência normal inclui dentes pontiagudos, garras pretas, um moicano vermelho, calças com textura de escamas verdes e manchas nos braços e bochechas.",
 };
 
 var shatteredGlamrockChica = {
@@ -856,14 +856,14 @@ var shatteredMontgomeryGator = {
     descricao: "Shattered Montgomery Gator, também conhecido como \"Monty\", é um animatrônico glamrock que aparece em Five Nights at Freddy's: Security Breach. Ele foi derrubado das passarelas acima de sua atração por Gregory para remover suas garras e dar para Glamrock Freddy. <br><br> Após ser jogado das passarelas, ele fica gravemente danificado, com a mandíbula deslocada, um braço faltando e partes expostas do endoesqueleto.",
 };
 
-var daycareAttendantSun = {
-    src: "assets/models/fnafsb/daycare-attendant-sun.glb",
+var sun = {
+    src: "assets/models/fnafsb/sun.glb",
     corFundo: "radial-gradient(#F8D1AC, #BD8343)",
     fnaf: "sb",
     temCursor: true,
-    srcImg: "assets/images/fnafsb/daycare-attendant-sun/",
+    srcImg: "assets/images/fnafsb/sun/",
     swiperDescricao: [
-        "Botão de Daycare Attendant (Sun) para seu modelo 3D",
+        "Botão de Sun (Daycare Attendant) para seu modelo 3D",
     ],
     orbitaCameraMaxima: "0 0 9m",
     orbitaCameraMinima: "0 0 6m",
@@ -942,37 +942,37 @@ var daycareAttendantSun = {
     },
     audios: {
         fala1: {
-            src: "assets/audios/fnafsb/daycare-attendant-sun/fala1.ogg",
+            src: "assets/audios/fnafsb/sun/fala1.ogg",
             volume: 0.5,
             nome: "Fala 1",
         },
         fala2: {
-            src: "assets/audios/fnafsb/daycare-attendant-sun/fala2.ogg",
+            src: "assets/audios/fnafsb/sun/fala2.ogg",
             volume: 0.5,
             nome: "Fala 2",
         },
         fala3: {
-            src: "assets/audios/fnafsb/daycare-attendant-sun/fala3.ogg",
+            src: "assets/audios/fnafsb/sun/fala3.ogg",
             volume: 0.5,
             nome: "Fala 3",
         },
         fala4: {
-            src: "assets/audios/fnafsb/daycare-attendant-sun/fala4.ogg",
+            src: "assets/audios/fnafsb/sun/fala4.ogg",
             volume: 0.5,
             nome: "Fala 4",
         },
         fala5: {
-            src: "assets/audios/fnafsb/daycare-attendant-sun/fala5.ogg",
+            src: "assets/audios/fnafsb/sun/fala5.ogg",
             volume: 0.5,
             nome: "Fala 5",
         },
         fala6: {
-            src: "assets/audios/fnafsb/daycare-attendant-sun/fala6.ogg",
+            src: "assets/audios/fnafsb/sun/fala6.ogg",
             volume: 0.5,
             nome: "Fala 6",
         },
         somMecanico: {
-            src: "assets/audios/fnafsb/daycare-attendant-sun/som-mecanico.ogg",
+            src: "assets/audios/fnafsb/sun/som-mecanico.ogg",
             volume: 0.5,
             nome: "Som mecânico",
         },
@@ -980,14 +980,14 @@ var daycareAttendantSun = {
     descricao: "Sun é uma versão de Daycare Attendant, animatrônico do Five Nights at Freddy's: Security Breach. Ele tem uma aparência jocosa, com uma cabeça em forma de sol de cor bege-clara, olhos brancos e um sorriso largo. Seu corpo é esguio, com membros longos e mãos grandes de cinco dedos. <br><br> Sun usa uma camisa bege-âmbar, calças amarelas com listras marrom e um sash de tecido marrom-claro. Curiosamente, Sun tem uma marca em forma de crescente no rosto, que se sobrepõe ao nariz e cria a ilusão de uma lua sorridente, fazendo referência ao seu contraparte, Moon.",
 };
 
-var daycareAttendantMoon = {
-    src: "assets/models/fnafsb/daycare-attendant-moon.glb",
+var moon = {
+    src: "assets/models/fnafsb/moon.glb",
     corFundo: "radial-gradient(#02137C, #000)",
     fnaf: "sb",
     temCursor: true,
-    srcImg: "assets/images/fnafsb/daycare-attendant-moon/",
+    srcImg: "assets/images/fnafsb/moon/",
     swiperDescricao: [
-        "Botão de Daycare Attendant (Moon) para seu modelo 3D",
+        "Botão de Moon (Daycare Attendant) para seu modelo 3D",
     ],
     orbitaCameraMaxima: "0 0 1.75m",
     orbitaCameraMinima: "0 0 1.75m",
@@ -1107,22 +1107,22 @@ var daycareAttendantMoon = {
             nome: "Jumpscare",
         },
         fala1: {
-            src: "assets/audios/fnafsb/daycare-attendant-moon/fala1.ogg",
+            src: "assets/audios/fnafsb/moon/fala1.ogg",
             volume: 0.5,
             nome: "Fala 1",
         },
         fala2: {
-            src: "assets/audios/fnafsb/daycare-attendant-moon/fala2.ogg",
+            src: "assets/audios/fnafsb/moon/fala2.ogg",
             volume: 0.5,
             nome: "Fala 2",
         },
         fala3: {
-            src: "assets/audios/fnafsb/daycare-attendant-moon/fala3.ogg",
+            src: "assets/audios/fnafsb/moon/fala3.ogg",
             volume: 0.5,
             nome: "Fala 3",
         },
         risada: {
-            src: "assets/audios/fnafsb/daycare-attendant-moon/risada.ogg",
+            src: "assets/audios/fnafsb/moon/risada.ogg",
             volume: 0.5,
             nome: "Risada",
         },

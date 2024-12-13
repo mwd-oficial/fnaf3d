@@ -1,6 +1,7 @@
 // Five Nights at Freddy's 1
 var freddy = {
-    src: "assets/models/fnaf1/freddy.glb",
+    //src: "assets/models/fnaf1/freddy.glb",
+    src: "https://cdn.jsdelivr.net/gh/mwd-oficial/fnaf3d@main/assets/models/fnaf1/freddy.glb",
     corFundo: "radial-gradient(#5B3C21, #000)",
     fnaf: "1",
     temCursor: true,

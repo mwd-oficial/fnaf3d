@@ -88,8 +88,8 @@ var modelos = [
     shatteredGlamrockChica,
     shatteredRoxanneWolf,
     shatteredMontgomeryGator,
-    daycareAttendantSun,
-    daycareAttendantMoon,
+    sun,
+    moon,
     glamrockEndo,
     djMusicMan,
     miniMusicMan,
@@ -109,9 +109,9 @@ var modelos = [
     // fnaf sbr
     prototypeGlamrockFreddy,
     ruinedGlamrockChica,
-    ruinedMontgomeryGator,
     ruinedRoxanneWolf,
-    daycareAttendantEclipse,
+    ruinedMontgomeryGator,
+    eclipse,
     ruinedMiniMusicMan1, 
     ruinedMiniMusicMan2, 
     shatteredBot,
@@ -169,18 +169,37 @@ var modelosExtras = [
     // Pra Comprar
     moeda3d,
     purpleGuy,
+    // Fredbear
 
     // Pra Encontrar
     // Fnaf 1
     goldenFreddy,
+    // endo-01
     poster,
 
     // Fnaf 2
+    // shadow freddy
+    // shadow bonnie (ou RWQFSFASXC)
+    // endo-02
+    // jj
+    // paper pals
     mascaraFreddy,
+
+    // Fnaf 3
+
+    // Fnaf 4
+    // nightmare endo
 
     // Fnaf sl
     lolbit,
     bonnet,
+    // HandUnit
+    // Elizabeth Afton
+    // 8-bit baby
+    // Yenndo
+
+    // fnaf ffps
+    // candy cadet (aqui eu na seção principal do ffps)
 
     // Fnaf sb
     headChefBot,
@@ -208,6 +227,8 @@ var modelosExtras = [
     // Outros
     ventilador,
     phoneGuy,
+    // dee dee
+    // old man consequences
     // Pit bonnie
 
     // Pra Encontrar Dourado

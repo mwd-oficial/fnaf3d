@@ -407,11 +407,13 @@ function pularTutorialf() {
 // fnaf info
 
 fnafffpsDownload.addEventListener("click", function () {
-    window.open("https://drive.usercontent.google.com/download?id=16GOgIIRxcUjrlW8nLoW0OVx0ew46awrn&export=download&authuser=1", "_blank")
+    //window.open("https://drive.usercontent.google.com/download?id=16GOgIIRxcUjrlW8nLoW0OVx0ew46awrn&export=download&authuser=1", "_blank")
+    window.open("https://github.com/mwd-oficial/fnaf3d/releases/download/v1.0/fnafffps.exe", "_blank")
     exitFullscreen()
 })
 fnafwDownload.addEventListener("click", function () {
-    window.open("https://drive.usercontent.google.com/download?id=1JzAI8b2ns_pbWy2RYcvPdkmh4v-SzdZw&export=download&authuser=1", "_blank")
+    //window.open("https://drive.usercontent.google.com/download?id=1JzAI8b2ns_pbWy2RYcvPdkmh4v-SzdZw&export=download&authuser=1", "_blank")
+    window.open("https://github.com/mwd-oficial/fnaf3d/releases/download/v1.0/fnafw.exe", "_blank")
     exitFullscreen()
 })
 fnafsbSteam.addEventListener("click", function () {
@@ -427,7 +429,8 @@ fnafFilme.addEventListener("click", function () {
     exitFullscreen()
 })
 document.querySelector("#ucn-download-div").addEventListener("click", function () {
-    window.open("https://drive.usercontent.google.com/download?id=1cuc8Z7HOvG5d6Tdsz0R89wZkUcgsVCaa&export=download&authuser=0", "_blank")
+    //window.open("https://drive.usercontent.google.com/download?id=1cuc8Z7HOvG5d6Tdsz0R89wZkUcgsVCaa&export=download&authuser=0", "_blank")
+    window.open("https://github.com/mwd-oficial/fnaf3d/releases/download/v1.0/fnafucn.exe", "_blank")
     exitFullscreen()
 })
 
