@@ -1,12 +1,12 @@
 // TIRAR ISSO DEPOIS!!!!
-
+/*
 aviso.style.display = "none"
 telaInicial.style.display = "flex"
 document.querySelector("#conteudo").style.display = "block"
 //document.querySelector("#tela-carregamento-site").style.display = "none"
 telaCheia.style.display = "none"
 tutorialVisto = true
-
+*/
 
 ////////////////////////////////////
 
@@ -327,7 +327,7 @@ document.querySelector("#iniciar-btn").addEventListener("click", function () {
 
         setTimeout(() => {
             //cliqueModelo(btnModelos[0], 0)
-            cliqueModelo(btnModelos[2], 2)
+            cliqueModelo(btnModelos[0], 0)
             clearTimeout(timeoutVoltar)
         }, 100);
     }, 1);

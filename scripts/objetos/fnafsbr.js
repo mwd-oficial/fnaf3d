@@ -2,56 +2,53 @@
 
 var prototypeGlamrockFreddy = {
     src: "assets/models/fnafsbr/prototype-glamrock-freddy.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#E6773A, #000)",
     fnaf: "sbr",
     srcImg: "",
     swiperDescricao: [
         "Botão de Ruined Glamrock Freddy para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 0m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
+    orbitaCameraMaxima: "0 0 6m",
+    orbitaCameraMinima: "0 0 6m",
     temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
+    alturaMaxima: 0.75,
+    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "SK_DLC_Freddy.ao|A_DLC_Freddy_Idle",
             nome: "Posição inicial",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "0 1.75rad 0",
         },
         jumpscare: {
             src: "SK_DLC_Freddy.ao|A_DLC_FreddyJumpscareFrontA_Freddy",
             nome: "Jumpscare",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "0 1.75rad 0",
         },
         seLevantando: {
-            src: "SK_DLC_Freddy.ao|A_DLC_CIN_Fazerblast_Section6_6c_Freddy",
+            src: "SK_DLC_Freddy.ao|A_DLC_CIN_Fazerblast_Section6_6c_FreddyTest",
             nome: "Se levantando",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 1m",
             estatico: false,
-        },
-        seLevantando: {
-            src: "SK_DLC_Freddy.ao|A_DLC_HeadlessFreddy_Walk",
-            nome: "Andando",
-            alvoCamera: "0m 0m 0m",
-            estatico: false,
+            mudaOrbitaCameraMaxima: true,
+            orbitaCameraMaxima: "0 0 8m",
+            mudaOrbitaCamera: true,
+            orbitaCamera: "210deg 1.5rad 0",
         },
         correndo: {
-            src: "SK_DLC_Freddy.ao|A_DLC_Freddy_Walk",
-            nome: "Correndo",
-            alvoCamera: "0m 0m 0m",
-            estatico: false,
-        },
-        correndo2: {
             src: "SK_DLC_Freddy.ao|A_DLC_Freddy_Walk_Fast",
-            nome: "Correndo 2",
-            alvoCamera: "0m 0m 0m",
+            nome: "Correndo",
+            alvoCamera: "0m 1.25m 0m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "0 1.75rad 0",
         },
     },
     audios: {
@@ -72,9 +69,8 @@ var ruinedGlamrockChica = {
     swiperDescricao: [
         "Botão de Ruined Glamrock Chica para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 0m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
+    orbitaCameraMaxima: "0 0 10m",
+    orbitaCameraMinima: "0 0 10m",
     temAltura: true,
     alturaMaxima: 0,
     alturaMinima: -0,
@@ -158,9 +154,8 @@ var ruinedRoxanneWolf = {
     swiperDescricao: [
         "Botão de Ruined Roxanne Wolf para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 0m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
+    orbitaCameraMaxima: "0 0 10m",
+    orbitaCameraMinima: "0 0 10m",
     temAltura: true,
     alturaMaxima: 0,
     alturaMinima: -0,
@@ -277,43 +272,39 @@ var ruinedRoxanneWolf = {
 
 var ruinedMontgomeryGator = {
     src: "assets/models/fnafsbr/ruined-montgomery-gator.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#7E787B, #000)",
     fnaf: "sbr",
     srcImg: "",
     swiperDescricao: [
         "Botão de Ruined Montgomery Gator para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 0m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
-    temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
+    orbitaCameraMaxima: "0 0 4m",
+    orbitaCameraMinima: "0 0 4m",
     temAnimacao: true,
     temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "A_DLC_Monty_Idle_SK_Monty_DLC",
             nome: "Posição inicial",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 0.25m 0m",
             estatico: false,
         },
         jumpscare: {
             src: "A_DLC_Monty_Jumpscare_Monty_SK_Monty_DLC",
             nome: "Jumpscare",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 0.65m -0.5m",
             estatico: false,
         },
         seRastejando: {
             src: "ShatteredMonty_Crawl_SK_Monty_DLC",
             nome: "Se rastejando",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 0.25m 0m",
             estatico: false,
         },
         seRastejandoRapido: {
             src: "ShatteredMonty_Crawl_Fast_SK_Monty_DLC",
             nome: "Se rastejando rápido",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 0.25m 0m",
             estatico: false,
         },
     },
@@ -329,44 +320,52 @@ var ruinedMontgomeryGator = {
 
 var eclipse = {
     src: "assets/models/fnafsbr/eclipse.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#9F9FD5, #000)",
     fnaf: "sbr",
     srcImg: "",
     swiperDescricao: [
         "Botão de Eclipse (Daycare Attendant)  para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 0m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
+    orbitaCameraMaxima: "0 0 6m",
+    orbitaCameraMinima: "0 0 6m",
     temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
+    alturaMaxima: 1,
+    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "SK_Moonman_DLC|A_DLC_Sunman_Idle_SK_Moonman_DLC",
             nome: "Posição inicial",
-            alvoCamera: "0m 0m 0m",
-            estatico: false,
+            alvoCamera: "0m 1.25m 0m",
+            estatico: false, 
+            mudaOrbitaCamera: true,
+            orbitaCamera: "-10deg 1.5rad 0",
         },
         jumpscare: {
             src: "SK_Moonman_DLC|A_DLC_Moonman_Jumpscare_FrontB_SK_Moonman_DLC",
             nome: "Jumpscare",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0.15m 1.25m 0.25m",
             estatico: false,
-        },
+            mudaOrbitaCamera: true,
+            orbitaCamera: "0 1.5rad 0",
+        },      
         cabisbaixo: {
             src: "SK_Moonman_DLC|A_DLC_Moonman_Suffering_Flashlight_SK_Moonman_DLC",
             nome: "Cabisbaixo",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0.3m 1.1m 0.25m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "0 1.5rad 0",
         },
         conversando: {
             src: "SK_Moonman_DLC|A_DLC_CIN_Daycare_Section4_2_Sun_AR_SK_Moonman_DLC",
             nome: "Conversando",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "-340m -46.85m 535m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "30deg 1.5rad 0",
+            
         },
     },
     audios: {
@@ -387,9 +386,8 @@ var ruinedMiniMusicMan1 = {
     swiperDescricao: [
         "Botão de Ruined Mini Music Man 1 para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 0m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
+    orbitaCameraMaxima: "0 0 10m",
+    orbitaCameraMinima: "0 0 10m",
     temAltura: true,
     alturaMaxima: 0,
     alturaMinima: -0,
@@ -413,7 +411,222 @@ var ruinedMiniMusicMan1 = {
     descricao: "Ruined Mini Music Man 1 (3 de 7 variações) são versões danificadas do Mini Music Man, que aparecem no jogo Five Nights at Freddy's: Security Breach RUIN, como pequenos animatronics que continuam a perseguir os jogadores com sons assustadores. Eles são pequenos e ágeis, com engrenagens expostas, sinais de desgaste e partes faltando. <br><br> Apesar do estado arruinado, continuam a emitir sons musicais distorcidos enquanto perseguem, criando uma atmosfera de tensão e desconforto. Suas aparições repentinas e movimentos rápidos os tornam adversários difíceis de evitar.",
 }
 /*
-
+0
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_01"
+1
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_02"
+2
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_03"
+3
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_01"
+4
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_02"
+5
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_03"
+6
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_01"
+7
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_02"
+8
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_03"
+9
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_End_SK_LMM_01"
+10
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_End_SK_LMM_02"
+11
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_End_SK_LMM_03"
+12
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_01"
+13
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_02"
+14
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_03"
+15
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_01"
+16
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_02"
+17
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_03"
+18
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_Start_SK_LMM_01"
+19
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_Start_SK_LMM_02"
+20
+: 
+"SK_LMM_03|AS_FC_DJ_LMM_Tube_Start_SK_LMM_03"
+21
+: 
+"SK_LMM_03|AS_LMM_Jumpscare_SK_LMM_01"
+22
+: 
+"SK_LMM_03|AS_LMM_Jumpscare_SK_LMM_02"
+23
+: 
+"SK_LMM_03|AS_LMM_Jumpscare_SK_LMM_03"
+24
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_01"
+25
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_02"
+26
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_03"
+27
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_01"
+28
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_02"
+29
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_03"
+30
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_01"
+31
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_02"
+32
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_03"
+33
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_End_SK_LMM_01"
+34
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_End_SK_LMM_02"
+35
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_End_SK_LMM_03"
+36
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_01"
+37
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_02"
+38
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_03"
+39
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_01"
+40
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_02"
+41
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_03"
+42
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_Start_SK_LMM_01"
+43
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_Start_SK_LMM_02"
+44
+: 
+"SK_LMM_02|AS_FC_DJ_LMM_Tube_Start_SK_LMM_03"
+45
+: 
+"SK_LMM_02|AS_LMM_Jumpscare_SK_LMM_01"
+46
+: 
+"SK_LMM_02|AS_LMM_Jumpscare_SK_LMM_02"
+47
+: 
+"SK_LMM_02|AS_LMM_Jumpscare_SK_LMM_03"
+48
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_01"
+49
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_02"
+50
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_03"
+51
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_01"
+52
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_02"
+53
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_03"
+54
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_01"
+55
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_02"
+56
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_03"
+57
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_End_SK_LMM_01"
+58
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_End_SK_LMM_02"
+59
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_End_SK_LMM_03"
+60
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_01"
+61
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_02"
+62
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_03"
+63
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_01"
+64
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_02"
+65
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_03"
+66
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_Start_SK_LMM_01"
+67
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_Start_SK_LMM_02"
+68
+: 
+"SK_LMM_01|AS_FC_DJ_LMM_Tube_Start_SK_LMM_03"
+69
+: 
+"SK_LMM_01|AS_LMM_Jumpscare_SK_LMM_01"
+70
+: 
+"SK_LMM_01|AS_LMM_Jumpscare_SK_LMM_02"
+71
+: 
+"SK_LMM_01|AS_LMM_Jumpscare_SK_LMM_03"
 */
 
 var ruinedMiniMusicMan2 = {
@@ -424,9 +637,8 @@ var ruinedMiniMusicMan2 = {
     swiperDescricao: [
         "Botão de Ruined Mini Music Man 2 para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 0m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
+    orbitaCameraMaxima: "0 0 10m",
+    orbitaCameraMinima: "0 0 10m",
     temAltura: true,
     alturaMaxima: 0,
     alturaMinima: -0,
@@ -450,6 +662,391 @@ var ruinedMiniMusicMan2 = {
     descricao: "Ruined Mini Music Man 2 (4 de 7 variações) são versões danificadas do Mini Music Man, que aparecem no jogo Five Nights at Freddy's: Security Breach RUIN, como pequenos animatronics que continuam a perseguir os jogadores com sons assustadores. Eles são pequenos e ágeis, com engrenagens expostas, sinais de desgaste e partes faltando. <br><br> Apesar do estado arruinado, continuam a emitir sons musicais distorcidos enquanto perseguem, criando uma atmosfera de tensão e desconforto. Suas aparições repentinas e movimentos rápidos os tornam adversários difíceis de evitar.",
 }
 /*
+0
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_04"
+1
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_05"
+2
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_06"
+3
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_07"
+4
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_04"
+5
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_05"
+6
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_06"
+7
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_07"
+8
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_04"
+9
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_05"
+10
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_06"
+11
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_07"
+12
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_End_SK_LMM_04"
+13
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_End_SK_LMM_05"
+14
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_End_SK_LMM_06"
+15
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_End_SK_LMM_07"
+16
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_04"
+17
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_05"
+18
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_06"
+19
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_07"
+20
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_04"
+21
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_05"
+22
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_06"
+23
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_07"
+24
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Start_SK_LMM_04"
+25
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Start_SK_LMM_05"
+26
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Start_SK_LMM_06"
+27
+: 
+"SK_LMM_07|AS_FC_DJ_LMM_Tube_Start_SK_LMM_07"
+28
+: 
+"SK_LMM_07|AS_LMM_Jumpscare_SK_LMM_04"
+29
+: 
+"SK_LMM_07|AS_LMM_Jumpscare_SK_LMM_05"
+30
+: 
+"SK_LMM_07|AS_LMM_Jumpscare_SK_LMM_06"
+31
+: 
+"SK_LMM_07|AS_LMM_Jumpscare_SK_LMM_07"
+32
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_04"
+33
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_05"
+34
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_06"
+35
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_07"
+36
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_04"
+37
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_05"
+38
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_06"
+39
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_07"
+40
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_04"
+41
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_05"
+42
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_06"
+43
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_07"
+44
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_End_SK_LMM_04"
+45
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_End_SK_LMM_05"
+46
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_End_SK_LMM_06"
+47
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_End_SK_LMM_07"
+48
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_04"
+49
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_05"
+50
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_06"
+51
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_07"
+52
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_04"
+53
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_05"
+54
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_06"
+55
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_07"
+56
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Start_SK_LMM_04"
+57
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Start_SK_LMM_05"
+58
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Start_SK_LMM_06"
+59
+: 
+"SK_LMM_06|AS_FC_DJ_LMM_Tube_Start_SK_LMM_07"
+60
+: 
+"SK_LMM_06|AS_LMM_Jumpscare_SK_LMM_04"
+61
+: 
+"SK_LMM_06|AS_LMM_Jumpscare_SK_LMM_05"
+62
+: 
+"SK_LMM_06|AS_LMM_Jumpscare_SK_LMM_06"
+63
+: 
+"SK_LMM_06|AS_LMM_Jumpscare_SK_LMM_07"
+64
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_04"
+65
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_05"
+66
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_06"
+67
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_07"
+68
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_04"
+69
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_05"
+70
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_06"
+71
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_07"
+72
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_04"
+73
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_05"
+74
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_06"
+75
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_07"
+76
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_End_SK_LMM_04"
+77
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_End_SK_LMM_05"
+78
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_End_SK_LMM_06"
+79
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_End_SK_LMM_07"
+80
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_04"
+81
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_05"
+82
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_06"
+83
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_07"
+84
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_04"
+85
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_05"
+86
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_06"
+87
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_07"
+88
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Start_SK_LMM_04"
+89
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Start_SK_LMM_05"
+90
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Start_SK_LMM_06"
+91
+: 
+"SK_LMM_05|AS_FC_DJ_LMM_Tube_Start_SK_LMM_07"
+92
+: 
+"SK_LMM_05|AS_LMM_Jumpscare_SK_LMM_04"
+93
+: 
+"SK_LMM_05|AS_LMM_Jumpscare_SK_LMM_05"
+94
+: 
+"SK_LMM_05|AS_LMM_Jumpscare_SK_LMM_06"
+95
+: 
+"SK_LMM_05|AS_LMM_Jumpscare_SK_LMM_07"
+96
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_04"
+97
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_05"
+98
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_06"
+99
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_End_SK_LMM_07"
+
+100
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_04"
+101
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_05"
+102
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_06"
+103
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_Loop_SK_LMM_07"
+104
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_04"
+105
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_05"
+106
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_06"
+107
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_BeatDisrupt_Start_SK_LMM_07"
+108
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_End_SK_LMM_04"
+109
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_End_SK_LMM_05"
+110
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_End_SK_LMM_06"
+111
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_End_SK_LMM_07"
+112
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_04"
+113
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_05"
+114
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_06"
+115
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Jump_SK_LMM_07"
+116
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_04"
+117
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_05"
+118
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_06"
+119
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Loop_SK_LMM_07"
+120
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Start_SK_LMM_04"
+121
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Start_SK_LMM_05"
+122
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Start_SK_LMM_06"
+123
+: 
+"SK_LMM_04|AS_FC_DJ_LMM_Tube_Start_SK_LMM_07"
+124
+: 
+"SK_LMM_04|AS_LMM_Jumpscare_SK_LMM_04"
+125
+: 
+"SK_LMM_04|AS_LMM_Jumpscare_SK_LMM_05"
+126
+: 
+"SK_LMM_04|AS_LMM_Jumpscare_SK_LMM_06"
+127
+: 
+"SK_LMM_04|AS_LMM_Jumpscare_SK_LMM_07"
 
 */
 
@@ -472,26 +1069,30 @@ var shatteredBot = {
 
 var maskBot = {
     src: "assets/models/fnafsbr/mask-bot.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#896302, #000)",
     fnaf: "sbr",
-    orbitaCameraMaxima: "0 0 100m",
-    orbitaCameraMinima: "0 0 0m",
+    srcImg: "assets/images/fnafsbr/mask-bot/",
+    swiperDescricao: [
+        "Botão de Mask Bot para seu modelo 3D",
+    ],
+    orbitaCameraMaxima: "0 0 5m",
+    orbitaCameraMinima: "0 0 5m",
     temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
+    alturaMaxima: 0.75,
+    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "SK_Maskbot.001",
             nome: "Posição inicial",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.2m -0.6m",
             estatico: true,
         },
         jumpscare: {
             src: "StaffBot_NM_Jumpscare_RIG_MapBot",
             nome: "Jumpscare",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.2m 0m",
             estatico: false,
         },
     },
@@ -507,25 +1108,24 @@ var maskBot = {
 
 var cassie = {
     src: "assets/models/fnafsbr/cassie.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#990F18, #000)",
     fnaf: "sbr",
     srcImg: "",
     swiperDescricao: [
         "Botão de Cassie para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 0m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
+    orbitaCameraMaxima: "0 0 3m",
+    orbitaCameraMinima: "0 0 2.5m",
     temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
+    alturaMaxima: 0.5,
+    alturaMinima: -0.5,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "SK_Cassie.ao|AS_Ending_Helptrap_Cassie_Part4",
             nome: "Posição inicial",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 0.65m 0m",
             estatico: false,
         },
     },
@@ -539,17 +1139,16 @@ var cassie = {
     descricao: "Cassie é a personagem principal da expansão \"Ruin\" de Five Nights at Freddy's: Security Breach, uma jovem corajosa que explora as ruínas do Pizzaplex tentando sobreviver e encontrar seu amigo Gregory. <br><br> Determinada e curiosa, Cassie enfrenta inúmeros perigos enquanto desvenda segredos ocultos e escapa de animatronics hostis. Sua jornada revela muitos mistérios do Pizzaplex, proporcionando uma nova perspectiva sobre os eventos e a história dos animatronics.",
 }
 
-var entidade = {
-    src: "assets/models/fnafsbr/entidade.glb",
+var entity = {
+    src: "assets/models/fnafsbr/entity.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "sbr",
     srcImg: "",
     swiperDescricao: [
-        "Botão de Entidade para seu modelo 3D",
+        "Botão de Entity para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 0m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
+    orbitaCameraMaxima: "0 0 10m",
+    orbitaCameraMinima: "0 0 10m",
     temAltura: true,
     alturaMaxima: 0,
     alturaMinima: -0,
@@ -570,7 +1169,7 @@ var entidade = {
             nome: "Teste",
         },
     },
-    descricao: "A Entidade, também conhecido como M.X.E.S, é um avançado sistema de segurança digital introduzido em \"Five Nights at Freddy's: Security Breach - Ruin\". <br><br> Ele atua como uma entidade virtual projetada para monitorar e proteger as áreas do Pizzaplex. Dotado de inteligência artificial sofisticada, a Entidade é capaz de detectar intrusos e anomalias no ambiente, ativando protocolos de defesa automatizados para garantir a segurança do local. <br><br> Sua presença constante e vigilante adiciona uma camada de desafio e tensão ao jogo, forçando os jogadores a navegar cuidadosamente para evitar sua detecção.",
+    descricao: "Entity, também conhecido como M.X.E.S, é um avançado sistema de segurança digital introduzido em \"Five Nights at Freddy's: Security Breach - Ruin\". <br><br> Ele atua como uma entidade virtual projetada para monitorar e proteger as áreas do Pizzaplex. Dotado de inteligência artificial sofisticada, Entity é capaz de detectar intrusos e anomalias no ambiente, ativando protocolos de defesa automatizados para garantir a segurança do local. <br><br> Sua presença constante e vigilante adiciona uma camada de desafio e tensão ao jogo, forçando os jogadores a navegar cuidadosamente para evitar sua detecção.",
 }
 /*
 
@@ -705,44 +1304,51 @@ var entidade = {
 
 var mimic = {
     src: "assets/models/fnafsbr/mimic.glb",
-    corFundo: "radial-gradient(#fff, #000)",
+    corFundo: "radial-gradient(#302526, #000)",
     fnaf: "sbr",
     srcImg: "",
     swiperDescricao: [
         "Botão de Mimic para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 0m",
-    orbitaCameraMinima: "0 0 0m",
-    alvoCamera: "0m 0m 0m",
+    orbitaCameraMaxima: "0 0 6m",
+    orbitaCameraMinima: "0 0 4m",
     temAltura: true,
-    alturaMaxima: 0,
-    alturaMinima: -0,
+    alturaMaxima: 1,
+    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "A_DLC_OldEndo_IdleA_SK_DLC_Old_Endo",
             nome: "Posição inicial",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "-0.1m 1.25m 0.1m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "0 1.5rad 0",
         },
         jumpscare: {
             src: "A_DLC_OldEndo_JumpscareFrontA_SK_DLC_Old_Endo",
             nome: "Jumpscare",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 1m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "0 1.5rad 0",
         },
         andando: {
             src: "A_DLC_OldEndo_Walk_SK_DLC_Old_Endo",
             nome: "Andando",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0.2m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "0 1.5rad 0",
         },
         correndo: {
             src: "A_DLC_OldEndo_RunA_SK_DLC_Old_Endo",
             nome: "Correndo",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "0m 1.25m 0.2m",
             estatico: false,
+            mudaOrbitaCamera: true,
+            orbitaCamera: "0 1.5rad 0",
         },
     },
     audios: {

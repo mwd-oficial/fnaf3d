@@ -117,7 +117,7 @@ var modelos = [
     shatteredBot,
     maskBot,
     cassie,
-    entidade,
+    entity,
     mimic,
 
 
@@ -200,11 +200,15 @@ var modelosExtras = [
 
     // fnaf ffps
     // candy cadet (aqui eu na seção principal do ffps)
+    // Itens de compra (piscina de bolinha, pratos, etc)
 
     // Fnaf sb
     headChefBot,
     blob,
     burntrap,
+    // Fazer blat
+    // Faz-camera
+    // Faz-watch
 
     // Fnaf sbr
     // Glamrock bonnie
