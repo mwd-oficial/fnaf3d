@@ -303,7 +303,7 @@ var roxanneWolf = {
     swiperDescricao: [
         "Botão de Roxanne Wolf para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 7mcursores/",
+    orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 5m",
     temAltura: true,
     alturaMaxima: 0.75,
@@ -418,10 +418,10 @@ var roxanneWolf = {
             volume: 0.5,
             nome: "Fala 2",
         },
-        fala3: {
-            src: "assets/audios/fnafsb/roxanne-wolf/fala3.ogg",
+        chorando: {
+            src: "assets/audios/fnafsb/roxanne-wolf/chorando.ogg",
             volume: 0.5,
-            nome: "Fala 3",
+            nome: "Chorando",
         },
     },
     descricao: "Roxanne Wolf, também conhecida como \"Roxy\", é uma animatrônica glamrock que aparece em \"Five Nights at Freddy's: Security Breach\" como uma das principais antagonistas. Ela é a autoconfiante tecladista da banda glamrock, apresentando-se como uma loba de pelagem cinza com olhos amarelos brilhantes. <br><br> Roxanne usa maquiagem preta nas bochechas e batom roxo. Seus pés têm garras pintadas de roxo, enquanto as garras das mãos são verdes. Seu cabelo é longo e prateado, com uma mecha verde brilhante. <br><br> Além disso, ela veste um top vermelho, shorts curtos e ombreiras adornadas com padrões de estrelas pretas. Após ser atropelada por um mini kart no Roxy Raceway, Roxanne fica gravemente danificada, com os olhos removidos para aprimorar Glamrock Freddy.",
@@ -576,10 +576,10 @@ var montgomeryGator = {
             volume: 0.5,
             nome: "Fala 3",
         },
-        fala4: {
-            src: "assets/audios/fnafsb/montgomery-gator/fala4.ogg",
+        rugindo: {
+            src: "assets/audios/fnafsb/montgomery-gator/rugindo.ogg",
             volume: 0.5,
-            nome: "Fala 4",
+            nome: "Rugindo",
         },
     },
     descricao: "Montgomery Gator, também conhecido como Monty, é um animatrônico glamrock que aparece em Five Nights at Freddy's: Security Breach como um dos principais antagonistas. <br><br> Ele é o baixista da banda glamrock, tendo substituído Glamrock Bonnie antes de ser derrubado das passarelas acima de sua atração por Gregory e ter suas garras removidas por Glamrock Freddy. <br><br> Sua aparência normal inclui dentes pontiagudos, garras pretas, um moicano vermelho, calças com textura de escamas verdes e manchas nos braços e bochechas.",
@@ -663,10 +663,10 @@ var shatteredGlamrockChica = {
             volume: 0.5,
             nome: "Jumpscare",
         },
-        fala: {
-            src: "assets/audios/fnafsb/shattered-glamrock-chica/fala.ogg",
+        ruido: {
+            src: "assets/audios/fnafsb/shattered-glamrock-chica/ruido.ogg",
             volume: 0.5,
-            nome: "Fala",
+            nome: "Ruído",
         },
     },
     descricao: "Shattered Glamrock Chica é a versão despedaçada de Glamrock Chica que aparece em Five Nights at Freddy's: Security Breach. <br><br> Ela é a guitarrista da banda glamrock, mas após ser esmagada por um compactador de lixo, sua aparência se deteriora drasticamente. Seu bico é arrancado, revelando o endoesqueleto, e seu corpo está repleto de rachaduras e buracos.",
@@ -766,6 +766,16 @@ var shatteredRoxanneWolf = {
             volume: 0.5,
             nome: "Jumpscare",
         },
+        gritando: {
+            src: "assets/audios/fnafsb/shattered-roxanne-wolf/gritando.ogg",
+            volume: 0.5,
+            nome: "Gritando",
+        },
+        rosnando: {
+            src: "assets/audios/fnafsb/shattered-roxanne-wolf/rosnando.ogg",
+            volume: 0.5,
+            nome: "Rosnando",
+        },
         fala1: {
             src: "assets/audios/fnafsb/shattered-roxanne-wolf/fala1.ogg",
             volume: 0.5,
@@ -775,16 +785,6 @@ var shatteredRoxanneWolf = {
             src: "assets/audios/fnafsb/shattered-roxanne-wolf/fala2.ogg",
             volume: 0.5,
             nome: "Fala 2",
-        },
-        fala3: {
-            src: "assets/audios/fnafsb/shattered-roxanne-wolf/fala3.ogg",
-            volume: 0.5,
-            nome: "Fala 3",
-        },
-        fala4: {
-            src: "assets/audios/fnafsb/shattered-roxanne-wolf/fala4.ogg",
-            volume: 0.5,
-            nome: "Fala 4",
         },
     },
     descricao: "Shattered Roxanne Wolf é uma animatrônica glamrock que aparece em Five Nights at Freddy's: Security Breach. <br><br> Ela é a autoproclamada tecladista egocêntrica da banda glamrock, com um visual de lobo cinza, olhos amarelos e maquiagem preta nas bochechas. Após ser atropelada pelo Driver Assist Bot, seus olhos são removidos para aprimorar Glamrock Freddy, deixando-a cega e com danos severos. <br><br> Seu cabelo prateado está emaranhado, e partes de sua carcaça estão quebradas, expondo o endoesqueleto.",

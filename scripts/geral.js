@@ -7,7 +7,6 @@ document.querySelector("#conteudo").style.display = "block"
 telaCheia.style.display = "none"
 tutorialVisto = true
 */
-
 ////////////////////////////////////
 
 

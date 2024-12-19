@@ -143,7 +143,7 @@ var suavizacaoInput = document.querySelector("#suavizacao-input")
 var corInput = document.querySelector("#cor-input")
 
 var effectComposer
-var pixelateEffect, glitchEffect, outlineEffect
+var pixelateEffect, glitchEffect, outlineEffect, bloomEffect
 
 
 

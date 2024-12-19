@@ -224,7 +224,7 @@ var mascaraFreddy = {
             src: "Mask--Idle",
             nome: "Posição inicial",
             alvoCamera: "0m 0m 1m",
-            estatico: false,
+            estatico: true,
         },
     },
     audios: {

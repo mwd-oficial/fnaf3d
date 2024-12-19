@@ -66,6 +66,7 @@ function comecarAnimacao(iModelo, iAnimacao) {
 
     // Se a animação não for estática, mostra o range e o tempo atual
     if (!animacaoSel.estatico) {
+        modelViewer.play()
         animacoesRangeDiv.style.display = "flex"
 
         // Pega a duração da animação e define no mostrador
@@ -92,6 +93,7 @@ function comecarAnimacao(iModelo, iAnimacao) {
         iconeAnimacoes.addEventListener("click", playPauseAnimacao)
 
     } else {
+        modelViewer.pause()
         animacoesRangeDiv.style.display = "none"
     }
 }

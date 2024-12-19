@@ -206,9 +206,11 @@ var modelosExtras = [
     headChefBot,
     blob,
     burntrap,
-    // Fazer blat
+    // Fazer blater
     // Faz-camera
     // Faz-watch
+    // Mascara vanny
+    // Prize box
 
     // Fnaf sbr
     // Glamrock bonnie
@@ -234,6 +236,13 @@ var modelosExtras = [
     // dee dee
     // old man consequences
     // Pit bonnie
+    // Drink Clowns
+    // mystic hippo
+    // barker
+    // burnet barker
+    // dreadbear
+    // grim foxy
+    // Pirate foxy
 
     // Pra Encontrar Dourado
     fnaf1Mapa,

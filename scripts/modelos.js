@@ -218,8 +218,8 @@ function carregarModelo(iModelo) {
         modelViewer.cameraOrbit = "auto auto auto"
     }
 
-    
-    
+
+
     setTimeout(() => {
         clearTimeout(timeoutMenu)
         telaCarregamento.style.display = "none"
@@ -228,10 +228,10 @@ function carregarModelo(iModelo) {
         voltarCarregamento.style.pointerEvents = "none"
         divMenu.style.display = "flex"
         btnMenu.style.display = "flex"
-        
+
         if (!tutorialVisto) {
             tutorialVisto = true
-                tutorialBotoes()
+            tutorialBotoes()
         } else {
             animacoesContainer.style.pointerEvents = "all"
             audiosContainer.style.pointerEvents = "all"
@@ -422,6 +422,9 @@ function desConfigEx() {
     modelViewer.exposure = 1
     modelViewer.style.filter = "none"
     modelViewer.style.mixBlendMode = "normal"
+    if (bloomEffect && effectComposer.contains(bloomEffect)) {
+        effectComposer.removeChild(bloomEffect);
+    }
 }
 
 function defineAltura(iModelo) {
