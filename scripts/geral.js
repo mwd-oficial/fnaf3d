@@ -1,12 +1,14 @@
 // TIRAR ISSO DEPOIS!!!!
-
+/*
 aviso.style.display = "none"
 telaInicial.style.display = "flex"
 document.querySelector("#conteudo").style.display = "block"
 //document.querySelector("#tela-carregamento-site").style.display = "none"
 telaCheia.style.display = "none"
+divLogoBtn.style.display = "flex"
+divLogoBtn.style.opacity = 1
 tutorialVisto = true
-
+*/
 ////////////////////////////////////
 
 isCelular = navigator.userAgentData != undefined && navigator.userAgentData.mobile
@@ -17,7 +19,7 @@ if (isCelular) {
     nomeDescricaoModelo.style.display = "none"
     nomeDescricaoModeloCel.style.display = "block"
     document.querySelectorAll(".efeito-hover").forEach(btn => btn.classList.remove("efeito-hover"))
-    
+
     document.querySelector("#tela-cheia > p").innerHTML = "Toque para ativar a tela cheia"
 
     userDiv.classList.add("celular")
@@ -37,10 +39,14 @@ if (isCelular) {
     fecharExtraDesbloqueado.style.fontSize = "50px"
     document.querySelector("#fechar-swiper-div-btn").style.fontSize = "50px"
 
-    resetarConfig.innerHTML = "Resetar<br>configurações"
-
     document.querySelector("#modelo-div").style.transform = "scale(1)"
 
+    document.querySelector("#modelo-info-container").style.flexDirection = "column"
+    document.querySelector("#modelo-info-div").style.width = "50%"
+
+    document.querySelector("form").style.marginBottom = "35%"
+
+    document.querySelector("#config-user-div").style.height = "calc(100% - 50px)"
 
     document.querySelectorAll(".ajustar-width-50").forEach(function (el) {
         var widthAtual = parseFloat(window.getComputedStyle(el).width);
@@ -287,40 +293,87 @@ progressoInterval = setInterval(function () {
 
 window.addEventListener("load", function () {
     progressBar.value = 100
-    setTimeout(async () => {
-        pointers.forEach(btn => btn.classList.add("efeito-hover"))
+    setTimeout(() => {
+        atualizarPointers()
         document.querySelector("#tela-carregamento-site").style.display = "none"
-        getLocalStorage()
-        imagemCarregada.src = await teste()
     }, 500);
 })
 
+function atualizarPointers() {
+    if (isCelular) return
+    pointers = document.querySelectorAll(".pointers")
+    pointers.forEach(btn => btn.classList.add("efeito-hover"))
+    pointers.forEach((btn) => {
+        btn.removeEventListener("mouseover", function () {
+            pointarCursor(btn)
+        })
+        btn.addEventListener("mouseover", function () {
+            pointarCursor(btn)
+        })
+    })
+}
+
+var continuarAvisoBool = true
 if (isCelular) {
     continuarAviso.innerHTML = "Continuar <span class='material-symbols-rounded'>east</span>"
     continuarAviso.addEventListener("touchstart", continuar)
 } else {
     continuarAviso.innerHTML = "Continuar (Enter) <span class='material-symbols-rounded'>east</span>"
-    window.addEventListener("keydown", function (event) { if (event.key === 'Enter' && aviso.style.display != "none") continuar() })
+    window.addEventListener("keydown", function (event) { if (event.key === 'Enter' && continuarAvisoBool) continuar() })
 }
+
+var timeoutJumpscare, pularJumpscareBool = true
 function continuar() {
+    continuarAvisoBool = false
+    pularJumpscare.style.display = "flex"
     aviso.style.opacity = 0
+    if (isCelular) {
+        pularJumpscare.innerHTML = "Pular introdução <span class='material-symbols-rounded'>east</span>"
+        pularJumpscare.addEventListener("touchstart", irTelaInicial)
+    } else {
+        pularJumpscare.innerHTML = "Pular introdução (Enter) <span class='material-symbols-rounded'>east</span>"
+        window.addEventListener("keydown", function (event) {
+            if (event.key === 'Enter' && pularJumpscareBool) {
+                irTelaInicial()
+            }
+        })
+    }
     setTimeout(() => {
         telaInicial.style.display = "block"
         aviso.style.display = "none"
-        telaInicialVideo.play()
-        telaInicialAudio.play()
+    }, 2500);
+    timeoutJumpscare = setTimeout(() => {
+        jumpscareInicialVideo.play()
+        jumpscareInicialVideo.addEventListener("ended", irTelaInicial)
     }, 2500);
 }
 
+function irTelaInicial() {
+    pularJumpscareBool = false
+    pularJumpscare.style.display = "none"
+    jumpscareInicialVideo.style.display = "none"
+    clearTimeout(timeoutJumpscare)
+    jumpscareInicialVideo.pause()
+    jumpscareInicialVideo.removeEventListener("ended", irTelaInicial)
+
+    divLogoBtn.style.display = "flex"
+    setTimeout(() => divLogoBtn.style.opacity = 1, 10);
+    telaInicialVideo.style.display = "block"
+    telaInicialVideo.play()
+}
 
 
-document.querySelector("#iniciar-btn").addEventListener("click", function () {
+document.querySelector("#iniciar-btn").addEventListener("click", async function () {
     telaCarregamento.style.display = "flex"
     telaInicial.style.display = "none"
 
+    if (dadosUser.email && dadosUser.password && !logado) {
+        peloLocalStorage = true
+        await entrarUser();
+    }
+
     document.querySelector("#conteudo").style.display = "block"
     telaInicialVideo.pause()
-    telaInicialAudio.pause()
 
     sortearTelaModelosAudio()
 
@@ -360,19 +413,6 @@ document.querySelector("#iniciar-btn").addEventListener("click", function () {
     }, 1);
 })
 
-resetarConfig.addEventListener("click", () => {
-    avisoLocalStorageDiv.style.display = "flex"
-    setTimeout(() => avisoLocalStorageDiv.style.opacity = 1, 125);
-})
-
-document.querySelector("#voltar-btn").addEventListener("click", () => {
-    avisoLocalStorageDiv.style.opacity = 0
-    setTimeout(() => avisoLocalStorageDiv.style.display = "none", 125);
-})
-
-document.querySelector("#prosseguir-btn").addEventListener("click", resetLocalStorageGeral)
-
-
 function aparecerCursorImg() { cursorImg.style.display = "block" }
 function sumirCursorImg() { cursorImg.style.display = "none" }
 
@@ -398,7 +438,7 @@ setInterval(() => {
         dicaP.style.opacity = 0
         setTimeout(() => {
             do {
-                newSortDica = Math.floor(Math.random() * telaModelosAudios.length);
+                newSortDica = Math.floor(Math.random() * dicas.length);
             } while (sortDica === newSortDica);
 
             sortDica = newSortDica;

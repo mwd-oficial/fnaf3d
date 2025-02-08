@@ -88,17 +88,6 @@
     </div>
     <div class="continuar-btn efeito-hover" id="pular-tutorial" style="display: none;"></div>
 
-    <div id="aviso-local-storage-div">
-        <div>
-            <p>Tem certeza? Você perderá as noites salvas de todos os jogos, os Extras desbloqueados e as moedas 3D.
-            </p>
-            <div>
-                <div id="voltar-btn" class="efeito-hover">Voltar</div>
-                <div id="prosseguir-btn" class="efeito-hover">Prosseguir</div>
-            </div>
-        </div>
-    </div>
-
     <div id="extra-desbloqueado">
         <span class="material-symbols-rounded pointers" id="fechar-extra-desbloqueado">close</span>
         <div id="modelo-div">
@@ -202,19 +191,19 @@
         <div id="tela-dados-user">
             <div id="menu-user">
                 <div id="menu-nao-logado">
-                    <div id="entrar-btn" class="pointers ajustar-font-size">Entrar</div>
-                    <div id="cadastrar-btn" class="pointers ajustar-font-size">Cadastrar</div>
+                    <div id="entrar-btn" class="btns-menu-user pointers ajustar-font-size">Entrar</div>
+                    <div id="cadastrar-btn" class="btns-menu-user pointers ajustar-font-size">Cadastrar</div>
                 </div>
                 <div id="menu-logado">
-                    <div id="sair-btn" class="pointers ajustar-font-size">Sair</div>
-                    <div id="editar-btn" class="pointers ajustar-font-size">Editar</div>
+                    <div id="sair-btn" class="btns-menu-user pointers ajustar-font-size">Sair</div>
+                    <div id="editar-btn" class="btns-menu-user pointers ajustar-font-size">Editar</div>
                 </div>
             </div>
             <div id="dados-user-container">
                 <div id="dados-user-img-info">
                     <div id="dados-user-img">
-                        <img src="assets/images/avatar.webp" alt="">
-                        <div class="carregamento-img">
+                        <img src="" alt="">
+                        <div class="carregamento-img" id="carregamento-img-dados">
                             <div class="div-logo">
                                 <img src="assets/images/freddy-logo.png" alt="">
                                 <p class="p-fnaf-logo">
@@ -228,26 +217,27 @@
                         </div>
                     </div>
                     <div id="dados-user-info">
-                        <h1 id="dados-user-username">@Visitante</h1>
+                        <h1 id="dados-user-username"></h1>
+                        <p>
+                            <img src="assets/images/extras/pra-comprar/moeda-3d/0.webp" alt="">
+                            <span><span id="dados-user-moedas"></span> moedas 3D</span>
+                        </p>
                         <p>
                             <span class="material-symbols-outlined" id="favoritar-icon">star</span>
-                            <span><span id="dados-user-favoritos">3</span> favoritos</span>
+                            <span><span id="dados-user-favoritos"></span> favoritos</span>
                         </p>
                         <p>
                             <span class="material-symbols-outlined" id="like-icon">thumb_up</span>
-                            <span><span id="dados-user-likes">6</span> likes dados</span>
+                            <span><span id="dados-user-likes"></span> likes dados</span>
                         </p>
                         <p>
                             <span class="material-symbols-outlined" id="dislike-icon">thumb_down</span>
-                            <span><span id="dados-user-dislikes">8</span> dislikes dados</span>
-                        </p>
-                        <p>
-                            <img src="assets/images/extras/pra-comprar/moeda-3d/0.webp" alt="">
-                            <span><span id="dados-user-moedas">10</span> moedas 3D</span>
+                            <span><span id="dados-user-dislikes"></span> dislikes dados</span>
                         </p>
                         <p>
                             <span class="material-symbols-rounded" id="visto-icon">visibility</span>
-                            <span><span id="dados-user-vistos">12</span>/<span id="dados-user-total"></span> modelos vistos</span>
+                            <span><span id="dados-user-vistos"></span>/<span id="dados-user-total"></span> modelos
+                                vistos</span>
                         </p>
                     </div>
                 </div>
@@ -283,16 +273,20 @@
                     <p class="p-3d-logo">3D</p>
                 </div>
             </div>
-            <span class='material-symbols-rounded efeito-hover ajustar-font-size' id="voltar-tela-mostrar-user">arrow_left_alt</span>
-            <img src="" alt="" id="img-animatronic" class="ajustar-width-75">
-            <div>
+            <span class='material-symbols-rounded efeito-hover ajustar-font-size'
+                id="voltar-tela-dados-user">arrow_left_alt</span>
+            <img src="assets/images/0.webp" alt="" id="img-animatronic0" class="img-animatronic">
+            <img src="assets/images/1.webp" alt="" id="img-animatronic1" class="img-animatronic">
+            <img src="assets/images/2.webp" alt="" id="img-animatronic2" class="img-animatronic">
+            <img src="assets/images/3.webp" alt="" id="img-animatronic3" class="img-animatronic">
+            <img src="assets/images/4.webp" alt="" id="img-animatronic4" class="img-animatronic">
+            <div id="config-user-div">
                 <h1 id="tela-config-h1"></h1>
                 <form action="" method="post" autocomplete="on">
                     <div id="imagem-div">
                         <label for="input-imagem" id="label-imagem" class="pointers">
-                            <img src="https://api.pcloud.com/getpubthumb?code=XZtgfF5Z4loI2BUpmH04RfyUq2DJhJsgTsdy&linkpassword=undefined&size=1365x910&crop=0&type=auto" alt="">
-                            <!-- <img src="assets/images/avatar.webp" alt=""> -->
-                            <div class="carregamento-img">
+                            <img src="assets/images/avatar.webp" alt="">
+                            <div class="carregamento-img" id="carregamento-img-config">
                                 <div class="div-logo">
                                     <img src="assets/images/freddy-logo.png" alt="">
                                     <p class="p-fnaf-logo">
@@ -311,7 +305,7 @@
                         <input type="file" name="" id="input-imagem" accept=".jpg, .png, .webp" style="display: none;">
                         <div id="preencher-div">
                             <p class="pointers ajustar-font-size" id="preencher-p">Preencher imagem:</p>
-                            <div id="preencher-input" class="pointers checkbox-input"></div>
+                            <div id="input-preencher" class="pointers checkbox-input"></div>
                         </div>
                         <div id="avatar-btn" class="pointers">
                             <img src="assets/images/avatar.webp" alt="">
@@ -319,26 +313,27 @@
                     </div>
                     <fieldset id="username-fieldset">
                         <legend class="ajustar-font-size">Username</legend>
-                        <input type="text" name="username" id="input-username" class="pointers" required minlength="3" maxlength="15"
-                        pattern="^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$"
-                        title="O nome de usuário deve conter apenas caracteres alfanuméricos e hífens únicos, não pode começar ou terminar com um hífen, nem conter hífens consecutivos.">
+                        <input type="text" name="username" id="input-username" class="inputs-user pointers" minlength="3"
+                            maxlength="15" pattern="^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$"
+                            title="O nome de usuário deve conter apenas caracteres alfanuméricos e hífens únicos, não pode começar ou terminar com um hífen, nem conter hífens consecutivos.">
                     </fieldset>
                     <fieldset>
                         <legend class="ajustar-font-size">Email</legend>
-                        <input type="text" name="email" id="input-email" class="pointers" required pattern="^[^@]+@[^@]+\.[^@]{2,}$"
-                        title="Por favor, insira um email válido.">
+                        <input type="text" name="email" id="input-email" class="inputs-user pointers" required
+                            pattern="^[^@]+@[^@]+\.[^@]{2,}$" title="Por favor, insira um email válido.">
                     </fieldset>
                     <fieldset>
                         <legend class="ajustar-font-size">Password</legend>
-                        <input type="password" name="password" id="input-password" class="pointers" required minlength="8"
-                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-                        title="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e um caractere especial.">
+                        <input type="password" name="password" id="input-password" class="inputs-user pointers" required
+                            minlength="8"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{8,}$"
+                            title="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e um caractere especial.">
                         <span class="material-symbols-rounded pointers" id="olho">visibility</span>
                     </fieldset>
-                    <button type="submit" class="pointers">Entrar</button>
+                    <button type="submit" class="pointers" id="enviar-btn"></button>
                 </form>
                 <p id="link-conta"></p>
-                <button type="button" class="pointersr" id="excluir-btn">Excluir conta</button>
+                <button type="button" class="pointers" id="excluir-btn">Excluir conta</button>
             </div>
         </div>
     </div>
@@ -349,12 +344,14 @@
     </div>
 
     <div id="tela-inicial">
-        <video src="assets/videos/teste.mp4" preload="auto" loop style="filter: brightness(0.5);"></video>
-        <audio src="assets/audios/tela-inicial.ogg" preload="auto" loop volume="1"></audio>
+        <div class="continuar-btn efeito-hover" id="pular-jumpscare" style="display: none;"></div>
+        <video src="assets/videos/jumpscare.mp4" preload="auto" id="jumpscare-inicial-video"
+            style="filter: brightness(0.75);"></video>
+        <video src="assets/videos/tela-inicial.mp4" preload="auto" loop id="tela-inicial-video"
+            style="filter: brightness(0.75);"></video>
         <div id="div-logo-btn">
             <img src="assets/images/logo.webp" alt="logo fnaf 3d" class="ajustar-width-50">
             <div id="iniciar-btn" class="ajustar-font-size efeito-hover">Iniciar</div>
-            <div id="resetar-config" class="ajustar-font-size efeito-hover">Resetar progresso</div>
         </div>
     </div>
 
@@ -364,8 +361,7 @@
             <span class='material-symbols-outlined'>arrow_left_alt</span>
             <p>Voltar</p>
         </div>
-        <p id="aviso-progresso" class="ajustar-font-size">Não se preocupe: O seu progresso é salvo automaticamente.
-        </p>
+        <p id="aviso-progresso" class="ajustar-font-size">Crie uma conta para salvar o seu progresso!</p>
         <div id="div-center">
             <div class="div-logo">
                 <img src="assets/images/freddy-logo.png" alt="">
@@ -393,7 +389,7 @@
     <div id="conteudo">
         <img src="assets/images/extras/pra-comprar/moeda-3d/0.webp" alt="" id="moeda-3d-img">
         <div id="quantidade-moedas-3d-div">
-            <div id="moedas-3d-num-div"></div>
+            <div id="moedas-3d-num-div">+1</div>
             <img src="assets/images/extras/pra-comprar/moeda-3d/0.webp" alt="">
         </div>
 
@@ -415,120 +411,123 @@
         <div id="tutorial-descricao-div">
             <div id="tutorial-descricao-content">
 
-                <div id="descricao-div">
-                    <h2 id="nome-descricao-modelo-cel" class="ajustar-font-size" style="display: none;"></h2>
-                    <div id="modelo-info-container">
-                        <div id="modelo-info-img-div" class="ajustar-width-75 ajustar-height">
-                            <img src="" alt="" id="img-descricao-modelo">
+                <div id="descricao-div-wrapper" class="efeito-hover">
+                    <div id="descricao-div">
+                        <h2 id="nome-descricao-modelo-cel" class="ajustar-font-size" style="display: none;"></h2>
+                        <div id="modelo-info-container">
+                            <div id="modelo-info-img-div" class="ajustar-width-75 ajustar-height">
+                                <img src="" alt="" id="img-descricao-modelo">
+                            </div>
+                            <div id="modelo-info-div">
+                                <h2 id="nome-descricao-modelo" class="ajustar-font-size"></h2>
+                                <p class="ajustar-font-size"><span class="material-symbols-rounded info-btns pointers"
+                                        id="favoritar-btn">star</span> <span id="favoritar-span"></span></p>
+                                <p class="ajustar-font-size"><span class="material-symbols-rounded info-btns pointers"
+                                        id="likes-btn">thumb_up</span> <span id="likes-el"></span></p>
+                                <p class="ajustar-font-size"><span class="material-symbols-rounded info-btns pointers"
+                                        id="dislikes-btn">thumb_down</span> <span id="dislikes-el"></span></p>
+                            </div>
                         </div>
-                        <div id="modelo-info-div">
-                            <h2 id="nome-descricao-modelo" class="ajustar-font-size"></h2>
-                            <p class="ajustar-font-size"><span class="material-symbols-rounded info-btns pointers"
-                                    id="favoritar-btn">star</span> Favoritar</p>
-                            <p class="ajustar-font-size"><span class="material-symbols-rounded info-btns pointers"
-                                    id="likes-btn">thumb_up</span> <span id="likes-el">1000</span></p>
-                            <p class="ajustar-font-size"><span class="material-symbols-rounded info-btns pointers"
-                                    id="dislikes-btn">thumb_down</span> <span id="dislikes-el">2000</span></p>
+                        <p id="descricao-modelo" class="ajustar-font-size"></p>
+                        <h3 class="ajustar-font-size">Imagens:</h3>
+                        <img src="" alt="Imagem Cards" id="imagem-cards" class="pointers">
+                        <h3 id="h3-jumpscare" class="ajustar-font-size">Jumpscare:</h3>
+                        <div class="div-video" id="jumpscare-div-video">
+                            <video src="" poster="" controls controlsList="nodownload" id="jumpscare-video"
+                                class="pointers"></video>
+                            <div class="play-pause"><span class="material-symbols-outlined">play_arrow</span></div>
                         </div>
+                        <div id='botao-dourado' class='pointers' onclick='sortearPraEncontrarDourado()'>Clique</div>
                     </div>
-                    <p id="descricao-modelo" class="ajustar-font-size"></p>
-                    <h3 class="ajustar-font-size">Imagens:</h3>
-                    <img src="" alt="Imagem Cards" id="imagem-cards" class="pointers">
-                    <h3 id="h3-jumpscare" class="ajustar-font-size">Jumpscare:</h3>
-                    <div class="div-video" id="jumpscare-div-video">
-                        <video src="" poster="" controls controlsList="nodownload" id="jumpscare-video"
-                            class="pointers"></video>
-                        <div class="play-pause"><span class="material-symbols-outlined">play_arrow</span></div>
-                    </div>
-                    <div id='botao-dourado' class='pointers' onclick='sortearPraEncontrarDourado()'>Clique</div>
                 </div>
 
-                <div id="tutorial-div">
+                <div id="tutorial-div-wrapper" class="efeito-hover">
+                    <div id="tutorial-div">
 
-                    <h2 class="ajustar-font-size">Interagindo com o Modelo 3D</h2>
-                    <h3 class="ajustar-font-size">Movimento da Orbita da Câmera</h3>
-                    <p class="ajustar-font-size">
-                        <span>
-                            <span class="material-symbols-rounded ajustar-font-size">north</span>
-                            <span class="material-symbols-rounded ajustar-font-size">east</span>
-                            <span class="material-symbols-rounded ajustar-font-size">south</span>
-                            <span class="material-symbols-rounded ajustar-font-size">west</span>
-                        </span>
-                        Pressionar setinhas do teclado
-                    </p>
-                    <p class="ajustar-font-size">
-                        <span class="material-symbols-rounded ajustar-font-size">mouse</span>
-                        Arrastar o botão esquerdo do mouse
-                    </p>
-                    <p class="ajustar-font-size">
-                        <span class="material-symbols-rounded ajustar-font-size">touch_app</span>
-                        Arrastar o dedo
-                    </p>
-                    <h3 class="ajustar-font-size">Dar ou Tirar Zoom</h3>
-                    <p class="ajustar-font-size">
-                        <span class="material-symbols-rounded ajustar-font-size">mouse</span>
-                        Com o scroll do mouse (rodinha)
-                    </p>
-                    <p class="ajustar-font-size">
-                        <span class="material-symbols-rounded ajustar-font-size">pinch_zoom_out</span>
-                        Com o movimento depinça (dois dedos)
-                    </p>
+                        <h2 class="ajustar-font-size">Interagindo com o Modelo 3D</h2>
+                        <h3 class="ajustar-font-size">Movimento da Orbita da Câmera</h3>
+                        <p class="ajustar-font-size">
+                            <span>
+                                <span class="material-symbols-rounded ajustar-font-size">north</span>
+                                <span class="material-symbols-rounded ajustar-font-size">east</span>
+                                <span class="material-symbols-rounded ajustar-font-size">south</span>
+                                <span class="material-symbols-rounded ajustar-font-size">west</span>
+                            </span>
+                            Pressionar setinhas do teclado
+                        </p>
+                        <p class="ajustar-font-size">
+                            <span class="material-symbols-rounded ajustar-font-size">mouse</span>
+                            Arrastar o botão esquerdo do mouse
+                        </p>
+                        <p class="ajustar-font-size">
+                            <span class="material-symbols-rounded ajustar-font-size">touch_app</span>
+                            Arrastar o dedo
+                        </p>
+                        <h3 class="ajustar-font-size">Dar ou Tirar Zoom</h3>
+                        <p class="ajustar-font-size">
+                            <span class="material-symbols-rounded ajustar-font-size">mouse</span>
+                            Com o scroll do mouse (rodinha)
+                        </p>
+                        <p class="ajustar-font-size">
+                            <span class="material-symbols-rounded ajustar-font-size">pinch_zoom_out</span>
+                            Com o movimento depinça (dois dedos)
+                        </p>
 
 
-                    <h3 class="ajustar-font-size">Rotação:</h3>
-                    <div class="checkbox-input-div pointers">
-                        <p class="ajustar-font-size pointers" id="rotacao-p">Automática:</p>
-                        <div id="rotacao-input" class="pointers checkbox-input"></div>
+                        <h3 class="ajustar-font-size">Rotação:</h3>
+                        <div class="checkbox-input-div pointers">
+                            <p class="ajustar-font-size pointers" id="rotacao-p">Automática:</p>
+                            <div id="rotacao-input" class="pointers checkbox-input"></div>
+                        </div>
+
+                        <div class="range-inputs-div">
+                            <p class="ajustar-font-size">Velocidade:</p>
+                            <span class="ajustar-font-size">0%</span>
+                            <input type="range" id="velocidade-input" class="range-inputs pointers" min="0" max="360"
+                                step="0.1" value="0">
+                            <span class="ajustar-font-size">100%</span>
+                        </div>
+
+                        <h3>Efeitos:</h3>
+                        <div class="checkbox-input-div pointers">
+                            <p class="ajustar-font-size pointers" id="pixel-p">Pixelado:</p>
+                            <div id="pixel-input" class="pointers checkbox-input"></div>
+                        </div>
+
+                        <div class="checkbox-input-div pointers">
+                            <p class="ajustar-font-size pointers" id="glitch-p">Glitch:</p>
+                            <div id="glitch-input" class="pointers checkbox-input"></div>
+                        </div>
+
+
+
+                        <div class="checkbox-input-div pointers" style="margin-top: 20px;">
+                            <p class="ajustar-font-size pointers" id="outline-p">Contorno:</p>
+                            <div id="outline-input" class="pointers checkbox-input"></div>
+                        </div>
+
+                        <div class="range-inputs-div">
+                            <p class="ajustar-font-size">Cor:</p>
+                            <input type="color" id="cor-input" class="range-inputs pointers" value="#ffffff"
+                                style="border: none;outline: none;">
+                        </div>
+
+                        <div class="range-inputs-div">
+                            <p class="ajustar-font-size">Intensidade:</p>
+                            <span class="ajustar-font-size">0%</span>
+                            <input type="range" id="intensidade-input" class="range-inputs pointers" min="0" max="10"
+                                step="0.1" value="0">
+                            <span class="ajustar-font-size">100%</span>
+                        </div>
+
+                        <div class="range-inputs-div">
+                            <p class="ajustar-font-size">Suavização:</p>
+                            <span class="ajustar-font-size">0%</span>
+                            <input type="range" id="suavizacao-input" class="range-inputs pointers" min="0" max="6"
+                                step="1" value="0">
+                            <span class="ajustar-font-size">100%</span>
+                        </div>
                     </div>
-
-                    <div class="range-inputs-div">
-                        <p class="ajustar-font-size">Velocidade:</p>
-                        <span class="ajustar-font-size">0%</span>
-                        <input type="range" id="velocidade-input" class="range-inputs pointers" min="0" max="360"
-                            step="0.1" value="0">
-                        <span class="ajustar-font-size">100%</span>
-                    </div>
-
-                    <h3>Efeitos:</h3>
-                    <div class="checkbox-input-div pointers">
-                        <p class="ajustar-font-size pointers" id="pixel-p">Pixelado:</p>
-                        <div id="pixel-input" class="pointers checkbox-input"></div>
-                    </div>
-
-                    <div class="checkbox-input-div pointers">
-                        <p class="ajustar-font-size pointers" id="glitch-p">Glitch:</p>
-                        <div id="glitch-input" class="pointers checkbox-input"></div>
-                    </div>
-
-
-
-                    <div class="checkbox-input-div pointers" style="margin-top: 20px;">
-                        <p class="ajustar-font-size pointers" id="outline-p">Contorno:</p>
-                        <div id="outline-input" class="pointers checkbox-input"></div>
-                    </div>
-
-                    <div class="range-inputs-div">
-                        <p class="ajustar-font-size">Cor:</p>
-                        <input type="color" id="cor-input" class="range-inputs pointers" value="#ffffff"
-                            style="border: none;outline: none;">
-                    </div>
-
-                    <div class="range-inputs-div">
-                        <p class="ajustar-font-size">Intensidade:</p>
-                        <span class="ajustar-font-size">0%</span>
-                        <input type="range" id="intensidade-input" class="range-inputs pointers" min="0" max="10"
-                            step="0.1" value="0">
-                        <span class="ajustar-font-size">100%</span>
-                    </div>
-
-                    <div class="range-inputs-div">
-                        <p class="ajustar-font-size">Suavização:</p>
-                        <span class="ajustar-font-size">0%</span>
-                        <input type="range" id="suavizacao-input" class="range-inputs pointers" min="0" max="6" step="1"
-                            value="0">
-                        <span class="ajustar-font-size">100%</span>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -540,7 +539,7 @@
         <div id="pesquisa-nao-visto-div">
             <div id="pesquisa-div">
                 <input type="text" name="" id="pesquisa-input" class="pointers" autocomplete="off"
-                    placeholder="Pesquise o nome de modelos 3D aqui">
+                    placeholder="Pesquise modelos ou usuários (com &quot;@&quot; antes)">
                 <div id="pesquisa-btn" class="pointers">
                     <span class="material-symbols-outlined">search</span>
                 </div>
@@ -1860,8 +1859,10 @@
                             <p class="ajustar-font-size">???</p>
                         </div>
                     </div>
+                    <div id="lista-users"></div>
                     <p id="nenhum-resul" class="ajustar-font-size">Nenhum resultado encontrado.</p>
                 </div>
+
             </div>
         </div>
 
@@ -2170,7 +2171,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="scripts/variaveis.js"></script>
-    <script src="scripts/localStorage.js"></script>
 
     <!-- Objetos dos modelos -->
     <script src="scripts/objetos/logos.js"></script>
@@ -2187,12 +2187,12 @@
 
 
     <script src="scripts/modelosArray.js"></script>
+    <script src="scripts/user.js"></script>
     <script src="scripts/geral.js"></script>
     <script src="scripts/modelos.js"></script>
     <script src="scripts/menu.js"></script>
     <script src="scripts/animacoes.js"></script>
     <script src="scripts/audios.js"></script>
-    <script src="scripts/user.js"></script>
 
     <!--
 

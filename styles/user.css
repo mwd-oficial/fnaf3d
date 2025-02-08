@@ -1,3 +1,22 @@
+.arroba {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.carregamento-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    background-image: radial-gradient(rgb(10, 10, 10), #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
 #user-div {
     position: absolute;
     top: 0;
@@ -13,7 +32,7 @@
     padding: 100px;
     color: #fff;
     opacity: 0;
-    transition-duration: .125s;
+    transition-duration: .25s;
     display: none;
 
     & #fechar-user-div {
@@ -234,11 +253,11 @@
             }
         }
 
-        & #voltar-tela-mostrar-user {
+        & #voltar-tela-dados-user {
             position: fixed;
-            top: 10px;
-            left: 10px;
-            font-size: 80px;
+            top: 0;
+            left: 0;
+            font-size: 100px;
             color: #fff;
             transition-duration: .5s;
             z-index: 10;
@@ -248,7 +267,7 @@
             }
         }
 
-        & #img-animatronic {
+        & .img-animatronic {
             position: fixed;
             left: 0;
             bottom: 0;
@@ -370,6 +389,14 @@
                         margin-left: 25px;
                     }
 
+                    &.invalido {
+                        border: 2px solid #a00;
+
+                        & legend {
+                            color: #f00;
+                        }
+                    }
+
                     & input {
                         outline: none;
                         width: 100%;
@@ -435,7 +462,7 @@
                 padding-bottom: 30px;
 
                 & a {
-                    color: #00f;
+                    color: #0064ff !important;
                     text-decoration: underline;
                     transition: color .1s;
 
@@ -446,7 +473,7 @@
             }
 
             & #excluir-btn {
-                font-size: 10px;
+                font-size: 12px;
                 padding: 5px;
                 border: 0.5px solid #f00;
                 background-color: #0000;
@@ -505,7 +532,8 @@
 
                             & #favoritar-icon,
                             & #like-icon,
-                            & #dislike-icon {
+                            & #dislike-icon,
+                            & #visto-icon {
                                 font-size: 20px;
                             }
 
@@ -516,30 +544,113 @@
                     }
                 }
             }
+        }
 
-            & #tela-config-user {
-                & #img-animatronic {
-                    width: 200px;
+        & #tela-config-user {
+            & .img-animatronic {
+                width: 150px;
+            }
+
+            &>div {
+                & h1 {
+                    font-size: 30px;
                 }
 
-                &>div {
-                    & h1 {
-                        font-size: 30px;
-                    }
+                & form {
+                    & #imagem-div {
 
-                    & form {
-                        & #imagem-div {
+                        & #label-imagem {
+                            width: 200px;
+                            height: 200px;
+                        }
 
-                            & #label-imagem,
-                            & #avatar-btn {
-                                width: 200px;
-                                height: 200px;
-                            }
+                        & #avatar-btn {
+                            bottom: 45px;
+                            right: 5px;
+                            width: 50px;
+                            height: 50px;
                         }
                     }
-
                 }
+
             }
         }
+    }
+}
+
+
+
+#lista-users {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    & .users {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 1000px;
+        font-size: 25px;
+        padding: 5px 15px;
+        margin: 15px 0px;
+        transition-duration: .5s;
+
+        &.efeito-hover:hover {
+            transform: scale(1.05);
+
+            & .username {
+                text-decoration: underline;
+            }
+        }
+
+        & .img-users {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            overflow: hidden;
+
+            & .loader-img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                z-index: 5;
+                display: none;
+                animation: carregando 2s linear infinite;
+            }
+
+            & .img-users-img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@keyframes carregando {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.9);
     }
 }

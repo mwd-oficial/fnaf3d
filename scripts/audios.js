@@ -20,7 +20,7 @@ telaModelosAudios.forEach(function(audio) {
 });
 */
 function sortearTelaModelosAudio() {
-    if (telaModelosAudio != undefined) {
+    if (telaModelosAudio) {
         telaModelosAudio.pause();
         telaModelosAudio.currentTime = 0;
     }

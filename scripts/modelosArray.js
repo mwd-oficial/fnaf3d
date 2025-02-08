@@ -106,15 +106,15 @@ var modelos = [
     gregory,
     vanessa,
     vanny,
-    
+
     // fnaf sbr
     prototypeGlamrockFreddy,
     ruinedGlamrockChica,
     ruinedRoxanneWolf,
     ruinedMontgomeryGator,
     eclipse,
-    ruinedMiniMusicMan1, 
-    ruinedMiniMusicMan2, 
+    ruinedMiniMusicMan1,
+    ruinedMiniMusicMan2,
     shatteredBot,
     maskBot,
     cassie,
@@ -162,7 +162,7 @@ var modelos = [
     adventureNightmareBalloonBoy,
     adventurePlushtrap,
     adventureNightmarionne,
-    
+
     adventureFuntimeFoxy,
 ]
 
@@ -194,7 +194,7 @@ var modelosExtras = [
     // Fnaf sl
     lolbit,
     bonnet,
-    // HandUnit
+    //HandUnit,
     // Elizabeth Afton
     // 8-bit baby
     // Yenndo
@@ -224,7 +224,10 @@ var modelosExtras = [
     // Roxy walkie talky
     // Freddy Talky ruin
     // Faz-Wench
-    
+
+    // Fnaf world
+    // 
+
     // Fnaf filme
     pizzaria,
     springBonnieFilme,
@@ -248,6 +251,7 @@ var modelosExtras = [
     // Jackie's box
     // white tiger
     // Jack o Moon
+    // Fnaf AR (skins originais)
 
     // Pra Encontrar Dourado
     fnaf1Mapa,
@@ -255,5 +259,32 @@ var modelosExtras = [
 ]
 
 modelos = modelos.concat(modelosExtras);
-
+modelos.forEach(modelo => {
+    modelo.favoritado = false
+    modelo.comLike = false
+    modelo.comDislike = false
+})
 console.log(modelos)
+
+var modelosbd = []
+modelos.forEach(modelo => {
+    var obj = {
+        src: modelo.src,
+        likes: 0,
+        dislikes: 0
+    }
+    modelosbd.push(obj)
+})
+console.log(modelosbd.length)
+
+axios.post(`${API_URL}/models/cadastrar`, {
+    modelos: modelosbd
+});
+
+(async () => {
+    const res = await axios.get(`${API_URL}/models`)
+    modelosbd.forEach((modelo, i) => {
+        modelo.likes = res.data[i].likes
+        modelo.dislikes = res.data[i].dislikes
+    })
+})()

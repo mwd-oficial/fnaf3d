@@ -1,7 +1,7 @@
 // Modelos
 
 btnModelos.forEach((modelo, iModelo) => {
-    modelo.classList.add("efeito-hover")
+    if (!isCelular) modelo.classList.add("efeito-hover")
     modelo.removeEventListener("mouseover", function () {
         pointarCursor(modelo)
     })
@@ -46,6 +46,7 @@ function cliqueModelo(modelo, iModelo) {
         divMenu.style.display = "none"
         btnMenu.style.display = "none"
     }, 1500);
+
     telaCarregamento.style.display = "flex"
     defineModelo(iModelo)
 
@@ -73,9 +74,9 @@ function cliqueModelo(modelo, iModelo) {
         if (telaModelosAudio.paused) {
             document.querySelectorAll(".tela-modelos-especiais").forEach((audio) => {
                 audio.pause()
-                audio.currentTime = "0"
+                audio.currentTime = 0
             })
-            telaModelosAudio.currentTime = "0"
+            telaModelosAudio.currentTime = 0
             sortearTelaModelosAudio()
         }
     }
@@ -168,14 +169,7 @@ function defineModelo(iModelo) {
         cursorImg.src = ""
         document.body.style.cursor = "default"
     }
-    pointers.forEach((btn) => {
-        btn.removeEventListener("mouseover", function () {
-            pointarCursor(btn)
-        })
-        btn.addEventListener("mouseover", function () {
-            pointarCursor(btn)
-        })
-    })
+    atualizarPointers()
 
     if (vistosArray.indexOf(iModelo) == -1) vistosArray.push(iModelo)
     localStorage.setItem("vistosArray", JSON.stringify(vistosArray))
@@ -244,6 +238,12 @@ function carregarModelo(iModelo) {
         voltarCarregamento.style.pointerEvents = "none"
         divMenu.style.display = "flex"
         btnMenu.style.display = "flex"
+
+        marcarInteracao(favoritarBtn, "favoritado")
+        marcarInteracao(likes.btn, "comLike")
+        marcarInteracao(dislikes.btn, "comDislike")
+        likes.qtdeEl.innerHTML = modelosbd[iModeloVar].likes
+        dislikes.qtdeEl.innerHTML = modelosbd[iModeloVar].dislikes
 
         if (!tutorialVisto) {
             tutorialVisto = true
@@ -431,6 +431,28 @@ function botoes(i) {
         sumirBotoes()
     }
 }
+
+
+function marcarInteracao(btn, estado) {
+    if (modelos[iModeloVar][estado]) {
+        setTimeout(() => {
+            btn.classList.add(iconOutlined);
+            btn.classList.remove(iconRounded);
+        }, 500);
+    } else {
+        setTimeout(() => {
+            btn.classList.add(iconRounded);
+            btn.classList.remove(iconOutlined);
+        }, 500);
+    }
+
+    setTimeout(() => {
+        if (estado == "favoritado") {
+            document.querySelector("#favoritar-span").innerHTML = btn.classList.contains(iconRounded) ? "Favoritar" : "Favoritado"
+        }
+    }, 600);
+}
+
 
 
 voltarCarregamento.addEventListener("click", voltarCarregamentof)

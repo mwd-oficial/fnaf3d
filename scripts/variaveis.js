@@ -10,13 +10,27 @@ var arBtn = document.querySelector("#ar-btn")
 var ar = false
 
 // Login, banco de dados e relacionados
+
+const API_URL = "https://fnaf3d.vercel.app";
+//const API_URL = "http://localhost:3000";
+
 var userDiv = document.querySelector("#user-div")
 var myUserBtn = document.querySelector("#my-user-btn")
+var myUserBtnImg = document.querySelector("#my-user-btn img")
 
 var telaDadosUser = document.querySelector("#tela-dados-user")
 var telaConfigUser = document.querySelector("#tela-config-user")
 var menuNaoLogado = document.querySelector("#menu-nao-logado")
 var menuLogado = document.querySelector("#menu-logado")
+var dadosUserImg = document.querySelector("#dados-user-img > img")
+var dadosUserUsername = document.querySelector("#dados-user-username")
+var dadosUserFavoritos = document.querySelector("#dados-user-favoritos")
+var dadosUserLikes = document.querySelector("#dados-user-likes")
+var dadosUserDislikes = document.querySelector("#dados-user-dislikes")
+var dadosUserMoedas = document.querySelector("#dados-user-moedas")
+var dadosUserVistos = document.querySelector("#dados-user-vistos")
+
+var listaUsers = document.querySelector("#lista-users")
 
 var imagemDiv = document.querySelector("#imagem-div")
 var usernameFieldset = document.querySelector("#username-fieldset")
@@ -24,40 +38,46 @@ var excluirBtn = document.querySelector("#excluir-btn")
 var linkConta = document.querySelector("#link-conta")
 var entrar = false, cadastrar = false, editar = false, logado = false;
 
-var carregamentoImg = document.querySelectorAll(".carregamento-img")
+var carregamentoImgDados = document.querySelector("#carregamento-img-dados")
+var carregamentoImgConfig = document.querySelector("#carregamento-img-config")
 var carregamentoForm = document.querySelector("#carregamento-form")
 var avatarBtn = document.querySelector("#avatar-btn")
 var imagemCarregada = document.querySelector("#label-imagem > img");
-var urlImagem, semFoto = true
+var urlImagem, semFoto = true, peloLocalStorage = false
+
+var imgAnimatronic = document.querySelectorAll(".img-animatronic")
 
 var formulario = document.querySelector("form")
-var preencherInput = document.querySelector("#preencher-input");
+var inputPreencher = document.querySelector("#input-preencher");
 var inputImagem = document.querySelector("#input-imagem");
 var inputUsername = document.querySelector("#input-username");
 var inputEmail = document.querySelector("#input-email");
 var inputPassword = document.querySelector("#input-password");
+var olho = document.querySelector("#olho")
 
 var dadosUser = {
+    id: "",
     username: "",
-    email: "",
-    password: "",
+    email: localStorage.getItem("email") ? JSON.parse(localStorage.getItem("email")) : "",
+    password: localStorage.getItem("password") ? JSON.parse(localStorage.getItem("password")) : "",
+    moedas3d: 0,
+    favoritos: [],
+    likes: [],
+    dislikes: [],
+    vistos: [],
     imagemId: "",
     semFoto: true,
     preencher: false,
-    favoritos: [],
-    vistos: [],
 }
 
 var favoritarBtn = document.querySelector("#favoritar-btn")
 var likes = { 
     btn: document.querySelector("#likes-btn"),
     qtdeEl: document.querySelector("#likes-el"),
-    qtde: 1000 
 }
 var dislikes = { 
     btn: document.querySelector("#dislikes-btn"),
     qtdeEl: document.querySelector("#dislikes-el"),
-    qtde: 2000 
 }
 var nomeDescricaoModelo = document.querySelector("#nome-descricao-modelo")
 var nomeDescricaoModeloCel = document.querySelector("#nome-descricao-modelo-cel")
@@ -75,14 +95,14 @@ var conteudo = document.querySelector("#conteudo")
 var telaCheia = document.querySelector("#tela-cheia")
 var aviso = document.querySelector("#aviso")
 var continuarAviso = document.querySelector("#continuar-aviso")
+var pularJumpscare = document.querySelector("#pular-jumpscare")
+var divLogoBtn = document.querySelector("#div-logo-btn")
 var telaInicial = document.querySelector("#tela-inicial")
-var telaInicialVideo = document.querySelector("#tela-inicial video")
-var telaInicialAudio = document.querySelector("#tela-inicial audio")
+var jumpscareInicialVideo = document.querySelector("#jumpscare-inicial-video")
+var telaInicialVideo = document.querySelector("#tela-inicial-video")
 var fecharAbaCel = document.querySelector("#fechar-aba-cel")
 
-var avisoLocalStorageDiv = document.querySelector("#aviso-local-storage-div")
-var resetarConfig = document.querySelector("#resetar-config")
-
+var avisoProgresso = document.querySelector("#aviso-progresso")
 var telaCarregamento = document.querySelector("#tela-carregamento")
 var voltarCarregamento = document.querySelector("#voltar-carregamento")
 var dicaP = document.querySelector("#dica-p")
@@ -157,6 +177,8 @@ var vistosArray = []
 var tutorialDescricaoContent = document.querySelector("#tutorial-descricao-content")
 var tutorialDescricaoDiv = document.querySelector("#tutorial-descricao-div")
 var tutorialDescricaoBtn = document.querySelector("#tutorial-descricao-btn")
+var descricaoDivWrapper = document.querySelector("#descricao-div-wrapper")
+var tutorialDivWrapper = document.querySelector("#tutorial-div-wrapper")
 var tutorialIcon = document.querySelector("#tutorial-descricao-btn span")
 var descricaoModelo = document.querySelector("#descricao-modelo")
 var imagemCards = document.querySelector("#imagem-cards")
@@ -311,7 +333,6 @@ var ucnDesbloqueado = false
 // Moeda 3D e modelos bloqueados
 var moeda3dImg = document.querySelector("#moeda-3d-img")
 var quantidadeMoedas3dDiv = document.querySelector("#quantidade-moedas-3d-div")
-var moedas3dNumDiv = document.querySelector("#moedas-3d-num-div")
 var moedas3dNum
 
 var valor = document.querySelectorAll(".valor")

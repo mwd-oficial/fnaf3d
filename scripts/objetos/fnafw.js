@@ -420,7 +420,7 @@ var adventurePhantomFoxy = {
 };
 
 var adventurePhantomMangle = {
-    src: "assets/models/fnafw/fnaf2/adventure-mangle.glb",
+    src: "assets/models/fnafw/fnaf3/adventure-phantom-mangle.glb",
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf2/adventure-mangle/",

@@ -144,9 +144,15 @@ btnHome.addEventListener("click", function () {
     telaInicial.style.display = "block"
     document.querySelector("#conteudo").style.display = "none"
     telaInicialVideo.currentTime = 0
-    telaInicialAudio.currentTime = 0
     telaInicialVideo.play()
-    telaInicialAudio.play()
+    if (telaModelosAudio) {
+        telaModelosAudio.pause();
+        telaModelosAudio.currentTime = 0;
+    }
+    document.querySelectorAll(".tela-modelos-especiais").forEach((audio) => {
+        audio.pause()
+        audio.currentTime = 0
+    })
     divMenu.style.display = "none"
     btnMenu.style.display = "none"
     tutorialDescricaoDiv.style.display = "none"
@@ -168,7 +174,30 @@ arBtn.addEventListener("touchstart", function () {
     verificaOrientacao()
 })
 
+
+
+
 // descrição/tutorial
+if (!isCelular) {
+    descricaoDivWrapper.addEventListener("mouseenter", function () {
+        tutorialDivWrapper.style.boxShadow = "inset 0px 0px 20px 0px #0008, 0px 0px 0px 0px #0000"
+        tutorialDivWrapper.style.transform = "scale(0.9825)"
+    })
+    descricaoDivWrapper.addEventListener("mouseleave", function () {
+        tutorialDivWrapper.style.boxShadow = "inset 0px 0px 0px 0px #0000,  0px 0px 0px 0px #0000"
+        tutorialDivWrapper.style.transform = "scale(1)"
+    })
+    tutorialDivWrapper.addEventListener("mouseenter", function () {
+        descricaoDivWrapper.style.boxShadow = "inset 0px 0px 20px 0px #0008, 0px 0px 0px 0px #0000"
+        descricaoDivWrapper.style.transform = "scale(0.9825)"
+    })
+    tutorialDivWrapper.addEventListener("mouseleave", function () {
+        descricaoDivWrapper.style.boxShadow = "inset 0px 0px 0px 0px #0000,  0px 0px 0px 0px #0000"
+        descricaoDivWrapper.style.transform = "scale(1)"
+    })
+}
+
+
 tutorialDescricaoBtn.addEventListener("click", abrirFecharTutorial)
 function abrirFecharTutorial() {
     tutorialDescricaoBtn.style.pointerEvents = "none"
@@ -189,17 +218,22 @@ function abrirFecharTutorial() {
             tutorialDescricaoContent.style.opacity = 1
         }, 1000);
         tutorialIcon.innerHTML = "close"
+        document.querySelector("#descricao-div").scrollTo(0, 0)
+        document.querySelector("#tutorial-div").scrollTo(0, 0)
     }
 }
 
-favoritarBtn.addEventListener("click", function () {
+favoritarBtn.addEventListener("click", async function () {
     if (!logado) {
         alerta("Faça login para favoritar modelos 3D.");
         return;
     }
     this.classList.toggle(iconRounded);
     this.classList.toggle(iconOutlined);
-    if (this.classList.contains(iconOutlined)) alerta("Favoritado! Você poderá ver este modelo 3D na sua barra de favoritos.")
+
+    document.querySelector("#favoritar-span").innerHTML = this.classList.contains(iconRounded) ? "Favoritar" : "Favoritado"
+
+    atualizarInteracoes(favoritarBtn, "favoritos", "favoritado", "Favoritado! Você poderá ver este modelo 3D na sua barra de favoritos.")
 })
 
 likes.btn.addEventListener("click", function () {
@@ -207,7 +241,7 @@ likes.btn.addEventListener("click", function () {
         alerta("Faça login para dar likes.");
         return;
     }
-    cliqueLikeDislike(likes, dislikes, "Like");
+    cliqueLikeDislike(likes, dislikes, "Like", "likes", "dislikes", "comLike");
 });
 
 dislikes.btn.addEventListener("click", function () {
@@ -215,27 +249,54 @@ dislikes.btn.addEventListener("click", function () {
         alerta("Faça login para dar dislikes.");
         return;
     }
-    cliqueLikeDislike(dislikes, likes, "Dislike");
+    cliqueLikeDislike(dislikes, likes, "Dislike", "dislikes", "likes", "comDislike");
 });
 
-function cliqueLikeDislike(obj, otherObj, str) {
+function cliqueLikeDislike(obj, otherObj, str, dustr, otherDustr, estado) {
     if (obj.btn.classList.contains(iconRounded)) {
         obj.btn.classList.add(iconOutlined);
         obj.btn.classList.remove(iconRounded);
-        obj.qtdeEl.innerHTML = ++obj.qtde;
+        obj.qtdeEl.innerHTML = ++modelosbd[iModeloVar][dustr];
 
         if (otherObj.btn.classList.contains(iconOutlined)) {
             otherObj.btn.classList.remove(iconOutlined);
             otherObj.btn.classList.add(iconRounded);
-            otherObj.qtdeEl.innerHTML = --otherObj.qtde;
+            otherObj.qtdeEl.innerHTML = --modelosbd[iModeloVar][otherDustr];
         }
-        alerta(`${str} registrado com sucesso.`)
     } else {
         obj.btn.classList.remove(iconOutlined);
         obj.btn.classList.add(iconRounded);
-        obj.qtdeEl.innerHTML = --obj.qtde;
+        obj.qtdeEl.innerHTML = --modelosbd[iModeloVar][dustr];
     }
+
+    atualizarInteracoes(obj.btn, dustr, estado, `${str} registrado com sucesso.`)
+    atualizarInteracoes(otherObj.btn, otherDustr, estado, `${str} registrado com sucesso.`)
+
+    axios.put(`${API_URL}/models/editar`, {
+        src: modelosbd[iModeloVar].src,
+        likes: modelosbd[iModeloVar].likes,
+        dislikes: modelosbd[iModeloVar].dislikes
+    });
 }
+
+async function atualizarInteracoes(btn, array, estado, msg) {
+    if (btn.classList.contains(iconOutlined)) {
+        dadosUser[array].push(modelos[iModeloVar].src)
+        modelos[iModeloVar][estado] = true
+        alerta(msg)
+    } else {
+        var indice = dadosUser[array].indexOf(modelos[iModeloVar].src)
+        dadosUser[array].splice(indice, 1)
+        modelos[iModeloVar][estado] = false
+    }
+
+    const res = await axios.put(`${API_URL}/users/atualizarInteracoes/${dadosUser.id}`, {
+        [array]: dadosUser[array]
+    })
+    console.log(res.data.msg);
+}
+
+
 
 document.querySelector("#rotacao-p").addEventListener("click", rotacaoAutomatica)
 rotacaoInput.addEventListener("click", rotacaoAutomatica)
@@ -376,6 +437,7 @@ function tutorialBotoes() {
             }
             break
         case 4:
+            /*
             inputAlturaDiv.style.zIndex = 10
             setTimeout(() => {
                 quantidadeMoedas3dDiv.style.transitionDuration = "0s"
@@ -385,9 +447,10 @@ function tutorialBotoes() {
             tutorialBotoesContentP.innerHTML = "Aqui mostra quantas moedas 3D você tem."
             tutorialBotoesContentP.innerHTML += isCelular ? " Toque" : " Passe o mouse por cima"
             tutorialBotoesContentP.innerHTML += " para vê-lo. <br> Dica: Cada modelo tem 1 moeda escondida. Tente encontrá-la! <br> (Clique)"
-
+*/
             break
         case 5:
+            /*
             quantidadeMoedas3dDiv.style.zIndex = 1
             quantidadeMoedas3dDiv.style.opacity = 0
             quantidadeMoedas3dDiv.style.transitionDuration = "1s"
@@ -402,6 +465,7 @@ function tutorialBotoes() {
             tutorialBotoesContentP.style.backdropFilter = "blur(10px) brightness(0.5)"
             tutorialBotoesDiv.style.backdropFilter = "none"
             if (!tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
+                */
             break
         case 6:
             if (tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
@@ -443,6 +507,7 @@ function pularTutorialf() {
     if (audiosAberto) abaAudios()
     audiosContainer.style.zIndex = 10
     inputAlturaDiv.style.zIndex = 10
+    /*
     quantidadeMoedas3dDiv.style.zIndex = 1
     quantidadeMoedas3dDiv.style.opacity = 0
     quantidadeMoedas3dDiv.style.transitionDuration = "1s"
@@ -451,6 +516,7 @@ function pularTutorialf() {
     } else {
         quantidadeMoedas3dDiv.addEventListener("mouseover", quantidadeMoedas3d)
     }
+        */
     if (tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
 
     passoTutorial = 7
@@ -800,34 +866,34 @@ function gerarMoeda3d() {
 }
 
 moeda3dImg.addEventListener("click", cliqueMoeda)
-function cliqueMoeda() {
+async function cliqueMoeda() {
     if (!logado) {
         alerta("Faça login para coletar moedas 3D.");
         return;
     }
     moeda3dImg.style.display = "none"
     document.querySelector("#moeda-3d-audio").play()
-    quantidadeMoedas3d()
-    moedas3dNumDiv.innerHTML = ++moedas3dNum
-    localStorage.setItem("moedas-3d", moedas3dNum)
-    verificaPraComprar()
-}
 
-function quantidadeMoedas3d() {
-    quantidadeMoedas3dDiv.removeEventListener("mouseover", quantidadeMoedas3d)
     quantidadeMoedas3dDiv.style.opacity = 1
-    setTimeout(() => {
-        quantidadeMoedas3dDiv.style.opacity = 0
-        quantidadeMoedas3dDiv.addEventListener("mouseover", quantidadeMoedas3d)
-    }, 5000);
+    setTimeout(() => quantidadeMoedas3dDiv.style.opacity = 0, 5000);
+
+    ++dadosUser.moedas3d
+
+    verificaPraComprar()
+
+    const res = await axios.put(`${API_URL}/users/atualizarInteracoes/${dadosUser.id}`, {
+        moedas3d: dadosUser.moedas3d
+    })
+    console.log(res.data.msg);
+    //localStorage.setItem("moedas-3d", moedas3dNum)
 }
 
 function verificaPraComprar() {
     praComprar.forEach((praComprarEl, iPraComprar) => {
-        if (moedas3dNum == valor[iPraComprar].innerHTML) {
+        if (dadosUser.moedas3d == valor[iPraComprar].innerHTML) {
             praComprarEl.classList.remove("bloqueado")
             praComprarArray.push(iPraComprar)
-            localStorage.setItem("praComprar", JSON.stringify(praComprarArray))
+            //localStorage.setItem("praComprar", JSON.stringify(praComprarArray))
 
             extraDesbloqueado.style.display = "flex"
             setTimeout(() => extraDesbloqueado.style.opacity = 1, 125);
@@ -849,7 +915,7 @@ fecharExtraDesbloqueado.addEventListener("click", function () {
 
             ucnDesbloqueado = true
             ucnBtn.style.display = "flex"
-            localStorage.setItem('ucnDesbloqueado', JSON.stringify(ucnDesbloqueado))
+            //localStorage.setItem('ucnDesbloqueado', JSON.stringify(ucnDesbloqueado))
 
             alerta("Parabéns! Você desbloqueou o FNaF UCN!")
 
@@ -898,7 +964,7 @@ function sortearPraEncontrar() {
 function praEncontrarf(iPraEncontrar) {
     praEncontrar[iPraEncontrar].classList.remove("bloqueado")
     iModeloExtra = iPraEncontrar + (praComprar.length)
-    localStorage.setItem("praEncontrar", JSON.stringify(praEncontrarArray))
+    //localStorage.setItem("praEncontrar", JSON.stringify(praEncontrarArray))
 
     extraDesbloqueado.classList.remove("dourado")
     setTimeout(() => {
@@ -920,7 +986,7 @@ function sortearPraEncontrarDourado() {
         if (!modelos[iModeloVar].botaoDouradoDesativado) {
             modelos[iModeloVar].botaoDouradoDesativado = true
             botaoDouradoDesativadoArray[geralSorteado.indexOf(iModeloVar)] = true
-            localStorage.setItem("botaoDouradoDesativadoArray", JSON.stringify(botaoDouradoDesativadoArray))
+            //localStorage.setItem("botaoDouradoDesativadoArray", JSON.stringify(botaoDouradoDesativadoArray))
             document.querySelector("#botao-dourado").classList.add("desativado")
         }
     }
@@ -941,7 +1007,7 @@ function sortearPraEncontrarDourado() {
 function praEncontrarDouradof(iPraEncontrarDourado) {
     praEncontrarDourado[iPraEncontrarDourado].classList.remove("bloqueado")
     iModeloExtra = iPraEncontrarDourado + (praComprar.length + praEncontrar.length)
-    localStorage.setItem("praEncontrarDourado", JSON.stringify(praEncontrarDouradoArray))
+    //localStorage.setItem("praEncontrarDourado", JSON.stringify(praEncontrarDouradoArray))
 
     extraDesbloqueado.classList.add("dourado")
     extraDesbloqueado.style.display = "flex"
@@ -1198,17 +1264,20 @@ function abaJogos() {
 
 
 myUserBtn.addEventListener("click", function () {
-    telaDadosUser.style.display = "flex"
-    telaDadosUser.style.opacity = 1;
-    
-    telaConfigUser.style.display = "none";
-    telaConfigUser.style.opacity = 0;
-    
     userDiv.style.display = "flex"
-    setTimeout(() => userDiv.style.opacity = 1, 125);
+    telaDadosUser.style.opacity = 0;
+    document.querySelectorAll(".btns-menu-user").forEach(btn => btn.style.pointerEvents = "none")
+    setTimeout(() => {
+        userDiv.style.opacity = 1
+        if (logado) {
+            irTelaDadosUser(dadosUser.username)
+        } else {
+            irTelaDadosUser()
+        }
+    }, 250);
 })
 
 document.querySelector("#fechar-user-div").addEventListener("click", function () {
     userDiv.style.opacity = 0
-    setTimeout(() => userDiv.style.display = "none", 125);
+    setTimeout(() => userDiv.style.display = "none", 250);
 })
