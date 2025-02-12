@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype FNaF 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100wv;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .animatronics {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+        }
+
+        #freddy {
+            top: 40px;
+            left: 235px;
+            background-color: #743e00;
+        }
+
+        #bonnie {
+            top: 40px;
+            left: 210px;
+            background-color: rgb(0, 0, 148);
+        }
+
+        #chica {
+            top: 40px;
+            left: 260px;
+            background-color: rgb(194, 194, 3);
+        }
+
+        #foxy {
+            top: 190px;
+            left: 80px;
+            background-color: rgb(179, 52, 14);
+        }
+
+        #map {
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: relative;">
+        <div id="freddy" class="animatronics"></div>
+        <div id="bonnie" class="animatronics"></div>
+        <div id="chica" class="animatronics"></div>
+        <div id="foxy" class="animatronics"></div>
+        <img src="map.webp" alt="" id="map">
+    </div>
+
+    <script>
+        var bonnie = {
+            element: document.querySelector("#bonnie"),
+            IA: 0,
+            cameras: {
+                _1a: {
+                    x: 0,
+                    y: 0,
+                    disponiveis: ["_1b"],
+                },
+                _1b: {
+                    x: 210,
+                    y: 130,
+                    disponiveis: ["_5", "_2a"],
+                },
+                _5: {
+                    x: 60,
+                    y: 80,
+                    disponiveis: ["_1b"],
+                },
+                _2a: {
+                    x: 175,
+                    y: 260,
+                    disponiveis: ["_1b", "_3", "_2b"],
+                },
+                _3: {
+                    x: 110,
+                    y: 320,
+                    disponiveis: ["_2a"],
+                },
+                _2b: {
+                    x: 175,
+                    y: 360,
+                    disponiveis: ["_2a", "ataque"],
+                },
+                ataque: {
+                    x: 240,
+                    y: 350,
+                    disponiveis: ["_1b"],
+                },
+            },
+        }
+
+
+        function sortearProximo(objetoAtual) {
+            const disponiveis = bonnie.cameras[objetoAtual].disponiveis;
+            const indiceSorteado = Math.floor(Math.random() * disponiveis.length);
+            return disponiveis[indiceSorteado];
+        }
+
+        let objetoAtual = "_1a";
+        var interval = setInterval(() => {
+            const proximo = sortearProximo(objetoAtual);
+            console.log("Sorteado:", proximo);
+            objetoAtual = proximo;
+            bonnie.element.style.top = bonnie.cameras[objetoAtual].y + "px"
+            bonnie.element.style.left = bonnie.cameras[objetoAtual].x + "px"
+            if (objetoAtual == "ataque") {
+                clearInterval(interval)
+                setTimeout(ataque, 5000)
+            }
+        }, 1000);
+
+        function ataque() {
+            alert("game over")
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
