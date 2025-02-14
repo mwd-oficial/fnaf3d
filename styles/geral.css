@@ -260,6 +260,7 @@ body {
     opacity: 0;
     transition-duration: 1s;
     z-index: 1;
+    pointer-events: none;
 
     & img {
         height: 40px;

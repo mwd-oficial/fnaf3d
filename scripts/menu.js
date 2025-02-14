@@ -269,7 +269,7 @@ function cliqueLikeDislike(obj, otherObj, str, dustr, otherDustr, estado, otherE
         obj.btn.classList.add(iconRounded);
         obj.qtdeEl.innerHTML = --modelosbd[iModeloVar][dustr];
     }
-    
+
     atualizarInteracoes(obj.btn, dustr, estado, `${str} registrado com sucesso.`)
 
     axios.put(`${API_URL}/models/editar`, {
@@ -1053,17 +1053,25 @@ function checkarAindaNaoVisto() {
 
 function atualizarVistos() {
     if (aindaNaoVistoInput.classList.contains("active")) {
-        vistosArray.forEach(iModelo => {
-            var img = btnModelosImg[iModelo];
-            var brilhoOriginal = parseFloat(img.getAttribute('data-original-brightness')) || 1;
-            var novoBrilho = brilhoOriginal - 3 * brilhoOriginal / 4; // Ajusta o brilho proporcionalmente
-            img.style.filter = `brightness(${novoBrilho})`;
+        modelos.forEach((modelo, i) => {
+            dadosUser.vistos.forEach(visto => {
+                if (modelo.src == visto) {
+                    var img = btnModelosImg[i];
+                    var brilhoOriginal = parseFloat(img.getAttribute('data-original-brightness')) || 1;
+                    var novoBrilho = brilhoOriginal - 3 * brilhoOriginal / 4; // Ajusta o brilho proporcionalmente
+                    img.style.filter = `brightness(${novoBrilho})`;
+                }
+            })
         });
     } else {
-        vistosArray.forEach(iModelo => {
-            var img = btnModelosImg[iModelo];
-            var brilhoOriginal = parseFloat(img.getAttribute('data-original-brightness')) || 1;
-            img.style.filter = `brightness(${brilhoOriginal})`; // Restaura o brilho original
+        modelos.forEach((modelo, i) => {
+            dadosUser.vistos.forEach(visto => {
+                if (modelo.src == visto) {
+                    var img = btnModelosImg[i];
+                    var brilhoOriginal = parseFloat(img.getAttribute('data-original-brightness')) || 1;
+                    img.style.filter = `brightness(${brilhoOriginal})`; // Restaura o brilho original
+                }
+            })
         });
     }
 }

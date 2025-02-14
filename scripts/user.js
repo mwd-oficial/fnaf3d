@@ -408,6 +408,7 @@ async function cadastrarUser() {
     formData.append("favoritos", JSON.stringify(dadosUser.favoritos));
     formData.append("likes", JSON.stringify(dadosUser.likes));
     formData.append("dislikes", JSON.stringify(dadosUser.dislikes));
+    formData.append("vistos", JSON.stringify(dadosUser.vistos));
 
     formData.append("imagem", inputImagem.files[0]);
     formData.append("preencher", inputPreencher.classList.contains("active") ? true : false);
@@ -426,6 +427,7 @@ async function cadastrarUser() {
                 localStorage.setItem("password", JSON.stringify(dadosUser.password));
             }, 100);
             dadosUser.imagemId = res.data.resultado.imagemId
+            exibirUsers()
             setTimeout(userEntrado, 100);
         }
     } catch (erro) {
@@ -457,6 +459,8 @@ async function entrarUser() {
                 catch (erro) { dadosUser.likes = res.data.userData.likes }
                 try { dadosUser.dislikes = JSON.parse(res.data.userData.dislikes) }
                 catch (erro) { dadosUser.dislikes = res.data.userData.dislikes }
+                try { dadosUser.vistos = JSON.parse(res.data.userData.vistos) }
+                catch (erro) { dadosUser.vistos = res.data.userData.vistos }
 
                 marcarEstadoInteracao("favoritos", "favoritado")
                 marcarEstadoInteracao("likes", "comLike")
@@ -473,6 +477,10 @@ async function entrarUser() {
                 dadosUser.imagemId = res.data.userData.imagemId;
                 dadosUser.preencher = JSON.parse(res.data.userData.preencher)
                 dadosUser.semFoto = dadosUser.imagemId === ""
+
+                axios.put(`${API_URL}/users/atualizarInteracoes/${dadosUser.id}`, {
+                    vistos: dadosUser.vistos
+                })
 
                 setTimeout(() => {
                     alerta(res.data.msg);

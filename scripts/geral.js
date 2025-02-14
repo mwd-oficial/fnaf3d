@@ -427,7 +427,7 @@ document.addEventListener('mousemove', (event) => {
 
 function pointarCursor(btn) {
     if (modelos[iModeloVar].temCursor) {
-        btn.style.cursor = `url(../${modelos[iModeloVar].srcImg}pointer.webp), auto`
+        btn.style.cursor = `url(${modelos[iModeloVar].srcImg}pointer.webp), auto`
     } else {
         btn.style.cursor = "pointer"
     }

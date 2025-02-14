@@ -164,15 +164,15 @@ function defineModelo(iModelo) {
 
     if (modelos[iModelo].temCursor) {
         cursorImg.src = modelos[iModelo].srcImg + "default.webp"
-        document.body.style.cursor = `url(../${modelos[iModelo].srcImg}default.webp), auto`
+        document.body.style.cursor = `url(${modelos[iModelo].srcImg}default.webp), auto`
     } else {
         cursorImg.src = ""
         document.body.style.cursor = "default"
     }
     atualizarPointers()
 
-    if (vistosArray.indexOf(iModelo) == -1) vistosArray.push(iModelo)
-    localStorage.setItem("vistosArray", JSON.stringify(vistosArray))
+    if (dadosUser.vistos.indexOf(modelos[iModelo].src) == -1) dadosUser.vistos.push(modelos[iModelo].src)
+    //localStorage.setItem("vistosArray", JSON.stringify(vistosArray))
     if (aindaNaoVistoInput.classList.contains("active")) atualizarVistos()
 
     iModeloVar = iModelo
@@ -193,6 +193,9 @@ function defineModelo(iModelo) {
         voltarCarregamento.style.opacity = 1
         voltarCarregamento.style.pointerEvents = "all"
     }, 1500);
+    if (logado) axios.put(`${API_URL}/users/atualizarInteracoes/${dadosUser.id}`, {
+        vistos: dadosUser.vistos
+    })
 }
 
 function carregarModeloEvento() {
