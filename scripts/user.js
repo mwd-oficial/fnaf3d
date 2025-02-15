@@ -261,7 +261,7 @@ function resetarInputs() {
 
 function userEntrado() {
     logado = true
-    alerta(`Seja bem-vindo, <span class='arroba'>@</span>${dadosUser.username}!`)
+    alerta(`Seja bem-vindo,&nbsp;<span class='arroba'>@</span>${dadosUser.username}!`)
     avisoProgresso.innerHTML = "Não se preocupe: O seu progresso é salvo automaticamente."
     irTelaDadosUser(dadosUser.username)
 }

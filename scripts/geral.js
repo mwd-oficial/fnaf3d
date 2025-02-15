@@ -113,7 +113,9 @@ document.addEventListener("fullscreenchange", function () {
         telaCheia.style.display = "none"
         if (siteCarregado) {
             siteCarregado = false
-            aviso.style.opacity = 1
+            setTimeout(() => {
+                aviso.style.opacity = 1
+            }, 1);
         }
         despausarMidia()
     } else {
@@ -345,6 +347,9 @@ function continuar() {
     timeoutJumpscare = setTimeout(() => {
         jumpscareInicialVideo.play()
         jumpscareInicialVideo.addEventListener("ended", irTelaInicial)
+
+        telaInicialVideo.play()
+        telaInicialVideo.muted = true
     }, 2500);
 }
 
@@ -357,9 +362,13 @@ function irTelaInicial() {
     jumpscareInicialVideo.removeEventListener("ended", irTelaInicial)
 
     divLogoBtn.style.display = "flex"
-    setTimeout(() => divLogoBtn.style.opacity = 1, 10);
-    telaInicialVideo.style.display = "block"
-    telaInicialVideo.play()
+
+    telaInicialVideo.muted = false
+    telaInicialVideo.currentTime = 0
+    setTimeout(() => {
+        divLogoBtn.style.opacity = 1
+        telaInicialVideo.style.display = "block"
+    }, 10);
 }
 
 

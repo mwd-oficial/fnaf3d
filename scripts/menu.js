@@ -874,12 +874,12 @@ async function cliqueMoeda() {
     moeda3dImg.style.display = "none"
     document.querySelector("#moeda-3d-audio").play()
 
-    quantidadeMoedas3dDiv.style.opacity = 1
-    setTimeout(() => quantidadeMoedas3dDiv.style.opacity = 0, 5000);
+    //quantidadeMoedas3dDiv.style.opacity = 1
+    //setTimeout(() => quantidadeMoedas3dDiv.style.opacity = 0, 5000);
 
     ++dadosUser.moedas3d
 
-    verificaPraComprar()
+    if (!verificaPraComprar()) alerta("+1&nbsp;<img src='assets/images/extras/pra-comprar/moeda-3d/0.webp'>")
 
     const res = await axios.put(`${API_URL}/users/atualizarInteracoes/${dadosUser.id}`, {
         moedas3d: dadosUser.moedas3d
@@ -889,7 +889,8 @@ async function cliqueMoeda() {
 }
 
 function verificaPraComprar() {
-    praComprar.forEach((praComprarEl, iPraComprar) => {
+    for (let iPraComprar = 0; iPraComprar < praComprar.length; iPraComprar++) {
+        let praComprarEl = praComprar[iPraComprar];
         if (dadosUser.moedas3d == valor[iPraComprar].innerHTML) {
             praComprarEl.classList.remove("bloqueado")
             praComprarArray.push(iPraComprar)
@@ -902,8 +903,10 @@ function verificaPraComprar() {
             extraDesbloqueadoP.innerHTML = modelosExtras[iPraComprar].nome
 
             aparecerConfete()
+            return true
         }
-    })
+    }
+    return false
 }
 
 fecharExtraDesbloqueado.addEventListener("click", function () {

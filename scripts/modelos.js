@@ -171,7 +171,11 @@ function defineModelo(iModelo) {
     }
     atualizarPointers()
 
-    if (dadosUser.vistos.indexOf(modelos[iModelo].src) == -1) dadosUser.vistos.push(modelos[iModelo].src)
+    var encontrou = false
+    dadosUser.vistos.forEach(visto => {
+        if (visto == modelos[iModelo].src) encontrou = true
+    })
+    if (!encontrou) dadosUser.vistos.push(modelos[iModelo].src)
     //localStorage.setItem("vistosArray", JSON.stringify(vistosArray))
     if (aindaNaoVistoInput.classList.contains("active")) atualizarVistos()
 

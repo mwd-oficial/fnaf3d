@@ -332,8 +332,6 @@ var ucnDesbloqueado = false
 
 // Moeda 3D e modelos bloqueados
 var moeda3dImg = document.querySelector("#moeda-3d-img")
-var quantidadeMoedas3dDiv = document.querySelector("#quantidade-moedas-3d-div")
-var moedas3dNum
 
 var valor = document.querySelectorAll(".valor")
 var praComprarArray = []

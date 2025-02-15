@@ -72,6 +72,9 @@ body {
 }
 
 #alerta-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: -50px;
     left: 50%;
@@ -84,6 +87,10 @@ body {
     opacity: 0;
     transition-duration: .5s;
     z-index: 99999999;
+
+    & img {
+        width: 25px;
+    }
 }
 
 #tela-cheia {
@@ -98,7 +105,7 @@ body {
     flex-direction: column;
     background-color: #000;
     cursor: pointer;
-    z-index: 9500 !important;
+    z-index: 9000 !important;
 
 
     & span {
@@ -123,7 +130,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #000;
-    z-index: 9000 !important;
+    z-index: 9500 !important;
     display: none;
 
     & span {
@@ -247,31 +254,6 @@ body {
     z-index: 1;
     cursor: grab;
     display: none;
-}
-
-#quantidade-moedas-3d-div {
-    position: absolute;
-    top: 10px;
-    right: 135px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    opacity: 0;
-    transition-duration: 1s;
-    z-index: 1;
-    pointer-events: none;
-
-    & img {
-        height: 40px;
-        filter: drop-shadow(0px 0px 2.5px #000);
-    }
-
-    & div {
-        font-size: 30px;
-        color: #fff;
-        text-shadow: 0px 0px 10px #000;
-    }
 }
 
 #extra-desbloqueado {
