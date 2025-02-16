@@ -197,7 +197,7 @@ function defineModelo(iModelo) {
         voltarCarregamento.style.opacity = 1
         voltarCarregamento.style.pointerEvents = "all"
     }, 1500);
-    if (logado) axios.put(`${API_URL}/users/atualizarInteracoes/${dadosUser.id}`, {
+    if (logado) axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
         vistos: dadosUser.vistos
     })
 }
@@ -219,15 +219,7 @@ function carregarModelo(iModelo) {
     nomeDescricaoModelo.innerHTML = modelosDivP[iModelo].innerText
     nomeDescricaoModeloCel.innerHTML = modelosDivP[iModelo].innerText
     descricaoModelo.innerHTML = modelos[iModelo].descricao
-    setTimeout(() => {
-        if ("botaoDouradoDesativado" in modelos[iModeloVar]) {
-            if (modelos[iModeloVar].botaoDouradoDesativado) {
-                document.querySelector("#botao-dourado").classList.add("desativado")
-            } else {
-                document.querySelector("#botao-dourado").classList.remove("desativado")
-            }
-        }
-    }, 10);
+    setTimeout(botaoDouradof, 10);
 
     if (modelos[iModelo].mudaOrbitaCamera) {
         modelViewer.cameraOrbit = modelos[iModelo].orbitaCamera;
@@ -358,8 +350,6 @@ function carregarModelo(iModelo) {
         jumpscareVideo.poster = ""
     }
 
-    botaoDourado.style.display = "none"
-    if (modelos[iModelo].temBotaoDourado) botaoDourado.style.display = "block"
 
 
     fnafInfo(iModelo)
@@ -437,6 +427,20 @@ function botoes(i) {
     } else {
         sumirBotoes()
     }
+}
+
+function botaoDouradof() {
+    botaoDourado.style.display = "none"
+    dadosUser.botoesDourados.forEach((el) => {
+        if (modelos[iModeloVar].src == el.src) {
+            botaoDourado.style.display = "block"
+            if (el.desativado) {
+                botaoDourado.classList.add("desativado")
+            } else {
+                botaoDourado.classList.remove("desativado")
+            }
+        }
+    })
 }
 
 

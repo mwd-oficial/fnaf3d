@@ -375,7 +375,6 @@ function irTelaInicial() {
 document.querySelector("#iniciar-btn").addEventListener("click", async function () {
     telaCarregamento.style.display = "flex"
     telaInicial.style.display = "none"
-
     if (dadosUser.email && dadosUser.password && !logado) {
         peloLocalStorage = true
         await entrarUser();

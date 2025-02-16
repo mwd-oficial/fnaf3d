@@ -91,6 +91,7 @@ function abrirFecharMenu() {
         }, 1000);
 
         pesquisaNaoVistoDiv.style.display = "none"
+        irTopoDiv.style.display = "none"
         fecharPesquisa()
     } else {
         setTimeout(() => {
@@ -99,20 +100,23 @@ function abrirFecharMenu() {
         pesquisaNaoVistoDiv.style.opacity = 0
         pesquisaNaoVistoDiv.style.pointerEvents = "none"
         pesquisaNaoVistoDiv.style.display = "flex"
+        irTopoDiv.style.opacity = 0
+        irTopoDiv.style.pointerEvents = "none"
+        irTopoDiv.style.display = "flex"
         menuContent.removeEventListener('scroll', scrollPesquisaNaoVisto)
         if (fnafInfoImgDiv.style.display == "flex") {
             setTimeout(() => {
                 if (document.querySelector("#div-scroll").getBoundingClientRect().top <= 75) {
                     pesquisaNaoVistoDiv.style.opacity = 1;
                     pesquisaNaoVistoDiv.style.pointerEvents = "all"
+                    irTopoDiv.style.opacity = 1;
+                    irTopoDiv.style.pointerEvents = "all"
                 }
                 menuContent.addEventListener('scroll', scrollPesquisaNaoVisto)
             }, 1500);
             if (primeiraVezScroll) {
                 primeiraVezScroll = false
-                setTimeout(() => {
-                    menuContent.scrollTo(0, 0)
-                }, 1500);
+                setTimeout(irTopo, 1500);
             } else {
                 setTimeout(() => {
                     nomeFnaf[iNomeFnaf].scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -122,6 +126,8 @@ function abrirFecharMenu() {
             setTimeout(() => {
                 pesquisaNaoVistoDiv.style.opacity = 1
                 pesquisaNaoVistoDiv.style.pointerEvents = "all"
+                irTopoDiv.style.opacity = 1
+                irTopoDiv.style.pointerEvents = "all"
                 menuContent.addEventListener('scroll', scrollPesquisaNaoVisto)
             }, 1500);
         }
@@ -174,6 +180,11 @@ arBtn.addEventListener("touchstart", function () {
     verificaOrientacao()
 })
 
+
+function irTopo() {
+    menuContent.scrollTo(0, 0)
+}
+irTopoDiv.addEventListener("click", irTopo)
 
 
 
@@ -290,7 +301,7 @@ async function atualizarInteracoes(btn, array, estado, msg) {
         modelos[iModeloVar][estado] = false
     }
 
-    const res = await axios.put(`${API_URL}/users/atualizarInteracoes/${dadosUser.id}`, {
+    const res = await axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
         [array]: dadosUser[array]
     })
     console.log(res.data.msg);
@@ -881,28 +892,36 @@ async function cliqueMoeda() {
 
     if (!verificaPraComprar()) alerta("+1&nbsp;<img src='assets/images/extras/pra-comprar/moeda-3d/0.webp'>")
 
-    const res = await axios.put(`${API_URL}/users/atualizarInteracoes/${dadosUser.id}`, {
+    const res = await axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
         moedas3d: dadosUser.moedas3d
     })
     console.log(res.data.msg);
     //localStorage.setItem("moedas-3d", moedas3dNum)
 }
 
-function verificaPraComprar() {
+async function verificaPraComprar() {
     for (let iPraComprar = 0; iPraComprar < praComprar.length; iPraComprar++) {
         let praComprarEl = praComprar[iPraComprar];
         if (dadosUser.moedas3d == valor[iPraComprar].innerHTML) {
             praComprarEl.classList.remove("bloqueado")
-            praComprarArray.push(iPraComprar)
+            dadosUser.comprados.push(modelosExtras[iPraComprar].src)
             //localStorage.setItem("praComprar", JSON.stringify(praComprarArray))
-
-            extraDesbloqueado.style.display = "flex"
-            setTimeout(() => extraDesbloqueado.style.opacity = 1, 125);
-            alerta("Novo Extra Desbloqueado!")
-            extraDesbloqueadoImg.src = modelosExtras[iPraComprar].srcImg + "0.webp"
-            extraDesbloqueadoP.innerHTML = modelosExtras[iPraComprar].nome
-
+            
+            extraDesbloqueado.classList.remove("dourado")
+            setTimeout(() => {
+                extraDesbloqueado.style.display = "flex"
+                setTimeout(() => extraDesbloqueado.style.opacity = 1, 125);
+                alerta("Novo Extra Desbloqueado!")
+                extraDesbloqueadoImg.src = modelosExtras[iPraComprar].srcImg + "0.webp"
+                extraDesbloqueadoP.innerHTML = modelosExtras[iPraComprar].nome
+            }, 1);
+            
             aparecerConfete()
+
+            const res = await axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
+                comprados: dadosUser.comprados
+            })
+            console.log(res.data.msg);
             return true
         }
     }
@@ -913,10 +932,10 @@ fecharExtraDesbloqueado.addEventListener("click", function () {
     extraDesbloqueado.style.opacity = 0
     setTimeout(() => extraDesbloqueado.style.display = "none", 125);
     if (extraDesbloqueado.contains(confete)) extraDesbloqueado.removeChild(confete)
-    setTimeout(() => {
-        if ((praComprarArray.length + praEncontrarArray.length + praEncontrarDouradoArray.length) == modelosExtras.length) {
+    setTimeout(async () => {
+        if ((dadosUser.comprados.length + dadosUser.encontrados.length + dadosUser.douradosEncontrados.length) == modelosExtras.length) {
 
-            ucnDesbloqueado = true
+            dadosUser.ucnDesbloqueado = true
             ucnBtn.style.display = "flex"
             //localStorage.setItem('ucnDesbloqueado', JSON.stringify(ucnDesbloqueado))
 
@@ -934,6 +953,11 @@ fecharExtraDesbloqueado.addEventListener("click", function () {
             if (jogosBtn.classList.contains("active")) imgJogos.style.height = "465px"
 
             aparecerUcnInfo()
+
+            const res = await axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
+                ucnDesbloqueado: dadosUser.ucnDesbloqueado
+            })
+            console.log(res.data.msg);
         }
     }, 1);
 })
@@ -949,19 +973,23 @@ function aparecerConfete() {
     }, 4000);
 }
 
-function sortearPraEncontrar() {
+async function sortearPraEncontrar() {
     numSort = Math.floor(Math.random() * praEncontrar.length);
-    if (praEncontrarArray.indexOf(numSort) == -1) {
-        if (praEncontrarArray.length < praEncontrar.length) {
-            praEncontrarArray.push(numSort);
+    if (dadosUser.encontrados.indexOf(numSort) == -1) {
+        if (dadosUser.encontrados.length < praEncontrar.length) {
+            dadosUser.encontrados.push(modelosExtras[numSort + praComprar.length].src);
             praEncontrarf(numSort)
+            const res = await axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
+                encontrados: dadosUser.encontrados
+            })
+            console.log(res.data.msg);
         }
     } else {
-        if (praEncontrarArray.length < praEncontrar.length) {
+        if (dadosUser.encontrados.length < praEncontrar.length) {
             sortearPraEncontrar()
         }
     }
-    console.log(praEncontrarArray);
+    console.log(dadosUser.encontrados);
 }
 
 function praEncontrarf(iPraEncontrar) {
@@ -985,26 +1013,35 @@ function praEncontrarf(iPraEncontrar) {
 }
 
 function sortearPraEncontrarDourado() {
-    if ("botaoDouradoDesativado" in modelos[iModeloVar]) {
-        if (!modelos[iModeloVar].botaoDouradoDesativado) {
-            modelos[iModeloVar].botaoDouradoDesativado = true
-            botaoDouradoDesativadoArray[geralSorteado.indexOf(iModeloVar)] = true
+    dadosUser.botoesDourados.forEach((el, i) => {
+        if (modelos[iModeloVar].src == el.src) {
+            //modelos[iModeloVar].botaoDouradoDesativado = true
+            //botaoDouradoDesativadoArray[geralSorteado.indexOf(iModeloVar)] = true
             //localStorage.setItem("botaoDouradoDesativadoArray", JSON.stringify(botaoDouradoDesativadoArray))
-            document.querySelector("#botao-dourado").classList.add("desativado")
+            if (!el.desativado) {
+                botaoDourado.classList.add("desativado")
+                el.desativado = true 
+                axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
+                    botoesDourados: dadosUser.botoesDourados
+                })
+            }
         }
-    }
+    })
     numSort = Math.floor(Math.random() * praEncontrarDourado.length);
-    if (praEncontrarDouradoArray.indexOf(numSort) == -1) {
-        if (praEncontrarDouradoArray.length < praEncontrarDourado.length) {
-            praEncontrarDouradoArray.push(numSort);
+    if (dadosUser.douradosEncontrados.indexOf(numSort) == -1) {
+        if (dadosUser.douradosEncontrados.length < praEncontrarDourado.length) {
+            dadosUser.douradosEncontrados.push(modelosExtras[numSort + praComprar.length + praEncontrar.length].src);
             praEncontrarDouradof(numSort)
+            axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
+                douradosEncontrados: dadosUser.douradosEncontrados
+            })
         }
     } else {
-        if (praEncontrarDouradoArray.length < praEncontrarDourado.length) {
+        if (dadosUser.douradosEncontrados.length < praEncontrarDourado.length) {
             sortearPraEncontrarDourado()
         }
     }
-    console.log(praEncontrarDouradoArray);
+    console.log(dadosUser.douradosEncontrados);
 }
 
 function praEncontrarDouradof(iPraEncontrarDourado) {
@@ -1085,10 +1122,14 @@ function scrollPesquisaNaoVisto() {
     if (document.querySelector("#div-scroll").getBoundingClientRect().top <= 75) {
         pesquisaNaoVistoDiv.style.opacity = 1;
         pesquisaNaoVistoDiv.style.pointerEvents = "all"
+        irTopoDiv.style.opacity = 1
+        irTopoDiv.style.pointerEvents = "all"
     } else {
         pesquisaNaoVistoDiv.style.opacity = 0;
         pesquisaNaoVistoDiv.style.pointerEvents = "none"
         pesquisaInput.blur()
+        irTopoDiv.style.opacity = 0
+        irTopoDiv.style.pointerEvents = "none"
     }
 }
 
@@ -1265,9 +1306,9 @@ function abaJogos() {
         jogosBtn.classList.add("active")
         imgJogos.style.border = "3px solid #333"
         if (isCelular) {
-            imgJogos.style.width = ucnDesbloqueado ? "465px" : "420px"
+            imgJogos.style.width = dadosUser.ucnDesbloqueado ? "465px" : "420px"
         } else {
-            imgJogos.style.height = ucnDesbloqueado ? "465px" : "420px"
+            imgJogos.style.height = dadosUser.ucnDesbloqueado ? "465px" : "420px"
         }
     }
 }

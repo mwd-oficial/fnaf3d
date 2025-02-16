@@ -150,6 +150,8 @@ function irTelaConfigUser(acao) {
     } while (sorteado === sorteadoAntigo);
     sorteadoAntigo = sorteado;
     setTimeout(() => {
+        document.querySelectorAll("fieldset").forEach(el => el.classList.remove("invalido"));
+        
         imgAnimatronic.forEach((el) => el.style.display = "none")
         document.querySelector(`#img-animatronic${sorteado}`).style.display = "block"
 
@@ -173,7 +175,9 @@ function irTelaConfigUser(acao) {
             entrar = acao === "Entrar" ? true : false
             cadastrar = acao === "Cadastrar" ? true : false
             linkConta.onclick = function () {
+                inputUsername.required = acao === "Entrar" ? true : false
                 irTelaConfigUser(novaAcao);
+                setTimeout(resetarInputs, 500)
             };
         } else {
             linkConta.style.display = "none";
@@ -271,20 +275,7 @@ function sairConta() {
     localStorage.setItem("email", "")
     localStorage.setItem("password", "")
 
-    dadosUser = {
-        id: "",
-        username: "",
-        email: "",
-        password: "",
-        moedas3d: 0,
-        favoritos: [],
-        likes: [],
-        dislikes: [],
-        vistos: [],
-        imagemId: "",
-        semFoto: true,
-        preencher: false,
-    }
+    dadosUser = limparDadosUser()
 
     modelos.forEach(modelo => {
         modelo.favoritado = false
@@ -297,6 +288,26 @@ function sairConta() {
         marcarInteracao(likes.btn, "comLike")
         marcarInteracao(dislikes.btn, "comDislike")
     }, 100);
+
+    praComprar.forEach((praComprarEl) => {
+        praComprarEl.classList.add("bloqueado")
+    })
+
+    praEncontrar.forEach((praEncontrarEl, iPraEncontrar) => {
+        praEncontrarEl.classList.add("bloqueado")
+        document.querySelectorAll(".pra-encontrar img")[iPraEncontrar].src = ""
+        document.querySelectorAll(".pra-encontrar ~ p")[iPraEncontrar].innerHTML = "???"
+    })
+
+    praEncontrarDourado.forEach((praEncontrarDouradoEl, iPraEncontrarDourado) => {
+        praEncontrarDouradoEl.classList.add("bloqueado")
+        document.querySelectorAll(".pra-encontrar-dourado img")[iPraEncontrarDourado].src = ""
+        document.querySelectorAll(".pra-encontrar-dourado ~ p")[iPraEncontrarDourado].innerHTML = "???"
+    })
+
+    botaoDourado.style.display = "none"
+
+    ucnBtn.style.display = "none"
 
     dadosUser.semFoto = true
     avisoProgresso.innerHTML = "Crie uma conta para salvar o seu progresso!"
@@ -410,6 +421,19 @@ async function cadastrarUser() {
     formData.append("dislikes", JSON.stringify(dadosUser.dislikes));
     formData.append("vistos", JSON.stringify(dadosUser.vistos));
 
+    formData.append("comprados", JSON.stringify(dadosUser.comprados));
+    console.log(dadosUser.comprados)
+    console.log(JSON.stringify(dadosUser.comprados))
+    formData.append("encontrados", JSON.stringify(dadosUser.encontrados));
+    formData.append("douradosEncontrados", JSON.stringify(dadosUser.douradosEncontrados));
+    formData.append("botoesDourados", JSON.stringify(dadosUser.botoesDourados));
+    formData.append("ucnDesbloqueado", JSON.stringify(dadosUser.ucnDesbloqueado));
+    formData.append("fnaf1", JSON.stringify(dadosUser.fnaf1));
+    formData.append("fnaf2", JSON.stringify(dadosUser.fnaf2));
+    formData.append("fnaf3", JSON.stringify(dadosUser.fnaf3));
+    formData.append("fnaf4", JSON.stringify(dadosUser.fnaf4));
+    formData.append("fnafsl", JSON.stringify(dadosUser.fnafsl));
+
     formData.append("imagem", inputImagem.files[0]);
     formData.append("preencher", inputPreencher.classList.contains("active") ? true : false);
     formData.append("semFoto", dadosUser.semFoto);
@@ -427,6 +451,23 @@ async function cadastrarUser() {
                 localStorage.setItem("password", JSON.stringify(dadosUser.password));
             }, 100);
             dadosUser.imagemId = res.data.resultado.imagemId
+
+            praEncontrarDourado.forEach(async () => {
+                numSort = Math.floor(Math.random() * document.querySelectorAll(".geral").length);
+                //modelos[numSort].temBotaoDourado = true
+                //modelos[numSort].botaoDouradoDesativado = false
+                dadosUser.botoesDourados.push({
+                    src: modelos[numSort].src,
+                    desativado: false,
+                })
+                //localStorage.setItem("botaoDouradoDesativadoArray", JSON.stringify(botaoDouradoDesativadoArray))
+                //localStorage.setItem("geralSorteado", JSON.stringify(geralSorteado))
+                const res = await axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
+                    botoesDourados: dadosUser.botoesDourados
+                })
+                console.log(res.data.msg);
+            })
+
             exibirUsers()
             setTimeout(userEntrado, 100);
         }
@@ -454,13 +495,36 @@ async function entrarUser() {
 
                 dadosUser.moedas3d = res.data.userData.moedas3d
                 try { dadosUser.favoritos = JSON.parse(res.data.userData.favoritos) }
-                catch (erro) { dadosUser.favoritos = res.data.userData.favoritos }
+                catch { dadosUser.favoritos = res.data.userData.favoritos }
                 try { dadosUser.likes = JSON.parse(res.data.userData.likes) }
-                catch (erro) { dadosUser.likes = res.data.userData.likes }
+                catch { dadosUser.likes = res.data.userData.likes }
                 try { dadosUser.dislikes = JSON.parse(res.data.userData.dislikes) }
-                catch (erro) { dadosUser.dislikes = res.data.userData.dislikes }
+                catch { dadosUser.dislikes = res.data.userData.dislikes }
                 try { dadosUser.vistos = JSON.parse(res.data.userData.vistos) }
-                catch (erro) { dadosUser.vistos = res.data.userData.vistos }
+                catch { dadosUser.vistos = res.data.userData.vistos }
+                if (iModeloVar && dadosUser.vistos.indexOf(modelos[iModeloVar].src) == -1) dadosUser.vistos.push(modelos[iModeloVar].src)
+
+                try { dadosUser.comprados = JSON.parse(res.data.userData.comprados) }
+                catch { dadosUser.comprados = res.data.userData.comprados }
+                try { dadosUser.encontrados = JSON.parse(res.data.userData.encontrados) }
+                catch { dadosUser.encontrados = res.data.userData.encontrados }
+                try { dadosUser.douradosEncontrados = JSON.parse(res.data.userData.douradosEncontrados) }
+                catch { dadosUser.douradosEncontrados = res.data.userData.douradosEncontrados }
+                try { dadosUser.botoesDourados = JSON.parse(res.data.userData.botoesDourados) }
+                catch { dadosUser.botoesDourados = res.data.userData.botoesDourados }
+
+                dadosUser.ucnDesbloqueado = res.data.userData.ucnDesbloqueado;
+
+                try { dadosUser.fnaf1 = JSON.parse(res.data.userData.fnaf1) }
+                catch { dadosUser.fnaf1 = res.data.userData.fnaf1 }
+                try { dadosUser.fnaf2 = JSON.parse(res.data.userData.fnaf2) }
+                catch { dadosUser.fnaf2 = res.data.userData.fnaf2 }
+                try { dadosUser.fnaf3 = JSON.parse(res.data.userData.fnaf3) }
+                catch { dadosUser.fnaf3 = res.data.userData.fnaf3 }
+                try { dadosUser.fnaf4 = JSON.parse(res.data.userData.fnaf4) }
+                catch { dadosUser.fnaf4 = res.data.userData.fnaf4 }
+                try { dadosUser.fnafsl = JSON.parse(res.data.userData.fnafsl) }
+                catch { dadosUser.fnafsl = res.data.userData.fnafsl }
 
                 marcarEstadoInteracao("favoritos", "favoritado")
                 marcarEstadoInteracao("likes", "comLike")
@@ -478,9 +542,41 @@ async function entrarUser() {
                 dadosUser.preencher = JSON.parse(res.data.userData.preencher)
                 dadosUser.semFoto = dadosUser.imagemId === ""
 
-                axios.put(`${API_URL}/users/atualizarInteracoes/${dadosUser.id}`, {
+                axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
                     vistos: dadosUser.vistos
                 })
+
+                for (let i = 0; i < dadosUser.comprados.length; i++) {
+                    praComprar[i].classList.remove("bloqueado")
+                }
+
+                for (let i = 0; i < dadosUser.encontrados.length; i++) {
+                    var iModeloExtra
+                    modelosExtras.forEach((modelo, iModelo) => {
+                        if (modelo.src == dadosUser.encontrados[i]){
+                            iModeloExtra = iModelo - praComprar.length
+                            praEncontrar[iModeloExtra].classList.remove("bloqueado")
+                            document.querySelectorAll(".pra-encontrar img")[iModeloExtra].src = modelosExtras[iModelo].srcImg + "0.webp"
+                            document.querySelectorAll(".pra-encontrar ~ p")[iModeloExtra].innerHTML = modelosExtras[iModelo].nome
+                        } 
+                    })
+                }
+
+                for (let i = 0; i < dadosUser.douradosEncontrados.length; i++) {
+                    var iModeloExtra
+                    modelosExtras.forEach((modelo, iModelo) => {
+                        if (modelo.src == dadosUser.douradosEncontrados[i]) {
+                            iModeloExtra = iModelo - praComprar.length - praEncontrar.length
+                            praEncontrarDourado[iModeloExtra].classList.remove("bloqueado")
+                            document.querySelectorAll(".pra-encontrar-dourado img")[iModeloExtra].src = modelosExtras[iModelo].srcImg + "0.webp"
+                            document.querySelectorAll(".pra-encontrar-dourado ~ p")[iModeloExtra].innerHTML = modelosExtras[iModelo].nome
+                        }
+                    })
+                }
+
+                botaoDouradof()
+
+                if (dadosUser.ucnDesbloqueado) ucnBtn.style.display = "flex"
 
                 setTimeout(() => {
                     alerta(res.data.msg);
@@ -551,9 +647,11 @@ async function excluirConta() {
                 });
             }
 
+            
             sairConta();
             carregamentoForm.style.display = "none";
-
+            
+            dadosUser.vistos.push(modelos[iModeloVar].src)
         }, 100);
     } catch (erro) {
         console.error('Erro ao excluir os dados:', erro);

@@ -4,6 +4,7 @@ var alertaDiv = document.querySelector("#alerta-div")
 var logomwdEl = document.querySelector("#logomwd")
 var telaViraPortrait = document.querySelector("#tela-vira-portrait")
 var telaViraLandscape = document.querySelector("#tela-vira-landscape")
+var irTopoDiv = document.querySelector("#ir-topo-div")
 
 // Ar
 var arBtn = document.querySelector("#ar-btn")
@@ -55,27 +56,51 @@ var inputEmail = document.querySelector("#input-email");
 var inputPassword = document.querySelector("#input-password");
 var olho = document.querySelector("#olho")
 
-var dadosUser = {
-    id: "",
-    username: "",
-    email: localStorage.getItem("email") ? JSON.parse(localStorage.getItem("email")) : "",
-    password: localStorage.getItem("password") ? JSON.parse(localStorage.getItem("password")) : "",
-    moedas3d: 0,
-    favoritos: [],
-    likes: [],
-    dislikes: [],
-    vistos: [],
-    imagemId: "",
-    semFoto: true,
-    preencher: false,
+var dadosUser = limparDadosUser()
+
+function limparDadosUser() {
+    return {
+        id: "",
+        username: "",
+        email: localStorage.getItem("email") ? JSON.parse(localStorage.getItem("email")) : "",
+        password: localStorage.getItem("password") ? JSON.parse(localStorage.getItem("password")) : "",
+        moedas3d: 0,
+        favoritos: [],
+        likes: [],
+        dislikes: [],
+        vistos: [],
+        comprados: [],
+        encontrados: [],
+        douradosEncontrados: [],
+        botoesDourados: [],
+        ucnDesbloqueado: false,
+        fnaf1: {
+            noite: 0,
+        },
+        fnaf2: {
+            noite: 0,
+        },
+        fnaf3: {
+            noite: 0,
+        },
+        fnaf4: {
+            noite: 0,
+        },
+        fnafsl: {
+            noite: 0,
+        },
+        imagemId: "",
+        semFoto: true,
+        preencher: false,
+    }
 }
 
 var favoritarBtn = document.querySelector("#favoritar-btn")
-var likes = { 
+var likes = {
     btn: document.querySelector("#likes-btn"),
     qtdeEl: document.querySelector("#likes-el"),
 }
-var dislikes = { 
+var dislikes = {
     btn: document.querySelector("#dislikes-btn"),
     qtdeEl: document.querySelector("#dislikes-el"),
 }
@@ -163,7 +188,7 @@ var iModeloVar, iModeloAntigo = 0
 var pesquisaNaoVistoDiv = document.querySelector("#pesquisa-nao-visto-div")
 
 var maiorLength = 0
-var maiorHeight = 0 
+var maiorHeight = 0
 var pesquisaInput = document.querySelector("#pesquisa-input")
 var pesquisaBtn = document.querySelector("#pesquisa-btn")
 var nenhumResul = document.querySelector("#nenhum-resul")
@@ -328,13 +353,13 @@ var downloadP = document.querySelector("#download-p")
 
 var ucnInfoImgDiv = document.querySelector("#ucn-info-img-div")
 var ucnBtn = document.querySelector("#ucn-btn")
-var ucnDesbloqueado = false
+//var ucnDesbloqueado = false
 
 // Moeda 3D e modelos bloqueados
 var moeda3dImg = document.querySelector("#moeda-3d-img")
 
 var valor = document.querySelectorAll(".valor")
-var praComprarArray = []
+//var praComprarArray = []
 var praComprar = document.querySelectorAll(".pra-comprar")
 var extraDesbloqueado = document.querySelector("#extra-desbloqueado")
 var fecharExtraDesbloqueado = document.querySelector("#fechar-extra-desbloqueado")
@@ -342,9 +367,8 @@ var extraDesbloqueadoImg = document.querySelector("#modelo-div #btn-modelo img")
 var extraDesbloqueadoP = document.querySelector("#modelo-div p")
 
 var numSort
-var praEncontrarArray = []
+//var praEncontrarArray = []
 var praEncontrar = document.querySelectorAll(".pra-encontrar")
-var iModeloExtra
 
 var praEncontrarDouradoArray = []
 var praEncontrarDourado = document.querySelectorAll(".pra-encontrar-dourado")
