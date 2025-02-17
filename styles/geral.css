@@ -2482,7 +2482,6 @@ a {
     transition-duration: 0.5s;
     padding: 10px;
     border-radius: 20px;
-    z-index: 1000;
     display: none;
     opacity: 0;
 
