@@ -604,8 +604,8 @@ model-viewer {
 #nome-modelo {
     position: absolute;
     top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 65px;
+    width: calc(100vw - 2* 65px);
     font-size: 30px;
     z-index: 10;
     color: #fff;
@@ -1329,6 +1329,7 @@ model-viewer {
     backdrop-filter: blur(10px);
     border: 3px solid #333;
     z-index: 10 !important;
+    display: none;
 }
 
 
@@ -1424,7 +1425,7 @@ model-viewer {
         & #descricao-div-wrapper {
             width: 50%;
             height: 100%;
-            border-radius: 30px;
+            border-radius: 0px;
             box-shadow: inset 0px 0px 0px 0px #0000, 0px 0px 0px 0px #0000;
             transform: scale(1);
             transition-duration: .25s;
@@ -1434,6 +1435,7 @@ model-viewer {
                 box-shadow: inset 0px 0px 0px 0px #0000,
                     0px 0px 20px 0px #0008 !important;
                 transform: scale(1.0175) !important;
+                border-radius: 30px !important;
             }
 
             & #descricao-div {
@@ -1545,7 +1547,7 @@ model-viewer {
         & #tutorial-div-wrapper {
             width: 50%;
             height: 100%;
-            border-radius: 30px;
+            border-radius: 0px;
             box-shadow: inset 0px 0px 0px 0px #0000, 0px 0px 0px 0px #0000;
             transform: scale(1);
             transition-duration: .25s;
@@ -1555,6 +1557,7 @@ model-viewer {
                 box-shadow: inset 0px 0px 0px 0px #0000,
                     0px 0px 20px 0px #0008 !important;
                 transform: scale(1.0175) !important;
+                border-radius: 30px !important;
             }
 
             & #tutorial-div {
@@ -1575,6 +1578,10 @@ model-viewer {
 
                 & h3 {
                     margin-top: 30px;
+                }
+
+                .tutorial-cel {
+                    display: none;
                 }
 
                 & p {
@@ -1640,6 +1647,14 @@ model-viewer {
 
         &.celular #descricao-div {
             padding: 0 10px 50px 10px;
+        }
+
+        &.celular .tutorial-cel {
+            display: flex !important;
+        }
+
+        &.celular .tutorial-comp {
+            display: none !important;
         }
     }
 }

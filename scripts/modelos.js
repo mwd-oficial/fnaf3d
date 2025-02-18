@@ -176,7 +176,6 @@ function defineModelo(iModelo) {
         if (visto == modelos[iModelo].src) encontrou = true
     })
     if (!encontrou) dadosUser.vistos.push(modelos[iModelo].src)
-    //localStorage.setItem("vistosArray", JSON.stringify(vistosArray))
     if (aindaNaoVistoInput.classList.contains("active")) atualizarVistos()
 
     iModeloVar = iModelo
@@ -219,7 +218,7 @@ function carregarModelo(iModelo) {
     nomeDescricaoModelo.innerHTML = modelosDivP[iModelo].innerText
     nomeDescricaoModeloCel.innerHTML = modelosDivP[iModelo].innerText
     descricaoModelo.innerHTML = modelos[iModelo].descricao
-    setTimeout(botaoDouradof, 10);
+    setTimeout(botaoDouradof, 1000);
 
     if (modelos[iModelo].mudaOrbitaCamera) {
         modelViewer.cameraOrbit = modelos[iModelo].orbitaCamera;
@@ -258,7 +257,7 @@ function carregarModelo(iModelo) {
     nomeModelo.style.display = "block"
 
     tutorialDescricaoBtn.style.display = "flex"
-    arBtn.style.display = "flex"
+    if (isCelular) arBtn.style.display = "flex"
     tutorialDescricaoDiv.style.display = "flex"
 
     if (modelos[iModelo].temAltura) {

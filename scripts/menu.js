@@ -193,18 +193,22 @@ if (!isCelular) {
     descricaoDivWrapper.addEventListener("mouseenter", function () {
         tutorialDivWrapper.style.boxShadow = "inset 0px 0px 20px 0px #0008, 0px 0px 0px 0px #0000"
         tutorialDivWrapper.style.transform = "scale(0.9825)"
+        tutorialDivWrapper.style.borderRadius = "30px"
     })
     descricaoDivWrapper.addEventListener("mouseleave", function () {
         tutorialDivWrapper.style.boxShadow = "inset 0px 0px 0px 0px #0000,  0px 0px 0px 0px #0000"
         tutorialDivWrapper.style.transform = "scale(1)"
+        tutorialDivWrapper.style.borderRadius = "0px"
     })
     tutorialDivWrapper.addEventListener("mouseenter", function () {
         descricaoDivWrapper.style.boxShadow = "inset 0px 0px 20px 0px #0008, 0px 0px 0px 0px #0000"
         descricaoDivWrapper.style.transform = "scale(0.9825)"
+        descricaoDivWrapper.style.borderRadius = "30px"
     })
     tutorialDivWrapper.addEventListener("mouseleave", function () {
         descricaoDivWrapper.style.boxShadow = "inset 0px 0px 0px 0px #0000,  0px 0px 0px 0px #0000"
         descricaoDivWrapper.style.transform = "scale(1)"
+        descricaoDivWrapper.style.borderRadius = "0px"
     })
 }
 
@@ -896,7 +900,6 @@ async function cliqueMoeda() {
         moedas3d: dadosUser.moedas3d
     })
     console.log(res.data.msg);
-    //localStorage.setItem("moedas-3d", moedas3dNum)
 }
 
 async function verificaPraComprar() {
@@ -905,8 +908,7 @@ async function verificaPraComprar() {
         if (dadosUser.moedas3d == valor[iPraComprar].innerHTML) {
             praComprarEl.classList.remove("bloqueado")
             dadosUser.comprados.push(modelosExtras[iPraComprar].src)
-            //localStorage.setItem("praComprar", JSON.stringify(praComprarArray))
-            
+
             extraDesbloqueado.classList.remove("dourado")
             setTimeout(() => {
                 extraDesbloqueado.style.display = "flex"
@@ -915,7 +917,7 @@ async function verificaPraComprar() {
                 extraDesbloqueadoImg.src = modelosExtras[iPraComprar].srcImg + "0.webp"
                 extraDesbloqueadoP.innerHTML = modelosExtras[iPraComprar].nome
             }, 1);
-            
+
             aparecerConfete()
 
             const res = await axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
@@ -937,7 +939,6 @@ fecharExtraDesbloqueado.addEventListener("click", function () {
 
             dadosUser.ucnDesbloqueado = true
             ucnBtn.style.display = "flex"
-            //localStorage.setItem('ucnDesbloqueado', JSON.stringify(ucnDesbloqueado))
 
             alerta("Parabéns! Você desbloqueou o FNaF UCN!")
 
@@ -995,7 +996,6 @@ async function sortearPraEncontrar() {
 function praEncontrarf(iPraEncontrar) {
     praEncontrar[iPraEncontrar].classList.remove("bloqueado")
     iModeloExtra = iPraEncontrar + (praComprar.length)
-    //localStorage.setItem("praEncontrar", JSON.stringify(praEncontrarArray))
 
     extraDesbloqueado.classList.remove("dourado")
     setTimeout(() => {
@@ -1015,12 +1015,9 @@ function praEncontrarf(iPraEncontrar) {
 function sortearPraEncontrarDourado() {
     dadosUser.botoesDourados.forEach((el, i) => {
         if (modelos[iModeloVar].src == el.src) {
-            //modelos[iModeloVar].botaoDouradoDesativado = true
-            //botaoDouradoDesativadoArray[geralSorteado.indexOf(iModeloVar)] = true
-            //localStorage.setItem("botaoDouradoDesativadoArray", JSON.stringify(botaoDouradoDesativadoArray))
             if (!el.desativado) {
                 botaoDourado.classList.add("desativado")
-                el.desativado = true 
+                el.desativado = true
                 axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
                     botoesDourados: dadosUser.botoesDourados
                 })
@@ -1047,7 +1044,6 @@ function sortearPraEncontrarDourado() {
 function praEncontrarDouradof(iPraEncontrarDourado) {
     praEncontrarDourado[iPraEncontrarDourado].classList.remove("bloqueado")
     iModeloExtra = iPraEncontrarDourado + (praComprar.length + praEncontrar.length)
-    //localStorage.setItem("praEncontrarDourado", JSON.stringify(praEncontrarDouradoArray))
 
     extraDesbloqueado.classList.add("dourado")
     extraDesbloqueado.style.display = "flex"
@@ -1134,7 +1130,12 @@ function scrollPesquisaNaoVisto() {
 }
 
 
-modelosDivP.forEach(nome => { if (nome.innerText.length > maiorLength) maiorLength = nome.innerText.length })
+modelosDivP.forEach(nome => {
+    if (nome.innerText.length > maiorLength) {
+        maiorLength = nome.innerText.length
+        console.log("Maior length: " + nome.innerText)
+    }
+})
 
 function ajustarAltura() {
     modelosDiv.forEach(div => { if (div.offsetHeight > maiorHeight) maiorHeight = div.offsetHeight })
@@ -1318,6 +1319,7 @@ function abaJogos() {
 myUserBtn.addEventListener("click", function () {
     userDiv.style.display = "flex"
     telaDadosUser.style.opacity = 0;
+    telaConfigUser.style.opacity = 0
     document.querySelectorAll(".btns-menu-user").forEach(btn => btn.style.pointerEvents = "none")
     setTimeout(() => {
         userDiv.style.opacity = 1

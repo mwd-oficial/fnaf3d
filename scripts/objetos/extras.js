@@ -366,7 +366,6 @@ var headChefBot = {
     alturaMaxima: 0.75,
     alturaMinima: -0.25,
     temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "SK_HeadChefBot|AS_FP_EC_HeadChefBot_Intro_SK_HeadChefBot",
@@ -383,13 +382,6 @@ var headChefBot = {
             estatico: false,
             mudaOrbitaCamera: true,
             orbitaCamera: "-90deg 0 0",
-        },
-    },
-    audios: {
-        teste: {
-            src: "",
-            volume: 0.5,
-            nome: "Teste",
         },
     },
     descricao: "O Head Chef Bot é uma variante do S.T.A.F.F. Bot e o chef chefe do El Chip's do Mega Pizzaplex de Freddy Fazbear. Ele apareceu pela primeira vez em Five Nights at Freddy's: Help Wanted 2, e atua como um antagonista abrangente para o nível do El Chip.",
@@ -527,10 +519,10 @@ var burntrap = {
         },
     },
     audios: {
-        teste: {
-            src: "",
+        risadas: {
+            src: "assets/audios/extras/pra-encontrar/fnafsb/burntrap/risadas.ogg",
             volume: 0.5,
-            nome: "Teste",
+            nome: "Risadas",
         },
     },
     descricao: "Burntrap é um antagonista secreto em Five Nights at Freddy's: Security Breach . Ele é um animatrônico de origem enigmática que residia nas ruínas subterrâneas da Freddy Fazbear's Pizza Place , aparecendo no final do jogo base \"Burn It All Down\". <br><br> Burntrap tem uma aparência física que lembra Springtrap e Scraptrap , embora com diferenças significativas. Seu traje é verde-oliva e amarelo escuro, com uma mandíbula humana exposta com dentes.",

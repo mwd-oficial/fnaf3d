@@ -387,6 +387,9 @@ document.querySelectorAll(".inputs-user").forEach((el, i) => {
             if (isCelular) event.target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 250);
     });
+    el.addEventListener("blur", function() {
+        launchFullscreen(document.documentElement)
+    })
 })
 
 formulario.addEventListener("submit", async function (event) {
@@ -460,8 +463,6 @@ async function cadastrarUser() {
                     src: modelos[numSort].src,
                     desativado: false,
                 })
-                //localStorage.setItem("botaoDouradoDesativadoArray", JSON.stringify(botaoDouradoDesativadoArray))
-                //localStorage.setItem("geralSorteado", JSON.stringify(geralSorteado))
                 const res = await axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
                     botoesDourados: dadosUser.botoesDourados
                 })

@@ -22,6 +22,8 @@ if (isCelular) {
 
     document.querySelector("#tela-cheia > p").innerHTML = "Toque para ativar a tela cheia"
 
+    nomeModelo.style.width = "calc(100vw - 3* 65px)"
+
     userDiv.classList.add("celular")
     tutorialDescricaoContent.classList.add("celular")
     logomwdEl.classList.add("celular")
