@@ -388,7 +388,9 @@ document.querySelectorAll(".inputs-user").forEach((el, i) => {
         }, 250);
     });
     el.addEventListener("blur", function() {
-        launchFullscreen(document.documentElement)
+        setTimeout(() => {
+            launchFullscreen(document.documentElement)
+        }, 1000)
     })
 })
 
