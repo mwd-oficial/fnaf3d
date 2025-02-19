@@ -368,11 +368,6 @@ exibirUsers()
 
 
 
-var overlayInput = document.querySelector("#overlay-input")
-overlayInput.addEventListener("click", function () {
-    overlayInput.style.display = "none"
-    exitFullscreen()
-})
 
 document.querySelectorAll(".inputs-user").forEach((el, i) => {
     var fieldset = document.querySelectorAll("fieldset")
@@ -390,18 +385,15 @@ document.querySelectorAll(".inputs-user").forEach((el, i) => {
         setTimeout(() => {
             if (isCelular) {
                 event.target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                overlayInput.style.display = "block"
             }
         }, 250);
     });
-    /*
     el.addEventListener("blur", function() {
         exitFullscreen()
         setTimeout(() => {
             launchFullscreen(document.documentElement)
         }, 10);
     })
-    */
 })
 
 formulario.addEventListener("submit", async function (event) {
