@@ -151,7 +151,7 @@ function irTelaConfigUser(acao) {
     sorteadoAntigo = sorteado;
     setTimeout(() => {
         document.querySelectorAll("fieldset").forEach(el => el.classList.remove("invalido"));
-        
+
         imgAnimatronic.forEach((el) => el.style.display = "none")
         document.querySelector(`#img-animatronic${sorteado}`).style.display = "block"
 
@@ -368,7 +368,11 @@ exibirUsers()
 
 
 
-
+var overlayInput = document.querySelector("#overlay-input")
+overlayInput.addEventListener("click", function () {
+    overlayInput.style.display = "none"
+    exitFullscreen()
+})
 
 document.querySelectorAll(".inputs-user").forEach((el, i) => {
     var fieldset = document.querySelectorAll("fieldset")
@@ -384,14 +388,20 @@ document.querySelectorAll(".inputs-user").forEach((el, i) => {
     })
     el.addEventListener('focus', event => {
         setTimeout(() => {
-            if (isCelular) event.target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (isCelular) {
+                event.target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                overlayInput.style.display = "block"
+            }
         }, 250);
     });
+    /*
     el.addEventListener("blur", function() {
+        exitFullscreen()
         setTimeout(() => {
             launchFullscreen(document.documentElement)
-        }, 1000)
+        }, 10);
     })
+    */
 })
 
 formulario.addEventListener("submit", async function (event) {
@@ -556,12 +566,12 @@ async function entrarUser() {
                 for (let i = 0; i < dadosUser.encontrados.length; i++) {
                     var iModeloExtra
                     modelosExtras.forEach((modelo, iModelo) => {
-                        if (modelo.src == dadosUser.encontrados[i]){
+                        if (modelo.src == dadosUser.encontrados[i]) {
                             iModeloExtra = iModelo - praComprar.length
                             praEncontrar[iModeloExtra].classList.remove("bloqueado")
                             document.querySelectorAll(".pra-encontrar img")[iModeloExtra].src = modelosExtras[iModelo].srcImg + "0.webp"
                             document.querySelectorAll(".pra-encontrar ~ p")[iModeloExtra].innerHTML = modelosExtras[iModelo].nome
-                        } 
+                        }
                     })
                 }
 
@@ -650,10 +660,10 @@ async function excluirConta() {
                 });
             }
 
-            
+
             sairConta();
             carregamentoForm.style.display = "none";
-            
+
             dadosUser.vistos.push(modelos[iModeloVar].src)
         }, 100);
     } catch (erro) {

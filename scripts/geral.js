@@ -11,8 +11,8 @@ tutorialVisto = true
 */
 ////////////////////////////////////
 
-isCelular = navigator.userAgentData != undefined && navigator.userAgentData.mobile
-//isCelular = true
+//isCelular = navigator.userAgentData != undefined && navigator.userAgentData.mobile
+isCelular = true
 
 // Ajusta width, height e font size para celular
 if (isCelular) {
