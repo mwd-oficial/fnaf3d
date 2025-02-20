@@ -1174,6 +1174,10 @@ menuContent.addEventListener("scroll", function () {
     posicaoScroll = menuContent.scrollY || menuContent.scrollTop;
 });
 
+pesquisaInput.addEventListener("blur", function () {
+    if (isCelular) exitFullscreen()
+})
+
 pesquisaInput.addEventListener("input", pesquisa)
 function pesquisa() {
     menuContent.scrollTo(0, 630)
@@ -1333,5 +1337,7 @@ myUserBtn.addEventListener("click", function () {
 
 document.querySelector("#fechar-user-div").addEventListener("click", function () {
     userDiv.style.opacity = 0
+    if (isCelular && focusInput) exitFullscreen()
+    focusInput = false
     setTimeout(() => userDiv.style.display = "none", 250);
 })

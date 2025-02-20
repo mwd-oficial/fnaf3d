@@ -368,7 +368,6 @@ exibirUsers()
 
 
 
-
 document.querySelectorAll(".inputs-user").forEach((el, i) => {
     var fieldset = document.querySelectorAll("fieldset")
     el.addEventListener("change", function () {
@@ -386,14 +385,9 @@ document.querySelectorAll(".inputs-user").forEach((el, i) => {
             if (isCelular) {
                 event.target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
+            focusInput = true
         }, 250);
     });
-    el.addEventListener("blur", function() {
-        exitFullscreen()
-        setTimeout(() => {
-            launchFullscreen(document.documentElement)
-        }, 10);
-    })
 })
 
 formulario.addEventListener("submit", async function (event) {

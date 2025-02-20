@@ -55,6 +55,7 @@ var inputUsername = document.querySelector("#input-username");
 var inputEmail = document.querySelector("#input-email");
 var inputPassword = document.querySelector("#input-password");
 var olho = document.querySelector("#olho")
+var focusInput = false
 
 var dadosUser = limparDadosUser()
 

@@ -11,8 +11,8 @@ tutorialVisto = true
 */
 ////////////////////////////////////
 
-//isCelular = navigator.userAgentData != undefined && navigator.userAgentData.mobile
-isCelular = true
+isCelular = navigator.userAgentData != undefined && navigator.userAgentData.mobile
+//isCelular = true
 
 // Ajusta width, height e font size para celular
 if (isCelular) {
@@ -20,7 +20,7 @@ if (isCelular) {
     nomeDescricaoModeloCel.style.display = "block"
     document.querySelectorAll(".efeito-hover").forEach(btn => btn.classList.remove("efeito-hover"))
 
-    document.querySelector("#tela-cheia > p").innerHTML = "Toque para ativar a tela cheia"
+    document.querySelector("#tela-cheia > p").innerHTML = "Para uma melhor experiência, <br> toque para ativar a tela cheia"
 
     nomeModelo.style.width = "calc(100vw - 3* 65px)"
 
@@ -82,6 +82,7 @@ function ajustarFontSize(el) {
 
 // API tela cheia
 function launchFullscreen(element) {
+    telaCheia.style.display = "none"
     if (element.requestFullscreen) {
         element.requestFullscreen();
     } else if (element.mozRequestFullScreen) { // Firefox
@@ -94,6 +95,7 @@ function launchFullscreen(element) {
 }
 
 function exitFullscreen() {
+    telaCheia.style.display = "flex"
     if (document.exitFullscreen) {
         document.exitFullscreen();
     } else if (document.mozCancelFullScreen) { // Firefox
