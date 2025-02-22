@@ -293,7 +293,6 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                gap: 20px;
                 width: 100%;
                 margin-bottom: 20%;
                 margin-top: 25px;
@@ -383,10 +382,18 @@
                     width: 50% !important;
                     padding: 10px;
                     border-radius: 20px;
+                    margin-top: 20px;
 
                     & legend {
                         font-size: 20px;
                         margin-left: 25px;
+                    }
+
+                    & + p {
+                        width: 50% !important;
+                        color: #f00;
+                        text-align: center;
+                        display: none;
                     }
 
                     &.invalido {
@@ -395,7 +402,12 @@
                         & legend {
                             color: #f00;
                         }
+
+                        & + p {
+                            display: block;
+                        }
                     }
+
 
                     & input {
                         outline: none;
@@ -446,6 +458,7 @@
                     background-color: #0000;
                     color: #fff;
                     border-radius: 15px;
+                    margin-top: 20px;
                     text-align: center;
                     transition: background-color .1s, color .1s, border .1s, transform .25s;
 

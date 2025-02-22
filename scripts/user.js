@@ -370,7 +370,7 @@ exibirUsers()
 
 document.querySelectorAll(".inputs-user").forEach((el, i) => {
     var fieldset = document.querySelectorAll("fieldset")
-    el.addEventListener("change", function () {
+    el.addEventListener("blur", function () {
         if (el.checkValidity()) {
             fieldset[i].classList.remove("invalido");
         } else {

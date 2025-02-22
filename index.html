@@ -313,23 +313,26 @@
                     </div>
                     <fieldset id="username-fieldset">
                         <legend class="ajustar-font-size">Username</legend>
-                        <input type="text" name="username" id="input-username" class="inputs-user pointers" minlength="3"
-                            maxlength="15" pattern="^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$"
-                            title="O nome de usuário deve conter apenas caracteres alfanuméricos e hífens únicos, não pode começar ou terminar com um hífen, nem conter hífens consecutivos.">
+                        <input type="text" name="username" id="input-username" class="inputs-user pointers"
+                            minlength="3" maxlength="15" pattern="^[A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*$">
                     </fieldset>
+                    <p>O nome de usuário deve conter apenas caracteres alfanuméricos, hífens e underlines únicos, não
+                        pode começar
+                        ou terminar com um hífen ou underline, nem conter hífens ou underlines consecutivos.</p>
                     <fieldset>
                         <legend class="ajustar-font-size">Email</legend>
-                        <input type="text" name="email" id="input-email" class="inputs-user pointers" required
-                            pattern="^[^@]+@[^@]+\.[^@]{2,}$" title="Por favor, insira um email válido.">
+                        <input type="email" name="email" id="input-email" class="inputs-user pointers" required pattern="^[^@]+@[^@]+\.[^@]{2,}$">
                     </fieldset>
+                    <p>Por favor, insira um email válido.</p>
                     <fieldset>
                         <legend class="ajustar-font-size">Password</legend>
                         <input type="password" name="password" id="input-password" class="inputs-user pointers" required
                             minlength="8"
-                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{8,}$"
-                            title="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e um caractere especial.">
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{8,}$">
                         <span class="material-symbols-rounded pointers" id="olho">visibility</span>
                     </fieldset>
+                    <p>A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e um
+                        caractere especial.</p>
                     <button type="submit" class="pointers" id="enviar-btn"></button>
                 </form>
                 <p id="link-conta"></p>
