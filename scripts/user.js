@@ -6,6 +6,7 @@ document.querySelector("#entrar-btn").addEventListener("click", function () {
     entrar = true;
     resetarInputs();
     inputUsername.required = false
+    inputPassword.autocomplete = "current-password"
     irTelaConfigUser("Entrar");
 })
 
@@ -13,6 +14,7 @@ document.querySelector("#cadastrar-btn").addEventListener("click", function () {
     cadastrar = true;
     resetarInputs();
     inputUsername.required = true
+    inputPassword.autocomplete = "new-password"
     irTelaConfigUser("Cadastrar");
 })
 
@@ -22,6 +24,7 @@ document.querySelector("#editar-btn").addEventListener("click", async function (
     inputUsername.required = true
     inputUsername.value = dadosUser.username
     inputEmail.value = dadosUser.email
+    inputPassword.autocomplete = "new-password"
     inputPassword.value = dadosUser.password;
     if (dadosUser.preencher) {
         inputPreencher.classList.add("active")
