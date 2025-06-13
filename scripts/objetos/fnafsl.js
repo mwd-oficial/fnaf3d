@@ -11,9 +11,6 @@ var circusBaby = {
     ],
     orbitaCameraMaxima: "0 0 6.5m",
     orbitaCameraMinima: "0 0 6m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -88,9 +85,6 @@ var funtimeFreddy = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 6m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -165,9 +159,6 @@ var bonBon = {
     ],
     orbitaCameraMaxima: "0 0 2m",
     orbitaCameraMinima: "0 0 2m",
-    temAltura: true,
-    alturaMaxima: 0.175,
-    alturaMinima: -0.175,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -235,9 +226,6 @@ var ballora = {
     ],
     orbitaCameraMaxima: "0 0 5.5m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -293,9 +281,6 @@ var funtimeFoxy = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 6m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -352,9 +337,6 @@ var ennard = {
     ],
     orbitaCameraMaxima: "0 0 6.5m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -426,9 +408,6 @@ var bidybab = {
     orbitaCameraMaxima: "0 0 600m",
     orbitaCameraMinima: "0 0 600m",
     alvoCamera: "0m 100m 0m",
-    temAltura: true,
-    alturaMaxima: 50,
-    alturaMinima: -50,
     temAudio: true,
     audios: {
         jumpscare: {
@@ -472,9 +451,6 @@ var minireena = {
     orbitaCameraMaxima: "0 0 200m",
     orbitaCameraMinima: "0 0 100m",
     alvoCamera: "0m 45m 2.5m",
-    temAltura: true,
-    alturaMaxima: 25,
-    alturaMinima: -25,
     temAudio: true,
     audios: {
         jumpscare: {

@@ -1,0 +1,442 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'logo';
+    src: url(../../../assets/fonts/logo.woff);
+}
+
+@font-face {
+    font-family: 'titulo';
+    src: url(../../../assets/fonts/titulo.woff2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+html {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'titulo', Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth !important;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+#tela-carregamento-site {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 9999;
+
+    & #tela-carregamento-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    & #tela-carregamento-logo {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 125px;
+        border-radius: 25px;
+    }
+
+    & #shadow-div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 40%;
+        box-shadow:
+            0px 0px 0px 1000px #000,
+            inset 0px 0px 200px 50px #000,
+            inset 0px 0px 200px 50px #000,
+            inset 0px 0px 200px 50px #000;
+    }
+
+    & #div-logo {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        font-family: 'logo', sans-serif;
+        animation: anima-logo 2s linear infinite;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            animation: anima-freddy-logo 2s linear infinite;
+        }
+
+        & #p-fnaf-logo {
+            position: absolute;
+            top: 30%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            color: #60ffaf;
+            font-size: 30px;
+            animation: anima-fnaf-logo 2s linear infinite;
+        }
+
+        & #p-3d-logo {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ebee2a;
+            font-size: 50px;
+            animation: anima-3d-logo 2s linear infinite;
+        }
+    }
+}
+
+progress {
+    margin-top: 20px;
+    height: 10px;
+    border: 2px solid #ddd;
+    background-color: #000;
+    border-radius: 1000px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #000;
+    border-radius: 1000px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #ddd;
+    border-radius: 1000px 0 0 1000px;
+}
+
+@keyframes anima-logo {
+
+    0%,
+    100% {
+        filter: brightness(0.5);
+        transform: scale(1);
+    }
+
+    50% {
+        filter: brightness(1);
+        transform: scale(1.025);
+    }
+}
+
+@keyframes anima-freddy-logo {
+
+    0%,
+    100% {
+        filter: invert(1) drop-shadow(0px 0px 0px #0000);
+    }
+
+    50% {
+        filter: invert(1) drop-shadow(0px 0px 5px #fff);
+    }
+}
+
+@keyframes anima-fnaf-logo {
+
+    0%,
+    100% {
+        text-shadow: none;
+    }
+
+    50% {
+        text-shadow:
+            0px 0px 5px #4db380,
+            0px 0px 7.5px #4db380,
+            0px 0px 10px #46a174,
+            0px 0px 12.5px #41996d,
+            0px 0px 15px #37815c;
+    }
+}
+
+@keyframes anima-3d-logo {
+
+    0%,
+    100% {
+        text-shadow: none;
+    }
+
+    50% {
+        text-shadow:
+            0px 0px 5px #ced124,
+            0px 0px 7.5px #b8bb20,
+            0px 0px 10px #b3b61e,
+            0px 0px 12.5px #a3a51d,
+            0px 0px 15px #7f8116;
+    }
+}
+
+#tela-cheia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #000;
+    cursor: pointer;
+    z-index: 9000 !important;
+
+    & span {
+        color: #fff;
+        font-size: 75px;
+    }
+
+    & p {
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+#tela-vira-cel {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9500 !important;
+    display: none;
+
+    & span {
+        font-size: 75px;
+        color: #fff;
+    }
+
+    & p {
+        color: #fff;
+        text-align: center;
+    }
+}
+
+#aviso {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    cursor: pointer;
+    opacity: 0;
+    display: none;
+    transition-duration: 1s;
+
+    & div {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        & p {
+            color: #fff;
+            text-align: center;
+
+            &:first-of-type {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+
+#tela-inicial {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: none;
+
+    & #glitch-tela-inicial {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100vh;
+        width: 100vw;
+        pointer-events: none;
+        opacity: 0.625;
+        object-fit: cover;
+    }
+
+    #barra {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        background-color: #fff3;
+        pointer-events: none;
+        animation: barra 20s linear infinite;
+    }
+
+    .barras {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        background-color: #fff3;
+        pointer-events: none;
+        display: none;
+    }
+
+    & #sombra-freddy {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        box-shadow: inset calc(-300 * (100vw / 1370)) 0px 250px 0px rgba(0, 0, 0, 0.95);
+        pointer-events: none;
+    }
+
+    & #menu-div {
+        position: absolute;
+        top: 50px;
+        left: 100px;
+
+        & #titulo {
+            font-size: 40px;
+
+            & span {
+                opacity: 0;
+            }
+        }
+
+        & #estrelas {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+
+            & span {
+                font-size: 50px;
+            }
+
+            & span:first-of-type {
+                font-size: 40px;
+                opacity: 0;
+            }
+        }
+
+        & #continue-noite {
+            font-size: 20px;
+            margin-left: 75px;
+            opacity: 0;
+        }
+
+        & #comecar-novo-jogo {
+            font-size: 20px;
+            margin-left: 75px;
+        }
+
+        & #sexta-noite {
+            margin-top: 0 !important;
+        }
+    }
+
+    & #vercao {
+        position: absolute;
+        left: 30px;
+        bottom: 10px;
+        color: #fff8;
+    }
+
+    & #menu-celular {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        display: none;
+    }
+
+    & .btn-inicial {
+        display: inline-block;
+        font-size: 40px;
+        margin-top: 25px;
+        cursor: pointer;
+
+        & .setas {
+            opacity: 0;
+        }
+    }
+
+    & a>#logomwd {
+        width: 125px;
+        margin: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition-duration: 0.5s;
+        padding: 10px;
+        border-radius: 20px;
+        z-index: 1;
+
+        &.efeito-hover:hover {
+            transform: scale(1.1);
+            background-color: white;
+        }
+    }
+}
+
+@keyframes barra {
+    0% {
+        top: -25px;
+    }
+
+    100% {
+        top: calc(100vh + 25px);
+    }
+}
+
+
+model-viewer {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+}

@@ -11,7 +11,7 @@ tutorialVisto = true
 */
 ////////////////////////////////////
 
-isCelular = navigator.userAgentData != undefined && navigator.userAgentData.mobile
+isCelular = (navigator.userAgentData !== undefined && navigator.userAgentData.mobile) || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 //isCelular = true
 
 // Ajusta width, height e font size para celular
@@ -27,12 +27,12 @@ if (isCelular) {
     userDiv.classList.add("celular")
     tutorialDescricaoContent.classList.add("celular")
     logomwdEl.classList.add("celular")
-    inputAlturaDiv.classList.add("celular")
     audiosContainer.classList.add("celular")
     fnafInfoImgDiv.classList.add("celular")
     ucnInfoImgDiv.classList.add("celular")
     document.querySelector("#modelos").classList.add("celular")
     menuJogos.classList.add("celular")
+    tutorialBotoesContentP.style.maxWidth = "95%"
 
     imgAlternativaDiv.classList.remove("naocelular")
     voltarCarregamento.classList.remove("naocelular")
@@ -49,6 +49,8 @@ if (isCelular) {
     document.querySelector("form").style.marginBottom = "35%"
 
     document.querySelector("#config-user-div").style.height = "calc(100% - 50px)"
+
+    arBtn.style.opacity = 1
 
     document.querySelectorAll(".ajustar-width-50").forEach(function (el) {
         var widthAtual = parseFloat(window.getComputedStyle(el).width);
@@ -110,20 +112,27 @@ function exitFullscreen() {
 telaCheia.addEventListener("click", function () {
     // Ativar o modo de tela cheia para navegadores que suportam!
     launchFullscreen(document.documentElement); // a página inteira
+    if (siteCarregado) {
+        siteCarregado = false
+        setTimeout(() => {
+            aviso.style.opacity = 1
+        }, 1);
+    }
+})
+
+telaCarregamentoSite.addEventListener("click", function () {
+    // Ativar o modo de tela cheia para navegadores que suportam!
+    launchFullscreen(document.documentElement); // a página inteira
+    telaCarregamentoSite.style.cursor = "default"
 })
 
 document.addEventListener("fullscreenchange", function () {
     if (document.fullscreenElement) {
         telaCheia.style.display = "none"
-        if (siteCarregado) {
-            siteCarregado = false
-            setTimeout(() => {
-                aviso.style.opacity = 1
-            }, 1);
-        }
         despausarMidia()
     } else {
         telaCheia.style.display = "flex"
+        telaCarregamentoSite.style.cursor = "pointer"
         if (!midiaPausada) {
             pausarMidia()
         }
@@ -165,11 +174,18 @@ function verificaOrientacao() {
 }
 verificaOrientacao()
 
-document.querySelectorAll(".videos").forEach((video) => {
-    video.addEventListener("play", pausarAudios)
-    video.addEventListener("pause", despausarAudios)
-    video.addEventListener("ended", despausarAudios)
-})
+
+function eventosVideo() {
+    document.querySelectorAll("video").forEach((video) => {
+        video.removeEventListener("play", pausarAudios)
+        video.removeEventListener("pause", despausarAudios)
+        video.removeEventListener("ended", despausarAudios)
+        video.addEventListener("play", pausarAudios)
+        video.addEventListener("pause", despausarAudios)
+        video.addEventListener("ended", despausarAudios)
+    })
+}
+eventosVideo()
 
 function pausarMidia() {
     midiaPausada = true
@@ -301,8 +317,18 @@ window.addEventListener("load", function () {
     progressBar.value = 100
     setTimeout(() => {
         atualizarPointers()
-        document.querySelector("#tela-carregamento-site").style.display = "none"
-    }, 500);
+        telaCarregamentoSite.style.display = "none"
+        if (!document.fullscreenElement) {
+            telaCheia.style.display = "flex"
+        } else {
+            if (siteCarregado) {
+                siteCarregado = false
+                setTimeout(() => {
+                    aviso.style.opacity = 1
+                }, 1);
+            }
+        }
+    }, 100);
 })
 
 function atualizarPointers() {
@@ -394,7 +420,6 @@ document.querySelector("#iniciar-btn").addEventListener("click", async function 
         // Tive que criar um model viewer novo para carregá-lo novamente ao retornar a página inicial
         modelViewer = document.createElement("model-viewer")
         modelViewer.cameraControls = true
-        modelViewer.disablePan = true
         modelViewer.animationCrossfadeDuration = "0"
         modelViewer.autoRotateDelay = "0"
         effectComposer = document.createElement("effect-composer")
@@ -439,7 +464,7 @@ document.addEventListener('mousemove', (event) => {
 
 function pointarCursor(btn) {
     if (modelos[iModeloVar].temCursor) {
-        btn.style.cursor = `url(${modelos[iModeloVar].srcImg}pointer.webp), auto`
+        btn.style.cursor = `url(${modelos[iModeloVar].srcImg}pointer.avif), auto`
     } else {
         btn.style.cursor = "pointer"
     }

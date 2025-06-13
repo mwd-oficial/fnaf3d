@@ -11,9 +11,6 @@ var trashAndTheGang = {
     ],
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -46,9 +43,6 @@ var helpy = {
     orbitaCameraMaxima: "0 0 60m",
     orbitaCameraMinima: "0 0 60m",
     alvoCamera: "0m 10m 0m",
-    temAltura: true,
-    alturaMaxima: 5,
-    alturaMinima: -5,
     temAudio: true,
     audios: {
         fucinho: {
@@ -72,9 +66,6 @@ var happyFrog = {
     orbitaCameraMaxima: "0 0 9m",
     orbitaCameraMinima: "0 0 8m",
     alvoCamera: "0m 2m 0.25m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -1,
     descricao: "Happy Frog é um animatrônico de Freddy Fazbear's Pizzeria Simulator e membro dos Mediocre Melodies. Ela aparece pela primeira vez em Freddy Fazbear's Pizzeria Simulator. <br><br> Sua aparência é a de uma rã verde, com olhos magenta e detalhes amarelos no queixo, dedos, estômago, pés e pálpebras. Ela segura um microfone e tem uma caixa elétrica com circuitos e fios. Curiosamente, Happy Frog tem uma rivalidade com Freddy Fazbear, competindo para determinar quem é o melhor mascote.",
 };
 
@@ -91,9 +82,6 @@ var mrHippo = {
     orbitaCameraMaxima: "0 0 9m",
     orbitaCameraMinima: "0 0 8m",
     alvoCamera: "0m 2m 0.25m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -1,
     descricao: "Mr. Hippo é um animatrônico de Freddy Fazbear's Pizzeria Simulator e membro dos Mediocre Melodies. Sua aparência, como o nome sugere, é semelhante à de um hipopótamo. Ele tem pele roxa com acentos lavanda, olhos azuis e usa um chapéu preto. <br><br> Curiosamente, apesar de ser um animatrônico assassino, ele não guarda rancor contra o jogador e até pede desculpas por sua morte. Sua personalidade é a de um velho sábio, sempre compartilhando histórias e lições da vida.",
 };
 
@@ -109,9 +97,6 @@ var pigpatch = {
     orbitaCameraMaxima: "0 0 9m",
     orbitaCameraMinima: "0 0 8m",
     alvoCamera: "0m 2m 0.25m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -1,
     descricao: "(Os olhos de Pigpatch são verde e azul, neste modelo estão errados) <br><br> Pigpatch é um animatrônico de Freddy Fazbear's Pizzeria Simulator e membro dos Mediocre Melodies. Ele se assemelha a um porco estereotipado, com um tom mais claro no focinho, orelhas internas, torso e na parte inferior dos pés. <br><br> Possui um umbigo rosa no torso e uma cauda espiral em suas costas. Seus olhos são verde e azul real, e ele carrega um banjo marrom com detalhes em bege. Curiosamente, seu nome pode ser uma referência a \"Porkpatch\", um chefe em \"FNaF World\".",
 };
 
@@ -127,9 +112,6 @@ var neddBear = {
     orbitaCameraMaxima: "0 0 18m",
     orbitaCameraMinima: "0 0 16m",
     alvoCamera: "0m -2.25m 0m",
-    temAltura: true,
-    alturaMaxima: 1.5,
-    alturaMinima: -2,
     descricao: "Nedd Bear é um animatrônico de Freddy Fazbear's Pizzeria Simulator e membro dos Mediocre Melodies. Sua aparência é a de um urso de pelúcia marrom claro com detalhes em bege ao redor do focinho, olhos e patas. <br><br> Ele lembra os designs dos animatrônicos originais do primeiro jogo, especialmente Freddy Fazbear. Nedd Bear tem olhos verdes caídos, uma gravata vermelha com listras brancas diagonais e um chapéu vermelho preso à cabeça por uma mola. <br><br> Curiosamente, ele possui uma boca de endoesqueleto visível, semelhante àquelas vistas no primeiro jogo. Quanto à sua personalidade, Nedd Bear é um caipira bem-humorado, frequentemente sem perceber a gravidade de suas ações e soltando trocadilhos bobos. <br><br> Ele fala com um sotaque do Arkansas. Em Freddy Fazbear's Pizzeria Simulator, assim como os outros Melodies, Nedd Bear requer uma fonte de energia elétrica para ser ativado.",
 };
 
@@ -145,9 +127,6 @@ var orvilleElephant = {
     orbitaCameraMaxima: "0 0 9m",
     orbitaCameraMinima: "0 0 8m",
     alvoCamera: "0m 2m 0.25m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -1,
     descricao: "Orville Elephant é um animatrônico de Freddy Fazbear's Pizzeria Simulator e membro dos Mediocre Melodies. Ele é um elefante laranja com detalhes mais claros em seu tronco, orelhas internas, torso, cascos e ao redor de seus olhos azuis. <br><br> Ele usa um chapéu roxo com uma faixa branca na base e segura uma varinha preta com ponta branca em sua mão esquerda. No jogo, ele custa $4100 e concede pontos de entretenimento, atmosfera e receita.",
 };
 
@@ -163,9 +142,6 @@ var rockstarFreddy = {
     orbitaCameraMaxima: "0 0 35m",
     orbitaCameraMinima: "0 0 25m",
     alvoCamera: "0m 7.5m 0m",
-    temAltura: true,
-    alturaMaxima: 4,
-    alturaMinima: -4,
     descricao: "Rockstar Freddy é uma versão redesenhada do icônico Freddy Fazbear e serve como mascote da mais recente Freddy Fazbear's Pizzeria. Sua aparência combina elementos de versões anteriores do Freddy: a parte superior da cabeça lembra o Toy Freddy, enquanto a mandíbula inferior é separada, mas conectada por hastes de metal, semelhante ao Nightmare Freddy ou Withered Freddy. <br><br> Ele tem bochechas vermelhas como os animatrônicos Toy do segundo jogo e usa um chapéu e gravata borboleta roxos brilhantes, semelhantes ao Fredbear. Seu focinho é de cor creme e ele segura um microfone metálico roxo.",
 };
 
@@ -180,9 +156,6 @@ var rockstarBonnie = {
     orbitaCameraMaxima: "0 0 20m",
     orbitaCameraMinima: "0 0 15m",
     alvoCamera: "0m -2m 0m",
-    temAltura: true,
-    alturaMaxima: 2.5,
-    alturaMinima: -3,
     descricao: "Rockstar Bonnie é um animatrônico da série Five Nights at Freddy's. Ele faz sua primeira aparição em Freddy Fazbear's Pizzeria Simulator. Sua aparência combina elementos de Toy Bonnie e Withered Bonnie, com tons azuis e detalhes mais claros no focinho, patas, barriga e interior das orelhas. <br><br> Seu olho verde, gravata vermelha brilhante e dois botões dourados em seu peito são características marcantes. Rockstar Bonnie carrega uma guitarra elétrica vermelho-laranja e, como outros animatrônicos “rockstar”, sua cabeça e mandíbula parecem estar separadas.",
 };
 
@@ -197,9 +170,6 @@ var rockstarChica = {
     orbitaCameraMaxima: "0 0 20m",
     orbitaCameraMinima: "0 0 15m",
     alvoCamera: "0m -2.25m 0.25m",
-    temAltura: true,
-    alturaMaxima: 2.5,
-    alturaMinima: -3,
     descricao: "Rockstar Chica é uma animatrônica secundária introduzida em \"Freddy Fazbear's Pizzeria Simulator\". Ela é uma versão atualizada da Chica original. Sua aparência é semelhante à da Chica original e da Chica deteriorada do segundo jogo: um frango amarelo com olhos rosa-magenta, bochechas azuis e joelhos. <br><br> Ela usa batom em seu bico laranja e seu babador tem a inscrição \"LET'S ROCK!!!\", uma referência ao babador da Chica original. Rockstar Chica também carrega um par de maracas douradas com linhas azuis e vermelhas.",
 };
 
@@ -215,9 +185,6 @@ var rockstarFoxy = {
     orbitaCameraMaxima: "0 0 100m",
     orbitaCameraMinima: "0 0 80m",
     alvoCamera: "0m 21m 0m",
-    temAltura: true,
-    alturaMaxima: 12.5,
-    alturaMinima: -12.5,
     descricao: "Rockstar Foxy é um animatrônico comprável em \"Freddy Fazbear's Pizzeria Simulator\" (FFPS). Ele é uma versão mais nova e não danificada do Foxy original. Seu visual inclui o icônico tapa-olho, um papagaio verde no ombro e um par de pernas, uma das quais é uma perna de pau, caracterizando-o como um pirata. <br><br> Rockstar Foxy toca acordeão e tem um distintivo peito dourado em forma de estrela, como os outros \"Rockstars\". No jogo, ele concede 8 pontos de ENTRETENIMENTO, mas também aumenta o risco de processos judiciais. ",
 };
 
@@ -233,9 +200,6 @@ var musicMan = {
     orbitaCameraMaxima: "0 0 40m",
     orbitaCameraMinima: "0 0 30m",
     alvoCamera: "0m 5.5m 0m",
-    temAltura: true,
-    alturaMaxima: 3,
-    alturaMinima: -3,
     descricao: "Music Man é um animatrônico pesado disponível para compra no catálogo do jogo \"Freddy Fazbear's Pizzeria Simulator\" (FFPS). Seu preço é de $19000. Sua aparência é marcante: olhos grandes e negros, bochechas roxas, um nariz rosa, sobrancelhas também rosas, um queixo roxo com uma fileira longa de dentes. <br><br> Ele possui seis pernas semelhantes às pernas de uma aranha, um corpo arredondado e um torso listrado em rosa e branco com alto-falantes. Nas mãos, segura pratos de choque e usa um chapéu preto com uma faixa branca.",
 };
 
@@ -251,9 +215,6 @@ var elChip = {
     orbitaCameraMaxima: "0 0 22.5m",
     orbitaCameraMinima: "0 0 20m",
     alvoCamera: "0m -2.5m 0.25m",
-    temAltura: true,
-    alturaMaxima: 2.5,
-    alturaMinima: -2.5,
     descricao: "El Chip é um animatrônico com temática mexicana e o mascote do \"El Chip's Fiesta Buffet\", uma localização de culinária mexicana não vista no jogo \"Freddy Fazbear's Pizzeria Simulator\". Ele se assemelha a um castor, com cores predominantemente marrom-escuras e detalhes em laranja/ocre no focinho, patas, joelhos, sobrancelhas, placa abdominal e o interior das orelhas. <br><br> Seus olhos são verdes-limão, e ele possui dois pares de dentes incisivos, um nariz preto, bochechas e pálpebras rosadas, orelhas redondas e uma cauda larga e plana. El Chip toca um bandolim e usa um grande sombrero amarelo/vermelho com padrão de triângulos e luzes em forma de pérola.",
 };
 
@@ -268,9 +229,6 @@ var funtimeChica = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     animacoes: {
         posicaoInicial: {
@@ -295,9 +253,6 @@ var moltenFreddy = {
     ],
     orbitaCameraMaxima: "0 0 4m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -372,9 +327,6 @@ var scrapBaby = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 6m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -438,9 +390,6 @@ var scraptrap = {
     ],
     orbitaCameraMaxima: "0 0 4m",
     orbitaCameraMinima: "0 0 3m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -505,9 +454,6 @@ var lefty = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {

@@ -11,9 +11,6 @@ var glamrockFreddy = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -179,9 +176,6 @@ var glamrockChica = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 3m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -305,9 +299,6 @@ var roxanneWolf = {
     ],
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -438,9 +429,6 @@ var montgomeryGator = {
     ],
     orbitaCameraMaxima: "0 0 5.5m",
     orbitaCameraMinima: "0 0 4.5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -596,9 +584,6 @@ var shatteredGlamrockChica = {
     ],
     orbitaCameraMaxima: "0 0 13m",
     orbitaCameraMinima: "0 0 10m",
-    temAltura: true,
-    alturaMaxima: 2,
-    alturaMinima: -2,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -683,9 +668,6 @@ var shatteredRoxanneWolf = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -867,9 +849,6 @@ var sun = {
     ],
     orbitaCameraMaxima: "0 0 9m",
     orbitaCameraMinima: "0 0 6m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1.25,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -991,9 +970,6 @@ var moon = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -0.5,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -1140,9 +1116,6 @@ var glamrockEndo = {
     ],
     orbitaCameraMaxima: "0 0 6.5m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -1311,9 +1284,6 @@ var miniMusicMan = {
     ],
     orbitaCameraMaxima: "0 0 3m",
     orbitaCameraMinima: "0 0 2m",
-    temAltura: true,
-    alturaMaxima: 0.25,
-    alturaMinima: -0.25,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -1368,9 +1338,6 @@ var staffBot = {
     ],
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 6m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -1432,9 +1399,6 @@ var securityBot = {
     alvoCamera: "0m 3.5m 0.5m",
     mudaOrbitaCamera: true,
     orbitaCamera: "0 1.5rad 0",
-    temAltura: true,
-    alturaMaxima: 2.5,
-    alturaMinima: -2.5,
     temAudio: true,
     audios: {
         jumpscare: {
@@ -1459,9 +1423,6 @@ var mapBot = {
     alvoCamera: "0m 3.5m 0m",
     mudaOrbitaCamera: true,
     orbitaCamera: "0 1.5rad 0",
-    temAltura: true,
-    alturaMaxima: 2.5,
-    alturaMinima: -2.5,
     temAudio: true,
     audios: {
         jumpscare: {
@@ -1506,9 +1467,6 @@ var partyBot = {
     alvoCamera: "0m 3.5m 0m",
     mudaOrbitaCamera: true,
     orbitaCamera: "0 1.5rad 0",
-    temAltura: true,
-    alturaMaxima: 2.5,
-    alturaMinima: -2.5,
     temAudio: true,
     audios: {
         fala1: {
@@ -1543,9 +1501,6 @@ var chefBot = {
     alvoCamera: "0m 3.5m 0m",
     mudaOrbitaCamera: true,
     orbitaCamera: "0 1.5rad 0",
-    temAltura: true,
-    alturaMaxima: 2.5,
-    alturaMinima: -2.5,
     temAudio: true,
     audios: {
         fala1: {
@@ -1575,9 +1530,6 @@ var serverBot = {
     alvoCamera: "0m 3.5m 0m",
     mudaOrbitaCamera: true,
     orbitaCamera: "0 1.5rad 0",
-    temAltura: true,
-    alturaMaxima: 2.5,
-    alturaMinima: -2.5,
     descricao: "O Server Bot é um bot S.T.A.F.F. que é empregado para servir comida às pessoas. O Server Bot usa uma camisa listrada azul, laranja e vermelha, eles também usam um boné roxo claro e vermelho com uma hélice vermelha e azul. Uma versão quebrada pode ser encontrada no final dos esgotos.",
 };
 
@@ -1594,9 +1546,6 @@ var sewerBot = {
     alvoCamera: "0m 3.25m 0m",
     mudaOrbitaCamera: true,
     orbitaCamera: "0 1.5rad 0",
-    temAltura: true,
-    alturaMaxima: 2.5,
-    alturaMinima: -2.5,
     temAudio: true,
     audios: {
         fala1: {
@@ -1626,9 +1575,6 @@ var nightmarionneBot = {
     alvoCamera: "0m 3.25m 0m",
     mudaOrbitaCamera: true,
     orbitaCamera: "0 1.5rad 0",
-    temAltura: true,
-    alturaMaxima: 2.5,
-    alturaMinima: -2.5,
     temAudio: true,
     audios: {
         jumpscare: {
@@ -1658,9 +1604,6 @@ var cautionBot = {
     alvoCamera: "0m 0.5m 0m",
     mudaOrbitaCamera: true,
     orbitaCamera: "0 1.5rad 0",
-    temAltura: true,
-    alturaMaxima: 0.25,
-    alturaMinima: -0.25,
     descricao: "O Caution Bot, também conhecido extraoficialmente como Wet Floor Bot, é um letreiro robótico de piso molhado localizado ao redor do Mega Pizzaplex de Freddy Fazbear. Ele estreou em Five Nights at Freddy's: Security Breach e fez outra aparição no DLC RUIN.",
 };
 
@@ -1674,9 +1617,6 @@ var gregory = {
     ],
     orbitaCameraMaxima: "0 0 3m",
     orbitaCameraMinima: "0 0 2m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -0.5,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -1741,9 +1681,6 @@ var vanessa = {
     ],
     orbitaCameraMaxima: "0 0 4m",
     orbitaCameraMinima: "0 0 4.5m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -0.5,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -1832,9 +1769,6 @@ var vanny = {
     ],
     orbitaCameraMaxima: "0 0 10m",
     orbitaCameraMinima: "0 0 8m",
-    temAltura: true,
-    alturaMaxima: 1.5,
-    alturaMinima: -1.5,
     temAnimacao: true,
     temAudio: true,
     animacoes: {

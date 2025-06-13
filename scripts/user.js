@@ -38,7 +38,7 @@ document.querySelector("#editar-btn").addEventListener("click", async function (
     }, 500);
 
     irTelaConfigUser("Editar");
-    imagemCarregada.src = dadosUser.semFoto ? "assets/images/avatar.webp" : await pegarArquivo(dadosUser.imagemId, "png")
+    imagemCarregada.src = dadosUser.semFoto ? "assets/images/avatar.avif" : await pegarArquivo(dadosUser.imagemId, "avif")
     imagemCarregada.onload = function () {
         setTimeout(() => {
             clearTimeout(timeoutCarregamento)
@@ -94,7 +94,7 @@ function irTelaDadosUser(username) {
             dadosUserDislikes.innerHTML = 0
             dadosUserVistos.innerHTML = 0
 
-            dadosUserImg.src = "assets/images/avatar.webp"
+            dadosUserImg.src = "assets/images/avatar.avif"
             myUserBtnImg.src = dadosUserImg.src
         } else if (username == dadosUser.username) {
             menuLogado.style.display = "flex";
@@ -111,7 +111,7 @@ function irTelaDadosUser(username) {
             dadosUserImg.style.objectFit = dadosUser.preencher ? "cover" : "contain"
             myUserBtnImg.style.objectFit = dadosUser.preencher ? "cover" : "contain"
 
-            dadosUserImg.src = dadosUser.semFoto ? "assets/images/avatar.webp" : await pegarArquivo(dadosUser.imagemId, "png")
+            dadosUserImg.src = dadosUser.semFoto ? "assets/images/avatar.avif" : await pegarArquivo(dadosUser.imagemId, "avif")
             myUserBtnImg.src = dadosUserImg.src
         } else {
             menuLogado.style.display = "none";
@@ -130,7 +130,7 @@ function irTelaDadosUser(username) {
             dadosUserImg.style.objectFit = res.data.preencher ? "cover" : "contain"
             myUserBtnImg.style.objectFit = res.data.preencher ? "cover" : "contain"
 
-            dadosUserImg.src = !res.data.imagemId ? "assets/images/avatar.webp" : await pegarArquivo(res.data.imagemId, "png")
+            dadosUserImg.src = !res.data.imagemId ? "assets/images/avatar.avif" : await pegarArquivo(res.data.imagemId, "avif")
         }
 
         dadosUserImg.onload = function () {
@@ -223,7 +223,7 @@ inputImagem.addEventListener('change', function (event) {
 avatarBtn.addEventListener("click", () => {
     avatarBtn.style.display = "none";
     carregamentoImgDados.style.display = "none"
-    imagemCarregada.src = "assets/images/avatar.webp";
+    imagemCarregada.src = "assets/images/avatar.avif";
     inputImagem.value = "";
     dadosUser.semFoto = true;
 })
@@ -244,7 +244,7 @@ olho.addEventListener("click", function () {
 
 
 async function pegarArquivo(id, tipop) {
-    var tipo = tipop == "png" ? "image/png" : "model/gltf-binary"
+    var tipo = tipop == "avif" ? "image/avif" : "model/gltf-binary"
     try {
         const res = await axios.get(`${API_URL}/pegarArquivo/${id}`, { responseType: 'arraybuffer' });
         const blob = new Blob([res.data], { type: tipo });
@@ -258,7 +258,7 @@ async function pegarArquivo(id, tipop) {
 
 function resetarInputs() {
     formulario.reset();
-    imagemCarregada.src = "assets/images/avatar.webp"
+    imagemCarregada.src = "assets/images/avatar.avif"
     avatarBtn.style.display = "none";
     inputPreencher.classList.remove("active")
     imagemCarregada.style.objectFit = "contain";
@@ -326,7 +326,7 @@ async function exibirUsers() {
          <p class="users pointers" data-index="${i}">
             <span class="img-users">
                 <img src="assets/images/favicon/192x192.png" class="loader-img">
-                <img src="${user.imagemId ? await pegarArquivo(user.imagemId, "png") : "assets/images/avatar.webp"}" class="img-users-img">
+                <img src="${user.imagemId ? await pegarArquivo(user.imagemId, "avif") : "assets/images/avatar.avif"}" class="img-users-img">
             </span>
             <span class="username"><span class="arroba">@</span>${user.username}</span>
             <span class="material-symbols-rounded">open_in_new</span>
@@ -558,7 +558,7 @@ async function entrarUser() {
                         if (modelo.src == dadosUser.encontrados[i]) {
                             iModeloExtra = iModelo - praComprar.length
                             praEncontrar[iModeloExtra].classList.remove("bloqueado")
-                            document.querySelectorAll(".pra-encontrar img")[iModeloExtra].src = modelosExtras[iModelo].srcImg + "0.webp"
+                            document.querySelectorAll(".pra-encontrar img")[iModeloExtra].src = modelosExtras[iModelo].srcImg + "0.avif"
                             document.querySelectorAll(".pra-encontrar ~ p")[iModeloExtra].innerHTML = modelosExtras[iModelo].nome
                         }
                     })
@@ -570,7 +570,7 @@ async function entrarUser() {
                         if (modelo.src == dadosUser.douradosEncontrados[i]) {
                             iModeloExtra = iModelo - praComprar.length - praEncontrar.length
                             praEncontrarDourado[iModeloExtra].classList.remove("bloqueado")
-                            document.querySelectorAll(".pra-encontrar-dourado img")[iModeloExtra].src = modelosExtras[iModelo].srcImg + "0.webp"
+                            document.querySelectorAll(".pra-encontrar-dourado img")[iModeloExtra].src = modelosExtras[iModelo].srcImg + "0.avif"
                             document.querySelectorAll(".pra-encontrar-dourado ~ p")[iModeloExtra].innerHTML = modelosExtras[iModelo].nome
                         }
                     })

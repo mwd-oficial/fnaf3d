@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @font-face {
     font-family: 'logo';
     src: url(../assets/fonts/logo.woff);
@@ -165,7 +167,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #000;
-    background-image: url(../assets/images/aviso.webp);
+    background-image: url(../assets/images/aviso.avif);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -185,7 +187,7 @@ body {
     gap: 10px;
     color: #C0C0C0;
     transition-duration: .5s;
-    z-index: 1100;
+    z-index: 2100;
 }
 
 #tela-inicial {
@@ -393,6 +395,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
     z-index: 9999;
 }
 
@@ -516,12 +519,12 @@ progress::-webkit-progress-value {
 
     0%,
     100% {
-        opacity: 0.5;
+        filter: brightness(0.5);
         transform: scale(1);
     }
 
     50% {
-        opacity: 1;
+        filter: brightness(1);
         transform: scale(1.025);
     }
 }
@@ -612,6 +615,7 @@ model-viewer {
     z-index: 10;
     color: #fff;
     text-align: center;
+    pointer-events: none;
 }
 
 #btn-menu-home {
@@ -683,11 +687,16 @@ model-viewer {
     gap: 10px;
     z-index: 101;
     transition-duration: .5s;
+    pointer-events: none;
     display: none;
     opacity: 0;
-    pointer-events: none;
+    
+    &.nao-clique {
+        pointer-events: none !important;
+    }
 
     & #pesquisa-div {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -737,6 +746,7 @@ model-viewer {
     }
 
     & #ainda-nao-visto-div {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -756,6 +766,7 @@ model-viewer {
     }
 
     & #my-user-btn {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -828,6 +839,7 @@ model-viewer {
     opacity: 0;
     transition-duration: .5s;
 
+    pointer-events: none;
     display: none;
 
 
@@ -1330,10 +1342,111 @@ model-viewer {
     background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
     backdrop-filter: blur(10px);
     border: 3px solid #333;
-    z-index: 10 !important;
+    opacity: .5;
+    pointer-events: none;
     display: none;
 }
 
+#carregamento-ar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
+    backdrop-filter: blur(10px);
+    z-index: 1001;
+    display: none;
+
+    &>div {
+        width: 200px !important;
+        height: 200px !important;
+        border-radius: 50%;
+        background: none !important;
+        display: flex !important;
+    }
+}
+
+#fechar-ar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 80px;
+    color: #fff;
+    z-index: 1005;
+    display: none;
+}
+
+#tela-ar {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100dvh;
+    background-color: #000;
+    background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
+    color: #fff;
+    z-index: 1000;
+    overflow-y: scroll;
+    display: none;
+
+    a {
+        color: #fff !important;
+        text-decoration: underline;
+    }
+
+    & h2 {
+        margin-top: 25px;
+    }
+
+    & h5 {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    & ol {
+        padding: 0 10px 0 30px !important;
+
+        & li {
+            text-align: justify;
+            margin: 10px 0;
+        }
+    }
+
+    & video {
+        aspect-ratio: 9 / 16;
+        width: 90%;
+        border-radius: 20px;
+    }
+
+    & #ir-ar-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 50px 0;
+        background-color: #fff;
+        color: #000;
+        padding: 10px 20px;
+        border-radius: 10px;
+
+        & span {
+            font-size: 30px;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        background-image: none !important;
+    }
+}
 
 #tutorial-botoes-div {
     position: fixed;
@@ -1342,7 +1455,7 @@ model-viewer {
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(10px) brightness(0.5);
-    z-index: 999;
+    z-index: 2005;
     display: none;
 
     & #tutorial-botoes-content {
@@ -1361,6 +1474,7 @@ model-viewer {
         & p {
             padding: 20px;
             border-radius: 20px;
+            max-width: 75%;
         }
     }
 }
@@ -1878,51 +1992,6 @@ model-viewer {
 
 
 
-#input-altura-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 45%;
-    right: 0px;
-    transform: translateY(-50%);
-    height: 200px;
-    padding: 30px 10px;
-    background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
-    backdrop-filter: blur(10px);
-    border: 3px solid #333;
-    border-radius: 10px 0 0 10px;
-    z-index: 10;
-    display: none;
-    pointer-events: none;
-
-    &.celular {
-        top: 50%;
-        gap: 0px;
-        height: 180px;
-        padding: 0px 5px;
-
-        & #input-altura-rotacao {
-            height: 60%;
-        }
-    }
-
-    & #input-altura-rotacao {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: rotate(-90deg);
-        height: 100%;
-        width: 0px;
-    }
-
-    & span {
-        transform: rotate(90deg);
-        color: #fff;
-    }
-}
 
 
 
@@ -2501,6 +2570,7 @@ a {
     border-radius: 20px;
     display: none;
     opacity: 0;
+    z-index: 1;
 
     &.efeito-hover:hover {
         transform: scale(1.1);
@@ -2519,19 +2589,19 @@ a {
 
 
 @media screen and (max-width: 1200px) {
-    img[src="assets/images/extras/fnaf-filme.webp"] {
+    img[src="assets/images/extras/fnaf-filme.avif"] {
         height: 90% !important;
     }
 }
 
 @media screen and (max-width: 1100px) {
-    img[src="assets/images/extras/fnaf-filme.webp"] {
+    img[src="assets/images/extras/fnaf-filme.avif"] {
         height: 80% !important;
     }
 }
 
 @media screen and (max-width: 1000px) {
-    img[src="assets/images/extras/fnaf-filme.webp"] {
+    img[src="assets/images/extras/fnaf-filme.avif"] {
         height: 70% !important;
     }
 }

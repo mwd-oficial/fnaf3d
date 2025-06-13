@@ -113,15 +113,13 @@ function abrirFecharMenu() {
                     irTopoDiv.style.pointerEvents = "all"
                 }
                 menuContent.addEventListener('scroll', scrollPesquisaNaoVisto)
-            }, 1500);
-            if (primeiraVezScroll) {
-                primeiraVezScroll = false
-                setTimeout(irTopo, 1500);
-            } else {
-                setTimeout(() => {
+                if (primeiraVezScroll) {
+                    primeiraVezScroll = false
+                    irTopo()
+                } else {
                     nomeFnaf[iNomeFnaf].scrollIntoView({ behavior: 'smooth', block: 'start' })
-                }, 1500);
-            }
+                }
+            }, 1500);
         } else {
             setTimeout(() => {
                 pesquisaNaoVistoDiv.style.opacity = 1
@@ -129,6 +127,7 @@ function abrirFecharMenu() {
                 irTopoDiv.style.opacity = 1
                 irTopoDiv.style.pointerEvents = "all"
                 menuContent.addEventListener('scroll', scrollPesquisaNaoVisto)
+                nomeFnaf[iNomeFnaf].scrollIntoView({ behavior: 'smooth', block: 'start' })
             }, 1500);
         }
         divMenu.classList.add("active")
@@ -173,16 +172,11 @@ btnHome.addEventListener("click", function () {
 ucnBtn.addEventListener("click", aparecerUcnInfo)
 
 
-
-
-arBtn.addEventListener("touchstart", function () {
-    ar = true
-    verificaOrientacao()
-})
-
-
 function irTopo() {
-    menuContent.scrollTo(0, 0)
+    menuContent.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
 }
 irTopoDiv.addEventListener("click", irTopo)
 
@@ -405,7 +399,6 @@ corInput.addEventListener("input", function () {
 
 
 
-
 // Tutorial botões
 function tutorialBotoes() {
     tutorialBotoesDiv.style.display = "flex"
@@ -420,7 +413,8 @@ function tutorialBotoes() {
     switch (passoTutorial) {
         case 1:
             if (!animacoesAberto) abaAnimacoes()
-            animacoesContainer.style.zIndex = 1001
+            animacoesContainer.style.zIndex = 2010
+            tutorialBotoesContentP.innerHTML = "Aqui você pode ver as animações disponíveis do modelo <br><br> (Clique)"
             if (isCelular) {
                 tutorialBotoesContent.style.height = "50%"
                 tutorialBotoesContent.style.top = "100px"
@@ -430,8 +424,8 @@ function tutorialBotoes() {
             if (animacoesAberto) abaAnimacoes()
             if (!audiosAberto) abaAudios()
             animacoesContainer.style.zIndex = 10
-            audiosContainer.style.zIndex = 1001
-            tutorialBotoesContentP.innerHTML = "Aqui você pode ver os áudios disponíveis do modelo <br> (Clique)"
+            audiosContainer.style.zIndex = 2010
+            tutorialBotoesContentP.innerHTML = "Aqui você pode ver os áudios disponíveis do modelo <br><br> (Clique)"
             if (isCelular) {
                 tutorialBotoesContent.style.transform = "translate(0%, -50%)"
                 tutorialBotoesContent.style.height = "100%"
@@ -444,64 +438,104 @@ function tutorialBotoes() {
         case 3:
             if (audiosAberto) abaAudios()
             audiosContainer.style.zIndex = 10
-            inputAlturaDiv.style.zIndex = 1001
-            tutorialBotoesContentP.innerHTML = "Aqui você pode alterar a altura do modelo <br> (Clique)"
-            if (isCelular) {
-                tutorialBotoesContent.style.left = "15%"
-                tutorialBotoesContent.style.right = "initial"
-            }
-            break
-        case 4:
-            /*
-            inputAlturaDiv.style.zIndex = 10
-            setTimeout(() => {
-                quantidadeMoedas3dDiv.style.transitionDuration = "0s"
-                quantidadeMoedas3dDiv.style.zIndex = 1001
-                quantidadeMoedas3dDiv.style.opacity = 1
-            }, 1);
-            tutorialBotoesContentP.innerHTML = "Aqui mostra quantas moedas 3D você tem."
-            tutorialBotoesContentP.innerHTML += isCelular ? " Toque" : " Passe o mouse por cima"
-            tutorialBotoesContentP.innerHTML += " para vê-lo. <br> Dica: Cada modelo tem 1 moeda escondida. Tente encontrá-la! <br> (Clique)"
-*/
-            break
-        case 5:
-            /*
-            quantidadeMoedas3dDiv.style.zIndex = 1
-            quantidadeMoedas3dDiv.style.opacity = 0
-            quantidadeMoedas3dDiv.style.transitionDuration = "1s"
+            arBtn.style.zIndex = 2010
+            arBtn.style.opacity = 1
+            tutorialBotoesContent.style.width = "100%"
+            tutorialBotoesContentP.innerHTML = `${isCelular ? "Aqui" : "Em um celular,"} você pode visualizar o modelo no modo AR (Realidade Aumentada) <br><br> (Clique)`
             if (isCelular) {
                 tutorialBotoesContent.style.left = "50%"
                 tutorialBotoesContent.style.transform = "translate(-50%, -50%)"
-                quantidadeMoedas3dDiv.addEventListener("touchstart", quantidadeMoedas3d)
-            } else {
-                quantidadeMoedas3dDiv.addEventListener("mouseover", quantidadeMoedas3d)
             }
-            tutorialBotoesContentP.innerHTML = "Aqui você pode ver a descrição do modelo e o tutorial de como interagir com ele <br> (Clique)"
+            break
+        case 4:
+            arBtn.style.zIndex = 10
+            if (!isCelular) arBtn.style.opacity = 0.5
+            tutorialBotoesContentP.innerHTML = "No lado esquerdo, você pode ver a descrição do modelo, imagens, vídeos e ler comentários. Caso logado, dar like e dislike, favoritar e comentar<br><br>No lado direito, você pode ver o tutorial de como interagir com o modelo e os efeitos disponíveis<br><br>(Clique)"
             tutorialBotoesContentP.style.backdropFilter = "blur(10px) brightness(0.5)"
             tutorialBotoesDiv.style.backdropFilter = "none"
             if (!tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
-                */
+            break
+        case 5:
+            if (tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
+            tutorialBotoesContentP.innerHTML = "Aqui você pode ver todos os modelos disponíveis (e extras para desbloquear) <br><br> (Clique)"
+            if (!divMenu.classList.contains("active")) abrirFecharMenu()
             break
         case 6:
-            if (tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
-            tutorialBotoesContentP.innerHTML = "Aqui você pode ver todos os modelos disponíveis (e extras para desbloquear) <br> (Clique)"
-            if (!divMenu.classList.contains("active")) abrirFecharMenu()
-
+            menuContent.scrollTo({
+                top: listaUsers.getBoundingClientRect().top + menuContent.scrollTop - 100,
+                behavior: 'smooth'
+            })
+            tutorialBotoesContentP.innerHTML = "E também outros usuários cadastrados <br><br> (Clique)"
             break
         case 7:
-
+            menuContent.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+            menuJogos.style.zIndex = 2010
+            if (!jogosBtn.classList.contains("active")) abaJogos()
+            tutorialBotoesContentP.innerHTML = "Aqui você pode jogar minhas versões dos jogos direto pelo navegador, além de poder instalar alguns oficiais disponibilizados gratuitamente pelo Scott Cawthon <br><br> (Clique)"
+            tutorialBotoesContentP.style.backdropFilter = "none"
+            tutorialBotoesDiv.style.backdropFilter = "blur(10px) brightness(0.5)"
+            break
+        case 8:
+            if (jogosBtn.classList.contains("active")) abaJogos()
+            menuJogos.style.zIndex = 101
+            pesquisaNaoVistoDiv.classList.add("nao-clique")
+            pesquisaNaoVistoDiv.style.zIndex = 2010
+            pesquisaDiv.style.opacity = 1
+            aindaNaoVistoDiv.style.opacity = 0.25
+            myUserBtn.style.opacity = 0.25
+            tutorialBotoesContentP.innerHTML = "Aqui você pode pesquisar modelos ou usuários (colocando o @ antes do nome) <br><br> (Clique)"
+            break
+        case 9:
+            pesquisaDiv.style.opacity = 0.25
+            aindaNaoVistoDiv.style.opacity = 1
+            myUserBtn.style.opacity = 0.25
+            tutorialBotoesContentP.innerHTML = "Aqui para ver os modelos que ainda não viu <br><br> (Clique)"
+            break
+        case 10:
+            pesquisaDiv.style.opacity = 0.25
+            aindaNaoVistoDiv.style.opacity = 0.25
+            myUserBtn.style.opacity = 1
+            tutorialBotoesContentP.innerHTML = "E aqui para acessar as suas informações<br><br> (Clique)"
+            break
+        case 11:
+            pesquisaNaoVistoDiv.style.zIndex = 101
+            pesquisaDiv.style.opacity = 1
+            aindaNaoVistoDiv.style.opacity = 1
+            myUserBtn.style.opacity = 1
+            abrirUserDiv()
+            tutorialBotoesContentP.innerHTML = "Aqui você poderá ver a quantidade de modelos que você deu like e dislike, que você viu, suas moedas e seus favoritos. <br><br> Também é onde você pode se cadastrar e entrar <br><br> (Clique)"
+            tutorialBotoesContentP.style.backdropFilter = "blur(10px) brightness(0.5)"
+            tutorialBotoesDiv.style.backdropFilter = "none"
+            break
+        case 12:
+            if (userDiv.style.display == "flex") fecharUserDiv()
             if (divMenu.classList.contains("active")) abrirFecharMenu()
+            if (tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
+            if (animacoesAberto) abaAnimacoes()
+            if (audiosAberto) abaAudios()
             tutorialBotoesDiv.style.display = "none"
             pularTutorial.style.display = "none"
             animacoesContainer.style.pointerEvents = "all"
+            animacoesContainer.style.zIndex = 10
             audiosContainer.style.pointerEvents = "all"
-            inputAlturaDiv.style.pointerEvents = "all"
+            audiosContainer.style.zIndex = 10
+            arBtn.style.pointerEvents = "all"
+            arBtn.style.zIndex = 10
+            menuJogos.style.zIndex = 101
+            menuJogos.style.pointerEvents = "all"
+            if (!isCelular) arBtn.style.opacity = 0.5
+            pesquisaNaoVistoDiv.classList.remove("nao-clique")
+            pesquisaNaoVistoDiv.style.zIndex = 101
+            pesquisaDiv.style.opacity = 1
+            aindaNaoVistoDiv.style.opacity = 1
+            myUserBtn.style.opacity = 1
             setTimeout(() => {
                 logomwdEl.style.display = "block"
                 setTimeout(() => logomwdEl.style.opacity = 1, 100)
             }, 500);
-
-
             break
     }
 }
@@ -517,11 +551,6 @@ function tutorialBotoesDivf() {
 }
 
 function pularTutorialf() {
-    if (animacoesAberto) abaAnimacoes()
-    animacoesContainer.style.zIndex = 10
-    if (audiosAberto) abaAudios()
-    audiosContainer.style.zIndex = 10
-    inputAlturaDiv.style.zIndex = 10
     /*
     quantidadeMoedas3dDiv.style.zIndex = 1
     quantidadeMoedas3dDiv.style.opacity = 0
@@ -532,9 +561,7 @@ function pularTutorialf() {
         quantidadeMoedas3dDiv.addEventListener("mouseover", quantidadeMoedas3d)
     }
         */
-    if (tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
-
-    passoTutorial = 7
+    passoTutorial = 12
     tutorialBotoes()
 }
 
@@ -734,8 +761,8 @@ function fnafInfo(iModelo) {
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnafexfInfo
             trailer.src = "assets/videos/trailer-filme.mp4"
-            trailer.poster = "assets/images/extras/trailer.webp"
-            fnafImg.src = "assets/images/extras/fnaf-filme.webp"
+            trailer.poster = "assets/images/extras/trailer.avif"
+            fnafImg.src = "assets/images/extras/fnaf-filme.avif"
             fnafImg.style.width = "initial"
             fnafImg.style.height = "100%"
             fnafFilme.style.display = "flex"
@@ -764,8 +791,8 @@ function configurarFnafInfo(i) {
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnaf1Info
             trailer.src = "assets/videos/fnaf1/trailer.mp4"
-            trailer.poster = "assets/images/fnaf1/trailer.webp"
-            fnafImg.src = "assets/images/fnaf1/fnaf1.webp"
+            trailer.poster = "assets/images/fnaf1/trailer.avif"
+            fnafImg.src = "assets/images/fnaf1/fnaf1.avif"
             jogarFnaf.style.display = "flex"
             break
         case 2:
@@ -774,8 +801,8 @@ function configurarFnafInfo(i) {
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnaf2Info
             trailer.src = "assets/videos/fnaf2/trailer.mp4"
-            trailer.poster = "assets/images/fnaf2/trailer.webp"
-            fnafImg.src = "assets/images/fnaf2/fnaf2.webp"
+            trailer.poster = "assets/images/fnaf2/trailer.avif"
+            fnafImg.src = "assets/images/fnaf2/fnaf2.avif"
             jogarFnaf.style.display = "flex"
             break
         case 3:
@@ -784,8 +811,8 @@ function configurarFnafInfo(i) {
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnaf3Info
             trailer.src = "assets/videos/fnaf3/trailer.mp4"
-            trailer.poster = "assets/images/fnaf3/trailer.webp"
-            fnafImg.src = "assets/images/fnaf3/fnaf3.webp"
+            trailer.poster = "assets/images/fnaf3/trailer.avif"
+            fnafImg.src = "assets/images/fnaf3/fnaf3.avif"
             jogarFnaf.style.display = "flex"
             break
         case 4:
@@ -794,8 +821,8 @@ function configurarFnafInfo(i) {
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnaf4Info
             trailer.src = "assets/videos/fnaf4/trailer.mp4"
-            trailer.poster = "assets/images/fnaf4/trailer.webp"
-            fnafImg.src = "assets/images/fnaf4/fnaf4.webp"
+            trailer.poster = "assets/images/fnaf4/trailer.avif"
+            fnafImg.src = "assets/images/fnaf4/fnaf4.avif"
             jogarFnaf.style.display = "flex"
             break
         case 5:
@@ -804,8 +831,8 @@ function configurarFnafInfo(i) {
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnafslInfo
             trailer.src = "assets/videos/fnafsl/trailer.mp4"
-            trailer.poster = "assets/images/fnafsl/trailer.webp"
-            fnafImg.src = "assets/images/fnafsl/fnafsl.webp"
+            trailer.poster = "assets/images/fnafsl/trailer.avif"
+            fnafImg.src = "assets/images/fnafsl/fnafsl.avif"
             jogarFnaf.style.display = "flex"
             break
         case 6:
@@ -814,8 +841,8 @@ function configurarFnafInfo(i) {
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnafffpsInfo
             trailer.src = "assets/videos/fnafffps/trailer.mp4"
-            trailer.poster = "assets/images/fnafffps/trailer.webp"
-            fnafImg.src = "assets/images/fnafffps/fnafffps.webp"
+            trailer.poster = "assets/images/fnafffps/trailer.avif"
+            fnafImg.src = "assets/images/fnafffps/fnafffps.avif"
             if (isCelular) {
                 downloadP.style.display = "block"
             } else {
@@ -828,8 +855,8 @@ function configurarFnafInfo(i) {
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnafsbInfo
             trailer.src = "assets/videos/fnafsb/trailer.mp4"
-            trailer.poster = "assets/images/fnafsb/trailer.webp"
-            fnafImg.src = "assets/images/fnafsb/fnafsb.webp"
+            trailer.poster = "assets/images/fnafsb/trailer.avif"
+            fnafImg.src = "assets/images/fnafsb/fnafsb.avif"
             fnafsbSteam.style.display = "flex"
             break
         case 8:
@@ -838,8 +865,8 @@ function configurarFnafInfo(i) {
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnafsbrInfo
             trailer.src = "assets/videos/fnafsbr/trailer.mp4"
-            trailer.poster = "assets/images/fnafsbr/trailer.webp"
-            fnafImg.src = "assets/images/fnafsbr/fnafsbr.webp"
+            trailer.poster = "assets/images/fnafsbr/trailer.avif"
+            fnafImg.src = "assets/images/fnafsbr/fnafsbr.avif"
             fnafsbrSteam.style.display = "flex"
             break
         case 9:
@@ -848,8 +875,8 @@ function configurarFnafInfo(i) {
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnafwInfo
             trailer.src = "assets/videos/fnafw/trailer.mp4"
-            trailer.poster = "assets/images/fnafw/trailer.webp"
-            fnafImg.src = "assets/images/fnafw/fnafw.webp"
+            trailer.poster = "assets/images/fnafw/trailer.avif"
+            fnafImg.src = "assets/images/fnafw/fnafw.avif"
             if (isCelular) {
                 downloadP.style.display = "block"
             } else {
@@ -857,6 +884,7 @@ function configurarFnafInfo(i) {
             }
             break
     }
+    eventosVideo()
 }
 
 
@@ -894,7 +922,7 @@ async function cliqueMoeda() {
 
     ++dadosUser.moedas3d
 
-    if (!verificaPraComprar()) alerta("+1&nbsp;<img src='assets/images/extras/pra-comprar/moeda-3d/0.webp'>")
+    if (!verificaPraComprar()) alerta("+1&nbsp;<img src='assets/images/extras/pra-comprar/moeda-3d/0.avif'>")
 
     const res = await axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
         moedas3d: dadosUser.moedas3d
@@ -914,7 +942,7 @@ async function verificaPraComprar() {
                 extraDesbloqueado.style.display = "flex"
                 setTimeout(() => extraDesbloqueado.style.opacity = 1, 125);
                 alerta("Novo Extra Desbloqueado!")
-                extraDesbloqueadoImg.src = modelosExtras[iPraComprar].srcImg + "0.webp"
+                extraDesbloqueadoImg.src = modelosExtras[iPraComprar].srcImg + "0.avif"
                 extraDesbloqueadoP.innerHTML = modelosExtras[iPraComprar].nome
             }, 1);
 
@@ -1002,11 +1030,11 @@ function praEncontrarf(iPraEncontrar) {
         extraDesbloqueado.style.display = "flex"
         setTimeout(() => extraDesbloqueado.style.opacity = 1, 125);
         alerta("Novo Extra Desbloqueado!")
-        extraDesbloqueadoImg.src = modelosExtras[iModeloExtra].srcImg + "0.webp"
+        extraDesbloqueadoImg.src = modelosExtras[iModeloExtra].srcImg + "0.avif"
         extraDesbloqueadoP.innerHTML = modelosExtras[iModeloExtra].nome
     }, 1);
 
-    document.querySelectorAll(".pra-encontrar img")[iPraEncontrar].src = modelosExtras[iModeloExtra].srcImg + "0.webp"
+    document.querySelectorAll(".pra-encontrar img")[iPraEncontrar].src = modelosExtras[iModeloExtra].srcImg + "0.avif"
     document.querySelectorAll(".pra-encontrar ~ p")[iPraEncontrar].innerHTML = modelosExtras[iModeloExtra].nome
 
     aparecerConfete()
@@ -1049,10 +1077,10 @@ function praEncontrarDouradof(iPraEncontrarDourado) {
     extraDesbloqueado.style.display = "flex"
     setTimeout(() => extraDesbloqueado.style.opacity = 1, 125);
     alerta("Novo Extra Dourado Desbloqueado!")
-    extraDesbloqueadoImg.src = modelosExtras[iModeloExtra].srcImg + "0.webp"
+    extraDesbloqueadoImg.src = modelosExtras[iModeloExtra].srcImg + "0.avif"
     extraDesbloqueadoP.innerHTML = modelosExtras[iModeloExtra].nome
 
-    document.querySelectorAll(".pra-encontrar-dourado img")[iPraEncontrarDourado].src = modelosExtras[iModeloExtra].srcImg + "0.webp"
+    document.querySelectorAll(".pra-encontrar-dourado img")[iPraEncontrarDourado].src = modelosExtras[iModeloExtra].srcImg + "0.avif"
     document.querySelectorAll(".pra-encontrar-dourado ~ p")[iPraEncontrarDourado].innerHTML = modelosExtras[iModeloExtra].nome
 
     aparecerConfete()
@@ -1076,7 +1104,7 @@ document.querySelector("#fechar-ucn-info-btn").addEventListener("click", () => {
 })
 
 
-document.querySelector("#ainda-nao-visto-div").addEventListener("click", checkarAindaNaoVisto)
+aindaNaoVistoDiv.addEventListener("click", checkarAindaNaoVisto)
 
 function checkarAindaNaoVisto() {
     if (aindaNaoVistoInput.classList.contains("active")) {
@@ -1320,7 +1348,9 @@ function abaJogos() {
 
 
 
-myUserBtn.addEventListener("click", function () {
+myUserBtn.addEventListener("click", abrirUserDiv)
+function abrirUserDiv() {
+    console.log("AbrirUserDiv executado")
     userDiv.style.display = "flex"
     telaDadosUser.style.opacity = 0;
     telaConfigUser.style.opacity = 0
@@ -1333,12 +1363,13 @@ myUserBtn.addEventListener("click", function () {
             irTelaDadosUser()
         }
     }, 250);
-})
+}
 
-document.querySelector("#fechar-user-div").addEventListener("click", function () {
+document.querySelector("#fechar-user-div").addEventListener("click", fecharUserDiv)
+function fecharUserDiv() {
     userDiv.style.opacity = 0
     if (isCelular && focusInput) exitFullscreen()
     focusInput = false
     if (!dadosUser.imagemId) semFoto = true
-setTimeout(() => userDiv.style.display = "none", 250);
-})
+    setTimeout(() => userDiv.style.display = "none", 250);
+}

@@ -83,7 +83,7 @@
     <div id="fechar-aba-cel"></div>
     <div id="tutorial-botoes-div" class="pointers">
         <div id="tutorial-botoes-content">
-            <p class="ajustar-font-size">Aqui você pode ver as animações disponíveis do modelo <br> (Clique)</p>
+            <p class="ajustar-font-size"></p>
         </div>
     </div>
     <div class="continuar-btn efeito-hover" id="pular-tutorial" style="display: none;"></div>
@@ -98,7 +98,7 @@
 
     <div id="ucn-info-img-div">
         <span class="material-symbols-rounded pointers" id="fechar-ucn-info-btn">close</span>
-        <div id="ucn-img-div"><img src="assets/images/fnafucn.webp" id="ucn-img"></div>
+        <div id="ucn-img-div"><img src="assets/images/fnafucn.avif" id="ucn-img"></div>
         <div id="ucn-info-div">
             <h2 class="ajustar-font-size">Five Nights at Freddy's Ultimate Custom Night</h2>
             <div id="ucn-info">
@@ -219,7 +219,7 @@
                     <div id="dados-user-info">
                         <h1 id="dados-user-username"></h1>
                         <p>
-                            <img src="assets/images/extras/pra-comprar/moeda-3d/0.webp" alt="">
+                            <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif" alt="">
                             <span><span id="dados-user-moedas"></span> moedas 3D</span>
                         </p>
                         <p>
@@ -247,7 +247,7 @@
                 <div id="dados-user-favoritos-container">
                     <!-- <div class="modelos-div ajustar-width-75">
                         <div class="btn-modelos geral ajustar-height"><img
-                                src="assets/images/fnaf4/nightmare-freddy/0.webp">
+                                src="assets/images/fnaf4/nightmare-freddy/0.avif">
                         </div>
                         <p class="ajustar-font-size">Nightmare Freddy</p>
                     </div> -->
@@ -285,7 +285,7 @@
                 <form action="" method="post" autocomplete="on">
                     <div id="imagem-div">
                         <label for="input-imagem" id="label-imagem" class="pointers">
-                            <img src="assets/images/avatar.webp" alt="">
+                            <img src="assets/images/avatar.avif" alt="">
                             <div class="carregamento-img" id="carregamento-img-config">
                                 <div class="div-logo">
                                     <img src="assets/images/freddy-logo.png" alt="">
@@ -302,26 +302,29 @@
                                 <span class="material-symbols-rounded">add_a_photo</span>
                             </div>
                         </label>
-                        <input type="file" name="" id="input-imagem" accept=".jpg, .png, .webp" style="display: none;">
+                        <input type="file" name="" id="input-imagem" accept=".jpeg, .jpg, .png, .webp, .avif" style="display: none;">
                         <div id="preencher-div">
                             <p class="pointers ajustar-font-size" id="preencher-p">Preencher imagem:</p>
                             <div id="input-preencher" class="pointers checkbox-input"></div>
                         </div>
                         <div id="avatar-btn" class="pointers">
-                            <img src="assets/images/avatar.webp" alt="">
+                            <img src="assets/images/avatar.avif" alt="">
                         </div>
                     </div>
                     <fieldset id="username-fieldset">
                         <legend class="ajustar-font-size">Username</legend>
-                        <input type="text" name="username" id="input-username" autocomplete="username" class="inputs-user pointers"
-                            minlength="3" maxlength="15" pattern="^[A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*$">
+                        <input type="text" name="username" id="input-username" autocomplete="username"
+                            class="inputs-user pointers" minlength="3" maxlength="15"
+                            pattern="^[A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*$">
                     </fieldset>
-                    <p class="ajustar-font-size">O nome de usuário deve conter apenas caracteres alfanuméricos, hífens e underlines únicos, não
+                    <p class="ajustar-font-size">O nome de usuário deve conter apenas caracteres alfanuméricos, hífens e
+                        underlines únicos, não
                         pode começar
                         ou terminar com um hífen ou underline, nem conter hífens ou underlines consecutivos.</p>
                     <fieldset>
                         <legend class="ajustar-font-size">Email</legend>
-                        <input type="email" name="email" id="input-email" autocomplete="email" class="inputs-user pointers" required pattern="^[^@]+@[^@]+\.[^@]{2,}$">
+                        <input type="email" name="email" id="input-email" autocomplete="email"
+                            class="inputs-user pointers" required pattern="^[^@]+@[^@]+\.[^@]{2,}$">
                     </fieldset>
                     <p class="ajustar-font-size">Por favor, insira um email válido.</p>
                     <fieldset>
@@ -331,7 +334,8 @@
                             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{8,}$">
                         <span class="material-symbols-rounded pointers" id="olho">visibility</span>
                     </fieldset>
-                    <p class="ajustar-font-size">A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e um
+                    <p class="ajustar-font-size">A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas,
+                        minúsculas, números e um
                         caractere especial.</p>
                     <button type="submit" class="pointers" id="enviar-btn"></button>
                 </form>
@@ -353,7 +357,7 @@
         <video src="assets/videos/tela-inicial.mp4" preload="auto" loop id="tela-inicial-video"
             style="filter: brightness(0.75);"></video>
         <div id="div-logo-btn">
-            <img src="assets/images/logo.webp" alt="logo fnaf 3d" class="ajustar-width-50">
+            <img src="assets/images/logo.avif" alt="logo fnaf 3d" class="ajustar-width-50">
             <div id="iniciar-btn" class="ajustar-font-size efeito-hover">Iniciar</div>
         </div>
     </div>
@@ -390,7 +394,7 @@
 
 
     <div id="conteudo">
-        <img src="assets/images/extras/pra-comprar/moeda-3d/0.webp" alt="" id="moeda-3d-img">
+        <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif" alt="" id="moeda-3d-img">
 
 
 
@@ -441,33 +445,39 @@
                 <div id="tutorial-div-wrapper" class="efeito-hover">
                     <div id="tutorial-div">
 
-                        <h2 class="ajustar-font-size">Interagindo com o Modelo 3D</h2>
-                        <h3 class="ajustar-font-size">Movimento da Orbita da Câmera</h3>
-                        <p class="ajustar-font-size tutorial-comp">
-                            <span>
-                                <span class="material-symbols-rounded">north</span>
-                                <span class="material-symbols-rounded">east</span>
-                                <span class="material-symbols-rounded">south</span>
-                                <span class="material-symbols-rounded">west</span>
-                            </span>
-                            Pressionar setinhas do teclado
-                        </p>
+                        <h2 class="ajustar-font-size">Interagir com Modelo 3D</h2>
+
+                        <h3 class="ajustar-font-size">Girar Modelo</h3>
                         <p class="ajustar-font-size tutorial-comp">
                             <span class="material-symbols-rounded">mouse</span>
-                            Arrastar o botão esquerdo do mouse
+                            Arrastar botão esquerdo do mouse
                         </p>
                         <p class="ajustar-font-size tutorial-cel">
                             <span class="material-symbols-rounded">touch_app</span>
-                            Arrastar o dedo
+                            Arrastar dedo
                         </p>
+
                         <h3 class="ajustar-font-size">Dar ou Tirar Zoom</h3>
                         <p class="ajustar-font-size tutorial-comp">
                             <span class="material-symbols-rounded">mouse</span>
-                            Com o scroll do mouse (rodinha)
+                            Com scroll do mouse (rodinha)
                         </p>
                         <p class="ajustar-font-size tutorial-cel">
                             <span class="material-symbols-rounded">pinch_zoom_out</span>
-                            Com o movimento de pinça (dois dedos)
+                            Com movimento de pinça (dois dedos)
+                        </p>
+
+                        <h3 class="ajustar-font-size">Mudar Ponto Central</h3>
+                        <p class="ajustar-font-size tutorial-comp"
+                            style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                            <span class="material-symbols-rounded">mouse</span>
+                            Arrastar botão direito do mouse ou clicar com esquerdo no modelo no ponto escolhido (clicar
+                            fora para centralizar novamente)
+                        </p>
+                        <p class="ajustar-font-size tutorial-cel">
+                            <span class="material-symbols-rounded">swipe_down</span>
+                            Arrastar com dois dedos ou tocar no modelo no ponto escolhido (tocar fora para centralizar
+                            novamente)
                         </p>
 
 
@@ -546,22 +556,22 @@
                 <div id="ainda-nao-visto-input" class="pointers checkbox-input"></div>
             </div>
             <div id="my-user-btn" class="pointers">
-                <img src="assets/images/avatar.webp" alt="">
+                <img src="assets/images/avatar.avif" alt="">
             </div>
         </div>
 
         <div id="menu-jogos">
             <div id="img-jogos">
-                <img src="assets/images/fnaf1/fnaf1.webp" class="pointers" alt="">
-                <img src="assets/images/fnaf2/fnaf2.webp" class="pointers" alt="">
-                <img src="assets/images/fnaf3/fnaf3.webp" class="pointers" alt="">
-                <img src="assets/images/fnaf4/fnaf4.webp" class="pointers" alt="">
-                <img src="assets/images/fnafsl/fnafsl.webp" class="pointers" alt="">
-                <img src="assets/images/fnafffps/fnafffps.webp" class="pointers" alt="">
-                <img src="assets/images/fnafsb/fnafsb.webp" class="pointers" alt="">
-                <img src="assets/images/fnafsbr/fnafsbr.webp" class="pointers" alt="">
-                <img src="assets/images/fnafw/fnafw.webp" class="pointers" alt="">
-                <img src="assets/images/fnafucn.webp" class="pointers" alt="" id="ucn-btn" style="display: none;">
+                <img src="assets/images/fnaf1/fnaf1.avif" class="pointers" alt="">
+                <img src="assets/images/fnaf2/fnaf2.avif" class="pointers" alt="">
+                <img src="assets/images/fnaf3/fnaf3.avif" class="pointers" alt="">
+                <img src="assets/images/fnaf4/fnaf4.avif" class="pointers" alt="">
+                <img src="assets/images/fnafsl/fnafsl.avif" class="pointers" alt="">
+                <img src="assets/images/fnafffps/fnafffps.avif" class="pointers" alt="">
+                <img src="assets/images/fnafsb/fnafsb.avif" class="pointers" alt="">
+                <img src="assets/images/fnafsbr/fnafsbr.avif" class="pointers" alt="">
+                <img src="assets/images/fnafw/fnafw.avif" class="pointers" alt="">
+                <img src="assets/images/fnafucn.avif" class="pointers" alt="" id="ucn-btn" style="display: none;">
             </div>
             <div id="jogos-btn" class="pointers"><span class="material-symbols-rounded">stadia_controller</span></div>
         </div>
@@ -578,9 +588,51 @@
 
 
 
+        <div id="carregamento-ar">
+            <div class="carregamento-img">
+                <div class="div-logo">
+                    <img src="assets/images/freddy-logo.png" alt="">
+                    <p class="p-fnaf-logo">
+                        <span>F</span>
+                        <span>N</span>
+                        <span>A</span>
+                        <span>F</span>
+                    </p>
+                    <p class="p-3d-logo">3D</p>
+                </div>
+            </div>
+        </div>
+        <span class="material-symbols-rounded" id="fechar-ar">close</span>
+        <div id="tela-ar">
+            <h2>Modo AR</h2>
+            <h5>Requisitos para acessar o modo <br> AR (Realidade Aumentada)</h5>
+            <ol>
+                <li class="ajustar-font-size">Dispositivo compatível com Google Play Services for AR (ARCore). Verifique
+                    a lista de dispositivos
+                    compatíveis <a target="_blank"
+                        href="https://developers.google.com/ar/discover/supported-devices">aqui</a>. Caso não seja,
+                    tente em outro dispositivo móvel.</li>
+                <li class="ajustar-font-size" style="margin-bottom: 0;">ARCore instalado. Caso ainda não tenha, baixe
+                    ele diretamente pela Play
+                    Store <a target="_blank"
+                        href="https://play.google.com/store/apps/details?id=com.google.ar.core">aqui</a> ou clique em
+                    instalar abaixo.
+                </li>
 
-
-
+                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.ar.core"><img
+                        src="assets/images/arcore.avif" alt="" style="width: 100%; border-radius: 20px;"></a>
+                <li class="ajustar-font-size" style="margin-top: 0;">Estar no sistema operacional Android (versão 7.0 ou
+                    superior).</li>
+                <li class="ajustar-font-size">Usar o navegador Chrome (recomendado).</li>
+                <li class="ajustar-font-size">Permitir que o ARCore acesse a câmera do dispositivo.</li>
+                <li class="ajustar-font-size" id="target-p"></li>
+                <li class="ajustar-font-size">Assistir este rápido tutorial de como interagir com o modelo no modo AR.
+                </li>
+            </ol>
+            <video src="assets/videos/tutorial.mp4" poster="assets/images/tutorial.avif" controls controlsList="nodownload"></video>
+            <div class="btn offset-top-10 offset-lg-top-0 btn-danger" id="ir-ar-btn">Modo AR<span
+                    class="material-symbols-rounded">east</span></div>
+        </div>
 
         <div id="div-menu" class="active">
 
@@ -616,15 +668,15 @@
                         </div>
                         <div class="steam-div pointers" id="fnafsb-steam">
                             Acessar
-                            <img src="assets/images/steam.webp" alt="">
+                            <img src="assets/images/steam.avif" alt="">
                         </div>
                         <div class="steam-div pointers" id="fnafsbr-steam">
                             Acessar
-                            <img src="assets/images/steam.webp" alt="">
+                            <img src="assets/images/steam.avif" alt="">
                         </div>
                         <div id="fnaf-filme" class="pointers">
                             Assitir
-                            <img src="assets/images/prime-video.webp" alt="">
+                            <img src="assets/images/prime-video.avif" alt="">
                         </div>
 
                         <p id="download-p" class="ajustar-font-size">Disponível apenas para computador.</p>
@@ -657,12 +709,12 @@
                     <h3 class="ajustar-font-size nome-fnaf">Logos</h3>
                     <div class="modelos-container">
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/logos/logo/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/logos/logo/0.avif">
                             </div>
                             <p class="ajustar-font-size">Fnaf 3D</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/logos/logomwd/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/logos/logomwd/0.avif">
                             </div>
                             <p class="ajustar-font-size">MWD</p>
                         </div>
@@ -680,28 +732,28 @@
                     <h3 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's</h3>
                     <div class="modelos-container">
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf1/freddy/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf1/freddy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Freddy Fazbear</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf1/chica/0.webp">
-                            </div>
-                            <p class="ajustar-font-size">Chica</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf1/bonnie/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf1/bonnie/0.avif">
                             </div>
                             <p class="ajustar-font-size">Bonnie</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf1/chica/0.avif">
+                            </div>
+                            <p class="ajustar-font-size">Chica</p>
+                        </div>
+                        <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf1/mr-cupcake/0.webp">
+                                    src="assets/images/fnaf1/mr-cupcake/0.avif">
                             </div>
                             <p class="ajustar-font-size">Mr. Cupcake</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf1/foxy/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf1/foxy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Foxy</p>
                         </div>
@@ -720,71 +772,71 @@
                     <div class="modelos-container">
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf2/toy-freddy/0.webp">
+                                    src="assets/images/fnaf2/toy-freddy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Toy Freddy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf2/toy-bonnie/0.webp">
+                                    src="assets/images/fnaf2/toy-bonnie/0.avif">
                             </div>
                             <p class="ajustar-font-size">Toy Bonnie</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf2/toy-chica/0.webp">
+                                    src="assets/images/fnaf2/toy-chica/0.avif">
                             </div>
                             <p class="ajustar-font-size">Toy Chica</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf2/toy-cupcake/0.webp">
+                                    src="assets/images/fnaf2/toy-cupcake/0.avif">
                             </div>
                             <p class="ajustar-font-size">Toy Cupcake</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf2/mangle/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf2/mangle/0.avif">
                             </div>
                             <p class="ajustar-font-size">Mangle</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf2/balloon-boy/0.webp">
+                                    src="assets/images/fnaf2/balloon-boy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Balloon Boy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf2/puppet/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnaf2/puppet/0.avif">
                             </div>
                             <p class="ajustar-font-size">Puppet</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf2/withered-freddy/0.webp">
+                                    src="assets/images/fnaf2/withered-freddy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Withered Freddy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf2/withered-bonnie/0.webp">
+                                    src="assets/images/fnaf2/withered-bonnie/0.avif">
                             </div>
                             <p class="ajustar-font-size">Withered Bonnie</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf2/withered-chica/0.webp">
+                                    src="assets/images/fnaf2/withered-chica/0.avif">
                             </div>
                             <p class="ajustar-font-size">Withered Chica</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf2/withered-foxy/0.webp">
+                                    src="assets/images/fnaf2/withered-foxy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Withered Foxy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf2/withered-golden-freddy/0.webp">
+                                    src="assets/images/fnaf2/withered-golden-freddy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Withered Golden Freddy</p>
                         </div>
@@ -803,44 +855,44 @@
                     <div class="modelos-container">
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf3/phantom-freddy/0.webp" style="filter: brightness(0.75);">
+                                    src="assets/images/fnaf3/phantom-freddy/0.avif" style="filter: brightness(0.75);">
                             </div>
                             <p class="ajustar-font-size">Phantom Freddy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf3/phantom-chica/0.webp" style="filter: brightness(2.5);">
+                                    src="assets/images/fnaf3/phantom-chica/0.avif" style="filter: brightness(2.5);">
                             </div>
                             <p class="ajustar-font-size">Phantom Chica</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf3/phantom-foxy/0.webp" style="filter: brightness(2.5);">
+                                    src="assets/images/fnaf3/phantom-foxy/0.avif" style="filter: brightness(2.5);">
                             </div>
                             <p class="ajustar-font-size">Phantom Foxy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf3/phantom-mangle/0.webp">
+                                    src="assets/images/fnaf3/phantom-mangle/0.avif">
                             </div>
                             <p class="ajustar-font-size">Phantom Mangle</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf3/phantom-balloon-boy/0.webp"
+                                    src="assets/images/fnaf3/phantom-balloon-boy/0.avif"
                                     style="filter: brightness(0.75);">
                             </div>
                             <p class="ajustar-font-size">Phantom Balloon Boy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf3/phantom-puppet/0.webp" style="filter: brightness(2.5);">
+                                    src="assets/images/fnaf3/phantom-puppet/0.avif" style="filter: brightness(2.5);">
                             </div>
                             <p class="ajustar-font-size">Phantom Puppet</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf3/springtrap/0.webp">
+                                    src="assets/images/fnaf3/springtrap/0.avif">
                             </div>
                             <p class="ajustar-font-size">Springtrap (William Afton)</p>
                         </div>
@@ -859,85 +911,85 @@
                     <div class="modelos-container">
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/nightmare-freddy/0.webp">
+                                    src="assets/images/fnaf4/nightmare-freddy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmare Freddy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/freddles/0.webp">
+                                    src="assets/images/fnaf4/freddles/0.avif">
                             </div>
                             <p class="ajustar-font-size">Freddles</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/nightmare-bonnie/0.webp">
+                                    src="assets/images/fnaf4/nightmare-bonnie/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmare Bonnie</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/nightmare-chica/0.webp">
+                                    src="assets/images/fnaf4/nightmare-chica/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmare Chica</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/nightmare-cupcake/0.webp">
+                                    src="assets/images/fnaf4/nightmare-cupcake/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmare Cupcake</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/nightmare-foxy/0.webp">
+                                    src="assets/images/fnaf4/nightmare-foxy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmare Foxy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/nightmare-fredbear/0.webp">
+                                    src="assets/images/fnaf4/nightmare-fredbear/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmare Fredbear</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/nightmare/0.webp">
+                                    src="assets/images/fnaf4/nightmare/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmare</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/jack-o-bonnie/0.webp">
+                                    src="assets/images/fnaf4/jack-o-bonnie/0.avif">
                             </div>
                             <p class="ajustar-font-size">Jack-O-Bonnie</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/jack-o-chica/0.webp">
+                                    src="assets/images/fnaf4/jack-o-chica/0.avif">
                             </div>
                             <p class="ajustar-font-size">Jack-O-Chica</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/nightmare-mangle/0.webp">
+                                    src="assets/images/fnaf4/nightmare-mangle/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmare Mangle</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/nightmare-balloon-boy/0.webp">
+                                    src="assets/images/fnaf4/nightmare-balloon-boy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmare Balloon Boy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/plushtrap/0.webp">
+                                    src="assets/images/fnaf4/plushtrap/0.avif">
                             </div>
                             <p class="ajustar-font-size">Plushtrap</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnaf4/nightmarionne/0.webp">
+                                    src="assets/images/fnaf4/nightmarionne/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmarionne</p>
                         </div>
@@ -956,48 +1008,48 @@
                     <div class="modelos-container">
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsl/circus-baby/0.webp">
+                                    src="assets/images/fnafsl/circus-baby/0.avif">
                             </div>
                             <p class="ajustar-font-size">Circus Baby</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsl/funtime-freddy/0.webp">
+                                    src="assets/images/fnafsl/funtime-freddy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Funtime Freddy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsl/bon-bon/0.webp">
+                                    src="assets/images/fnafsl/bon-bon/0.avif">
                             </div>
                             <p class="ajustar-font-size">Bon-Bon</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsl/ballora/0.webp">
+                                    src="assets/images/fnafsl/ballora/0.avif">
                             </div>
                             <p class="ajustar-font-size">Ballora</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsl/funtime-foxy/0.webp">
+                                    src="assets/images/fnafsl/funtime-foxy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Funtime Foxy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsl/ennard/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsl/ennard/0.avif">
                             </div>
                             <p class="ajustar-font-size">Ennard</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsl/bidybab/0.webp">
+                                    src="assets/images/fnafsl/bidybab/0.avif">
                             </div>
                             <p class="ajustar-font-size">Bidybab</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsl/minireena/0.webp">
+                                    src="assets/images/fnafsl/minireena/0.avif">
                             </div>
                             <p class="ajustar-font-size">Minireena</p>
                         </div>
@@ -1016,109 +1068,109 @@
                     <div class="modelos-container">
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/trash-and-the-gang/0.webp">
+                                    src="assets/images/fnafffps/trash-and-the-gang/0.avif">
                             </div>
                             <p class="ajustar-font-size">Trash and the Gang</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/helpy/0.webp">
+                                    src="assets/images/fnafffps/helpy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Helpy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/happy-frog/0.webp">
+                                    src="assets/images/fnafffps/happy-frog/0.avif">
                             </div>
                             <p class="ajustar-font-size">Happy Frog</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/mr-hippo/0.webp">
+                                    src="assets/images/fnafffps/mr-hippo/0.avif">
                             </div>
                             <p class="ajustar-font-size">Mr. Hippo</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/pigpatch/0.webp">
+                                    src="assets/images/fnafffps/pigpatch/0.avif">
                             </div>
                             <p class="ajustar-font-size">Pigpatch</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/nedd-bear/0.webp">
+                                    src="assets/images/fnafffps/nedd-bear/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nedd Bear</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/orville-elephant/0.webp">
+                                    src="assets/images/fnafffps/orville-elephant/0.avif">
                             </div>
                             <p class="ajustar-font-size">Orville Elephant</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/rockstar-freddy/0.webp">
+                                    src="assets/images/fnafffps/rockstar-freddy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Rockstar Freddy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/rockstar-bonnie/0.webp">
+                                    src="assets/images/fnafffps/rockstar-bonnie/0.avif">
                             </div>
                             <p class="ajustar-font-size">Rockstar Bonnie</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/rockstar-chica/0.webp">
+                                    src="assets/images/fnafffps/rockstar-chica/0.avif">
                             </div>
                             <p class="ajustar-font-size">Rockstar Chica</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/rockstar-foxy/0.webp">
+                                    src="assets/images/fnafffps/rockstar-foxy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Rockstar Foxy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/music-man/0.webp">
+                                    src="assets/images/fnafffps/music-man/0.avif">
                             </div>
                             <p class="ajustar-font-size">Music Man</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/el-chip/0.webp">
+                                    src="assets/images/fnafffps/el-chip/0.avif">
                             </div>
                             <p class="ajustar-font-size">El Chip</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/funtime-chica/0.webp">
+                                    src="assets/images/fnafffps/funtime-chica/0.avif">
                             </div>
                             <p class="ajustar-font-size">Funtime Chica</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/molten-freddy/0.webp">
+                                    src="assets/images/fnafffps/molten-freddy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Molten Freddy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/scrap-baby/0.webp">
+                                    src="assets/images/fnafffps/scrap-baby/0.avif">
                             </div>
                             <p class="ajustar-font-size">Scrap Baby</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/scraptrap/0.webp">
+                                    src="assets/images/fnafffps/scraptrap/0.avif">
                             </div>
                             <p class="ajustar-font-size">Scraptrap (William Afton)</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafffps/lefty/0.webp">
+                                    src="assets/images/fnafffps/lefty/0.avif">
                             </div>
                             <p class="ajustar-font-size">Lefty</p>
                         </div>
@@ -1137,146 +1189,146 @@
                     <div class="modelos-container">
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/glamrock-freddy/0.webp">
+                                    src="assets/images/fnafsb/glamrock-freddy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Glamrock Freddy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/glamrock-chica/0.webp">
+                                    src="assets/images/fnafsb/glamrock-chica/0.avif">
                             </div>
                             <p class="ajustar-font-size">Glamrock Chica</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/roxanne-wolf/0.webp">
+                                    src="assets/images/fnafsb/roxanne-wolf/0.avif">
                             </div>
                             <p class="ajustar-font-size">Roxanne Wolf</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/montgomery-gator/0.webp">
+                                    src="assets/images/fnafsb/montgomery-gator/0.avif">
                             </div>
                             <p class="ajustar-font-size">Montgomery Gator</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/shattered-glamrock-chica/0.webp"
+                                    src="assets/images/fnafsb/shattered-glamrock-chica/0.avif"
                                     style="filter: brightness(1.25);">
                             </div>
                             <p class="ajustar-font-size">Shattered Glamrock Chica</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/shattered-roxanne-wolf/0.webp"
+                                    src="assets/images/fnafsb/shattered-roxanne-wolf/0.avif"
                                     style="filter: brightness(1.25);">
                             </div>
                             <p class="ajustar-font-size">Shattered Roxanne Wolf</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/shattered-montgomery-gator/0.webp"
+                                    src="assets/images/fnafsb/shattered-montgomery-gator/0.avif"
                                     style="filter: brightness(1.25);">
                             </div>
                             <p class="ajustar-font-size">Shattered Montgomery Gator</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsb/sun/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsb/sun/0.avif">
                             </div>
                             <p class="ajustar-font-size">Sun (Daycare Attendant)</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsb/moon/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsb/moon/0.avif">
                             </div>
                             <p class="ajustar-font-size">Moon (Daycare Attendant)</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/glamrock-endo/0.webp">
+                                    src="assets/images/fnafsb/glamrock-endo/0.avif">
                             </div>
                             <p class="ajustar-font-size">Glamrock Endo</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/dj-music-man/0.webp">
+                                    src="assets/images/fnafsb/dj-music-man/0.avif">
                             </div>
                             <p class="ajustar-font-size">DJ Music Man</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/mini-music-man/0.webp">
+                                    src="assets/images/fnafsb/mini-music-man/0.avif">
                             </div>
                             <p class="ajustar-font-size">Mini Music Man</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/staff-bots/staff-bot/0.webp"
+                                    src="assets/images/fnafsb/staff-bots/staff-bot/0.avif"
                                     style="filter: brightness(0.9);">
                             </div>
                             <p class="ajustar-font-size">S.T.A.F.F Bot (genérico)</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/staff-bots/security-bot/0.webp">
+                                    src="assets/images/fnafsb/staff-bots/security-bot/0.avif">
                             </div>
                             <p class="ajustar-font-size">Security Bot</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/staff-bots/map-bot/0.webp">
+                                    src="assets/images/fnafsb/staff-bots/map-bot/0.avif">
                             </div>
                             <p class="ajustar-font-size">Map Bot</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/staff-bots/party-bot/0.webp">
+                                    src="assets/images/fnafsb/staff-bots/party-bot/0.avif">
                             </div>
                             <p class="ajustar-font-size">Party Bot</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/staff-bots/chef-bot/0.webp">
+                                    src="assets/images/fnafsb/staff-bots/chef-bot/0.avif">
                             </div>
                             <p class="ajustar-font-size">Chef Bot</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/staff-bots/server-bot/0.webp">
+                                    src="assets/images/fnafsb/staff-bots/server-bot/0.avif">
                             </div>
                             <p class="ajustar-font-size">Server Bot</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/staff-bots/sewer-bot/0.webp">
+                                    src="assets/images/fnafsb/staff-bots/sewer-bot/0.avif">
                             </div>
                             <p class="ajustar-font-size">Sewer Bot</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/staff-bots/nightmarionne-bot/0.webp">
+                                    src="assets/images/fnafsb/staff-bots/nightmarionne-bot/0.avif">
                             </div>
                             <p class="ajustar-font-size">Nightmarionne Bot</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/caution-bot/0.webp">
+                                    src="assets/images/fnafsb/caution-bot/0.avif">
                             </div>
                             <p class="ajustar-font-size">Caution Bot</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/gregory/0.webp">
+                                    src="assets/images/fnafsb/gregory/0.avif">
                             </div>
                             <p class="ajustar-font-size">Gregory</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsb/vanessa/0.webp">
+                                    src="assets/images/fnafsb/vanessa/0.avif">
                             </div>
                             <p class="ajustar-font-size">Vanessa</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsb/vanny/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsb/vanny/0.avif">
                             </div>
                             <p class="ajustar-font-size">Vanny</p>
                         </div>
@@ -1295,72 +1347,72 @@
                     <div class="modelos-container">
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsbr/prototype-glamrock-freddy/0.webp">
+                                    src="assets/images/fnafsbr/prototype-glamrock-freddy/0.avif">
                             </div>
                             <p class="ajustar-font-size">Prototype Glamrock Freddy</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsbr/ruined-glamrock-chica/0.webp">
+                                    src="assets/images/fnafsbr/ruined-glamrock-chica/0.avif">
                             </div>
                             <p class="ajustar-font-size">Ruined Glamrock Chica</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsbr/ruined-roxanne-wolf/0.webp">
+                                    src="assets/images/fnafsbr/ruined-roxanne-wolf/0.avif">
                             </div>
                             <p class="ajustar-font-size">Ruined Roxanne Wolf</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsbr/ruined-montgomery-gator/0.webp">
+                                    src="assets/images/fnafsbr/ruined-montgomery-gator/0.avif">
                             </div>
                             <p class="ajustar-font-size">Ruined Montgomery Gator</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsbr/eclipse/0.webp">
+                                    src="assets/images/fnafsbr/eclipse/0.avif">
                             </div>
                             <p class="ajustar-font-size">Eclipse (Daycare Attendant)</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsbr/ruined-mini-music-man1/0.webp">
+                                    src="assets/images/fnafsbr/ruined-mini-music-man1/0.avif">
                             </div>
                             <p class="ajustar-font-size">Ruined Mini Music Man 1</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsbr/ruined-mini-music-man2/0.webp">
+                                    src="assets/images/fnafsbr/ruined-mini-music-man2/0.avif">
                             </div>
                             <p class="ajustar-font-size">Ruined Mini Music Man 2</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsbr/shattered-bot/0.webp" style="filter: brightness(1.25);">
+                                    src="assets/images/fnafsbr/shattered-bot/0.avif" style="filter: brightness(1.25);">
                             </div>
                             <p class="ajustar-font-size">Shattered Bot (genérico)</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsbr/mask-bot/0.webp" style="filter: brightness(1.5)">
+                                    src="assets/images/fnafsbr/mask-bot/0.avif" style="filter: brightness(1.5)">
                             </div>
                             <p class="ajustar-font-size">Mask Bot</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsbr/cassie/0.webp"
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsbr/cassie/0.avif"
                                     style="filter: brightness(0.75) saturate(1.5)">
                             </div>
                             <p class="ajustar-font-size">Cassie</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafsbr/entity/0.webp">
+                                    src="assets/images/fnafsbr/entity/0.avif">
                             </div>
                             <p class="ajustar-font-size">Entity</p>
                         </div>
                         <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsbr/mimic/0.webp">
+                            <div class="btn-modelos geral ajustar-height"><img src="assets/images/fnafsbr/mimic/0.avif">
                             </div>
                             <p class="ajustar-font-size">Mimic</p>
                         </div>
@@ -1641,27 +1693,27 @@
 
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos ajustar-height pra-comprar bloqueado">
-                                <img src="assets/images/extras/pra-comprar/moeda-3d/0.webp">
+                                <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif">
                                 <div class="bloqueio-pra-comprar"><span class="material-symbols-rounded">lock</span>
                                 </div>
                             </div>
                             <p class="ajustar-font-size">Moeda 3D</p>
                             <div class="valor-div">
                                 <p class="valor">1</p>
-                                <img src="assets/images/extras/pra-comprar/moeda-3d/0.webp" alt="">
+                                <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif" alt="">
                             </div>
                         </div>
 
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos ajustar-height pra-comprar bloqueado">
-                                <img src="assets/images/extras/pra-comprar/purple-guy/0.webp">
+                                <img src="assets/images/extras/pra-comprar/purple-guy/0.avif">
                                 <div class="bloqueio-pra-comprar"><span class="material-symbols-rounded">lock</span>
                                 </div>
                             </div>
                             <p class="ajustar-font-size">Purple Man (William Afton)</p>
                             <div class="valor-div">
                                 <p class="valor">10</p>
-                                <img src="assets/images/extras/pra-comprar/moeda-3d/0.webp" alt="">
+                                <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif" alt="">
                             </div>
                         </div>
 
@@ -1882,10 +1934,6 @@
 
 
 
-        <div id="input-altura-div">
-            <span class="material-symbols-rounded">Width</span>
-            <div id="input-altura-rotacao"><input type="range" id="input-altura" class="pointers" step="0.01"></div>
-        </div>
 
 
 
@@ -2161,7 +2209,7 @@
 
 
         <a href="https://mwd-oficial.github.io/sobre" target="_blank"><img src="assets/images/logomwd.png"
-                alt="logo mwd" id="logomwd" class="ajustar-width-75"></a>
+                alt="logo mwd" id="logomwd" class="ajustar-width-75 efeito-hover"></a>
 
     </div>
 
@@ -2190,6 +2238,7 @@
     <script src="scripts/menu.js"></script>
     <script src="scripts/animacoes.js"></script>
     <script src="scripts/audios.js"></script>
+    <script src="scripts/ar.js"></script>
 
     <!--
 

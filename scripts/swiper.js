@@ -119,7 +119,7 @@ document.querySelector("#problemas-swiper").addEventListener("click", function (
         imgAlternativaDiv.style.display = "flex"
         setaVoltar.style.display = "block"
         setaAvancar.style.display = "block"
-        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + ".webp"
+        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + ".avif"
         descricaoAlternativa.innerHTML = modelos[iModeloVar].swiperDescricao[iAlternativo]
         sumirBotoes()
         verificaSetas()
@@ -141,7 +141,7 @@ setaVoltar.addEventListener("click", function () {
     if (iAlternativo > 0) {
         iAlternativo--
         verificaSetas()
-        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + ".webp"
+        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + ".avif"
         descricaoAlternativa.innerHTML = modelos[iModeloVar].swiperDescricao[iAlternativo]
     }
 })
@@ -150,7 +150,7 @@ setaAvancar.addEventListener("click", function () {
     if (iAlternativo < modelos[iModeloVar].swiperDescricao.length) {
         iAlternativo++
         verificaSetas()
-        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + ".webp"
+        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + ".avif"
         descricaoAlternativa.innerHTML = modelos[iModeloVar].swiperDescricao[iAlternativo]
     }
 })

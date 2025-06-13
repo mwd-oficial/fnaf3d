@@ -6,8 +6,8 @@ var modelos = [
 
     // fnaf 1
     freddy,
-    chica,
     bonnie,
+    chica,
     mrCupcake,
     foxy,
 

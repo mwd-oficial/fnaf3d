@@ -9,9 +9,6 @@ var nightmareFreddy = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -52,9 +49,6 @@ var freddles = {
     ],
     orbitaCameraMaxima: "0 0 7.5m",
     orbitaCameraMinima: "0 0 7.5m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -0.5,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -98,9 +92,6 @@ var nightmareBonnie = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -160,9 +151,6 @@ var nightmareChica = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -249,9 +237,6 @@ var nightmareFoxy = {
     ],
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -313,9 +298,6 @@ var nightmareFredbear = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -0.5,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -419,9 +401,6 @@ var nightmare = {
     orbitaCameraMaxima: "0 0 10m",
     orbitaCameraMinima: "0 0 6m",
     alvoCamera: "0m 1.75m 0m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1,
     temConfigEx: true,
     configEx: () => {
         modelViewer.style.exposure = 0.75
@@ -492,9 +471,6 @@ var jackOBonnie = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -545,9 +521,6 @@ var jackOChica = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -611,9 +584,6 @@ var nightmareMangle = {
     orbitaCameraMaxima: "0 0 1500m",
     orbitaCameraMinima: "0 0 1250m",
     alvoCamera: "-25m 300m 25m",
-    temAltura: true,
-    alturaMaxima: 200,
-    alturaMinima: -200,
     temAudio: true,
     audios: {
         jumpscare: {
@@ -636,9 +606,6 @@ var nightmareBalloonBoy = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.25,
-    alturaMinima: -0.25,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -708,9 +675,6 @@ var plushtrap = {
     ],
     orbitaCameraMaxima: "0 0 7.5m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -0.5,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -783,9 +747,6 @@ var nightmarionne = {
     ],
     orbitaCameraMaxima: "0 0 7.5m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {

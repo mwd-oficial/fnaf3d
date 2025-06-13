@@ -10,9 +10,6 @@ var prototypeGlamrockFreddy = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 6m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -81,9 +78,6 @@ var ruinedGlamrockChica = {
     ],
     orbitaCameraMaxima: "0 0 7.5m",
     orbitaCameraMinima: "0 0 7m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -148,9 +142,6 @@ var ruinedRoxanneWolf = {
     ],
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -299,9 +290,6 @@ var eclipse = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 6m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -379,9 +367,6 @@ var ruinedMiniMusicMan1 = {
     ],
     orbitaCameraMaxima: "0 0 3m",
     orbitaCameraMinima: "0 0 2m",
-    temAltura: true,
-    alturaMaxima: 0.25,
-    alturaMinima: -0.25,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -484,9 +469,6 @@ var ruinedMiniMusicMan2 = {
     ],
     orbitaCameraMaxima: "0 0 3m",
     orbitaCameraMinima: "0 0 2m",
-    temAltura: true,
-    alturaMaxima: 0.25,
-    alturaMinima: -0.25,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -616,9 +598,6 @@ var shatteredBot = {
     orbitaCameraMaxima: "0 0 4m",
     orbitaCameraMinima: "0 0 3m",
     alvoCamera: "0m 0.5m 0.1m",
-    temAltura: true,
-    alturaMaxima: 0.25,
-    alturaMinima: -0.25,
     descricao: "Shattered Bot, que aparece em Five Nights at Freddy's: Security Breach RUIN, refere-se ao S.T.A.F.F Bots genéricos que foram destruídos, mas ainda apresentam alguma atividade residual. Com partes fragmentadas, peças penduradas e danos visíveis, esses bots exibem comportamentos erráticos e imprevisíveis, resultantes do estado danificado em que se encontram. <br><br> Eles representam o colapso do Pizzaplex e a degradação dos sistemas de segurança, aumentando a sensação de perigo constante.",
 }
 
@@ -632,9 +611,6 @@ var maskBot = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -686,9 +662,6 @@ var cassie = {
     ],
     orbitaCameraMaxima: "0 0 3m",
     orbitaCameraMinima: "0 0 2.5m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -0.5,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -729,9 +702,6 @@ var entity = {
     ],
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 6m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temConfigEx: true,
     configEx: () => {
         bloomEffect = document.createElement("bloom-effect")
@@ -838,9 +808,6 @@ var mimic = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {

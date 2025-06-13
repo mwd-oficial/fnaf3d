@@ -36,9 +36,6 @@ var purpleGuy = {
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 10m",
     alvoCamera: "0.5m 0m 0m",
-    temAltura: true,
-    alturaMaxima: 2,
-    alturaMinima: -2,
     temAudio: true,
     audios: {
         iAlwaysComeBack: {
@@ -190,9 +187,6 @@ var poster = {
     alvoCamera: "0m 1.5m 0m",
     mudaOrbitaCamera: true,
     orbitaCamera: "90deg 0 0",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1,
     temAudio: true,
     audios: {
         fucinho: {
@@ -261,9 +255,6 @@ var lolbit = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -295,9 +286,6 @@ var bonnet = {
     ],
     orbitaCameraMaxima: "0 0 2m",
     orbitaCameraMinima: "0 0 2m",
-    temAltura: true,
-    alturaMaxima: 0.175,
-    alturaMinima: -0.175,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -362,9 +350,6 @@ var headChefBot = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.25,
     temAnimacao: true,
     animacoes: {
         posicaoInicial: {
@@ -398,9 +383,6 @@ var blob = {
     ],
     orbitaCameraMaxima: "0 0 20m",
     orbitaCameraMinima: "0 0 15m",
-    temAltura: true,
-    alturaMaxima: 2,
-    alturaMinima: -2,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -455,9 +437,6 @@ var burntrap = {
     ],
     orbitaCameraMaxima: "0 0 8m",
     orbitaCameraMinima: "0 0 7m",
-    temAltura: true,
-    alturaMaxima: 1.25,
-    alturaMinima: -1.25,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -572,9 +551,6 @@ var springBonnieFilme = {
     orbitaCameraMaxima: "0 0 25m",
     orbitaCameraMinima: "0 0 15m",
     alvoCamera: "0m -3.5m 0m",
-    temAltura: true,
-    alturaMaxima: 3.5,
-    alturaMinima: -3.5,
     temAudio: true,
     audios: {
         abertura: {
@@ -603,9 +579,6 @@ var springBonniePixel = {
     orbitaCameraMaxima: "0 0 12.5m",
     orbitaCameraMinima: "0 0 7.5m",
     alvoCamera: "0m 0.5m 0m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1.5,
     mudaOrbitaCamera: true,
     orbitaCamera: "90deg 0 0",
     temAudio: true,
@@ -636,9 +609,6 @@ var balloonBoyFilme = {
     orbitaCameraMaxima: "0 0 100m",
     orbitaCameraMinima: "0 0 50m",
     alvoCamera: "0m 12.5m 1m",
-    temAltura: true,
-    alturaMaxima: 5,
-    alturaMinima: -7.5,
     temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.5
@@ -808,6 +778,7 @@ var phoneGuy = {
 
 var dreadbear = {
     nome: "Dreadbear",
+    // AR indisponível: modelo pesa 200MB
     src: "assets/models/extras/pra-encontrar/outros/dreadbear.glb",
     corFundo: "radial-gradient(#71765D, #000)",
     fnaf: "exo",
@@ -817,9 +788,6 @@ var dreadbear = {
     ],
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 6m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {

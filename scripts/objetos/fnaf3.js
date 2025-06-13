@@ -10,9 +10,6 @@ var phantomFreddy = {
     ],
     orbitaCameraMaxima: "0 0 250m",
     orbitaCameraMinima: "0 0 250m",
-    temAltura: true,
-    alturaMaxima: 25,
-    alturaMinima: -25,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -57,9 +54,6 @@ var phantomChica = {
     orbitaCameraMaxima: "0 0 300m",
     orbitaCameraMinima: "0 0 250m",
     alvoCamera: "0m 60m 1m",
-    temAltura: true,
-    alturaMaxima: 40,
-    alturaMinima: -40,
     temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.5
@@ -88,9 +82,6 @@ var phantomFoxy = {
     orbitaCameraMaxima: "0 0 300m",
     orbitaCameraMinima: "0 0 250m",
     alvoCamera: "0m 65m 1m",
-    temAltura: true,
-    alturaMaxima: 45,
-    alturaMinima: -45,
     temConfigEx: true,
     configEx: () => {
         modelViewer.style.filter = "hue-rotate(60deg)"
@@ -117,9 +108,6 @@ var phantomMangle = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -0.5,
     temConfigEx: true,
     configEx: () => {
         modelViewer.style.mixBlendMode = "hard-light"
@@ -193,9 +181,6 @@ var phantomBalloonBoy = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temConfigEx: true,
     configEx: () => {
         modelViewer.style.mixBlendMode = "hard-light"
@@ -259,9 +244,6 @@ var phantomPuppet = {
     orbitaCameraMaxima: "0m 0m 250m",
     orbitaCameraMinima: "0m 0m 150m",
     alvoCamera: "0m 50m 0m",
-    temAltura: true,
-    alturaMaxima: 35,
-    alturaMinima: -35,
     temConfigEx: true,
     configEx: () => {
         modelViewer.style.filter = "contrast(2) hue-rotate(75deg)"
@@ -290,9 +272,6 @@ var springtrap = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 3m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {

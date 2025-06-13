@@ -34,17 +34,18 @@ function abaAnimacoes() {
 }
 
 function comecarAnimacao(iModelo, iAnimacao) {
+    modeloPronto = false
     animacoesKeys = Object.keys(modelos[iModelo].animacoes);
     var animacaoSel = modelos[iModelo].animacoes[animacoesKeys[iAnimacao]]
+    modelos[iModelo].animacaoAtual = animacaoSel.src
+    modelos[iModelo].nomeAnimacao = animacaoSel.nome
+    modelos[iModelo].coordenadas = animacaoSel.alvoCamera
+
     modelViewer.animationName = animacaoSel.src;
     modelViewer.currentTime = 0
     modelViewer.cameraTarget = animacaoSel.alvoCamera;
     iconeAnimacoes.innerHTML = "pause"
     modelViewer.play();
-
-    setTimeout(() => {
-        defineAltura(iModelo)
-    }, 1);
 
     if (animacaoSel.mudaOrbitaCameraMaxima) {
         modelViewer.maxCameraOrbit = animacaoSel.orbitaCameraMaxima;

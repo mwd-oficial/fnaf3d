@@ -1,5 +1,6 @@
 // Five Nights at Freddy's 1
 var freddy = {
+    driveId: "1gkq22LnK0axNBkoOZNsi2IVDcAz7KMd0",
     src: "assets/models/fnaf1/freddy.glb",
     corFundo: "radial-gradient(#5B3C21, #000)",
     fnaf: "1",
@@ -29,9 +30,6 @@ var freddy = {
     srcJumpscare: "assets/videos/fnaf1/freddy.mp4",
     orbitaCameraMaxima: "0 0 6.5m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -104,6 +102,7 @@ var freddy = {
 
 
 var bonnie = {
+    driveId: "1_IXZqJ4O4zRUup0rGi5Ro3Er2Yq4sejP",
     src: "assets/models/fnaf1/bonnie.glb",
     corFundo: "radial-gradient(#2D3A75, #000)",
     fnaf: "1",
@@ -129,9 +128,6 @@ var bonnie = {
     srcJumpscare: "assets/videos/fnaf1/bonnie.mp4",
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -195,6 +191,7 @@ var bonnie = {
 
 
 var chica = {
+    driveId: "1rVC8iIGcUVxLDQNq6lnCSUFodDQHAVNy",
     src: "assets/models/fnaf1/chica.glb",
     corFundo: "radial-gradient(#DCC863, #856d1a)",
     fnaf: "1",
@@ -218,9 +215,6 @@ var chica = {
     srcJumpscare: "assets/videos/fnaf1/chica.mp4",
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -305,6 +299,7 @@ var chica = {
 
 
 var mrCupcake = {
+    driveId: "1oNWFvTiHLGmChArD3RaXA1ZPzWUZC_qm",
     src: "assets/models/fnaf1/mr-cupcake.glb",
     corFundo: "radial-gradient(#f89cb5, #ca6882, #9c5164)",
     fnaf: "1",
@@ -323,6 +318,7 @@ var mrCupcake = {
 
 
 var foxy = {
+    driveId: "1VPCrduPSmaGDNmnee4AgZK6SHefIfizx",
     src: "assets/models/fnaf1/foxy.glb",
     corFundo: "radial-gradient(#D25A37, #000)",
     fnaf: "1",
@@ -338,9 +334,6 @@ var foxy = {
     srcJumpscare: "assets/videos/fnaf1/foxy.mp4",
     orbitaCameraMaxima: "0 0 7.5m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 1,
-    alturaMinima: -1,
     temAnimacao: true,
     temAudio: true,
     animacoes: {

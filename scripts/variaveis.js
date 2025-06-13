@@ -1,3 +1,4 @@
+var telaCarregamentoSite = document.querySelector("#tela-carregamento-site")
 var cursorImg = document.querySelector("#cursor-img");
 var pointers = document.querySelectorAll(".pointers")
 var alertaDiv = document.querySelector("#alerta-div")
@@ -7,8 +8,15 @@ var telaViraLandscape = document.querySelector("#tela-vira-landscape")
 var irTopoDiv = document.querySelector("#ir-topo-div")
 
 // Ar
+var telaAr = document.querySelector("#tela-ar")
 var arBtn = document.querySelector("#ar-btn")
+var carregamentoAR = document.querySelector("#carregamento-ar")
+var fecharAr = document.querySelector("#fechar-ar")
 var ar = false
+
+var irArBtn = document.querySelector("#ir-ar-btn")
+var url, intervaloModeloPronto
+var modeloPronto = false
 
 // Login, banco de dados e relacionados
 
@@ -141,7 +149,7 @@ var dicas = [
     "Dica: Procure por moedas 3D ao redor dos modelos. Juntando uma certa quantia você consegue desbloquear os modelos Extras!",
     "Dica: Sempre leia as descrições dos modelos. Em alguns sorteamos uma surpresa que você pode encontrar por lá!",
     "Dica: Visite a aba \"Interagindo com o Modelo 3D\". Existem efeitos bem legais para aplicar no modelo!",
-    "No celular um botão para ativar o modo AR aparece. Vai lá conferir!"
+    "No celular o botão para ativar o modo AR fica disponível. Vai lá conferir!"
 ]
 var modelViewer
 
@@ -190,10 +198,12 @@ var pesquisaNaoVistoDiv = document.querySelector("#pesquisa-nao-visto-div")
 
 var maiorLength = 0
 var maiorHeight = 0
+var pesquisaDiv = document.querySelector("#pesquisa-div")
 var pesquisaInput = document.querySelector("#pesquisa-input")
 var pesquisaBtn = document.querySelector("#pesquisa-btn")
 var nenhumResul = document.querySelector("#nenhum-resul")
 
+var aindaNaoVistoDiv = document.querySelector("#ainda-nao-visto-div")
 var aindaNaoVistoInput = document.querySelector("#ainda-nao-visto-input")
 var vistosArray = []
 
@@ -259,12 +269,6 @@ var pixelateEffect, glitchEffect, outlineEffect, bloomEffect
 
 
 
-
-// Altura
-var inputAlturaDiv = document.querySelector("#input-altura-div")
-var inputAltura = document.querySelector("#input-altura")
-var altura = 0
-var alvoX, alvoY, alvoZ
 
 
 // Variáveis de animações
@@ -354,7 +358,6 @@ var downloadP = document.querySelector("#download-p")
 
 var ucnInfoImgDiv = document.querySelector("#ucn-info-img-div")
 var ucnBtn = document.querySelector("#ucn-btn")
-//var ucnDesbloqueado = false
 
 // Moeda 3D e modelos bloqueados
 var moeda3dImg = document.querySelector("#moeda-3d-img")

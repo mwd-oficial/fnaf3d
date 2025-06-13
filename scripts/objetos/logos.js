@@ -1,6 +1,7 @@
 // Logos
 
 var logo = {
+    driveId: "16AHE0DH_95mR9g4yupk_tfePekoF4hnA",
     src: "assets/models/logos/logo.glb",
     corFundo: "radial-gradient(#949494, #d3d3d3)",
     fnaf: "l",
@@ -12,13 +13,11 @@ var logo = {
     orbitaCameraMaxima: "0 0 400m",
     orbitaCameraMinima: "0 0 300m",
     alvoCamera: "0m 0m 0m",
-    temAltura: true,
-    alturaMaxima: 50,
-    alturaMinima: -50,
     descricao: "Logo oficial de Fnaf 3D. Possui o formato da cabeça de Freddy branca, sobre ele escrito FNAF em verde e 3D amarelo.",
 }
 
 var logomwd = {
+    driveId: "12BtoQF1U6PNR39VCAtzhfB5DEYR5S-Bi",
     src: "assets/models/logos/logomwd.glb",
     corFundo: "radial-gradient(#4e7abd, #0000b3)",
     fnaf: "l",

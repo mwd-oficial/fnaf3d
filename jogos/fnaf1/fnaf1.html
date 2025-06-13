@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/telas.css">
+    <link rel="stylesheet" href="styles/fnaf1.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
 
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/fnaf1/jogo/favicon/16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/fnaf1/jogo/favicon/32x32.png">
@@ -14,7 +20,42 @@
 
     <title>Fnaf 1</title>
 </head>
+
 <body>
+
+    <audio src="../../assets/audios/fnaf1/jogo/inicial.ogg" preload="auto" id="inicial-audio" loop></audio>
+    <audio src="../../assets/audios/fnaf1/jogo/inicial-celular.ogg" preload="auto" id="inicial-celular-audio"
+        loop></audio>
+    <audio src="../../assets/audios/fnaf1/jogo/mudando-camera.ogg" preload="auto" id="mudando-camera"></audio>
+    <audio src="../../assets/audios/fnaf1/jogo/chiado.ogg" preload="auto" id="chiado"></audio>
+
+    <model-viewer camera-controls disable-pan disable-zoom src="../../assets/models/fnaf1/freddy.glb"
+        animation-name="RIG_Freddy|Freddy_MenuPose_01_RIG_Freddy" interaction-prompt="none"
+        animation-crossfade-duration="0" id="freddy" loading="eager">
+    </model-viewer>
+    <!--
+    <model-viewer camera-controls disable-pan disable-zoom src="../../assets/models/fnaf1/bonnie.glb"
+        animation-name="RIG_Freddy|Freddy_MenuPose_01_RIG_Freddy" interaction-prompt="none" loading="eager"
+        animation-crossfade-duration="0" id="bonnie">
+    </model-viewer>
+    <model-viewer camera-controls disable-pan disable-zoom src="../../assets/models/fnaf1/chica.glb"
+        animation-name="RIG_Freddy|Freddy_MenuPose_01_RIG_Freddy" interaction-prompt="none" loading="eager"
+        animation-crossfade-duration="0" id="chica">
+    </model-viewer>
+    <model-viewer camera-controls disable-pan disable-zoom src="../../assets/models/fnaf1/mr-cupcake.glb"
+        animation-name="RIG_Freddy|Freddy_MenuPose_01_RIG_Freddy" interaction-prompt="none" loading="eager"
+        animation-crossfade-duration="0" id="mr-cupcake">
+    </model-viewer>
+    <model-viewer camera-controls disable-pan disable-zoom src="../../assets/models/fnaf1/foxy.glb"
+        animation-name="RIG_Freddy|Freddy_MenuPose_01_RIG_Freddy" interaction-prompt="none" loading="eager"
+        animation-crossfade-duration="0" id="foxy">
+    </model-viewer>
+    <model-viewer camera-controls disable-pan disable-zoom src="../../assets/models/extras/pra-encontrar/fnaf1/golden-freddy.glb"
+        animation-name="RIG_Freddy|Freddy_MenuPose_01_RIG_Freddy" interaction-prompt="none" loading="eager"
+        animation-crossfade-duration="0" id="golden-freddy">
+    </model-viewer>
+    -->
+
     <div id="tela-carregamento-site">
         <img src="../../assets/images/fnaf1/jogo/office.webp" alt="" id="tela-carregamento-img">
         <div id="shadow-div"></div>
@@ -32,9 +73,98 @@
         <progress id="progress-bar" value="0" max="100"></progress>
     </div>
 
-    <h1>Fnaf 1</h1>
-    <p>Ainda em desenvolvimento. Por favor aguarde.</p>
+    <div id="tela-cheia">
+        <p class="ajustar-font-size">Para uma melhor experiência, <br> clique para ativar a tela cheia</p>
+        <span class="material-symbols-rounded ajustar-font-size">fullscreen</span>
+    </div>
 
-    <script src="scripts/geral.js"></script>
+    <div id="tela-vira-cel">
+        <span class="material-symbols-rounded">screen_rotation</span>
+        <p>Para uma melhor experiência,<br>vire o seu celular.</p>
+    </div>
+
+    <div id="aviso">
+        <div>
+            <p>AVISO!</p>
+            <p>Este jogo contém luzes piscantes, <br> barulhos altos e muitos jumpscares!</p>
+        </div>
+    </div>
+
+    <div id="tela-inicial">
+        <img src="../../assets/images/fnaf1/jogo/glitch.gif" alt="" id="glitch-tela-inicial">
+        <div id="sombra-freddy"></div>
+        <div id="barra" style="height: 25px;"></div>
+        <div class="barras" style="height: 75px;"></div>
+        <div class="barras" style="height: 50px;"></div>
+        <div class="barras" style="height: 50px;"></div>
+        <div class="barras" style="height: 25px;"></div>
+        <div class="barras" style="height: 12.5px;"></div>
+        <div class="barras" style="height: 12.5px;"></div>
+
+        <div id="menu-div">
+            <p id="titulo">
+                <span>>></span>
+                Five <br>
+                <span>>></span>
+                Nights <br>
+                <span>>></span>
+                at <br>
+                <span>>></span>
+                Freddy's
+            </p>
+            <div id="estrelas">
+                <span>>></span>
+                <span class='material-symbols-outlined'>star</span>
+                <span class='material-symbols-outlined'>star</span>
+                <span class='material-symbols-outlined'>star</span>
+            </div>
+            <div id="menu">
+                <p id="novo-jogo" class="btn-inicial"><span class="setas" style="opacity: 1;">>></span> Novo Jogo</p>
+                <br>
+                <p id="continue" class="btn-inicial"><span class="setas">>></span> Continue</p><br>
+                <p id="continue-noite">Noite 1</p>
+                <p id="sexta-noite" class="btn-inicial"><span class="setas">>></span> 6<sup>a</sup> Noite</p><br>
+                <p id="noite-personalizavel" class="btn-inicial"><span class="setas">>></span> Noite Personalizável</p>
+            </div>
+            <div id="sim-nao-div" style="display: none;">
+                <br>
+                <p id="comecar-novo-jogo">Começar um novo jogo?</p>
+                <p id="sim" class="btn-inicial"><span class="setas">>></span> Sim</p><br>
+                <p id="nao" class="btn-inicial"><span class="setas">>></span> Não</p><br>
+            </div>
+        </div>
+
+        <p id="vercao">v1.0</p>
+
+        <div id="menu-celular">
+            <p id="opcoes" class="btn-inicial"><span class="setas">>></span> Opções</p>
+            <p id="desbloqueaveis" class="btn-inicial"><span class="setas">>></span> Desbloqueáveis</p>
+        </div>
+
+        <a href="https://mwd-oficial.github.io/sobre" target="_blank"><img src="../../assets/images/logomwd.png"
+                alt="logo mwd" id="logomwd" class="ajustar-width-75 efeito-hover"></a>
+    </div>
+
+
+    <!-- <h1>Fnaf 1</h1>
+    <p>Ainda em desenvolvimento. Por favor aguarde.</p> -->
+
+    <script src="scripts/animatronics.js"></script>
+    <script src="scripts/fnaf1.js"></script>
+
+    <!-- Api Model Viewer e efeitos de pós-processamento -->
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@^0.163.0/build/three.module.min.js"
+      }
+    }
+    </script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer-module.min.js"></script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects/dist/model-viewer-effects.min.js"></script>
 </body>
+
 </html>

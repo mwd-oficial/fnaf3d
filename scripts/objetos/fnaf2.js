@@ -24,9 +24,6 @@ var toyFreddy = {
     srcJumpscare: "assets/videos/fnaf2/toy-freddy.mp4",
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -98,9 +95,6 @@ var toyBonnie = {
     srcJumpscare: "assets/videos/fnaf2/toy-bonnie.mp4",
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.75
@@ -185,9 +179,6 @@ var toyChica = {
     srcJumpscare: "assets/videos/fnaf2/toy-chica.mp4",
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 3m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -281,9 +272,6 @@ var mangle = {
     srcJumpscare: "assets/videos/fnaf2/mangle.mp4",
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.5,
-    alturaMinima: -0.5,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -368,9 +356,6 @@ var balloonBoy = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.75
@@ -440,9 +425,6 @@ var puppet = {
     srcJumpscare: "assets/videos/fnaf2/puppet.mp4",
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -509,9 +491,6 @@ var witheredFreddy = {
     srcJumpscare: "assets/videos/fnaf2/withered-freddy.mp4",
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -584,9 +563,6 @@ var witheredBonnie = {
     srcJumpscare: "assets/videos/fnaf2/withered-bonnie.mp4",
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -672,9 +648,6 @@ var witheredChica = {
     srcJumpscare: "assets/videos/fnaf2/withered-chica.mp4",
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {
@@ -751,9 +724,6 @@ var witheredFoxy = {
     srcJumpscare: "assets/videos/fnaf2/withered-foxy.mp4",
     orbitaCameraMaxima: "0 0 7.5m",
     orbitaCameraMinima: "0 0 5.5m",
-    temAltura: true,
-    alturaMaxima: 0.75,
-    alturaMinima: -0.75,
     temAnimacao: true,
     temAudio: true,
     animacoes: {

@@ -136,7 +136,6 @@ function defineModelo(iModelo) {
 
     dicaP.style.opacity = 1
     nomeModelo.style.display = "none"
-    inputAlturaDiv.style.display = "none"
     animacoesContainer.style.display = "none"
     audiosContainer.style.display = "none"
     extraDesbloqueado.style.display = "none"
@@ -163,8 +162,8 @@ function defineModelo(iModelo) {
     tutorialDescricaoDiv.style.display = "none"
 
     if (modelos[iModelo].temCursor) {
-        cursorImg.src = modelos[iModelo].srcImg + "default.webp"
-        document.body.style.cursor = `url(${modelos[iModelo].srcImg}default.webp), auto`
+        cursorImg.src = modelos[iModelo].srcImg + "default.avif"
+        document.body.style.cursor = `url(${modelos[iModelo].srcImg}default.avif), auto`
     } else {
         cursorImg.src = ""
         document.body.style.cursor = "default"
@@ -205,7 +204,7 @@ function carregarModeloEvento() {
     progressBarModelo.value = 100
     setTimeout(() => {
         carregarModelo(iModeloVar)
-    }, 500)
+    }, 100)
 }
 
 function carregarModelo(iModelo) {
@@ -218,7 +217,7 @@ function carregarModelo(iModelo) {
     nomeDescricaoModelo.innerHTML = modelosDivP[iModelo].innerText
     nomeDescricaoModeloCel.innerHTML = modelosDivP[iModelo].innerText
     descricaoModelo.innerHTML = modelos[iModelo].descricao
-    setTimeout(botaoDouradof, 1000);
+    // setTimeout(botaoDouradof, 1000);
 
     if (modelos[iModelo].mudaOrbitaCamera) {
         modelViewer.cameraOrbit = modelos[iModelo].orbitaCamera;
@@ -249,7 +248,6 @@ function carregarModelo(iModelo) {
         } else {
             animacoesContainer.style.pointerEvents = "all"
             audiosContainer.style.pointerEvents = "all"
-            inputAlturaDiv.style.pointerEvents = "all"
         }
     }, 500);
 
@@ -257,12 +255,9 @@ function carregarModelo(iModelo) {
     nomeModelo.style.display = "block"
 
     tutorialDescricaoBtn.style.display = "flex"
-    if (isCelular) arBtn.style.display = "flex"
+    arBtn.style.display = "flex"
     tutorialDescricaoDiv.style.display = "flex"
 
-    if (modelos[iModelo].temAltura) {
-        inputAlturaDiv.style.display = "flex"
-    }
     animacoesContainer.style.display = "block"
     audiosContainer.style.display = "flex"
 
@@ -281,7 +276,7 @@ function carregarModelo(iModelo) {
     }
 
 
-    imgDescricaoModelo.src = modelos[iModelo].srcImg + "0.webp"
+    imgDescricaoModelo.src = modelos[iModelo].srcImg + "0.avif"
     favoritarBtn.classList.remove(iconOutlined)
     favoritarBtn.classList.add(iconRounded)
     likes.btn.classList.remove(iconOutlined)
@@ -289,7 +284,7 @@ function carregarModelo(iModelo) {
     dislikes.btn.classList.remove(iconOutlined)
     dislikes.btn.classList.add(iconRounded)
 
-    imagemCards.src = modelos[iModelo].srcImg + "cards.webp"
+    imagemCards.src = modelos[iModelo].srcImg + "cards.avif"
     swiperSlide = document.querySelectorAll(".swiper-slide")
     swiperSlide.forEach(slide => {
         slide.remove()
@@ -300,7 +295,7 @@ function carregarModelo(iModelo) {
         novoSlide.classList.add("pointers")
 
         novaImg = document.createElement("img")
-        novaImg.src = modelos[iModelo].srcImg + i + ".webp"
+        novaImg.src = modelos[iModelo].srcImg + i + ".avif"
 
         novaDescricao = document.createElement("div")
         novaDescricao.classList.add("swiper-descricao")
@@ -341,7 +336,7 @@ function carregarModelo(iModelo) {
         h3Jumpscare.style.display = "block"
         jumpscareDivVideo.style.display = "flex"
         jumpscareVideo.src = modelos[iModelo].srcJumpscare
-        jumpscareVideo.poster = modelos[iModelo].srcImg + "poster.webp"
+        jumpscareVideo.poster = modelos[iModelo].srcImg + "poster.avif"
     } else {
         h3Jumpscare.style.display = "none"
         jumpscareDivVideo.style.display = "none"
@@ -379,18 +374,12 @@ function carregarModelo(iModelo) {
                         })
                         this.classList.add("active")
                         comecarAnimacao(iModelo, iAnimacao)
-                        setTimeout(() => {
-                            defineAltura(iModelo)
-                        }, 500);
                     }
                 })
             })
         })
     } else {
         modelViewer.cameraTarget = modelos[iModelo].alvoCamera
-        setTimeout(() => {
-            defineAltura(iModelo)
-        }, 500);
     }
 
     if (modelos[iModelo].temAudio) {
@@ -482,17 +471,4 @@ function desConfigEx() {
         effectComposer.removeChild(bloomEffect);
     }
 }
-
-function defineAltura(iModelo) {
-    inputAltura.max = modelos[iModelo].alturaMaxima
-    inputAltura.min = modelos[iModelo].alturaMinima
-    inputAltura.value = (modelos[iModelo].alturaMaxima + modelos[iModelo].alturaMinima) / 2
-    alvoX = Number(modelViewer.getCameraTarget().x)
-    alvoY = Number(modelViewer.getCameraTarget().y)
-    alvoZ = Number(modelViewer.getCameraTarget().z)
-}
-
-inputAltura.addEventListener("input", function () {
-    modelViewer.cameraTarget = `${alvoX}m ${alvoY + Number(this.value)}m ${alvoZ}m`
-})
 
