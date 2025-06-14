@@ -234,7 +234,7 @@ function abrirFecharTutorial() {
 
 favoritarBtn.addEventListener("click", async function () {
     if (!logado) {
-        alerta("Faça login para favoritar modelos 3D.");
+        alerta("Faça login para favoritar modelos 3D");
         return;
     }
     this.classList.toggle(iconRounded);
@@ -247,7 +247,7 @@ favoritarBtn.addEventListener("click", async function () {
 
 likes.btn.addEventListener("click", function () {
     if (!logado) {
-        alerta("Faça login para dar likes.");
+        alerta("Faça login para dar likes");
         return;
     }
     cliqueLikeDislike(likes, dislikes, "Like", "likes", "dislikes", "comLike", "comDislike");
@@ -255,7 +255,7 @@ likes.btn.addEventListener("click", function () {
 
 dislikes.btn.addEventListener("click", function () {
     if (!logado) {
-        alerta("Faça login para dar dislikes.");
+        alerta("Faça login para dar dislikes");
         return;
     }
     cliqueLikeDislike(dislikes, likes, "Dislike", "dislikes", "likes", "comDislike", "comLike");
@@ -911,7 +911,7 @@ function gerarMoeda3d() {
 moeda3dImg.addEventListener("click", cliqueMoeda)
 async function cliqueMoeda() {
     if (!logado) {
-        alerta("Faça login para coletar moedas 3D.");
+        alerta("Faça login para coletar moedas 3D");
         return;
     }
     moeda3dImg.style.display = "none"

@@ -627,7 +627,7 @@ async function excluirConta() {
         console.log("username: " + dadosUser.username)
         console.log(res.data);
         setTimeout(async () => {
-            alerta("Conta excluída... Lamentamos ver você partir.");
+            alerta("Conta excluída... Lamentamos ver você partir");
 
             for (let i = 0; i < modelos.length; i++) {
                 for (let j = 0; j < dadosUser.likes.length; j++) {

@@ -1,11 +1,11 @@
 arBtn.addEventListener("click", async function () {
     if (!isCelular) {
-        alert("A visualização no modo AR está disponível apenas para celulares.")
+        alerta("A visualização no modo AR está disponível apenas para celulares")
         return
     }
 
     if (!/Android/i.test(navigator.userAgent)) {
-        alert("O modo AR funciona apenas em dispositivos Android.")
+        alerta("O modo AR funciona apenas em dispositivos Android")
         return
     }
 
@@ -37,7 +37,7 @@ arBtn.addEventListener("click", async function () {
                     modeloPronto = true
                 }, 1000);
             } catch (e) {
-                alert("Um erro ocorreu ao tentar entrar no modo AR.")
+                alerta("Um erro ocorreu ao tentar entrar no modo AR.")
                 return
             }
         } else {
@@ -45,7 +45,7 @@ arBtn.addEventListener("click", async function () {
             modeloPronto = true
         }
     } else {
-        alert("Esse modelo 3D não está disponível para o modo AR.")
+        alerta("Esse modelo 3D não está disponível para o modo AR.")
     }
 })
 
@@ -87,52 +87,3 @@ fecharAr.addEventListener("click", function () {
     tutorialVideo.pause();
     tutorialVideo.currentTime = 0;
 })
-
-/*
-arBtn.addEventListener("click", async function () {
-    if (!isCelular) {
-        alerta("A visualização no modo AR está disponível apenas para celulares.")
-        arBtn.style.opacity = 0.5
-        return
-    }
-
-    if (modelos[iModeloVar].driveId) {
-        ar = true
-        verificaOrientacao()
-        telaAr.style.display = "flex"
-
-        let url, sceneViewerUrl
-        //url = "https://drive.google.com/uc?export=download&id=1uDTEyO14x3IaWh9quu4IPE8zmts3pCRR";
-        if (modelos[iModeloVar].animacaoAtual) {
-            try {
-                console.log("modelos[iModeloVar].driveId: " + modelos[iModeloVar].driveId)
-                const timestamp = new Date().toISOString();
-
-                const res = await axios.post(`${API_URL}/ar/cadastrar`, {
-                    driveId: modelos[iModeloVar].driveId,
-                    animacao: modelos[iModeloVar].animacaoAtual,
-                    username: dadosUser.username || "Anônimo",
-                    nome: nomeModelo.innerHTML,
-                    timestamp: timestamp
-                });
-                setTimeout(() => {
-                    url = `https://drive.google.com/uc?export=download&id=${res.data.newDriveId}`
-                    
-                    sceneViewerUrl = `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(url)}&mode=ar_only&resizable=true#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(url)};end;`;
-                    
-                    window.location.href = sceneViewerUrl;
-                }, 1000);
-            } catch (erro) {
-                console.log("Erro ao eniar o modelo para AR:", erro);
-            }
-        } else {
-            url = `https://drive.google.com/uc?export=download&id=${modelos[iModeloVar].driveId}`
-            sceneViewerUrl = `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(url)}&mode=ar_only&resizable=true#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(url)};end;`;
-
-            window.location.href = sceneViewerUrl;
-        }
-    } else {
-        alerta("Modelo 3D não disponível para AR.")
-    }
-})
-*/

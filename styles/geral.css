@@ -83,6 +83,7 @@ body {
     transform: translateX(-50%) scale(0.75);
     font-size: 14px;
     font-weight: bolder;
+    text-align: center;
     padding: 10px 20px;
     background-color: #fff;
     border-radius: 100px;
@@ -1423,7 +1424,7 @@ model-viewer {
 
     & video {
         aspect-ratio: 9 / 16;
-        width: 90%;
+        width: 75%;
         border-radius: 20px;
     }
 
