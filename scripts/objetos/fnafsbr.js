@@ -590,7 +590,7 @@ var ruinedMiniMusicMan2 = {
 var shatteredBot = {
     src: "assets/models/fnafsbr/shattered-bot.glb",
     corFundo: "radial-gradient(#6979A1, #000)",
-    fnaf: "sb",
+    fnaf: "sbr",
     srcImg: "assets/images/fnafsbr/shattered-bot/",
     swiperDescricao: [
         "Botão de Shattered Bot (genérico) para seu modelo 3D",
