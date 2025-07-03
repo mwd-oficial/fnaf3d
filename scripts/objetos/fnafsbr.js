@@ -4,7 +4,7 @@ var prototypeGlamrockFreddy = {
     src: "assets/models/fnafsbr/prototype-glamrock-freddy.glb",
     corFundo: "radial-gradient(#E6773A, #000)",
     fnaf: "sbr",
-    srcImg: "",
+    srcImg: "assets/images/fnafsbr/prototype-glamrock-freddy",
     swiperDescricao: [
         "Botão de Ruined Glamrock Freddy para seu modelo 3D",
     ],
@@ -72,7 +72,7 @@ var ruinedGlamrockChica = {
     src: "assets/models/fnafsbr/ruined-glamrock-chica.glb",
     corFundo: "radial-gradient(#8E5967, #000)",
     fnaf: "sbr",
-    srcImg: "",
+    srcImg: "assets/images/fnafsbr/ruined-glamrock-chica",
     swiperDescricao: [
         "Botão de Ruined Glamrock Chica para seu modelo 3D",
     ],
@@ -136,7 +136,7 @@ var ruinedRoxanneWolf = {
     src: "assets/models/fnafsbr/ruined-roxanne-wolf.glb",
     corFundo: "radial-gradient(#7127B1, #000)",
     fnaf: "sbr",
-    srcImg: "",
+    srcImg: "assets/images/fnafsbr/ruined-roxanne-wolf",
     swiperDescricao: [
         "Botão de Ruined Roxanne Wolf para seu modelo 3D",
     ],
@@ -236,7 +236,7 @@ var ruinedMontgomeryGator = {
     src: "assets/models/fnafsbr/ruined-montgomery-gator.glb",
     corFundo: "radial-gradient(#7E787B, #000)",
     fnaf: "sbr",
-    srcImg: "",
+    srcImg: "assets/images/fnafsbr/ruined-montgomery-gator",
     swiperDescricao: [
         "Botão de Ruined Montgomery Gator para seu modelo 3D",
     ],
@@ -284,7 +284,7 @@ var eclipse = {
     src: "assets/models/fnafsbr/eclipse.glb",
     corFundo: "radial-gradient(#9F9FD5, #000)",
     fnaf: "sbr",
-    srcImg: "",
+    srcImg: "assets/images/fnafsbr/eclipse",
     swiperDescricao: [
         "Botão de Eclipse (Daycare Attendant)  para seu modelo 3D",
     ],
@@ -361,7 +361,7 @@ var ruinedMiniMusicMan1 = {
     src: "assets/models/fnafsbr/ruined-mini-music-man1.glb",
     corFundo: "radial-gradient(#E9789A, #000)",
     fnaf: "sbr",
-    srcImg: "",
+    srcImg: "assets/images/fnafsbr/ruined-mini-music-man1",
     swiperDescricao: [
         "Botão de Ruined Mini Music Man 1 para seu modelo 3D",
     ],
@@ -463,7 +463,7 @@ var ruinedMiniMusicMan2 = {
     src: "assets/models/fnafsbr/ruined-mini-music-man2.glb",
     corFundo: "radial-gradient(#E9789A, #000)",
     fnaf: "sbr",
-    srcImg: "",
+    srcImg: "assets/images/fnafsbr/ruined-mini-music-man2",
     swiperDescricao: [
         "Botão de Ruined Mini Music Man 2 para seu modelo 3D",
     ],
@@ -656,7 +656,7 @@ var cassie = {
     src: "assets/models/fnafsbr/cassie.glb",
     corFundo: "radial-gradient(#990F18, #000)",
     fnaf: "sbr",
-    srcImg: "",
+    srcImg: "assets/images/fnafsbr/cassie/",
     swiperDescricao: [
         "Botão de Cassie para seu modelo 3D",
     ],
@@ -696,7 +696,7 @@ var entity = {
     src: "assets/models/fnafsbr/entity.glb",
     corFundo: "radial-gradient(#12254D, #000)",
     fnaf: "sbr",
-    srcImg: "",
+    srcImg: "assets/images/fnafsbr/entity",
     swiperDescricao: [
         "Botão de Entity para seu modelo 3D",
     ],
@@ -802,7 +802,7 @@ var mimic = {
     src: "assets/models/fnafsbr/mimic.glb",
     corFundo: "radial-gradient(#302526, #000)",
     fnaf: "sbr",
-    srcImg: "",
+    srcImg: "assets/images/fnafsbr/mimic",
     swiperDescricao: [
         "Botão de Mimic para seu modelo 3D",
     ],

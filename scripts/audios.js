@@ -120,8 +120,7 @@ function tocarAudio(iModelo, iAudio) {
 
     audioModelo.volume = modelos[iModelo].audios[audiosKeys[iAudio]].volume
     playPauseAudio(iAudio)
-    audioModelo.removeEventListener("ended", audioAcabou)
-    audioModelo.addEventListener("ended", audioAcabou)
+    audioModelo.onended = audioAcabou
 
 
 
@@ -145,8 +144,16 @@ function tocarAudio(iModelo, iAudio) {
 
     // Atualiza o tempo atual do áudio quando o usuário mudar no range
     audiosRange[iAudio].addEventListener('input', function () {
+        audioModelo.pause()
         audioModelo.currentTime = audiosRange[iAudio].value;
     });
+    audiosRange[iAudio].addEventListener('mouseup', function () {
+        if (iconeAudios[iAudio].innerHTML == "pause") audioModelo.play()
+    })
+    audiosRange[iAudio].addEventListener('touchend', function () {
+        if (iconeAudios[iAudio].innerHTML == "pause") audioModelo.play()
+    })
+
 }
 
 function audioAcabou() {
@@ -163,6 +170,9 @@ function audioAcabou() {
             break
         case "sbr":
             telaModelosSbr.play()
+            break
+        case "sotm":
+            //telaModelosSotm.play()
             break
         case "w":
             telaModelosW.play()
@@ -188,6 +198,9 @@ function playPauseAudio(iAudio) {
             case "sbr":
                 telaModelosSbr.pause()
                 break
+            case "sotm":
+                //telaModelosSotm.pause()
+                break
             case "w":
                 telaModelosW.pause()
                 break
@@ -207,6 +220,9 @@ function playPauseAudio(iAudio) {
                 break
             case "sbr":
                 telaModelosSbr.play()
+                break
+            case "sotm":
+                //telaModelosSotm.play()
                 break
             case "w":
                 telaModelosW.play()

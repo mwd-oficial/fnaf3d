@@ -1,13 +1,16 @@
 imagemCards.addEventListener("click", () => {
     swiperDiv.style.display = "flex"
-    setTimeout(() => swiperDiv.style.opacity = 1, 125);
+    setTimeout(() => {
+        swiperDiv.style.opacity = 1
+        const botaoDesativado = document.querySelector(".swiper-button-disabled");
+        if (botaoDesativado) botaoDesativado.style.opacity = 0;
+    }, 125);
     document.querySelectorAll(".swiper-pagination-bullet").forEach((btn) => {
-        btn.removeEventListener("mouseover", function () { pointarCursor(btn) })
-        btn.addEventListener("mouseover", function () { pointarCursor(btn) })
+        btn.onmouseover = () => { pointarCursor(btn) }
     })
 })
 
-document.querySelector("#fechar-swiper-div-btn").addEventListener("click", () => { 
+document.querySelector("#fechar-swiper-div-btn").addEventListener("click", () => {
     swiperDiv.style.opacity = 0
     setTimeout(() => swiperDiv.style.display = "none", 125);
 })
@@ -39,8 +42,6 @@ swiper.on('slideChange', function () {
     iAlternativo = slideAtual
     aparecerBotoes()
 });
-
-if (buttonDisabled) buttonDisabled.style.opacity = 0
 
 pagination.addEventListener("mouseenter", function () {
     mouseSobreBotao = true

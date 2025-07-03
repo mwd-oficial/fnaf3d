@@ -46,6 +46,7 @@ function comecarAnimacao(iModelo, iAnimacao) {
     modelViewer.cameraTarget = animacaoSel.alvoCamera;
     iconeAnimacoes.innerHTML = "pause"
     modelViewer.play();
+    modelViewer.resetTurntableRotation()
 
     if (animacaoSel.mudaOrbitaCameraMaxima) {
         modelViewer.maxCameraOrbit = animacaoSel.orbitaCameraMaxima;
@@ -87,11 +88,20 @@ function comecarAnimacao(iModelo, iAnimacao) {
 
         // Atualiza o tempo atual da animação quando o usuário mudar no range
         animacoesRange.addEventListener('input', function () {
+            modelViewer.timeScale = 1
+            modelViewer.pause()
             modelViewer.currentTime = animacoesRange.value;
         });
+        animacoesRange.addEventListener('mouseup', function () {
+            if (iconeAnimacoes.innerHTML == "pause") modelViewer.play()
+            modelViewer.timeScale = velocidadeInput.value
+        })
+        animacoesRange.addEventListener('touchend', function () {
+            if (iconeAnimacoes.innerHTML == "pause") modelViewer.play()
+            modelViewer.timeScale = velocidadeInput.value
+        })
 
-        iconeAnimacoes.removeEventListener("click", playPauseAnimacao)
-        iconeAnimacoes.addEventListener("click", playPauseAnimacao)
+        iconeAnimacoes.onclick = playPauseAnimacao
 
     } else {
         modelViewer.pause()

@@ -158,6 +158,7 @@ var telaModelosAudios = document.querySelectorAll(".tela-modelos-audios")
 var telaModelosFfps = document.querySelector("#tela-modelos-ffps")
 var telaModelosSb = document.querySelector("#tela-modelos-sb")
 var telaModelosSbr = document.querySelector("#tela-modelos-sbr")
+var telaModelosSotm = document.querySelector("#tela-modelos-sotm")
 var telaModelosW = document.querySelector("#tela-modelos-w")
 
 
@@ -182,6 +183,7 @@ var srcJogos = [
     "https://github.com/mwd-oficial/fnaf3d/releases/download/v1.0/fnafffps.exe",
     "https://store.steampowered.com/app/747660/Five_Nights_at_Freddys_Security_Breach/",
     "https://store.steampowered.com/app/1924720/Five_Nights_at_Freddys_Security_Breach__Ruin/",
+    "https://store.steampowered.com/app/2215390/Five_Nights_at_Freddys_Secret_of_the_Mimic/",
     "https://github.com/mwd-oficial/fnaf3d/releases/download/v1.0/fnafw.exe",
 ]
 
@@ -343,6 +345,8 @@ var fnafsbInfo = "<p class='ajustar-font-size-info'>Clique no botão para acessa
 
 var fnafsbrInfo = "<p class='ajustar-font-size-info'>Clique no botão para acessar Five Nights at Freddy's: Security Breach Ruin diretamente na Steam para jogá-lo (para jogar essa DLC você precisa comprar o jogo base primeiro).</p><p class='ajustar-font-size-info'>Five Nights at Freddy's: Security Breach é um marco na série de jogos de terror de sobrevivência criada por Scott Cawthon. O jogo, que se passa no Mega Pizzaplex de Freddy Fazbear, apresenta uma nova dimensão de medo e suspense. Agora, o palco está pronto para a DLC 'Ruin'. Nesta expansão gratuita, o Mega Pizzaplex, outrora vibrante e cheio de vida, agora é um lugar sombrio e abandonado. As luzes se apagaram, os animatrônicos estão desligados e o riso das crianças é apenas uma memória distante.</p><p class='ajustar-font-size-info'>A DLC 'Ruin' oferece uma nova perspectiva sobre o universo de Five Nights at Freddy's. Ela desafia os jogadores a explorar o Pizzaplex de uma maneira totalmente nova, enquanto tentam desvendar seus segredos e sobreviver aos perigos que espreitam nas sombras.</p><h3>Sinopse:</h3><p class='ajustar-font-size-info'>Você pode correr, mas não se esconder...</p><p class='ajustar-font-size-info'>Entre nas ruínas do Freddy Fazbear's Mega Pizzaplex no DLC GRÁTIS de Five Nights at Freddy's: Security Breach!</p><p class='ajustar-font-size-info'>Gregory está preso de novo no agora abandonado Pizzaplex e precisa da sua ajuda! Jogue como Cassie, a melhor amiga de Gregory, uma Faz-fanática e aspirante a salvadora, enquanto ela desbrava a sombria, lúgubre e dilapidada pizzaria. Ela está armada apenas de uma Faz-Ferramenta, um Roxy-Talky e uma estranha máscara de coelho, e você precisa ajudá-la a encontrar seu amigo, libertá-lo e escapar das ruínas em segurança.</p><p class='ajustar-font-size-info'>Será que você consegue salvar seu amigo, a si mesma e o Pizzaplex? Descubra no DLC 100% grátis Five Nights at Freddy's: Security Breach - Ruin.</p>"
 
+var fnafsotmInfo = "lorem"
+
 var fnafwInfo = "<p class='ajustar-font-size-info'>Instale e jogue o Five Nights at Freddy's World original de forma gratuita e totalmente livre de vírus e malware. Este jogo foi disponibilizado diretamente no site Game Jolt pelo próprio Scott Cawthon. Ao clicar no botão de download, você baixará automaticamente o arquivo fnafw.exe</p><p class='ajustar-font-size-info'>Five Nights at Freddy's World é um spin-off da série de survival horror Five Nights at Freddy's desenvolvido por Scott Cawthon. Foi lançado para PC no dia 21/01/2016. Alguns dias depois do lançamento, foi removido do Steam para melhorias no jogo. No dia 08/02/2016, ele foi re-lançado no Game Jolt com uma nova atualização. A versão portátil do jogo foi lançada para Android no dia 12/01/2017, mas um dia depois foi excluída da Google Play. A versão para iOS foi anunciada, mas não foi lançada. Diferente de seus antecessores, ele é um jogo de RPG ao invés de horror.</p><h3>Sinopse:</h3><p class='ajustar-font-size-info'>Com 48 personagens jogáveis, diversos finais, diversas dificuldades e ótimas trilhas sonoras desenvolvidas por Leon Riskin, FNaF World está a toda velocidade e não para. Tome controle de Freddy e sua turma e parta para uma missão no mundo debaixo dos mundos, um mundo que reflete as ações e os atos do 'flipside', onde as coisas haviam começado a ficar distorcidas e quebradas. Guie o seu time até as profundezas desse mundo digital para descobrir a origem dessas distorções e monstros, e restaure isso que foi designado para ser um paraíso seguro.</p><p class='ajustar-font-size-info'>Mas tenha cuidado, atrás das cortinas pode existir algo ainda mais sinistro controlando as marionetes...</p>"
 
 var fnafexfInfo = "<p class='ajustar-font-size-info'>Clique no botão e assita Five Nights At Freddy's: O Pesadelo Sem Fim no Prime Video!</p><p class='ajustar-font-size-info'>Five Nights At Freddy's: O Pesadelo Sem Fim é a primeira adaptação cinematográfica da famosa franquia homônima de jogos lançada em 2014 e criada por Scott Cawthon. O filme, dirigido por Emma Tammi, se passa em um restaurante familiar tipicamente americano chamado Freddy Fazbear's Pizza. Durante o dia, robôs animados fazem a festa das crianças, mas à noite, eles se transformam em assassinos psicopatas.</p><p class='ajustar-font-size-info'>O protagonista, Mike Schmidt (interpretado por Josh Hutcherson), é contratado como vigia noturno da pizzaria e descobre o segredo obscuro dos bonecos animatrônicos que ganham vida na escuridão. O filme foi lançado em outubro de 2023. Uma curiosidade é que a franquia de jogos original conquistou os fãs de survival horror e agora chega às telonas com uma adaptação arrepiante.</p><h3>Sinopse:</h3><p class='ajustar-font-size-info'>Você consegue sobreviver por cinco noites? O assustador fenômeno dos jogos de terror, 'Five Nights at Freddy's' (FNAF), se torna um evento cinematográfico arrepiante, já que a Blumhouse -- produtora de M3GAN, O Telefone Preto e O Homem Invisível -- traz a adaptação Five Nights at Freddy's - O Pesadelo sem Fim para as telas.</p>"
@@ -353,6 +357,7 @@ var fnafffpsDownload = document.querySelector("#fnafffps-download")
 var fnafwDownload = document.querySelector("#fnafw-download")
 var fnafsbSteam = document.querySelector("#fnafsb-steam")
 var fnafsbrSteam = document.querySelector("#fnafsbr-steam")
+var fnafsotmSteam = document.querySelector("#fnafsotm-steam")
 var fnafFilme = document.querySelector("#fnaf-filme")
 var downloadP = document.querySelector("#download-p")
 

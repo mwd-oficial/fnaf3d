@@ -2,20 +2,14 @@
 
 btnModelos.forEach((modelo, iModelo) => {
     if (!isCelular) modelo.classList.add("efeito-hover")
-    modelo.removeEventListener("mouseover", function () {
-        pointarCursor(modelo)
-    })
-    modelo.addEventListener("mouseover", function () {
-        pointarCursor(modelo)
-    })
+    modelo.onmouseover = () => pointarCursor(modelo)
     modelo.addEventListener("click", () => {
         if (!modelo.classList.contains("active") && !modelo.classList.contains("bloqueado")) {
             cliqueModelo(modelo, iModelo)
 
-            modelViewer.autoRotate = false
             modelViewer.interactionPromptStyle = "wiggle"
             modelViewer.rotationPerSecond = "0deg"
-            rotacaoInput.classList.remove("active")
+            modelViewer.timeScale = 1
             if (pixelateEffect) {
                 effectComposer.removeChild(pixelateEffect)
                 pixelInput.classList.remove("active")
@@ -50,8 +44,11 @@ function cliqueModelo(modelo, iModelo) {
     telaCarregamento.style.display = "flex"
     defineModelo(iModelo)
 
-    rotacaoInput.checked = false
-    velocidadeInput.value = 0
+    velocidadeInput.value = 1
+    document.querySelector("#velocidade-div span").innerHTML = "1"
+
+
+    rotacaoInput.value = 0
 
 
     pixelInput.checked = false
@@ -68,7 +65,7 @@ function cliqueModelo(modelo, iModelo) {
     document.querySelectorAll(".tela-modelos-especiais").forEach((audio) => {
         audio.volume = 0.25
     })
-    if (modelos[iModelo].fnaf == "ffps" || modelos[iModelo].fnaf == "sb" || modelos[iModelo].fnaf == "sbr" || modelos[iModelo].fnaf == "w") {
+    if (modelos[iModelo].fnaf == "ffps" || modelos[iModelo].fnaf == "sb" || modelos[iModelo].fnaf == "sbr" || modelos[iModelo].fnaf == "sotm" || modelos[iModelo].fnaf == "w") {
         telaModelosAudio.pause()
     } else {
         if (telaModelosAudio.paused) {
@@ -89,6 +86,7 @@ function cliqueModelo(modelo, iModelo) {
                 telaModelosSb.pause()
                 telaModelosSbr.pause()
                 telaModelosW.pause()
+                //telaModelosSotm.pause()
             }
             break
         case "sb":
@@ -98,6 +96,7 @@ function cliqueModelo(modelo, iModelo) {
                 telaModelosFfps.pause()
                 telaModelosSbr.pause()
                 telaModelosW.pause()
+                //telaModelosSotm.pause()
             }
             break
         case "sbr":
@@ -108,6 +107,18 @@ function cliqueModelo(modelo, iModelo) {
                 telaModelosFfps.pause()
                 telaModelosSb.pause()
                 telaModelosW.pause()
+                //telaModelosSotm.pause()
+            }
+            break
+        case "sotm":
+            if (telaModelosSotm.paused) {
+                telaModelosSotm.currentTime = 0
+                telaModelosSotm.volume = 0.125
+                //telaModelosSotm.play()
+                telaModelosFfps.pause()
+                telaModelosSb.pause()
+                telaModelosSbr.pause()
+                telaModelosW.pause()
             }
             break
         case "w":
@@ -117,6 +128,7 @@ function cliqueModelo(modelo, iModelo) {
                 telaModelosFfps.pause()
                 telaModelosSb.pause()
                 telaModelosSbr.pause()
+                //telaModelosSotm.pause()
             }
             break
     }
@@ -132,7 +144,7 @@ function defineModelo(iModelo) {
 
     // Reseta a orbita da câmera e a rotação para a posição inicial
     modelViewer.cameraOrbit = modelViewer.getCameraOrbit()
-    modelViewer.resetTurntableRotation(0)
+    modelViewer.resetTurntableRotation()
 
     dicaP.style.opacity = 1
     nomeModelo.style.display = "none"
@@ -186,8 +198,7 @@ function defineModelo(iModelo) {
             clearInterval(progressoModeloInterval);
         }
     }, 1);
-    modelViewer.removeEventListener("load", carregarModeloEvento)
-    modelViewer.addEventListener("load", carregarModeloEvento)
+    modelViewer.onload = carregarModeloEvento
 
     if (divMenu.classList.contains("active")) abrirFecharMenu()
     if (tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
@@ -313,18 +324,13 @@ function carregarModelo(iModelo) {
 
     swiperSlide.forEach((slide, i) => {
         if (isCelular) {
-            slide.removeEventListener("click", function () { aparecerBotoesSlide(i) })
-            slide.removeEventListener("click", sumirBotoes)
-            slide.addEventListener("click", function () { botoes(i) })
+            slide.onclick = () => botoes(i)
         } else {
-            slide.removeEventListener("mouseenter", function () { aparecerBotoesSlide(i) })
-            slide.addEventListener("mouseenter", function () { aparecerBotoesSlide(i) })
-            slide.removeEventListener("mouseleave", sumirBotoes)
-            slide.addEventListener("mouseleave", sumirBotoes)
+            slide.onmouseenter = () => aparecerBotoesSlide(i)
+            slide.onmouseleave = sumirBotoes
         }
 
-        slide.removeEventListener("mouseover", function () { pointarCursor(slide) })
-        slide.addEventListener("mouseover", function () { pointarCursor(slide) })
+        slide.onmouseover = () => pointarCursor(slide)
         if (isCelular) ajustarFontSize(swiperDescricao[i])
     })
     swiper.slideTo(0)
@@ -351,6 +357,9 @@ function carregarModelo(iModelo) {
 
 
     if (modelos[iModelo].temAnimacao) {
+        document.querySelector("#velocidade-h3").style.display = "block"
+        document.querySelector("#velocidade-div").style.display = "flex"
+
         animacoesKeys = Object.keys(modelos[iModelo].animacoes); // Pega todos os objetos dentro de .animacoes
         animacoesKeys.forEach((animacao) => {
             animacoesBtn = document.createElement("div");
@@ -361,12 +370,8 @@ function carregarModelo(iModelo) {
             document.querySelectorAll(".animacoes-btn")[0].classList.add("active")
 
             document.querySelectorAll(".animacoes-btn").forEach((btn, iAnimacao) => {
-                btn.removeEventListener("mouseover", function () {
-                    pointarCursor(btn)
-                })
-                btn.addEventListener("mouseover", function () {
-                    pointarCursor(btn)
-                })
+                if (!isCelular) btn.classList.add("efeito-hover")
+                btn.onmouseover = () => pointarCursor(btn)
                 btn.addEventListener("click", function () {
                     if (!this.classList.contains("active")) {
                         document.querySelectorAll(".animacoes-btn").forEach((btn) => {
@@ -380,6 +385,8 @@ function carregarModelo(iModelo) {
         })
     } else {
         modelViewer.cameraTarget = modelos[iModelo].alvoCamera
+        document.querySelector("#velocidade-h3").style.display = "none"
+        document.querySelector("#velocidade-div").style.display = "none"
     }
 
     if (modelos[iModelo].temAudio) {

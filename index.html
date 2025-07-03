@@ -38,6 +38,8 @@
         loop></audio>
     <audio src="assets/audios/tela-modelos-sbr.ogg" preload="auto" id="tela-modelos-sbr" class="tela-modelos-especiais"
         loop></audio>
+    <audio src="assets/audios/tela-modelos-sotm.ogg" preload="auto" id="tela-modelos-sotm" class="tela-modelos-especiais"
+        loop></audio>
     <audio src="assets/audios/tela-modelos-w.ogg" preload="auto" id="tela-modelos-w" class="tela-modelos-especiais"
         loop></audio>
 
@@ -302,7 +304,8 @@
                                 <span class="material-symbols-rounded">add_a_photo</span>
                             </div>
                         </label>
-                        <input type="file" name="" id="input-imagem" accept=".jpeg, .jpg, .png, .webp, .avif" style="display: none;">
+                        <input type="file" name="" id="input-imagem" accept=".jpeg, .jpg, .png, .webp, .avif"
+                            style="display: none;">
                         <div id="preencher-div">
                             <p class="pointers ajustar-font-size" id="preencher-p">Preencher imagem:</p>
                             <div id="input-preencher" class="pointers checkbox-input"></div>
@@ -480,17 +483,17 @@
                             novamente)
                         </p>
 
-
-                        <h3 class="ajustar-font-size">Rotação:</h3>
-                        <div class="checkbox-input-div pointers">
-                            <p class="ajustar-font-size pointers" id="rotacao-p">Automática:</p>
-                            <div id="rotacao-input" class="pointers checkbox-input"></div>
+                        <h3 class="ajustar-font-size" id="velocidade-h3">Velocidade da animação:</h3>
+                        <div id="velocidade-div" class="range-inputs-div">
+                            <input type="range" name="" id="velocidade-input" class="range-inputs pointers" min="-2"
+                                max="2" step="0.01" value="1">
+                            <span class="ajustar-font-size" style="width: 30px;">1</span>
                         </div>
 
+                        <h3 class="ajustar-font-size">Rotação automática:</h3>
                         <div class="range-inputs-div">
-                            <p class="ajustar-font-size">Velocidade:</p>
                             <span class="ajustar-font-size">0%</span>
-                            <input type="range" id="velocidade-input" class="range-inputs pointers" min="0" max="360"
+                            <input type="range" id="rotacao-input" class="range-inputs pointers" min="0" max="360"
                                 step="0.1" value="0">
                             <span class="ajustar-font-size">100%</span>
                         </div>
@@ -570,6 +573,7 @@
                 <img src="assets/images/fnafffps/fnafffps.avif" class="pointers" alt="">
                 <img src="assets/images/fnafsb/fnafsb.avif" class="pointers" alt="">
                 <img src="assets/images/fnafsbr/fnafsbr.avif" class="pointers" alt="">
+                <img src="assets/images/fnafsotm/fnafsotm.avif" class="pointers" alt="">
                 <img src="assets/images/fnafw/fnafw.avif" class="pointers" alt="">
                 <img src="assets/images/fnafucn.avif" class="pointers" alt="" id="ucn-btn" style="display: none;">
             </div>
@@ -629,7 +633,8 @@
                 <li class="ajustar-font-size">Assistir este rápido tutorial de como interagir com o modelo no modo AR.
                 </li>
             </ol>
-            <video src="assets/videos/tutorial.mp4" poster="assets/images/tutorial.avif" controls controlsList="nodownload"></video>
+            <video src="assets/videos/tutorial.mp4" poster="assets/images/tutorial.avif" controls
+                controlsList="nodownload"></video>
             <div class="btn offset-top-10 offset-lg-top-0 btn-danger" id="ir-ar-btn">Modo AR<span
                     class="material-symbols-rounded">east</span></div>
         </div>
@@ -671,6 +676,10 @@
                             <img src="assets/images/steam.avif" alt="">
                         </div>
                         <div class="steam-div pointers" id="fnafsbr-steam">
+                            Acessar
+                            <img src="assets/images/steam.avif" alt="">
+                        </div>
+                        <div class="steam-div pointers" id="fnafsotm-steam">
                             Acessar
                             <img src="assets/images/steam.avif" alt="">
                         </div>
@@ -1426,255 +1435,14 @@
 
 
 
-                    <!-- Five Nights at Freddy's World -->
-                    <h3 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's World</h3>
+
+                    <h3 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's: Secret of the Mimic</h3>
                     <div class="modelos-container">
-
-                        <!-- Fnaf 1 -->
                         <div class="modelos-div ajustar-width-75">
                             <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf1/adventure-freddy/0.webp"
-                                    style="transform: scale(1.4);">
+                                    src="assets/images/fnafsotm/prototype-bonnie/0.avif">
                             </div>
-                            <p class="ajustar-font-size">Adventure Freddy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height">
-                                <img src="assets/images/fnafw/fnaf1/adventure-bonnie/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Bonnie</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height">
-                                <img src="assets/images/fnafw/fnaf1/adventure-chica/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Chica</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height">
-                                <img src="assets/images/fnafw/fnaf1/adventure-foxy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Foxy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height">
-                                <img src="assets/images/fnafw/fnaf1/adventure-golden-freddy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Golden Freddy</p>
-                        </div>
-
-                        <!-- fnaf 2 -->
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height">
-                                <img src="assets/images/fnafw/fnaf2/adventure-toy-freddy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Toy Freddy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf2/adventure-toy-bonnie/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Toy Bonnie</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf2/adventure-toy-chica/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Toy Chica</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf2/adventure-mangle/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Mangle</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf2/adventure-balloon-boy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Balloon Boy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf2/adventure-puppet/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Puppet</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf2/adventure-withered-freddy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Withered Freddy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf2/adventure-withered-bonnie/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Withered Bonnie</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf2/adventure-withered-chica/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Withered Chica</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf2/adventure-withered-foxy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Withered Foxy</p>
-                        </div>
-
-                        <!-- fnaf 3 -->
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf3/adventure-phantom-freddy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Phantom Freddy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf3/adventure-phantom-chica/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Phantom Chica</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf3/adventure-phantom-foxy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Phantom Foxy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf3/adventure-phantom-mangle/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Phantom Mangle</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf3/adventure-phantom-balloon-boy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Phantom Balloon Boy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf3/adventure-phantom-puppet/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Phantom Puppet</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf3/adventure-springtrap/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Springtrap</p>
-                        </div>
-
-                        <!-- fnaf 4 -->
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-nightmare-freddy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Nightmare Freddy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-nightmare-bonnie/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Nightmare Bonnie</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-nightmare-chica/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Nightmare Chica</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-nightmare-foxy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Nightmare Foxy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-nightmare-fredbear/0.webp"
-                                    style="transform: scale(1.2);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Nightmare Fredbear</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-nightmare/0.webp"
-                                    style="transform: scale(1.2);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Nightmare</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-jack-o-bonnie/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Jack-O-Bonnie</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-jack-o-chica/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Jack-O-Chica</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-nightmare-balloon-boy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Nightmare Balloon Boy</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-plushtrap/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Plushtrap</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/fnaf4/adventure-nightmarionne/0.webp"
-                                    style="transform: scale(1.2);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Nightmarionne</p>
-                        </div>
-
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos geral ajustar-height"><img
-                                    src="assets/images/fnafw/adventure-funtime-foxy/0.webp"
-                                    style="transform: scale(1.4);">
-                            </div>
-                            <p class="ajustar-font-size">Adventure Funtime Foxy</p>
+                            <p class="ajustar-font-size">Prototype Bonnie</p>
                         </div>
                     </div>
 
@@ -1686,561 +1454,868 @@
 
 
 
-                    <!-- Extras -->
-                    <h3 class="ajustar-font-size nome-fnaf">Extras</h3>
-                    <!-- Extras Pra Comprar -->
-                    <div class="modelos-container">
 
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-comprar bloqueado">
-                                <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif">
-                                <div class="bloqueio-pra-comprar"><span class="material-symbols-rounded">lock</span>
+
+
+
+                        <!-- Five Nights at Freddy's World -->
+                        <h3 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's World</h3>
+                        <div class="modelos-container">
+
+                            <!-- Fnaf 1 -->
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf1/adventure-freddy/0.webp"
+                                        style="transform: scale(1.4);">
                                 </div>
+                                <p class="ajustar-font-size">Adventure Freddy</p>
                             </div>
-                            <p class="ajustar-font-size">Moeda 3D</p>
-                            <div class="valor-div">
-                                <p class="valor">1</p>
-                                <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif" alt="">
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height">
+                                    <img src="assets/images/fnafw/fnaf1/adventure-bonnie/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Bonnie</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height">
+                                    <img src="assets/images/fnafw/fnaf1/adventure-chica/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Chica</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height">
+                                    <img src="assets/images/fnafw/fnaf1/adventure-foxy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Foxy</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height">
+                                    <img src="assets/images/fnafw/fnaf1/adventure-golden-freddy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Golden Freddy</p>
+                            </div>
+
+                            <!-- fnaf 2 -->
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height">
+                                    <img src="assets/images/fnafw/fnaf2/adventure-toy-freddy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Toy Freddy</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf2/adventure-toy-bonnie/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Toy Bonnie</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf2/adventure-toy-chica/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Toy Chica</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf2/adventure-mangle/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Mangle</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf2/adventure-balloon-boy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Balloon Boy</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf2/adventure-puppet/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Puppet</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf2/adventure-withered-freddy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Withered Freddy</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf2/adventure-withered-bonnie/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Withered Bonnie</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf2/adventure-withered-chica/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Withered Chica</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf2/adventure-withered-foxy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Withered Foxy</p>
+                            </div>
+
+                            <!-- fnaf 3 -->
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf3/adventure-phantom-freddy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Phantom Freddy</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf3/adventure-phantom-chica/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Phantom Chica</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf3/adventure-phantom-foxy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Phantom Foxy</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf3/adventure-phantom-mangle/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Phantom Mangle</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf3/adventure-phantom-balloon-boy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Phantom Balloon Boy</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf3/adventure-phantom-puppet/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Phantom Puppet</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf3/adventure-springtrap/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Springtrap</p>
+                            </div>
+
+                            <!-- fnaf 4 -->
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-nightmare-freddy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Nightmare Freddy</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-nightmare-bonnie/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Nightmare Bonnie</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-nightmare-chica/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Nightmare Chica</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-nightmare-foxy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Nightmare Foxy</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-nightmare-fredbear/0.webp"
+                                        style="transform: scale(1.2);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Nightmare Fredbear</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-nightmare/0.webp"
+                                        style="transform: scale(1.2);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Nightmare</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-jack-o-bonnie/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Jack-O-Bonnie</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-jack-o-chica/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Jack-O-Chica</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-nightmare-balloon-boy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Nightmare Balloon Boy</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-plushtrap/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Plushtrap</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/fnaf4/adventure-nightmarionne/0.webp"
+                                        style="transform: scale(1.2);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Nightmarionne</p>
+                            </div>
+
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos geral ajustar-height"><img
+                                        src="assets/images/fnafw/adventure-funtime-foxy/0.webp"
+                                        style="transform: scale(1.4);">
+                                </div>
+                                <p class="ajustar-font-size">Adventure Funtime Foxy</p>
                             </div>
                         </div>
 
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-comprar bloqueado">
-                                <img src="assets/images/extras/pra-comprar/purple-guy/0.avif">
-                                <div class="bloqueio-pra-comprar"><span class="material-symbols-rounded">lock</span>
+
+
+
+
+
+
+
+
+                        <!-- Extras -->
+                        <h3 class="ajustar-font-size nome-fnaf">Extras</h3>
+                        <!-- Extras Pra Comprar -->
+                        <div class="modelos-container">
+
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-comprar bloqueado">
+                                    <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif">
+                                    <div class="bloqueio-pra-comprar"><span class="material-symbols-rounded">lock</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">Moeda 3D</p>
+                                <div class="valor-div">
+                                    <p class="valor">1</p>
+                                    <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif" alt="">
                                 </div>
                             </div>
-                            <p class="ajustar-font-size">Purple Man (William Afton)</p>
-                            <div class="valor-div">
-                                <p class="valor">10</p>
-                                <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif" alt="">
+
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-comprar bloqueado">
+                                    <img src="assets/images/extras/pra-comprar/purple-guy/0.avif">
+                                    <div class="bloqueio-pra-comprar"><span class="material-symbols-rounded">lock</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">Purple Man (William Afton)</p>
+                                <div class="valor-div">
+                                    <p class="valor">10</p>
+                                    <img src="assets/images/extras/pra-comprar/moeda-3d/0.avif" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Extras Pra Encontrar -->
+                        <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's</h4>
+                        <div class="modelos-container">
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span></div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
                             </div>
                         </div>
 
+                        <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's 2</h4>
+                        <div class="modelos-container">
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span></div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                        </div>
+
+                        <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's 3</h4>
+
+                        <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's 4</h4>
+
+                        <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's: Sister Location</h4>
+                        <div class="modelos-container">
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                        </div>
+
+                        <h4 class="ajustar-font-size nome-fnaf">Freddy Fazbear's Pizzeria Simulator</h4>
+
+                        <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's: Security Breach</h4>
+                        <div class="modelos-container">
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                        </div>
+
+                        <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's: Security Breach - Ruin</h4>
+
+                        <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's: Secret of the Mimic</h4>
+
+                        <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's World</h4>
+
+                        <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's - O Pesadelo Sem Fim</h4>
+                        <div class="modelos-container">
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                        </div>
+
+                        <h4 class="ajustar-font-size nome-fnaf">Outros</h4>
+                        <div class="modelos-container">
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar"><span
+                                            class="material-symbols-rounded">question_mark</span>
+                                    </div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                        </div>
+
+
+                        <!-- Extras Pra Encontrar Dourado -->
+                        <h4 class="ajustar-font-size nome-fnaf">Dourados</h4>
+                        <div class="modelos-container">
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar-dourado bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar-dourado"><span
+                                            class="material-symbols-rounded">question_mark</span></div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                            <div class="modelos-div ajustar-width-75">
+                                <div class="btn-modelos ajustar-height pra-encontrar-dourado bloqueado">
+                                    <img src="">
+                                    <div class="bloqueio-pra-encontrar-dourado"><span
+                                            class="material-symbols-rounded">question_mark</span></div>
+                                </div>
+                                <p class="ajustar-font-size">???</p>
+                            </div>
+                        </div>
+                        <div id="lista-users"></div>
+                        <p id="nenhum-resul" class="ajustar-font-size">Nenhum resultado encontrado.</p>
                     </div>
 
-                    <!-- Extras Pra Encontrar -->
-                    <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's</h4>
-                    <div class="modelos-container">
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span></div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                    </div>
-
-                    <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's 2</h4>
-                    <div class="modelos-container">
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span></div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                    </div>
-
-                    <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's 3</h4>
-
-                    <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's 4</h4>
-
-                    <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's: Sister Location</h4>
-                    <div class="modelos-container">
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                    </div>
-
-                    <h4 class="ajustar-font-size nome-fnaf">Freddy Fazbear's Pizzeria Simulator</h4>
-
-                    <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's: Security Breach</h4>
-                    <div class="modelos-container">
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                    </div>
-
-                    <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's: Security Breach - Ruin</h4>
-
-                    <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's World</h4>
-
-                    <h4 class="ajustar-font-size nome-fnaf">Five Nights at Freddy's - O Pesadelo Sem Fim</h4>
-                    <div class="modelos-container">
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                    </div>
-
-                    <h4 class="ajustar-font-size nome-fnaf">Outros</h4>
-                    <div class="modelos-container">
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar"><span
-                                        class="material-symbols-rounded">question_mark</span>
-                                </div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                    </div>
-
-
-                    <!-- Extras Pra Encontrar Dourado -->
-                    <h4 class="ajustar-font-size nome-fnaf">Dourados</h4>
-                    <div class="modelos-container">
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar-dourado bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar-dourado"><span
-                                        class="material-symbols-rounded">question_mark</span></div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                        <div class="modelos-div ajustar-width-75">
-                            <div class="btn-modelos ajustar-height pra-encontrar-dourado bloqueado">
-                                <img src="">
-                                <div class="bloqueio-pra-encontrar-dourado"><span
-                                        class="material-symbols-rounded">question_mark</span></div>
-                            </div>
-                            <p class="ajustar-font-size">???</p>
-                        </div>
-                    </div>
-                    <div id="lista-users"></div>
-                    <p id="nenhum-resul" class="ajustar-font-size">Nenhum resultado encontrado.</p>
-                </div>
-
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div id="animacoes-container">
-            <h3 class="ajustar-font-size">Animações<span class="material-symbols-rounded"
-                    id="h3-seta-animacoes">expand_more</span></h3>
-            <div id="animacoes-div">
-                <p id="sem-animacoes" class="ajustar-font-size">Este modelo 3D não possui animações.</p>
-                <div id="animacoes-range-div">
-                    <span class="material-symbols-outlined pointers" id="icone-animacoes">pause</span>
-                    <span id="tempo-atual-animacoes">00:00</span>
-                    <input type="range" min="0" value="0" step="0.000000000000001" id="animacoes-range"
-                        class="pointers">
-                    <span id="tempo-total-animacoes">00:00</span>
                 </div>
             </div>
-        </div>
 
 
 
-        <div id="audios-container">
-            <div id="audios-div">
 
-                <p id="sem-audios" class="ajustar-font-size">Este modelo 3D não<br>possui audios.</p>
 
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
-                <div class="audios-btn-p-range">
-                    <div class="audios-btn-p pointers">
-                        <div class="audios-btn"><span class="material-symbols-outlined icone-audios">volume_up</span>
-                        </div>
-                        <p class="ajustar-font-size"></p>
-                    </div>
-                    <div class="audios-range-div">
-                        <span class="tempo-atual">00:00</span>
-                        <input type="range" min="0" value="0" step="0.000000000000001" class="audios-range pointers">
-                        <span class="tempo-total">00:00</span>
-                    </div>
-                </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="animacoes-container">
+                <h3 class="ajustar-font-size">Animações<span class="material-symbols-rounded"
+                        id="h3-seta-animacoes">expand_more</span></h3>
+                <div id="animacoes-div">
+                    <p id="sem-animacoes" class="ajustar-font-size">Este modelo 3D não possui animações.</p>
+                    <div id="animacoes-range-div">
+                        <span class="material-symbols-outlined pointers" id="icone-animacoes">pause</span>
+                        <span id="tempo-atual-animacoes">00:00</span>
+                        <input type="range" min="0" value="0" step="0.000000000000001" id="animacoes-range"
+                            class="pointers">
+                        <span id="tempo-total-animacoes">00:00</span>
+                    </div>
+                </div>
             </div>
-            <h3 class="ajustar-font-size">
-                <span>Á</span><span>u</span><span>d</span><span>i</span><span>o</span><span>s</span>
-                <span class="material-symbols-rounded" id="h3-seta-audios">chevron_left</span>
-            </h3>
+
+
+
+            <div id="audios-container">
+                <div id="audios-div">
+
+                    <p id="sem-audios" class="ajustar-font-size">Este modelo 3D não<br>possui audios.</p>
+
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <div class="audios-btn-p-range">
+                        <div class="audios-btn-p pointers">
+                            <div class="audios-btn"><span
+                                    class="material-symbols-outlined icone-audios">volume_up</span>
+                            </div>
+                            <p class="ajustar-font-size"></p>
+                        </div>
+                        <div class="audios-range-div">
+                            <span class="tempo-atual">00:00</span>
+                            <input type="range" min="0" value="0" step="0.000000000000001"
+                                class="audios-range pointers">
+                            <span class="tempo-total">00:00</span>
+                        </div>
+                    </div>
+
+                </div>
+                <h3 class="ajustar-font-size">
+                    <span>Á</span><span>u</span><span>d</span><span>i</span><span>o</span><span>s</span>
+                    <span class="material-symbols-rounded" id="h3-seta-audios">chevron_left</span>
+                </h3>
+            </div>
+
+
+            <a href="https://mwd-oficial.github.io/sobre" target="_blank"><img src="assets/images/logomwd.png"
+                    alt="logo mwd" id="logomwd" class="ajustar-width-75 efeito-hover"></a>
+
         </div>
 
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-        <a href="https://mwd-oficial.github.io/sobre" target="_blank"><img src="assets/images/logomwd.png"
-                alt="logo mwd" id="logomwd" class="ajustar-width-75 efeito-hover"></a>
+        <script src="scripts/variaveis.js"></script>
 
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-    <script src="scripts/variaveis.js"></script>
-
-    <!-- Objetos dos modelos -->
-    <script src="scripts/objetos/logos.js"></script>
-    <script src="scripts/objetos/fnaf1.js"></script>
-    <script src="scripts/objetos/fnaf2.js"></script>
-    <script src="scripts/objetos/fnaf3.js"></script>
-    <script src="scripts/objetos/fnaf4.js"></script>
-    <script src="scripts/objetos/fnafsl.js"></script>
-    <script src="scripts/objetos/fnafffps.js"></script>
-    <script src="scripts/objetos/fnafsb.js"></script>
-    <script src="scripts/objetos/fnafsbr.js"></script>
-    <script src="scripts/objetos/fnafw.js"></script>
-    <script src="scripts/objetos/extras.js"></script>
+        <!-- Objetos dos modelos -->
+        <script src="scripts/objetos/logos.js"></script>
+        <script src="scripts/objetos/fnaf1.js"></script>
+        <script src="scripts/objetos/fnaf2.js"></script>
+        <script src="scripts/objetos/fnaf3.js"></script>
+        <script src="scripts/objetos/fnaf4.js"></script>
+        <script src="scripts/objetos/fnafsl.js"></script>
+        <script src="scripts/objetos/fnafffps.js"></script>
+        <script src="scripts/objetos/fnafsb.js"></script>
+        <script src="scripts/objetos/fnafsbr.js"></script>
+        <script src="scripts/objetos/fnafsotm.js"></script>
+        <script src="scripts/objetos/fnafw.js"></script>
+        <script src="scripts/objetos/extras.js"></script>
 
 
-    <script src="scripts/modelosArray.js"></script>
-    <script src="scripts/user.js"></script>
-    <script src="scripts/geral.js"></script>
-    <script src="scripts/modelos.js"></script>
-    <script src="scripts/menu.js"></script>
-    <script src="scripts/animacoes.js"></script>
-    <script src="scripts/audios.js"></script>
-    <script src="scripts/ar.js"></script>
+        <script src="scripts/modelosArray.js"></script>
+        <script src="scripts/user.js"></script>
+        <script src="scripts/geral.js"></script>
+        <script src="scripts/modelos.js"></script>
+        <script src="scripts/menu.js"></script>
+        <script src="scripts/animacoes.js"></script>
+        <script src="scripts/audios.js"></script>
+        <script src="scripts/ar.js"></script>
 
-    <!--
+        <!--
 
         <script>
             document.querySelector("#teste").addEventListener("camera-change", function () {
@@ -2250,22 +2325,22 @@
         </script>
     -->
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="scripts/swiper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="scripts/swiper.js"></script>
 
-    <!-- Api Model Viewer e efeitos de pós-processamento -->
-    <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"></script>
-    <script type="importmap">
+        <!-- Api Model Viewer e efeitos de pós-processamento -->
+        <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"></script>
+        <script type="importmap">
     {
       "imports": {
         "three": "https://cdn.jsdelivr.net/npm/three@^0.163.0/build/three.module.min.js"
       }
     }
     </script>
-    <script type="module"
-        src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer-module.min.js"></script>
-    <script type="module"
-        src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects/dist/model-viewer-effects.min.js"></script>
+        <script type="module"
+            src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer-module.min.js"></script>
+        <script type="module"
+            src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects/dist/model-viewer-effects.min.js"></script>
 
 </body>
 

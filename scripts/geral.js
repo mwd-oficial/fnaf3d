@@ -177,12 +177,9 @@ verificaOrientacao()
 
 function eventosVideo() {
     document.querySelectorAll("video").forEach((video) => {
-        video.removeEventListener("play", pausarAudios)
-        video.removeEventListener("pause", despausarAudios)
-        video.removeEventListener("ended", despausarAudios)
-        video.addEventListener("play", pausarAudios)
-        video.addEventListener("pause", despausarAudios)
-        video.addEventListener("ended", despausarAudios)
+        video.onplay = pausarAudios
+        video.onpause = despausarAudios
+        video.onended = despausarAudios
     })
 }
 eventosVideo()
@@ -336,12 +333,9 @@ function atualizarPointers() {
     pointers = document.querySelectorAll(".pointers")
     pointers.forEach(btn => btn.classList.add("efeito-hover"))
     pointers.forEach((btn) => {
-        btn.removeEventListener("mouseover", function () {
-            pointarCursor(btn)
-        })
-        btn.addEventListener("mouseover", function () {
-            pointarCursor(btn)
-        })
+        btn.onmouseover = () => {
+            pointarCursor(btn);
+        }
     })
 }
 
@@ -420,8 +414,10 @@ document.querySelector("#iniciar-btn").addEventListener("click", async function 
         // Tive que criar um model viewer novo para carregá-lo novamente ao retornar a página inicial
         modelViewer = document.createElement("model-viewer")
         modelViewer.cameraControls = true
-        modelViewer.animationCrossfadeDuration = "0"
         modelViewer.autoRotateDelay = "0"
+        modelViewer.autoRotate = true
+        modelViewer.interactionPromptStyle = "wiggle"
+        modelViewer.rotationPerSecond = "0deg"
         effectComposer = document.createElement("effect-composer")
         modelViewer.appendChild(effectComposer)
         conteudo.appendChild(modelViewer)
@@ -432,13 +428,10 @@ document.querySelector("#iniciar-btn").addEventListener("click", async function 
         btnModelos[0].classList.remove("active")
 
         if (!isCelular) {
-            modelViewer.removeEventListener("mouseover", aparecerCursorImg)
-            modelViewer.addEventListener("mouseover", aparecerCursorImg)
-            modelViewer.removeEventListener("mouseleave", sumirCursorImg)
-            modelViewer.addEventListener("mouseleave", sumirCursorImg)
+            modelViewer.onmouseover = aparecerCursorImg
+            modelViewer.onmouseleave = sumirCursorImg
             extraDesbloqueado.addEventListener("mouseover", sumirCursorImg)
-            moeda3dImg.removeEventListener("mouseover", aparecerCursorImg)
-            moeda3dImg.addEventListener("mouseover", aparecerCursorImg)
+            moeda3dImg.onmouseover = aparecerCursorImg
         }
 
 

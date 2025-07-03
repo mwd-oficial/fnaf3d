@@ -120,7 +120,9 @@ var modelos = [
     cassie,
     entity,
     mimic,
-
+    
+    // fnaf sotm
+    prototypeBonnie,
 
     // fnaf 1 (world)
     adventureFreddy,
@@ -225,6 +227,9 @@ var modelosExtras = [
     // Freddy Talky ruin
     // Faz-Wench
 
+    // Fnaf sotm
+    //
+
     // Fnaf world
     // 
 
@@ -278,7 +283,7 @@ modelos.forEach(modelo => {
 console.log(modelosbd.length)
 
 function cadastrarModels() {
-    axios.post("http://localhost:3000/models/cadastrar", {
+    axios.post(`${API_URL}/models/cadastrar`, {
         modelos: modelosbd
     });
 }

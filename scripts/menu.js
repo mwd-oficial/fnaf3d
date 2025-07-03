@@ -307,26 +307,19 @@ async function atualizarInteracoes(btn, array, estado, msg) {
 
 
 
-document.querySelector("#rotacao-p").addEventListener("click", rotacaoAutomatica)
-rotacaoInput.addEventListener("click", rotacaoAutomatica)
-function rotacaoAutomatica() {
-    rotacaoInput.classList.toggle("active")
-    if (rotacaoInput.classList.contains("active")) {
-        modelViewer.autoRotate = true
-        modelViewer.interactionPromptStyle = "basic"
-        if (velocidadeInput.value == 0) {
-            velocidadeInput.value = 33
-        }
-        modelViewer.rotationPerSecond = velocidadeInput.value + "deg"
-    } else {
-        modelViewer.autoRotate = false
-        modelViewer.interactionPromptStyle = "wiggle"
-        modelViewer.rotationPerSecond = "0deg"
-    }
-}
-
 velocidadeInput.addEventListener("input", function () {
-    modelViewer.rotationPerSecond = velocidadeInput.value + "deg"
+    modelViewer.timeScale = velocidadeInput.value
+    document.querySelector("#velocidade-div span").innerHTML = velocidadeInput.value
+})
+
+
+rotacaoInput.addEventListener("input", function () {
+    modelViewer.rotationPerSecond = rotacaoInput.value + "deg"
+    if (rotacaoInput.value > 0) {
+        modelViewer.interactionPromptStyle = "basic"
+    } else {
+        modelViewer.interactionPromptStyle = "wiggle"
+    }
 })
 
 
@@ -440,6 +433,7 @@ function tutorialBotoes() {
             audiosContainer.style.zIndex = 10
             arBtn.style.zIndex = 2010
             arBtn.style.opacity = 1
+            arBtn.style.pointerEvents = "none"
             tutorialBotoesContent.style.width = "100%"
             tutorialBotoesContentP.innerHTML = `${isCelular ? "Aqui" : "Em um celular,"} você pode visualizar o modelo no modo AR (Realidade Aumentada) <br><br> (Clique)`
             if (isCelular) {
@@ -449,6 +443,7 @@ function tutorialBotoes() {
             break
         case 4:
             arBtn.style.zIndex = 10
+            arBtn.style.pointerEvents = "all"
             if (!isCelular) arBtn.style.opacity = 0.5
             tutorialBotoesContentP.innerHTML = "No lado esquerdo, você pode ver a descrição do modelo, imagens, vídeos e ler comentários. Caso logado, dar like e dislike, favoritar e comentar<br><br>No lado direito, você pode ver o tutorial de como interagir com o modelo e os efeitos disponíveis<br><br>(Clique)"
             tutorialBotoesContentP.style.backdropFilter = "blur(10px) brightness(0.5)"
@@ -591,6 +586,10 @@ fnafsbrSteam.addEventListener("click", function () {
     window.open("https://store.steampowered.com/app/1924720/Five_Nights_at_Freddys_Security_Breach__Ruin/", "_blank")
     exitFullscreen()
 })
+fnafsotmSteam.addEventListener("click", function () {
+    window.open("https://store.steampowered.com/app/2215390/Five_Nights_at_Freddys_Secret_of_the_Mimic/", "_blank")
+    exitFullscreen()
+})
 fnafFilme.addEventListener("click", function () {
     window.open("https://www.primevideo.com/-/pt/detail/Five-Nights-At-Freddy%E2%80%99s---O-Pesadelo-Sem-Fim/0Q0EVJG1I85A6J5704EGLVAT54", "_blank")
     exitFullscreen()
@@ -612,6 +611,7 @@ function fnafInfo(iModelo) {
     fnafwDownload.style.display = "none"
     fnafsbSteam.style.display = "none"
     fnafsbrSteam.style.display = "none"
+    fnafsotmSteam.style.display = "none"
     fnafFilme.style.display = "none"
 
     downloadP.style.display = "none"
@@ -676,83 +676,96 @@ function fnafInfo(iModelo) {
             configurarFnafInfo(iNomeFnaf)
 
             break
-        case "w":
+        case "sotm":
 
 
             iNomeFnaf = 9
             configurarFnafInfo(iNomeFnaf)
 
             break
-        case "exc":
+        case "w":
 
-            fnafInfoImgDiv.style.display = "none"
+
             iNomeFnaf = 10
-
-            break
-        case "ex1":
-
-            iNomeFnaf = 11
             configurarFnafInfo(iNomeFnaf)
 
             break
-        case "ex2":
+        case "exc":
+
+            fnafInfoImgDiv.style.display = "none"
+            iNomeFnaf = 11
+
+            break
+        case "ex1":
 
             iNomeFnaf = 12
             configurarFnafInfo(iNomeFnaf)
 
             break
-        case "ex3":
+        case "ex2":
 
             iNomeFnaf = 13
             configurarFnafInfo(iNomeFnaf)
 
             break
-        case "ex4":
+        case "ex3":
 
             iNomeFnaf = 14
             configurarFnafInfo(iNomeFnaf)
 
             break
-        case "exsl":
+        case "ex4":
 
             iNomeFnaf = 15
             configurarFnafInfo(iNomeFnaf)
 
             break
-        case "exffps":
+        case "exsl":
 
             iNomeFnaf = 16
             configurarFnafInfo(iNomeFnaf)
 
             break
-        case "exsb":
+        case "exffps":
 
             iNomeFnaf = 17
             configurarFnafInfo(iNomeFnaf)
 
             break
-        case "exsbr":
+        case "exsb":
 
             iNomeFnaf = 18
             configurarFnafInfo(iNomeFnaf)
 
             break
-        case "exw":
+        case "exsbr":
 
             iNomeFnaf = 19
+            configurarFnafInfo(iNomeFnaf)
+
+            break
+        case "exsotm":
+
+            iNomeFnaf = 20
+            configurarFnafInfo(iNomeFnaf)
+
+            break
+        case "exw":
+
+            iNomeFnaf = 21
             configurarFnafInfo(iNomeFnaf)
 
             break
         case "exo":
 
             fnafInfoImgDiv.style.display = "none"
-            iNomeFnaf = 21
+            iNomeFnaf = 23
 
             break
         case "exd":
 
             fnafInfoImgDiv.style.display = "none"
-            iNomeFnaf = 22
+            iNomeFnaf = 24
 
             break
         case "exf":
@@ -766,7 +779,7 @@ function fnafInfo(iModelo) {
             fnafImg.style.width = "initial"
             fnafImg.style.height = "100%"
             fnafFilme.style.display = "flex"
-            iNomeFnaf = 20
+            iNomeFnaf = 22
 
             break
     }
@@ -872,6 +885,16 @@ function configurarFnafInfo(i) {
         case 9:
         case 19:
             nomeFnafInfo.innerHTML = nomeFnaf[9].innerHTML
+            textoFnafInfo.style.display = "flex"
+            texto.innerHTML = fnafsotmInfo
+            trailer.src = "assets/videos/fnafsotm/trailer.mp4"
+            trailer.poster = "assets/images/fnafsotm/trailer.avif"
+            fnafImg.src = "assets/images/fnafsotm/fnafsotm.avif"
+            fnafsotmSteam.style.display = "flex"
+            break
+        case 10:
+        case 20:
+            nomeFnafInfo.innerHTML = nomeFnaf[10].innerHTML
             textoFnafInfo.style.display = "flex"
             texto.innerHTML = fnafwInfo
             trailer.src = "assets/videos/fnafw/trailer.mp4"
@@ -1161,7 +1184,6 @@ function scrollPesquisaNaoVisto() {
 modelosDivP.forEach(nome => {
     if (nome.innerText.length > maiorLength) {
         maiorLength = nome.innerText.length
-        console.log("Maior length: " + nome.innerText)
     }
 })
 
@@ -1250,44 +1272,50 @@ function pesquisa() {
                 case "sbr":
                     nomeFnaf[8].style.display = "block"
                     break
-                case "w":
+                case "sotm":
                     nomeFnaf[9].style.display = "block"
                     break
-                case "ex1":
-                    nomeFnaf[11].style.display = "block"
+                case "w":
+                    nomeFnaf[10].style.display = "block"
                     break
-                case "ex2":
+                case "ex1":
                     nomeFnaf[12].style.display = "block"
                     break
-                case "ex3":
+                case "ex2":
                     nomeFnaf[13].style.display = "block"
                     break
-                case "ex4":
+                case "ex3":
                     nomeFnaf[14].style.display = "block"
                     break
-                case "exsl":
+                case "ex4":
                     nomeFnaf[15].style.display = "block"
                     break
-                case "exffps":
+                case "exsl":
                     nomeFnaf[16].style.display = "block"
                     break
-                case "exsb":
+                case "exffps":
                     nomeFnaf[17].style.display = "block"
                     break
-                case "exsbr":
+                case "exsb":
                     nomeFnaf[18].style.display = "block"
                     break
-                case "exw":
+                case "exsbr":
                     nomeFnaf[19].style.display = "block"
                     break
-                case "exo":
+                case "exsotm":
                     nomeFnaf[20].style.display = "block"
+                    break
+                case "exw":
+                    nomeFnaf[21].style.display = "block"
+                    break
+                case "exo":
+                    nomeFnaf[22].style.display = "block"
                     break
                 case "exf":
-                    nomeFnaf[20].style.display = "block"
+                    nomeFnaf[23].style.display = "block"
                     break
                 case "exd":
-                    nomeFnaf[21].style.display = "block"
+                    nomeFnaf[24].style.display = "block"
                     break
             }
             if (modelos[iNome].fnaf.includes("ex")) nomeFnaf[10].style.display = "block"

@@ -1344,7 +1344,8 @@ model-viewer {
     backdrop-filter: blur(10px);
     border: 3px solid #333;
     opacity: .5;
-    pointer-events: none;
+    z-index: 10;
+    pointer-events: all;
     display: none;
 }
 
@@ -1489,10 +1490,12 @@ model-viewer {
     right: 5px;
 }
 
+#tutorial-descricao-btn {
+    z-index: 35;
+}
+
 #tutorial-descricao-btn,
 #ar-btn {
-    z-index: 35;
-
     & span {
         color: #fff;
         transition-duration: .5s;
@@ -1501,7 +1504,6 @@ model-viewer {
     &.efeito-hover:hover span {
         transform: scale(1.1)
     }
-
 }
 
 
