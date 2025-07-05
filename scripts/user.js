@@ -350,7 +350,12 @@ async function exibirUsers() {
         })
 
         document.querySelectorAll(".users").forEach((user, i) => {
-            user.addEventListener("click", () => {
+            if (isCelular) ajustarFontSize(user)
+            if (i >= 3) {
+                user.style.display = "none";
+                user.style.opacity = 0;
+            }
+            user.onclick = () => {
                 const index = user.getAttribute("data-index");
                 userDiv.style.display = "flex"
                 telaDadosUser.style.opacity = 0;
@@ -358,7 +363,7 @@ async function exibirUsers() {
                     userDiv.style.opacity = 1
                     irTelaDadosUser(res.data[index].username)
                 }, 250);
-            });
+            }
         });
     } catch (erro) {
         console.error("Erro ao buscar dados:", erro);
@@ -367,6 +372,32 @@ async function exibirUsers() {
     }
 }
 exibirUsers()
+
+
+verMais.onclick = () => {
+    document.querySelectorAll(".users").forEach((user, i) => {
+        if (i >= 3) {
+            if (vendoMais) {
+                verMais.innerHTML = "Ver mais"
+                user.style.opacity = 0;
+                listaUsers.scrollTo({top: 0, behavior: "smooth"});
+                setTimeout(() => {
+                    user.style.display = "none"
+                    listaUsers.style.overflowY = "hidden";
+                }, 500);
+            } else {
+                verMais.innerHTML = "Ver menos"
+                user.style.display = "flex";
+                setTimeout(() => {
+                    listaUsers.style.overflowY = "scroll";
+                    listaUsers.scrollBy({top: 35, behavior: "smooth"});
+                    user.style.opacity = 1
+                }, 1);
+            }
+        }
+    });
+    vendoMais = !vendoMais;
+}
 
 
 

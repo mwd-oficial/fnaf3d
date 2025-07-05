@@ -433,7 +433,6 @@ function tutorialBotoes() {
             audiosContainer.style.zIndex = 10
             arBtn.style.zIndex = 2010
             arBtn.style.opacity = 1
-            arBtn.style.pointerEvents = "none"
             tutorialBotoesContent.style.width = "100%"
             tutorialBotoesContentP.innerHTML = `${isCelular ? "Aqui" : "Em um celular,"} você pode visualizar o modelo no modo AR (Realidade Aumentada) <br><br> (Clique)`
             if (isCelular) {
@@ -442,8 +441,7 @@ function tutorialBotoes() {
             }
             break
         case 4:
-            arBtn.style.zIndex = 10
-            arBtn.style.pointerEvents = "all"
+            arBtn.style.zIndex = 35
             if (!isCelular) arBtn.style.opacity = 0.5
             tutorialBotoesContentP.innerHTML = "No lado esquerdo, você pode ver a descrição do modelo, imagens, vídeos e ler comentários. Caso logado, dar like e dislike, favoritar e comentar<br><br>No lado direito, você pode ver o tutorial de como interagir com o modelo e os efeitos disponíveis<br><br>(Clique)"
             tutorialBotoesContentP.style.backdropFilter = "blur(10px) brightness(0.5)"
@@ -518,7 +516,7 @@ function tutorialBotoes() {
             audiosContainer.style.pointerEvents = "all"
             audiosContainer.style.zIndex = 10
             arBtn.style.pointerEvents = "all"
-            arBtn.style.zIndex = 10
+            arBtn.style.zIndex = 35
             menuJogos.style.zIndex = 101
             menuJogos.style.pointerEvents = "all"
             if (!isCelular) arBtn.style.opacity = 0.5
@@ -1367,9 +1365,9 @@ function abaJogos() {
         jogosBtn.classList.add("active")
         imgJogos.style.border = "3px solid #333"
         if (isCelular) {
-            imgJogos.style.width = dadosUser.ucnDesbloqueado ? "465px" : "420px"
+            imgJogos.style.width = dadosUser.ucnDesbloqueado ? "510px" : "465px"
         } else {
-            imgJogos.style.height = dadosUser.ucnDesbloqueado ? "465px" : "420px"
+            imgJogos.style.height = dadosUser.ucnDesbloqueado ? "510px" : "465px"
         }
     }
 }

@@ -40,6 +40,8 @@ var dadosUserMoedas = document.querySelector("#dados-user-moedas")
 var dadosUserVistos = document.querySelector("#dados-user-vistos")
 
 var listaUsers = document.querySelector("#lista-users")
+var verMais = document.querySelector("#ver-mais")
+var vendoMais = false
 
 var imagemDiv = document.querySelector("#imagem-div")
 var usernameFieldset = document.querySelector("#username-fieldset")

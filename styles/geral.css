@@ -591,6 +591,10 @@ progress::-webkit-progress-value {
 model-viewer {
     width: 100vw;
     height: 100vh;
+
+    &::part(default-progress-bar) {
+        opacity: 0;
+    }
 }
 
 
@@ -691,7 +695,7 @@ model-viewer {
     pointer-events: none;
     display: none;
     opacity: 0;
-    
+
     &.nao-clique {
         pointer-events: none !important;
     }
@@ -974,7 +978,7 @@ model-viewer {
         border: 0px solid #0000;
 
         &>#menu-content {
-            padding: 20px 50px 50px 75px;
+            padding: 20px 50px 20px 75px;
         }
     }
 
@@ -1344,8 +1348,7 @@ model-viewer {
     backdrop-filter: blur(10px);
     border: 3px solid #333;
     opacity: .5;
-    z-index: 10;
-    pointer-events: all;
+    pointer-events: none;
     display: none;
 }
 
@@ -1429,24 +1432,41 @@ model-viewer {
         border-radius: 20px;
     }
 
-    & #ir-ar-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin: 50px 0;
-        background-color: #fff;
-        color: #000;
-        padding: 10px 20px;
-        border-radius: 10px;
-
-        & span {
-            font-size: 30px;
-        }
-    }
-
     &::-webkit-scrollbar-track {
         background-image: none !important;
+    }
+}
+
+#ver-mais-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+#ir-ar-btn,
+#ver-mais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 50px 0;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    & span {
+        font-size: 30px;
+    }
+}
+
+#ver-mais {
+    transition-duration: .5s;
+    margin: 10px 0;
+
+    &.efeito-hover:hover {
+        transform: scale(1.05);
     }
 }
 
@@ -1490,12 +1510,10 @@ model-viewer {
     right: 5px;
 }
 
-#tutorial-descricao-btn {
-    z-index: 35;
-}
-
 #tutorial-descricao-btn,
 #ar-btn {
+    z-index: 35;
+
     & span {
         color: #fff;
         transition-duration: .5s;

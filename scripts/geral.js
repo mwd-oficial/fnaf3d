@@ -8,6 +8,8 @@ telaCheia.style.display = "none"
 divLogoBtn.style.display = "flex"
 divLogoBtn.style.opacity = 1
 tutorialVisto = true
+menuJogos.style.pointerEvents = "all"
+arBtn.style.pointerEvents = "all"
 */
 ////////////////////////////////////
 
@@ -19,6 +21,7 @@ if (isCelular) {
     nomeDescricaoModelo.style.display = "none"
     nomeDescricaoModeloCel.style.display = "block"
     document.querySelectorAll(".efeito-hover").forEach(btn => btn.classList.remove("efeito-hover"))
+    verMais.classList.remove("efeito-hover")
 
     document.querySelector("#tela-cheia > p").innerHTML = "Para uma melhor experiência, <br> toque para ativar a tela cheia"
 
@@ -418,6 +421,11 @@ document.querySelector("#iniciar-btn").addEventListener("click", async function 
         modelViewer.autoRotate = true
         modelViewer.interactionPromptStyle = "wiggle"
         modelViewer.rotationPerSecond = "0deg"
+        let mao = document.createElement("img")
+        mao.src = "assets/images/mao.avif"
+        mao.slot = "interaction-prompt"
+        mao.style.width = "35px"
+        modelViewer.appendChild(mao)
         effectComposer = document.createElement("effect-composer")
         modelViewer.appendChild(effectComposer)
         conteudo.appendChild(modelViewer)

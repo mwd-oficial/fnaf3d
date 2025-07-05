@@ -595,9 +595,12 @@
 
 #lista-users {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    max-width: 400px;
+    max-height: 210px;
+    overflow-y: hidden;
 
     & .users {
         display: inline-flex;
@@ -607,7 +610,7 @@
         border-radius: 1000px;
         font-size: 25px;
         padding: 5px 15px;
-        margin: 15px 0px;
+        margin: 5px 0px;
         transition-duration: .5s;
 
         &.efeito-hover:hover {
