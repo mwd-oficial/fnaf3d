@@ -48,23 +48,37 @@ function comecarAnimacao(iModelo, iAnimacao) {
     modelViewer.play();
     modelViewer.resetTurntableRotation()
 
-    if (animacaoSel.mudaOrbitaCameraMaxima) {
+    setTimeout(() => {
+        let target = modelViewer.getCameraTarget();
+        if (target.x > 2 || target.z > 2) modelViewer.disablePan = true
+        else modelViewer.disablePan = false
+
+        let viuAlerta = false
+        modelViewer.onpointerdown = (e) => {
+            if (e.pointerType === 'mouse' && e.button === 2) {
+                if ((target.x > 2 || target.z > 2) && !viuAlerta) {
+                    alerta("Não é possível mudar o ponto central dessa animação.")
+                    viuAlerta = true
+                }
+            }
+        }
+    }, 100);
+
+    if (animacaoSel.orbitaCameraMaxima) {
         modelViewer.maxCameraOrbit = animacaoSel.orbitaCameraMaxima;
     } else {
         modelViewer.maxCameraOrbit = modelos[iModelo].orbitaCameraMaxima
     }
 
-    if (animacaoSel.mudaOrbitaCameraMinima) {
+    if (animacaoSel.orbitaCameraMinima) {
         modelViewer.minCameraOrbit = animacaoSel.orbitaCameraMinima;
     } else {
         modelViewer.minCameraOrbit = modelos[iModelo].orbitaCameraMinima
     }
 
-    if (animacaoSel.mudaOrbitaCamera) {
-        modelViewer.cameraOrbit = animacaoSel.orbitaCamera;
-    } else {
-        modelViewer.cameraOrbit = "auto auto auto"
-    }
+    let rotacao = animacaoSel.rotacao ?? 0;
+    modelViewer.resetTurntableRotation((-90 + rotacao) * (Math.PI / 180));
+
 
     // Se a animação não for estática, mostra o range e o tempo atual
     if (!animacaoSel.estatico) {

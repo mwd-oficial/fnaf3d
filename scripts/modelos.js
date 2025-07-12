@@ -6,6 +6,8 @@ btnModelos.forEach((modelo, iModelo) => {
     modelo.addEventListener("click", () => {
         if (!modelo.classList.contains("active") && !modelo.classList.contains("bloqueado")) {
             cliqueModelo(modelo, iModelo)
+            modelo.style.pointerEvents = "none"
+            setTimeout(() => modelo.style.pointerEvents = "all", 2000)
 
             modelViewer.interactionPromptStyle = "wiggle"
             modelViewer.rotationPerSecond = "0deg"
@@ -86,7 +88,7 @@ function cliqueModelo(modelo, iModelo) {
                 telaModelosSb.pause()
                 telaModelosSbr.pause()
                 telaModelosW.pause()
-                //telaModelosSotm.pause()
+                telaModelosSotm.pause()
             }
             break
         case "sb":
@@ -96,7 +98,7 @@ function cliqueModelo(modelo, iModelo) {
                 telaModelosFfps.pause()
                 telaModelosSbr.pause()
                 telaModelosW.pause()
-                //telaModelosSotm.pause()
+                telaModelosSotm.pause()
             }
             break
         case "sbr":
@@ -107,14 +109,14 @@ function cliqueModelo(modelo, iModelo) {
                 telaModelosFfps.pause()
                 telaModelosSb.pause()
                 telaModelosW.pause()
-                //telaModelosSotm.pause()
+                telaModelosSotm.pause()
             }
             break
         case "sotm":
             if (telaModelosSotm.paused) {
                 telaModelosSotm.currentTime = 0
                 telaModelosSotm.volume = 0.125
-                //telaModelosSotm.play()
+                telaModelosSotm.play()
                 telaModelosFfps.pause()
                 telaModelosSb.pause()
                 telaModelosSbr.pause()
@@ -128,7 +130,7 @@ function cliqueModelo(modelo, iModelo) {
                 telaModelosFfps.pause()
                 telaModelosSb.pause()
                 telaModelosSbr.pause()
-                //telaModelosSotm.pause()
+                telaModelosSotm.pause()
             }
             break
     }
@@ -142,8 +144,25 @@ function defineModelo(iModelo) {
     modelViewer.maxCameraOrbit = modelos[iModelo].orbitaCameraMaxima
     modelViewer.minCameraOrbit = modelos[iModelo].orbitaCameraMinima
 
+    switch (modelos[iModelo].fnaf) {
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "sl":
+        case "ffps":
+        case "sb":
+        case "sbr":
+        case "sotm":
+            temSkybox = true
+            break
+        default:
+            temSkybox = false
+            break
+    }
+
     // Reseta a orbita da câmera e a rotação para a posição inicial
-    modelViewer.cameraOrbit = modelViewer.getCameraOrbit()
+    modelViewer.cameraOrbit = "-90deg 90deg 0"
     modelViewer.resetTurntableRotation()
 
     dicaP.style.opacity = 1
@@ -191,6 +210,14 @@ function defineModelo(iModelo) {
 
     iModeloVar = iModelo
 
+    if (temSkybox) {
+        skyboxDiv.style.display = "flex"
+        efeitoSkybox(true)
+    } else {
+        skyboxDiv.style.display = "none"
+        efeitoSkybox(false)
+    }
+
     progressoModeloInterval = setInterval(function () {
         if (progressBarModelo.value < 100) {
             progressBarModelo.value += 0.1
@@ -223,18 +250,15 @@ function carregarModelo(iModelo) {
     console.log(modelViewer.availableAnimations);
 
     desConfigEx()
-    if (modelos[iModelo].temConfigEx) modelos[iModelo].configEx()
+    if (typeof modelos[iModelo].configEx === 'function') modelos[iModelo].configEx()
 
     nomeDescricaoModelo.innerHTML = modelosDivP[iModelo].innerText
     nomeDescricaoModeloCel.innerHTML = modelosDivP[iModelo].innerText
     descricaoModelo.innerHTML = modelos[iModelo].descricao
     // setTimeout(botaoDouradof, 1000);
 
-    if (modelos[iModelo].mudaOrbitaCamera) {
-        modelViewer.cameraOrbit = modelos[iModelo].orbitaCamera;
-    } else {
-        modelViewer.cameraOrbit = "auto auto auto"
-    }
+    let rotacao = modelos[iModelo].rotacao ?? 0;
+    modelViewer.resetTurntableRotation((-90 + rotacao) * (Math.PI / 180));
 
 
 
@@ -272,7 +296,7 @@ function carregarModelo(iModelo) {
     animacoesContainer.style.display = "block"
     audiosContainer.style.display = "flex"
 
-    if (modelos[iModelo].temAnimacao) {
+    if (modelos[iModelo].animacoes) {
         comecarAnimacao(iModelo, 0) // Animação posição inicial
         semAnimacoes.style.display = "none"
     } else {
@@ -280,7 +304,7 @@ function carregarModelo(iModelo) {
         animacoesRangeDiv.style.display = "none"
     }
 
-    if (modelos[iModelo].temAudio) {
+    if (modelos[iModelo].audios) {
         semAudios.style.display = "none"
     } else {
         semAudios.style.display = "block"
@@ -306,7 +330,7 @@ function carregarModelo(iModelo) {
         novoSlide.classList.add("pointers")
 
         novaImg = document.createElement("img")
-        novaImg.src = modelos[iModelo].srcImg + i + ".avif"
+        novaImg.src = modelos[iModelo].srcImg + i + (modelos[iModelo].webps?.includes(i) ? ".webp" : ".avif")
 
         novaDescricao = document.createElement("div")
         novaDescricao.classList.add("swiper-descricao")
@@ -338,7 +362,7 @@ function carregarModelo(iModelo) {
 
 
 
-    if (modelos[iModelo].temJumpscare) {
+    if (modelos[iModelo].srcJumpscare) {
         h3Jumpscare.style.display = "block"
         jumpscareDivVideo.style.display = "flex"
         jumpscareVideo.src = modelos[iModelo].srcJumpscare
@@ -356,7 +380,7 @@ function carregarModelo(iModelo) {
     gerarMoeda3d()
 
 
-    if (modelos[iModelo].temAnimacao) {
+    if (modelos[iModelo].animacoes) {
         document.querySelector("#velocidade-h3").style.display = "block"
         document.querySelector("#velocidade-div").style.display = "flex"
 
@@ -387,9 +411,25 @@ function carregarModelo(iModelo) {
         modelViewer.cameraTarget = modelos[iModelo].alvoCamera
         document.querySelector("#velocidade-h3").style.display = "none"
         document.querySelector("#velocidade-div").style.display = "none"
+
+        setTimeout(() => {
+            let target = modelViewer.getCameraTarget();
+            if (target.x > 2 || target.z > 2) modelViewer.disablePan = true
+            else modelViewer.disablePan = false
+
+            let viuAlerta = false
+            modelViewer.onpointerdown = (e) => {
+                if (e.pointerType === 'mouse' && e.button === 2) {
+                    if ((target.x > 2 || target.z > 2) && !viuAlerta) {
+                        alerta("Não é possível mudar o ponto central desse modelo.")
+                        viuAlerta = true
+                    }
+                }
+            }
+        }, 100);
     }
 
-    if (modelos[iModelo].temAudio) {
+    if (modelos[iModelo].audios) {
         audiosKeys = Object.keys(modelos[iModelo].audios) // Pega todos os objetos dentro de .audios
         audiosKeys.forEach((audio, iAudio) => {
             audiosBtnPRange[iAudio].style.display = "flex"
@@ -415,6 +455,7 @@ function carregarModelo(iModelo) {
         voltarCarregamento.addEventListener("click", voltarCarregamentof)
     }, 2500);
 }
+
 
 function botoes(i) {
     if (estadoBotoes) {

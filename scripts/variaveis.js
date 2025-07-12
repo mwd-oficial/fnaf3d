@@ -258,6 +258,10 @@ var slideAtual = 0
 
 
 // Rotação e efeitos do tutorial
+let temSkybox = false
+var skyboxDiv = document.querySelector("#skybox-div")
+var skyboxInput = document.querySelector("#skybox-input")
+var degradeInput = document.querySelector("#degrade-input")
 var rotacaoInput = document.querySelector("#rotacao-input")
 var velocidadeInput = document.querySelector("#velocidade-input")
 var pixelInput = document.querySelector("#pixel-input")

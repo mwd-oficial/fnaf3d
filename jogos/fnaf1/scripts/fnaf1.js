@@ -20,9 +20,37 @@ let progressoInterval = setInterval(function () {
     }
 }, 1);
 
-freddy.el.addEventListener("load", () => freddyCarregado = true)
+freddy.el.onload = () => {
+    freddyCarregado = true
 
-window.addEventListener("load", function () {
+    const material = freddy.el.model.materials[0];
+    setInterval(() => {
+        material.setAlphaMode('BLEND');
+        material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0]);
+        setTimeout(() => {
+            material.setAlphaMode('OPAQUE');
+            material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);
+            setTimeout(() => {
+                material.setAlphaMode('BLEND');
+                material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0]);
+                setTimeout(() => {
+                    material.setAlphaMode('OPAQUE');
+                    material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);
+                    setTimeout(() => {
+                        material.setAlphaMode('BLEND');
+                        material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0]);
+                        setTimeout(() => {
+                            material.setAlphaMode('OPAQUE');
+                            material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);
+                        }, 750);
+                    }, 250);
+                }, 250);
+            }, 250);
+        }, 250);
+    }, 6000)
+}
+
+window.onload = () => {
     let intervalo = setInterval(() => {
         if (freddyCarregado) {
             this.clearInterval(intervalo)
@@ -37,9 +65,9 @@ window.addEventListener("load", function () {
             }, 500);
         }
     }, 500);
-})
+}
 
-window.addEventListener("resize", verificaOrientacao)
+window.onresize = verificaOrientacao
 function verificaOrientacao() {
     let portrait = window.innerHeight > window.innerWidth
     if (portrait) {
@@ -76,27 +104,27 @@ function exitFullscreen() {
     }
 }
 
-telaCarregamentoSite.addEventListener("click", function () {
+telaCarregamentoSite.onclick = () => {
     launchFullscreen(document.documentElement);
     telaCarregamentoSite.style.cursor = "default"
-})
+}
 
-telaCheia.addEventListener("click", function () {
+telaCheia.onclick = () => {
     launchFullscreen(document.documentElement);
     if (aparecerAviso) aparecerAvisof()
-})
+}
 
-document.addEventListener("fullscreenchange", function () {
+document.onfullscreenchange = () => {
     if (document.fullscreenElement) {
         telaCheia.style.display = "none"
     } else {
         telaCheia.style.display = "flex"
         telaCarregamentoSite.style.cursor = "pointer"
     }
-})
+}
 
 // Visibilidade da página
-document.addEventListener('visibilitychange', function () {
+document.onvisibilitychange = () => {
     if (document.visibilityState === 'hidden') {
         // if (!midiaPausada) {
         //     pausarMidia()
@@ -106,7 +134,7 @@ document.addEventListener('visibilitychange', function () {
         //     despausarMidia()
         // }
     }
-})
+}
 
 // Tirar o arrastar imagem com o cursor
 for (let i = 0; i < imagemGeral.length; i++) {
@@ -163,7 +191,7 @@ function aparecerAvisof() {
     setTimeout(() => {
         aviso.style.opacity = 1
         setTimeout(() => {
-            aviso.addEventListener("click", fecharAviso)
+            aviso.onclick = fecharAviso
         }, 10);
     }, 1000);
     avisoTimeout = setTimeout(fecharAviso, 4000);
@@ -233,7 +261,7 @@ document.querySelectorAll(".barras").forEach(barra => {
 
 
 btnInicial.forEach((btn, i) => {
-    btn.addEventListener("mouseover", function () {
+    btn.onmouseover = () => {
         if (!isCelular) {
             setas.forEach(seta => seta.style.opacity = 0)
             setas[i].style.opacity = 1
@@ -245,9 +273,9 @@ btnInicial.forEach((btn, i) => {
                 continueNoite.style.opacity = 0
             }
         }
-    })
+    }
 
-    btn.addEventListener("click", function () {
+    btn.onclick = () => {
         if (isCelular) {
             mudandoCamera.play()
             setas[i].style.opacity = 1
@@ -257,17 +285,17 @@ btnInicial.forEach((btn, i) => {
         } else {
             executarAcao(btn.id)
         }
-    })
+    }
 
 })
 
-window.addEventListener("keydown", function (event) {
+window.onkeydown = (event) => {
     if (!isCelular && telaInicial.style.display == "block" && event.key === "Enter") {
         for (let i = 0; i < setas.length; i++) {
             if (setas[i].style.opacity == 1) executarAcao(btnInicial[i].id)
         }
     }
-})
+}
 
 function executarAcao(id) {
     setas.forEach(seta => seta.style.opacity = 0)
@@ -318,16 +346,8 @@ function executarConfig(animatronicp, estadop) {
     animatronic.maxCameraOrbit = estado.maxCameraOrbit
     animatronic.minCameraOrbit = estado.minCameraOrbit
     estado.configEx()
-
-    const cameraMudandof = () => cameraMudando(animatronic)
-    animatronic.removeEventListener("camera-change", cameraMudandof)
-    animatronic.addEventListener("camera-change", cameraMudandof)
 }
 
-function cameraMudando(animatronicp) {
-    let theta = animatronicp.getCameraOrbit().theta;
-    animatronicp.cameraOrbit = `${theta}rad 1.5rad auto`;
-}
 
 
 

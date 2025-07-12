@@ -307,25 +307,59 @@ async function atualizarInteracoes(btn, array, estado, msg) {
 
 
 
-velocidadeInput.addEventListener("input", function () {
+
+
+document.querySelector("#skybox-p").onclick = () => efeitoSkybox(!skyboxInput.classList.contains("active"))
+skyboxInput.onclick = () => efeitoSkybox(!skyboxInput.classList.contains("active"))
+function efeitoSkybox(estado) {
+    if (estado) {
+        skyboxInput.classList.add("active");
+        if (temSkybox) {
+            modelViewer.skyboxImage = `assets/images/fnaf${modelos[iModeloVar].fnaf}/fnaf${modelos[iModeloVar].fnaf}hdr.avif`
+            modelViewer.environmentImage = "assets/images/branco.avif"
+        } else { 
+            modelViewer.skyboxImage = ""
+            modelViewer.environmentImage = "neutral"
+        }
+        degradeInput.classList.remove("active")
+    } else {
+        skyboxInput.classList.remove("active");
+        modelViewer.skyboxImage = ""
+        modelViewer.environmentImage = "neutral"
+        degradeInput.classList.add("active")
+        document.body.style.backgroundImage = modelos[iModeloVar].corFundo
+    }
+}
+
+
+document.querySelector("#degrade-p").onclick = efeitoDegrade
+degradeInput.onclick = efeitoDegrade
+function efeitoDegrade() {
+    degradeInput.classList.toggle("active")
+    if (degradeInput.classList.contains("active")) {
+        document.body.style.backgroundImage = modelos[iModeloVar].corFundo
+        efeitoSkybox(false)
+    } else {
+        document.body.style.backgroundImage = ""
+    }
+}
+
+velocidadeInput.oninput = () => {
     modelViewer.timeScale = velocidadeInput.value
     document.querySelector("#velocidade-div span").innerHTML = velocidadeInput.value
-})
+}
 
-
-rotacaoInput.addEventListener("input", function () {
+rotacaoInput.oninput = () => {
     modelViewer.rotationPerSecond = rotacaoInput.value + "deg"
     if (rotacaoInput.value > 0) {
         modelViewer.interactionPromptStyle = "basic"
     } else {
         modelViewer.interactionPromptStyle = "wiggle"
     }
-})
+}
 
-
-
-document.querySelector("#pixel-p").addEventListener("click", efeitoPixelado)
-pixelInput.addEventListener("click", efeitoPixelado)
+document.querySelector("#pixel-p").onclick = efeitoPixelado
+pixelInput.onclick = efeitoPixelado
 function efeitoPixelado() {
     pixelInput.classList.toggle("active")
     if (pixelInput.classList.contains("active")) {
@@ -336,8 +370,8 @@ function efeitoPixelado() {
     }
 }
 
-document.querySelector("#glitch-p").addEventListener("click", efeitoGlitch)
-glitchInput.addEventListener("click", efeitoGlitch)
+document.querySelector("#glitch-p").onclick = efeitoGlitch
+glitchInput.onclick = efeitoGlitch
 function efeitoGlitch() {
     glitchInput.classList.toggle("active")
     if (glitchInput.classList.contains("active")) {
@@ -350,8 +384,8 @@ function efeitoGlitch() {
 
 
 
-document.querySelector("#outline-p").addEventListener("click", efeitoOutline)
-outlineInput.addEventListener("click", efeitoOutline)
+document.querySelector("#outline-p").onclick = efeitoOutline
+outlineInput.onclick = efeitoOutline
 function efeitoOutline() {
     outlineInput.classList.toggle("active")
     if (outlineInput.classList.contains("active")) {
@@ -371,17 +405,17 @@ function efeitoOutline() {
     }
 }
 
-intensidadeInput.addEventListener("input", function () {
-    if (outlineEffect) outlineEffect.strength = this.value
-})
+intensidadeInput.oninput = () => {
+    if (outlineEffect) outlineEffect.strength = intensidadeInput.value
+}
 
-suavizacaoInput.addEventListener("input", function () {
-    if (outlineEffect) outlineEffect.smoothing = Number(this.value)
-})
+suavizacaoInput.oninput = () => {
+    if (outlineEffect) outlineEffect.smoothing = Number(suavizacaoInput.value)
+}
 
-corInput.addEventListener("input", function () {
-    if (outlineEffect) outlineEffect.color = this.value
-})
+corInput.oninput = () => {
+    if (outlineEffect) outlineEffect.color = corInput.value
+}
 
 
 
@@ -474,7 +508,7 @@ function tutorialBotoes() {
         case 8:
             if (jogosBtn.classList.contains("active")) abaJogos()
             menuJogos.style.zIndex = 101
-            pesquisaNaoVistoDiv.classList.add("nao-clique")
+            document.querySelectorAll("#pesquisa-nao-visto-div > div").forEach(el => el.classList.add("nao-clique"))
             pesquisaNaoVistoDiv.style.zIndex = 2010
             pesquisaDiv.style.opacity = 1
             aindaNaoVistoDiv.style.opacity = 0.25
@@ -520,7 +554,7 @@ function tutorialBotoes() {
             menuJogos.style.zIndex = 101
             menuJogos.style.pointerEvents = "all"
             if (!isCelular) arBtn.style.opacity = 0.5
-            pesquisaNaoVistoDiv.classList.remove("nao-clique")
+            document.querySelectorAll("#pesquisa-nao-visto-div > div").forEach(el => el.classList.remove("nao-clique"))
             pesquisaNaoVistoDiv.style.zIndex = 101
             pesquisaDiv.style.opacity = 1
             aindaNaoVistoDiv.style.opacity = 1

@@ -598,7 +598,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    max-width: 400px;
+    width: 400px;
     max-height: 210px;
     overflow-y: hidden;
 

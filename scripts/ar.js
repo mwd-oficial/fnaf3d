@@ -19,17 +19,18 @@ arBtn.addEventListener("click", async function () {
 
         telaAr.scrollTo(0, 0)
 
-        let animado = modelos[iModeloVar].temAnimacao
+        let animado = modelos[iModeloVar].animacoes
 
         document.querySelector("#target-p").innerHTML = `${animado ? "Animação" : "Modelo 3D"} ter o ponto central próximo de 0m 0m 0m (recomendado). Quanto maiores esses números, mais longe do centro o modelo 3D pode aparecer, e você pode precisar procurar ao seu redor para encontrá-lo. <br>Animação: ${modelos[iModeloVar].nomeAnimacao || (animado ? "Padrão" : "Nenhuma")}<br>Ponto central: ${modelos[iModeloVar].coordenadas || "0m 0m 0m"}`
         if (modelos[iModeloVar].animacaoAtual) {
             console.log("tem mais de 1 animação")
             try {
                 const res = await axios.post(`${API_URL}/ar/cadastrar`, {
-                    driveId: modelos[iModeloVar].driveId,
-                    animacao: modelos[iModeloVar].animacaoAtual,
                     username: dadosUser.username || "Anônimo",
+                    driveId: modelos[iModeloVar].driveId,
                     nome: nomeModelo.innerHTML,
+                    nomeAnimacao: modelos[iModeloVar].nomeAnimacao,
+                    animacao: modelos[iModeloVar].animacaoAtual,
                     timestamp: timestamp
                 });
                 setTimeout(() => {
@@ -43,6 +44,14 @@ arBtn.addEventListener("click", async function () {
         } else {
             url = `https://drive.google.com/uc?export=download&id=${modelos[iModeloVar].driveId}`
             modeloPronto = true
+            try {
+                await axios.post(`${API_URL}/ar/postar`, {
+                    username: dadosUser.username || "Anônimo",
+                    nome: nomeModelo.innerHTML,
+                });
+            } catch (e) {
+                console.log("Um erro ocorreu ao tentar cadastrar modelo estático.")
+            }
         }
     } else {
         alerta("Esse modelo 3D não está disponível para o modo AR.")

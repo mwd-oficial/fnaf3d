@@ -229,7 +229,7 @@ avatarBtn.addEventListener("click", () => {
 })
 
 inputPreencher.addEventListener("click", preencher);
-document.querySelector("#preencher-p").addEventListener("click", preencher)
+document.querySelector("#preencher-p").onclick = preencher;
 function preencher() {
     inputPreencher.classList.toggle("active");
     imagemCarregada.style.objectFit = inputPreencher.classList.contains("active") ? "cover" : "contain";

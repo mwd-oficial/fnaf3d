@@ -11,8 +11,6 @@ var trashAndTheGang = {
     ],
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 5m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "TrashAndTheGang--Decloaked",
@@ -43,7 +41,6 @@ var helpy = {
     orbitaCameraMaxima: "0 0 60m",
     orbitaCameraMinima: "0 0 60m",
     alvoCamera: "0m 10m 0m",
-    temAudio: true,
     audios: {
         fucinho: {
             src: "assets/audios/fnaf1/freddy/fucinho.ogg",
@@ -229,15 +226,13 @@ var funtimeChica = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAnimacao: true,
     animacoes: {
         posicaoInicial: {
             src: "SK_FuntimeChica|AS_FTChica_Splash_Pose_SK_FuntimeChica",
             nome: "Posição inicial",
             alvoCamera: "0m 1.25m 0.175m",
             estatico: true,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-15deg 1.5rad 0",
+            rotacao: 15,
         },
     },
     descricao: "A Funtime Chica é uma animatrônica do jogo Freddy Fazbear's Pizzeria Simulator. Ela pode ser adquirida no catálogo \"Rare Finds Auction\" por $71.000. <br><br> Sua aparência é semelhante à Toy Chica, com pernas alaranjadas e cintura laranja em vez de rosa. Ela segura um cupcake que lembra uma versão menos assustadora do Nightmare Cupcake do quarto jogo.",
@@ -253,8 +248,6 @@ var moltenFreddy = {
     ],
     orbitaCameraMaxima: "0 0 4m",
     orbitaCameraMinima: "0 0 4m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "MoltenFreddy--Glimpse",
@@ -266,24 +259,20 @@ var moltenFreddy = {
             src: "MoltenFreddy--Jumpscare",
             nome: "Jumpscare",
             alvoCamera: "0m -0.5m -1m",
-            estatico: false,
         },
         seMovendo: {
             src: "MoltenFreddy--Idle",
             nome: "Se movendo",
             alvoCamera: "0m 0m -1.25m",
-            estatico: false,
             srcImg: "",
             swiperDescricao: [
                 "",
             ],
-            mudaOrbitaCameraMaxima: true,
             srcImg: "",
             swiperDescricao: [
                 "",
             ],
             orbitaCameraMaxima: "0 0 2.5m",
-            mudaOrbitaCameraMinima: true,
             orbitaCameraMinima: "0 0 2m",
         },
     },
@@ -327,32 +316,22 @@ var scrapBaby = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 6m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         jumpscare: {
             src: "SK_ScrapBaby|AS_ScrapBaby_Jumpscare_SK_ScrapBaby",
             nome: "Jumpscare",
             alvoCamera: "0m -0.25m -0.75m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 1.5rad 0",
         },
         naVentilacao: {
             src: "SK_ScrapBaby|AS_SO_FA_ScrapBaby_LeftVentCrawl_SK_ScrapBaby",
             nome: "Na ventilação",
             alvoCamera: "0.75m 1.5m -5m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 1.5rad 0",
         },
         entrando: {
             src: "SK_ScrapBaby|AS_SO_FA_ScrapBaby_OpenCurtain_Start_SK_ScrapBaby",
             nome: "Entrando",
             alvoCamera: "3m 1.25m 0m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-100deg 1.5rad 0",
+            rotacao: 100,
         },
     },
     audios: {
@@ -390,31 +369,25 @@ var scraptrap = {
     ],
     orbitaCameraMaxima: "0 0 4m",
     orbitaCameraMinima: "0 0 3m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "Afton--Idle_New",
             nome: "Posição inicial",
             alvoCamera: "0m -0.1m -1.875m",
-            estatico: false,
         },
         jumpscare: {
             src: "Afton--Jumpscare",
             nome: "Jumpscare",
             alvoCamera: "0m -0.75m -1m",
-            estatico: false,
             srcImg: "",
             swiperDescricao: [
                 "",
             ],
-            mudaOrbitaCameraMaxima: true,
             srcImg: "",
             swiperDescricao: [
                 "",
             ],
             orbitaCameraMaxima: "0 0 7m",
-            mudaOrbitaCameraMinima: true,
             orbitaCameraMinima: "0 0 5m",
         },
     },
@@ -454,38 +427,28 @@ var lefty = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "SK_Lefty|AS_FC_FB_Lefty_Barker_Idle_SK_Lefty",
             nome: "Posição inicial",
             alvoCamera: "0m 1.25m 0m",
-            estatico: false,
         },
         jumpscare: {
             src: "SK_Lefty|AS_Lefty_Jumpscare_SK_Lefty",
             nome: "Jumpscare",
             alvoCamera: "0.75m 0.25m 0m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-90deg 0 0",
+            rotacao: 90,
         },
         naVentilacao: {
             src: "SK_Lefty|AS_SO_FA_Lefty_LeftVentCrawl_SK_Lefty",
             nome: "Na ventilação",
             alvoCamera: "0.75m 1.25m -5m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 1.5rad 0",
         },
         andando: {
             src: "SK_Lefty|AS_SO_FA_Lefty_OpenCurtain_Start_SK_Lefty",
             nome: "Andando",
             alvoCamera: "3.75m 1.375m -0.1m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-90deg 1.5rad 0",
+            rotacao: 90,
         },
     },
     audios: {

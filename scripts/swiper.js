@@ -95,10 +95,12 @@ function sumirBotoes() {
 }
 
 function sumirConfig() {
-    swiperSlide[slideAtual].style.boxShadow = "0px 0px 0px 0px #1110, inset 0px 0px 0px 0px #1110"
-    swiperImg[slideAtual].style.transform = "scale(1)"
-    swiperDescricao[slideAtual].style.boxShadow = "0px 0px 0px 0px #1110, 0px 0px 0px 0px #1110"
-    swiperDescricao[slideAtual].style.opacity = 0
+    setTimeout(() => {
+        swiperSlide[slideAtual].style.boxShadow = "0px 0px 0px 0px #1110, inset 0px 0px 0px 0px #1110"
+        swiperImg[slideAtual].style.transform = "scale(1)"
+        swiperDescricao[slideAtual].style.boxShadow = "0px 0px 0px 0px #1110, 0px 0px 0px 0px #1110"
+        swiperDescricao[slideAtual].style.opacity = 0
+    }, 1);
 }
 
 // Problemas com Swiper 
@@ -120,7 +122,7 @@ document.querySelector("#problemas-swiper").addEventListener("click", function (
         imgAlternativaDiv.style.display = "flex"
         setaVoltar.style.display = "block"
         setaAvancar.style.display = "block"
-        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + ".avif"
+        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + (modelos[iModeloVar].webps?.includes(iAlternativo) ? ".webp" : ".avif")
         descricaoAlternativa.innerHTML = modelos[iModeloVar].swiperDescricao[iAlternativo]
         sumirBotoes()
         verificaSetas()
@@ -142,7 +144,7 @@ setaVoltar.addEventListener("click", function () {
     if (iAlternativo > 0) {
         iAlternativo--
         verificaSetas()
-        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + ".avif"
+        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + (modelos[iModeloVar].webps?.includes(iAlternativo) ? ".webp" : ".avif")
         descricaoAlternativa.innerHTML = modelos[iModeloVar].swiperDescricao[iAlternativo]
     }
 })
@@ -151,7 +153,7 @@ setaAvancar.addEventListener("click", function () {
     if (iAlternativo < modelos[iModeloVar].swiperDescricao.length) {
         iAlternativo++
         verificaSetas()
-        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + ".avif"
+        imgAlternativa.src = modelos[iModeloVar].srcImg + iAlternativo + (modelos[iModeloVar].webps?.includes(iAlternativo) ? ".webp" : ".avif")
         descricaoAlternativa.innerHTML = modelos[iModeloVar].swiperDescricao[iAlternativo]
     }
 })

@@ -9,8 +9,8 @@ let freddy = {
         animationName: "RIG_Freddy|Freddy_MenuPose_01_RIG_Freddy",
         cameraTarget: "0m 2m 0m",
         cameraOrbit: "0 1.5rad 0",
-        maxCameraOrbit: "0 0 1.5m",
-        minCameraOrbit: "0 0 1.5m",
+        maxCameraOrbit: "0 90deg 1.5m",
+        minCameraOrbit: "0 90deg 1.5m",
         configEx: () => {
             var effectComposer = document.createElement("effect-composer")
             freddy.el.appendChild(effectComposer)

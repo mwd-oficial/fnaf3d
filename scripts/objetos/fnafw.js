@@ -124,7 +124,6 @@ var adventureChica = {
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 15m",
     alvoCamera: "0m 2.5m 0.5m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.75
         modelViewer.style.filter = "saturate(1.5)"
@@ -204,7 +203,6 @@ var adventureToyChica = {
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 15m",
     alvoCamera: "0m 2.5m 0.25m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.75
         modelViewer.style.filter = "saturate(1.5)"
@@ -237,7 +235,6 @@ var adventureBalloonBoy = {
     orbitaCameraMaxima: "0 0 40m",
     orbitaCameraMinima: "0 0 35m",
     alvoCamera: "0m 7m 0.25m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.75
     },
@@ -298,7 +295,6 @@ var adventureWitheredChica = {
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 15m",
     alvoCamera: "0m 3m 0.5m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.75
         modelViewer.style.filter = "saturate(1.5)"
@@ -377,7 +373,6 @@ var adventurePhantomMangle = {
     orbitaCameraMaxima: "0 0 200m",
     orbitaCameraMinima: "0 0 250m",
     alvoCamera: "-25m 37.5m 25m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.1
         modelViewer.style.mixBlendMode = "luminosity"
@@ -486,8 +481,7 @@ var adventureNightmareFoxy = {
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 7m",
     alvoCamera: "0.75m 0.4m -0.1m",
-    mudaOrbitaCamera: true,
-    orbitaCamera: "90deg 0 0",
+    rotacao: -90,
     descricao: "Adventure Nightmare Foxy é um personagem em FNaF World. Ele é baseado no Nightmare Foxy, o animatrônico aterrorizante da série Five Nights at Freddy's 4. Adventure Nightmare Foxy é um raposo animatrônico vermelho com olhos brilhantes e garras afiadas. Seus ataques incluem \"Hook\", \"Hot Cheese\" e \"Jumpscare\". Além disso, ele representa os pesadelos do protagonista do quarto jogo.",
 };
 

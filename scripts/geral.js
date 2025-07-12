@@ -421,11 +421,6 @@ document.querySelector("#iniciar-btn").addEventListener("click", async function 
         modelViewer.autoRotate = true
         modelViewer.interactionPromptStyle = "wiggle"
         modelViewer.rotationPerSecond = "0deg"
-        let mao = document.createElement("img")
-        mao.src = "assets/images/mao.avif"
-        mao.slot = "interaction-prompt"
-        mao.style.width = "35px"
-        modelViewer.appendChild(mao)
         effectComposer = document.createElement("effect-composer")
         modelViewer.appendChild(effectComposer)
         conteudo.appendChild(modelViewer)
@@ -442,6 +437,9 @@ document.querySelector("#iniciar-btn").addEventListener("click", async function 
             moeda3dImg.onmouseover = aparecerCursorImg
         }
 
+        modelViewer.oncontextmenu = (e) => {
+            if (e.pointerType === 'mouse' && e.button === 2) e.preventDefault();
+        };
 
         setTimeout(() => {
             //cliqueModelo(btnModelos[0], 0)

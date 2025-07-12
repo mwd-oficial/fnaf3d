@@ -172,7 +172,7 @@ function audioAcabou() {
             telaModelosSbr.play()
             break
         case "sotm":
-            //telaModelosSotm.play()
+            telaModelosSotm.play()
             break
         case "w":
             telaModelosW.play()
@@ -199,7 +199,7 @@ function playPauseAudio(iAudio) {
                 telaModelosSbr.pause()
                 break
             case "sotm":
-                //telaModelosSotm.pause()
+                telaModelosSotm.pause()
                 break
             case "w":
                 telaModelosW.pause()
@@ -222,7 +222,7 @@ function playPauseAudio(iAudio) {
                 telaModelosSbr.play()
                 break
             case "sotm":
-                //telaModelosSotm.play()
+                telaModelosSotm.play()
                 break
             case "w":
                 telaModelosW.play()

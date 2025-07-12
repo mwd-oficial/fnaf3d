@@ -26,12 +26,9 @@ var freddy = {
         "Freddy nas alucinações. Note as veias de um olho humano",
         "Freddy na tela de Game Over",
     ],
-    temJumpscare: true,
     srcJumpscare: "assets/videos/fnaf1/freddy.mp4",
     orbitaCameraMaxima: "0 0 6.5m",
     orbitaCameraMinima: "0 0 5m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Freddy|Freddy_MenuPose_01_RIG_Freddy",
@@ -43,9 +40,6 @@ var freddy = {
             src: "RIG_Freddy|Freddy_Jumpscare_01_RIG_Freddy",
             nome: "Jumpscare",
             alvoCamera: "0m -0.5m -1m",
-            alvoCameraJogo: "0m 0m -1m",
-            orbitaCameraJogo: "-0.004831221105499585rad 1.5716068512153272rad 1.7707877722717378m",
-            orbitaMinimaCameraJogo: "0 0 0.5m",
         },
         parado: {
             src: "RIG_Freddy|Freddy_Pos03_Door_RIG_Freddy",
@@ -108,6 +102,7 @@ var bonnie = {
     fnaf: "1",
     temCursor: true,
     srcImg: "assets/images/fnaf1/bonnie/",
+    webps: [10],
     swiperDescricao: [
         "Botão de Bonnie para seu modelo 3D",
         "Os três animatrônicos no Palco",
@@ -124,12 +119,9 @@ var bonnie = {
         "Bonnie, sem olhos nas alucinações. Isso também é visto em uma tela final",
         "Uma rara tela Bonnie \"sem olhos\" com pequenas pupilas brancas que aparecem após a morte",
     ],
-    temJumpscare: true,
     srcJumpscare: "assets/videos/fnaf1/bonnie.mp4",
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 5m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Bonnie|Bonnie_StagePose_Guitar_RIG_Bonnie",
@@ -147,8 +139,7 @@ var bonnie = {
             nome: "Parado",
             alvoCamera: "22.4m 2.5m -0.45m",
             estatico: true,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-90deg 0 0",
+            rotacao: 90,
         },
         olhar: {
             src: "RIG_Bonnie|Bonnie_Hallway_LookAt_RIG_Bonnie",
@@ -164,8 +155,7 @@ var bonnie = {
             src: "RIG_Bonnie|Bonnie_Trans_DiningArea_B_RIG_Bonnie",
             nome: "Andando",
             alvoCamera: "12.5m 1.35m -1.4m",
-            mudaOrbitaCamera: true,
-            orbitaCamera: "90deg 0 0",
+            rotacao: -90,
         },
     },
     audios: {
@@ -197,6 +187,7 @@ var chica = {
     fnaf: "1",
     temCursor: true,
     srcImg: "assets/images/fnaf1/chica/",
+    webps: [10],
     swiperDescricao: [
         "Botão de Chica para seu modelo 3D",
         "Os três animatrônicos no Palco",
@@ -211,12 +202,9 @@ var chica = {
         "Chica se contorcendo nas últimas noites",
         "Chica aparecendo na porta",
     ],
-    temJumpscare: true,
     srcJumpscare: "assets/videos/fnaf1/chica.mp4",
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Chica|Chica_MenuPose_01_RIG_Chica",
@@ -234,22 +222,19 @@ var chica = {
             nome: "Parada",
             alvoCamera: "7.5m 1.25m 2.75m",
             estatico: true,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-90deg 0 0",
+            rotacao: 90,
         },
         olhar1: {
             src: "RIG_Chica|Chica_Hallway_LookAt_RIG_Chica",
             nome: "Olhar 1",
             alvoCamera: "0m 1.25m 2.75m",
-            mudaOrbitaCamera: true,
-            orbitaCamera: "180deg 0 0",
+            rotacao: -180,
         },
         olhar2: {
             src: "RIG_Chica|Chica_Finale_Pos05_RIG_Chica",
             nome: "Olhar 2",
             alvoCamera: "-57m 1.25m 53.6m",
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-120deg 0 0",
+            rotacao: 120,
         },
         horaDoShow: {
             src: "RIG_Chica|Chica_Showtime_Loop_Tom_RIG_Chica",
@@ -260,15 +245,13 @@ var chica = {
             src: "'RIG_Chica|Chica_Finale_Pos01_RIG_Chica",
             nome: "Perseguição",
             alvoCamera: "-60m 1.3m 55m",
-            mudaOrbitaCamera: true,
-            orbitaCamera: "150deg 0 0",
+            rotacao: -150,
         },
         andando: {
             src: "RIG_Chica|Chica_Trans_DiningArea_A_RIG_Chica",
             nome: "Andando",
             alvoCamera: "17.5m 1.3m 1.6m",
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-90deg 0 0",
+            rotacao: 90,
         },
     },
     audios: {
@@ -324,18 +307,16 @@ var foxy = {
     fnaf: "1",
     temCursor: true,
     srcImg: "assets/images/fnaf1/foxy/",
+    webps: [3],
     swiperDescricao: [
         "Botão de Foxy para seu modelo 3D",
         "Foxy espiando por trás da cortina na Enseada Pirata",
         "Foxy saindo da cortina, antes de ir para o escritório",
         "Foxy correndo pelo Corredor Oeste em direção ao escritório",
     ],
-    temJumpscare: true,
     srcJumpscare: "assets/videos/fnaf1/foxy.mp4",
     orbitaCameraMaxima: "0 0 7.5m",
     orbitaCameraMinima: "0 0 5m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Foxy_Clean|Foxy_Office01_Pos01_RIG_Foxy_Clean",
@@ -353,8 +334,7 @@ var foxy = {
             nome: "Olhar",
             alvoCamera: "2m 1.5m 7.5m",
             estatico: true,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "200deg 0 0",
+            rotacao: -200,
         },
         sentado: {
             src: "RIG_Foxy_Clean|FoxyRepair_HeadMotion_RIG_Foxy_Clean",
@@ -370,7 +350,6 @@ var foxy = {
             src: "RIG_Foxy_Clean|FoxyRepair_Run_RIG_Foxy_Clean",
             nome: "Correndo",
             alvoCamera: "0m 1.5m -10m",
-            mudaOrbitaCameraMaxima: true,
             orbitaCameraMaxima: "0 0 20m",
         },
     },

@@ -10,26 +10,21 @@ var phantomFreddy = {
     ],
     orbitaCameraMaxima: "0 0 250m",
     orbitaCameraMinima: "0 0 250m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "phantomfreddy_Bowtie_skeleton|idle",
             nome: "Posição inicial",
             alvoCamera: "0m 55m 0m",
-            estatico: false,
         },
         seAbaixando: {
             src: "phantomfreddy_Bowtie_skeleton|cloack",
             nome: "Se abaixando",
             alvoCamera: "0m 55m 0m",
-            estatico: false,
         },
         andando: {
             src: "phantomfreddy_Bowtie_skeleton|walk",
             nome: "Andando",
             alvoCamera: "0m 55m 10m",
-            estatico: false,
         },
     },
     audios: {
@@ -54,12 +49,10 @@ var phantomChica = {
     orbitaCameraMaxima: "0 0 300m",
     orbitaCameraMinima: "0 0 250m",
     alvoCamera: "0m 60m 1m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.5
         modelViewer.style.filter = "hue-rotate(35deg)"
     },
-    temAudio: true,
     audios: {
         jumpscare: {
             src: "assets/audios/fnaf3/jumpscare.ogg",
@@ -82,11 +75,9 @@ var phantomFoxy = {
     orbitaCameraMaxima: "0 0 300m",
     orbitaCameraMinima: "0 0 250m",
     alvoCamera: "0m 65m 1m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.style.filter = "hue-rotate(60deg)"
     },
-    temAudio: true,
     audios: {
         jumpscare: {
             src: "assets/audios/fnaf3/jumpscare.ogg",
@@ -108,44 +99,35 @@ var phantomMangle = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.style.mixBlendMode = "hard-light"
     },
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Mangle2|Mangle_Pos_Door_RIG_Mangle2",
             nome: "Posição inicial",
             alvoCamera: "0.75m 2m 4.5m",
             estatico: true,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "190deg 0 0",
+            rotacao: -190,
         },
         aproximando: {
             src: "RIG_Mangle2|Mangle_EnterRoom_RIG_Mangle2",
             nome: "Se aproximando",
             alvoCamera: "0.25m 2m 3m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "180deg 0 0",
+            rotacao: -180,
         },
         janela: {
             src: "RIG_Mangle2|Mangle_LWindow_Idle_RIG_Mangle2",
             nome: "Na janela",
             alvoCamera: "1.25m 2.25m -0.75m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "150deg 0 0",
+            rotacao: -150,
         },
         desligada: {
             src: "RIG_Mangle2|Mangle_Pos_12_RIG_Mangle2",
             nome: "Desligada",
             alvoCamera: "-15.1m 0.25m 4.25m",
             estatico: true,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-50deg 0 0",
+            rotacao: 50,
         },
         ventilacao: {
             src: "RIG_Mangle2|Mangle_Repair_Phase2_Idle_RIG_Mangle2",
@@ -157,7 +139,6 @@ var phantomMangle = {
             src: "RIG_Mangle2|Mangle_Repair_Phase1_RIG_Mangle2",
             nome: "Correndo",
             alvoCamera: "0m 0.5m -3.5m",
-            estatico: false,
         },
     },
     audios: {
@@ -181,45 +162,37 @@ var phantomBalloonBoy = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.style.mixBlendMode = "hard-light"
         modelViewer.exposure = 2
     },
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_BalloonBoy|BalloonBoy_Idle_04_RIG_BalloonBoy",
             nome: "Posição inicial",
             alvoCamera: "-1.85m 0.85m -10.1m",
-            estatico: false,
         },
         jumpscare: {
             src: "RIG_BalloonBoy|BalloonBoy_Jumpscare_01_RIG_BalloonBoy",
             nome: "Jumpscare",
             alvoCamera: "0m -0.25m -0.3m",
-            estatico: false,
         },
         bbVoando: {
             src: "RIG_BalloonBoy|BalloonBoy_Idle_03_RIG_BalloonBoy",
             nome: "Voando",
             alvoCamera: "1.2m 1.25m -5.8m",
-            estatico: false,
         },
         bbAgachado: {
             src: "RIG_BalloonBoy|BalloonBoy_Pos02_RIG_BalloonBoy",
             nome: "Agachado",
             alvoCamera: "10m 0.5m -2m",
             estatico: true,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-80deg 0 0",
+            rotacao: 80,
         },
         bbCorrendo: {
             src: "RIG_BalloonBoy|BalloonBoy_Path_IN_04_RIG_BalloonBoy",
             nome: "Correndo",
             alvoCamera: "-1.5m 1m -6.8m",
-            estatico: false,
         },
     },
     audios: {
@@ -244,13 +217,11 @@ var phantomPuppet = {
     orbitaCameraMaxima: "0m 0m 250m",
     orbitaCameraMinima: "0m 0m 150m",
     alvoCamera: "0m 50m 0m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.style.filter = "contrast(2) hue-rotate(75deg)"
         modelViewer.style.mixBlendMode = "hard-light"
         modelViewer.exposure = 2.5
     },
-    temAudio: true,
     audios: {
         ruido: {
             src: "assets/audios/fnaf3/phantom-puppet/ruido.ogg",
@@ -272,38 +243,29 @@ var springtrap = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 3m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_SpringTrap|Springtrap_InvisibleTrans_Vents_RIG_SpringTrap",
             nome: "Posição inicial",
             alvoCamera: "-0.6m 1.25m 3.35m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "180deg 0 0",
+            rotacao: -180,
         },
         jumpscare: {
             src: "RIG_SpringTrap|Springtrap_Jumpscare_01_RIG_SpringTrap",
             nome: "Jumpscare",
             alvoCamera: "-0.1m -0.5m -0.25m",
-            estatico: false,
         },
         andando: {
             src: "RIG_SpringTrap|Springtrap_Trans_02_01_RIG_SpringTrap",
             nome: "Andando",
             alvoCamera: "-3.5m 1.25m 6.5m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "180deg 0 0",
+            rotacao: -180,
         },
         ventilacao: {
             src: "RIG_SpringTrap|Springtrap_Vent_11_RIG_SpringTrap",
             nome: "Na ventilação",
             alvoCamera: "8.25m 0.5m 20m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "90deg 0 0",
+            rotacao: -90,
         },
     },
     audios: {

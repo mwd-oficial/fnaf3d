@@ -9,13 +9,11 @@ var prototypeBonnie = {
     ],
     orbitaCameraMaxima: "0 0 6.5m",
     orbitaCameraMinima: "0 0 5m",
-    temAnimacao: true,
     animacoes: {
         posicaoInicial: {
             src: "SK_ProtoBonnie.ao|AS_PrototypeBonnie_Distraction",
             nome: "Posição inicial",
             alvoCamera: "0 0 0",
-            estatico: false,
         },
     },
     descricao: "lorem",

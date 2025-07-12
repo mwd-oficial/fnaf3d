@@ -120,7 +120,7 @@ var modelos = [
     cassie,
     entity,
     mimic,
-    
+
     // fnaf sotm
     prototypeBonnie,
 
@@ -295,3 +295,4 @@ function cadastrarModels() {
         modelo.dislikes = res.data[i].dislikes
     })
 })()
+

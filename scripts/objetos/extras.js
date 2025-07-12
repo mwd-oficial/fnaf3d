@@ -12,7 +12,6 @@ var moeda3d = {
     orbitaCameraMaxima: "0 0 500m",
     orbitaCameraMinima: "0 0 450m",
     alvoCamera: "0m 0m 0m",
-    temAudio: true,
     audios: {
         moeda3dAudio: {
             src: "assets/audios/extras/pra-comprar/moeda-3d/moeda-3d.ogg",
@@ -36,7 +35,6 @@ var purpleGuy = {
     orbitaCameraMaxima: "0 0 15m",
     orbitaCameraMinima: "0 0 10m",
     alvoCamera: "0.5m 0m 0m",
-    temAudio: true,
     audios: {
         iAlwaysComeBack: {
             src: "assets/audios/fnafffps/scraptrap/i-always-come-back.ogg",
@@ -54,7 +52,6 @@ var purpleGuy = {
             nome: "\"Morte\"",
         },
     },
-    descricao: "(Purple Guy é a primeira forma de William Afton)<br><br>Purple Guy, também conhecido como Purple Man e William Afton, é o co-fundador da Fazbear Entertainment Inc., além de ser o principal antagonista da série Five Nights at Freddy's. Ele foi diretamente e indiretamente responsável por inúmeros incidentes e tragédias ao longo da série. Sua participação na história da franquia é fundamental.<br><br>Purple Guy é representado nos minigames como um homem de cor roxa, com tamanho e forma de um adulto. Seu sprite muda um pouco em cada minigame, mas até o terceiro jogo, ele mantém uma aparência não muito detalhada. No entanto, seu estado emocional pode ser facilmente percebido através de seus olhos, sobrancelhas e boca. Há especulações sobre o que é o misterioso objeto que Purple Guy segura, mas ainda não se sabe ao certo.",
 }
 
 
@@ -141,13 +138,10 @@ var goldenFreddy = {
         "O pôster alternativo no Canto do Corredor Oeste, com um close do rosto de Golden Freddy",
         "Golden Freddy no escritório",
     ],
-    temJumpscare: true,
     srcJumpscare: "assets/videos/extras/pra-encontrar/fnaf1/golden-freddy.mp4",
     orbitaCameraMaxima: "0 0 200m",
     orbitaCameraMinima: "0 0 200m",
     alvoCamera: "0m 60m 15m",
-    temAudio: true,
-    temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.2
         modelViewer.style.filter = "hue-rotate(10deg)"
@@ -185,9 +179,7 @@ var poster = {
     orbitaCameraMaxima: "0 0 10m",
     orbitaCameraMinima: "0 0 10m",
     alvoCamera: "0m 1.5m 0m",
-    mudaOrbitaCamera: true,
-    orbitaCamera: "90deg 0 0",
-    temAudio: true,
+    rotacao: -90,
     audios: {
         fucinho: {
             src: "assets/audios/fnaf1/freddy/fucinho.ogg",
@@ -211,8 +203,6 @@ var mascaraFreddy = {
     ],
     orbitaCameraMaxima: "0 0 7.5m",
     orbitaCameraMinima: "0 0 5m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "Mask--Idle",
@@ -255,8 +245,6 @@ var lolbit = {
     ],
     orbitaCameraMaxima: "0 0 6m",
     orbitaCameraMinima: "0 0 5m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_FuntimeFoxy|FuntimeFoxy_Pos_02_RIG_FuntimeFoxy",
@@ -286,40 +274,29 @@ var bonnet = {
     ],
     orbitaCameraMaxima: "0 0 2m",
     orbitaCameraMinima: "0 0 2m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "SK_Bonbon|AS_BonBon_Splash_Pose_SK_Bonbon",
             nome: "Posição inicial",
             alvoCamera: "-0.5m 1.7m 0.25m",
             estatico: true,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 1.5rad 0",
         },
         jumpscare: {
             src: "SK_Bonbon|AS_BonBon_Jumpscare_SK_Bonbon",
             nome: "Jumpscare",
             alvoCamera: "0.3m 0m 0m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-90deg 1.5rad 0",
+            rotacao: 90,
         },
         olhar: {
             src: "SK_Bonbon|AS_SL_BR_BonBon_StagePose03_SK_Bonbon",
             nome: "Olhar",
             alvoCamera: "-0.5m 2.1m 0.25m",
             estatico: true,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 1.5rad 0",
         },
         acenando: {
             src: "SK_Bonbon|AS_SL_O_BonBon_PeekHallL_Idle_SK_Bonbon",
             nome: "Acenando",
             alvoCamera: "1.5m 1.1m -4.6m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 1.5rad 0",
         },
     },
     audios: {
@@ -350,23 +327,18 @@ var headChefBot = {
     ],
     orbitaCameraMaxima: "0 0 5m",
     orbitaCameraMinima: "0 0 4m",
-    temAnimacao: true,
     animacoes: {
         posicaoInicial: {
             src: "SK_HeadChefBot|AS_FP_EC_HeadChefBot_Intro_SK_HeadChefBot",
             nome: "Posição inicial",
             alvoCamera: "2m 0.5m 0.25m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-90deg 0 0",
+            rotacao: 90,
         },
         jumpscare: {
             src: "SK_HeadChefBot|AS_FP_EL_HeadChefBot_Jumpscare_SK_HeadChefBot",
             nome: "Jumpscare",
             alvoCamera: "0.5m 0.25m 0.25m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-90deg 0 0",
+            rotacao: 90,
         },
     },
     descricao: "O Head Chef Bot é uma variante do S.T.A.F.F. Bot e o chef chefe do El Chip's do Mega Pizzaplex de Freddy Fazbear. Ele apareceu pela primeira vez em Five Nights at Freddy's: Help Wanted 2, e atua como um antagonista abrangente para o nível do El Chip.",
@@ -383,26 +355,21 @@ var blob = {
     ],
     orbitaCameraMaxima: "0 0 20m",
     orbitaCameraMinima: "0 0 15m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Blob|Blob_Idle_RIG_Blob",
             nome: "Posição inicial",
             alvoCamera: "0m 3m 0m",
-            estatico: false,
         },
         jumpscare1: {
             src: "RIG_Blob|Blob_Office_Jumpscare_RIG_Blob",
             nome: "Jumpscare 1",
             alvoCamera: "0m 0m 0m",
-            estatico: false,
         },
         jumpscare2: {
             src: "RIG_Blob|Blob_Sinkhole_Jumpscare_RIG_Blob",
             nome: "Jumpscare 2",
             alvoCamera: "0m 2.5m 0m",
-            estatico: false,
         },
     },
     audios: {
@@ -437,64 +404,41 @@ var burntrap = {
     ],
     orbitaCameraMaxima: "0 0 8m",
     orbitaCameraMinima: "0 0 7m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_Burntrap|BurnTrap_Idle_RIG_Burntrap",
             nome: "Posição inicial",
             alvoCamera: "0m 1.75m 0m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 90deg 0",
         },
         colocandoAMão: {
             src: "RIG_Burntrap|Burntrap_Hack_IN_RIG_Burntrap",
             nome: "Colocando a mão",
             alvoCamera: "0m 1.75m 0.5m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 90deg 0",
         },
         mantendoAMão: {
             src: "RIG_Burntrap|Burntrap_Hack_Loop_RIG_Burntrap",
             nome: "Mantendo a mão",
             alvoCamera: "0m 1.75m 0.5m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 90deg 0",
         },
         tirandoAMão: {
             src: "RIG_Burntrap|Burntrap_Hack_OUT_RIG_Burntrap",
             nome: "Tirando a mão",
             alvoCamera: "0m 1.75m 0.5m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 90deg 0",
         },
         andando: {
             src: "RIG_Burntrap|BurnTrap_Walk_RIG_Burntrap",
             nome: "Andando",
             alvoCamera: "0m 1.75m 0.25m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 90deg 0",
         },
         correndo: {
             src: "RIG_Burntrap|BurnTrap_Run_Full_RIG_Burntrap",
             nome: "Correndo",
             alvoCamera: "0m 1.75m 0.25m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 90deg 0",
         },
         morrendo: {
             src: "RIG_Burntrap|Burntrap_Death_RIG_Burntrap",
             nome: "Morrendo",
             alvoCamera: "0m 1.75m 1m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 90deg 0",
         },
     },
     audios: {
@@ -523,7 +467,6 @@ var pizzaria = {
     orbitaCameraMaxima: "0 0 50m",
     orbitaCameraMinima: "0 0 10m",
     alvoCamera: "0m 0m 0m",
-    temAudio: true,
     audios: {
         abertura: {
             src: "assets/audios/extras/pra-encontrar/filme/abertura.ogg",
@@ -551,7 +494,6 @@ var springBonnieFilme = {
     orbitaCameraMaxima: "0 0 25m",
     orbitaCameraMinima: "0 0 15m",
     alvoCamera: "0m -3.5m 0m",
-    temAudio: true,
     audios: {
         abertura: {
             src: "assets/audios/extras/pra-encontrar/filme/abertura.ogg",
@@ -579,9 +521,7 @@ var springBonniePixel = {
     orbitaCameraMaxima: "0 0 12.5m",
     orbitaCameraMinima: "0 0 7.5m",
     alvoCamera: "0m 0.5m 0m",
-    mudaOrbitaCamera: true,
-    orbitaCamera: "90deg 0 0",
-    temAudio: true,
+    rotacao: -90,
     audios: {
         abertura: {
             src: "assets/audios/extras/pra-encontrar/filme/abertura.ogg",
@@ -609,11 +549,9 @@ var balloonBoyFilme = {
     orbitaCameraMaxima: "0 0 100m",
     orbitaCameraMinima: "0 0 50m",
     alvoCamera: "0m 12.5m 1m",
-    temConfigEx: true,
     configEx: () => {
         modelViewer.exposure = 0.5
     },
-    temAudio: true,
     audios: {
         abertura: {
             src: "assets/audios/extras/pra-encontrar/filme/abertura.ogg",
@@ -646,13 +584,10 @@ var ventilador = {
     orbitaCameraMaxima: "0 0 2.5m",
     orbitaCameraMinima: "0 0 2.5m",
     alvoCamera: "0m 0.25m 0m",
-    mudaOrbitaCamera: true,
-    orbitaCamera: "230deg 0 0",
-    temConfigEx: true,
+    rotacao: -230,
     configEx: () => {
         modelViewer.exposure = 0.5
     },
-    temAudio: true,
     audios: {
         fnaf1: {
             src: "assets/audios/extras/pra-encontrar/outros/ventilador/ventilador-fnaf1.ogg",
@@ -685,7 +620,6 @@ var phoneGuy = {
     orbitaCameraMaxima: "0 0 500m",
     orbitaCameraMinima: "0 0 400m",
     alvoCamera: "0m 0m 0m",
-    temAudio: true,
     audios: {
         fnaf1Noite1: {
             src: "assets/audios/extras/pra-encontrar/outros/telefone/fnaf1-noite1.ogg",
@@ -788,60 +722,45 @@ var dreadbear = {
     ],
     orbitaCameraMaxima: "0 0 7m",
     orbitaCameraMinima: "0 0 6m",
-    temAnimacao: true,
-    temAudio: true,
     animacoes: {
         posicaoInicial: {
             src: "RIG_DLC1_Freddy|DLC_Freddy_SplashScreen_RIG_DLC1_Freddy",
             nome: "Posição inicial",
             alvoCamera: "0.5m 1m 0m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-90deg 0 0",
+            rotacao: 90,
         },
         jumpscare: {
             src: "RIG_DLC1_Freddy|A_DLC_Freddy_JumpScare_RIG_DLC1_Freddy",
             nome: "Jumpscare",
             alvoCamera: "0m -0.5m -0.75m",
-            estatico: false,
         },
         posicaoGameOver: {
             src: "RIG_DLC1_Freddy|DLC_Freddy_Gameover_Idle_Start_RIG_DLC1_Freddy",
             nome: "Posição game over",
             alvoCamera: "-0.5m 1.35m -0.25m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "-90deg 0 0",
+            rotacao: 90,
         },
         choque1: {
             src: "RIG_DLC1_Freddy|DLC_Freddy_Idle_04_RIG_DLC1_Freddy",
             nome: "Choque 1",
             alvoCamera: "0m 0.25m 0.5m",
-            estatico: false,
         },
         choque2: {
             src: "RIG_DLC1_Freddy|DLC_Freddy_Shock_RIG_DLC1_Freddy",
             nome: "Choque 2",
             alvoCamera: "0m 0.25m 0.5m",
-            estatico: false,
         },
         quebrandoAPorta: {
             src: "RIG_DLC1_Freddy|DLCFreddy_DoorBreak_RIG_DLC1_Freddy",
             nome: "Quebrando a porta",
             alvoCamera: "-0.25m 1.5m 2m",
-            estatico: false,
-            mudaOrbitaCamera: true,
-            orbitaCamera: "190deg 1.5rad 0",
+            rotacao: -190,
         },
         andando: {
             src: "RIG_DLC1_Freddy|DLC_Freddy_Hall_Walk_RootMotion_RIG_DLC1_Freddy",
             nome: "Andando",
             alvoCamera: "0m 1.5m 0.15m",
-            estatico: false,
-            mudaOrbitaCameraMaxima: true,
             orbitaCameraMaxima: "0 0 20m",
-            mudaOrbitaCamera: true,
-            orbitaCamera: "0 1.5rad 0",
         },
     },
     audios: {
@@ -900,7 +819,6 @@ var fnaf1Mapa = {
     orbitaCameraMaxima: "0 0 0m",
     orbitaCameraMinima: "0 0 0m",
     alvoCamera: "0m 0m 0m",
-    temAudio: true,
     audios: {
         teste: {
             src: "",
@@ -923,7 +841,6 @@ var mascaraVanny = {
     orbitaCameraMaxima: "0 0 7.5m",
     orbitaCameraMinima: "0 0 5m",
     alvoCamera: "0m 0m 1m",
-    temAudio: true,
     audios: {
         teste: {
             src: "",

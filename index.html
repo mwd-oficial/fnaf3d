@@ -484,6 +484,16 @@
                             novamente)
                         </p>
 
+                        <h3 class="ajustar-font-size">Fundo do Modelo:</h3>
+                        <div class="checkbox-input-div pointers" id="skybox-div">
+                            <p class="pointers ajustar-font-size" id="skybox-p">Imagem de fundo:</p>
+                            <div id="skybox-input" class="pointers checkbox-input active"></div>
+                        </div>
+                        <div class="checkbox-input-div pointers">
+                            <p class="pointers ajustar-font-size" id="degrade-p">Fundo de degradê:</p>
+                            <div id="degrade-input" class="pointers checkbox-input"></div>
+                        </div>
+
                         <h3 class="ajustar-font-size" id="velocidade-h3">Velocidade da animação:</h3>
                         <div id="velocidade-div" class="range-inputs-div">
                             <input type="range" name="" id="velocidade-input" class="range-inputs pointers" min="-2"
@@ -491,7 +501,7 @@
                             <span class="ajustar-font-size" style="width: 30px;">1</span>
                         </div>
 
-                        <h3 class="ajustar-font-size">Rotação automática:</h3>
+                        <h3 class="ajustar-font-size">Rotação Automática:</h3>
                         <div class="range-inputs-div">
                             <span class="ajustar-font-size">0%</span>
                             <input type="range" id="rotacao-input" class="range-inputs pointers" min="0" max="360"
@@ -1944,8 +1954,8 @@
                         </div>
 
                         <h3 class="ajustar-font-size" style="display: block;">Usuários cadastrados</h3>
-                        <div id="lista-users"></div>
-                        <div id="ver-mais-div">
+                        <div id="lista-users" class="ajustar-width-75"></div>
+                        <div id="ver-mais-div" class="ajustar-width-75">
                             <div id="ver-mais" class="efeito-hover pointers">Ver mais</div>
                         </div>
                         <p id="nenhum-resul" class="ajustar-font-size">Nenhum resultado encontrado.</p>
@@ -2319,16 +2329,6 @@
         <script src="scripts/animacoes.js"></script>
         <script src="scripts/audios.js"></script>
         <script src="scripts/ar.js"></script>
-
-        <!--
-
-        <script>
-            document.querySelector("#teste").addEventListener("camera-change", function () {
-                var theta = this.getCameraOrbit().theta
-                this.cameraOrbit = `${theta}rad auto auto`
-            })
-        </script>
-    -->
 
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="scripts/swiper.js"></script>
