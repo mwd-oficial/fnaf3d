@@ -426,6 +426,14 @@ function carregarModelo(iModelo) {
                     }
                 }
             }
+            modelViewer.ontouchstart = (e) => {
+                if (e.touches.length === 2) {
+                    if ((target.x > 2 || target.z > 2) && !viuAlerta) {
+                        alerta("Não é possível mudar o ponto central desse modelo.")
+                        viuAlerta = true
+                    }
+                }
+            }
         }, 100);
     }
 

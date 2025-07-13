@@ -62,6 +62,14 @@ function comecarAnimacao(iModelo, iAnimacao) {
                 }
             }
         }
+        modelViewer.ontouchstart = (e) => {
+            if (e.touches.length === 2) {
+                if ((target.x > 2 || target.z > 2) && !viuAlerta) {
+                    alerta("Não é possível mudar o ponto central dessa animação.")
+                    viuAlerta = true
+                }
+            }
+        }
     }, 100);
 
     if (animacaoSel.orbitaCameraMaxima) {
