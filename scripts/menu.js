@@ -475,7 +475,7 @@ function tutorialBotoes() {
             }
             break
         case 4:
-            arBtn.style.zIndex = 35
+            arBtn.style.zIndex = 20
             if (!isCelular) arBtn.style.opacity = 0.5
             tutorialBotoesContentP.innerHTML = "No lado esquerdo, você pode ver a descrição do modelo, imagens, vídeos e ler comentários. Caso logado, dar like e dislike, favoritar e comentar<br><br>No lado direito, você pode ver o tutorial de como interagir com o modelo e os efeitos disponíveis<br><br>(Clique)"
             tutorialBotoesContentP.style.backdropFilter = "blur(10px) brightness(0.5)"
@@ -550,7 +550,7 @@ function tutorialBotoes() {
             audiosContainer.style.pointerEvents = "all"
             audiosContainer.style.zIndex = 10
             arBtn.style.pointerEvents = "all"
-            arBtn.style.zIndex = 35
+            arBtn.style.zIndex = 20
             menuJogos.style.zIndex = 101
             menuJogos.style.pointerEvents = "all"
             if (!isCelular) arBtn.style.opacity = 0.5
