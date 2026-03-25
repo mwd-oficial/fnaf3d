@@ -1,6 +1,6 @@
 // Five Nights at Freddy's 1
 var freddy = {
-    driveId: "1gkq22LnK0axNBkoOZNsi2IVDcAz7KMd0",
+    temAr: true,
     src: "assets/models/fnaf1/freddy.glb",
     corFundo: "radial-gradient(#5B3C21, #000)",
     fnaf: "1",

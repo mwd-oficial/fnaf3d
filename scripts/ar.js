@@ -9,8 +9,8 @@ arBtn.addEventListener("click", async function () {
         return
     }
 
-    if (modelos[iModeloVar].driveId) {
-        console.log("tem driveId")
+    if (modelos[iModeloVar].temAr) {
+        console.log("tem ar")
         ar = true
         verificaOrientacao()
         telaAr.style.display = "flex"
@@ -27,14 +27,14 @@ arBtn.addEventListener("click", async function () {
             try {
                 const res = await axios.post(`${API_URL}/ar/cadastrar`, {
                     username: dadosUser.username || "Anônimo",
-                    driveId: modelos[iModeloVar].driveId,
+                    src: modelos[iModeloVar].src,
                     nome: nomeModelo.innerHTML,
                     nomeAnimacao: modelos[iModeloVar].nomeAnimacao,
                     animacao: modelos[iModeloVar].animacaoAtual,
                     timestamp: timestamp
                 });
                 setTimeout(() => {
-                    url = `https://drive.google.com/uc?export=download&id=${res.data.newDriveId}`
+                    url = res.data.blobUrl
                     modeloPronto = true
                 }, 1000);
             } catch (e) {
@@ -42,12 +42,14 @@ arBtn.addEventListener("click", async function () {
                 return
             }
         } else {
-            url = `https://drive.google.com/uc?export=download&id=${modelos[iModeloVar].driveId}`
+            url = modelos[iModeloVar].blobUrl
             modeloPronto = true
             try {
-                await axios.post(`${API_URL}/ar/postar`, {
+                await axios.post(`${API_URL}/ar/cadastrar`, {
                     username: dadosUser.username || "Anônimo",
+                    src: modelos[iModeloVar].src,
                     nome: nomeModelo.innerHTML,
+                    timestamp: timestamp
                 });
             } catch (e) {
                 console.log("Um erro ocorreu ao tentar cadastrar modelo estático.")
