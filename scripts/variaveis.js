@@ -20,8 +20,8 @@ var modeloPronto = false
 
 // Login, banco de dados e relacionados
 
-const API_URL = "https://fnaf3d.vercel.app";
-//const API_URL = "http://localhost:3000";
+// const API_URL = "https://fnaf3d.vercel.app";
+const API_URL = "http://localhost:3000";
 
 var userDiv = document.querySelector("#user-div")
 var myUserBtn = document.querySelector("#my-user-btn")
