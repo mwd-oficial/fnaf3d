@@ -1,7 +1,7 @@
 // Logos
 
 var logo = {
-    driveId: "16AHE0DH_95mR9g4yupk_tfePekoF4hnA",
+    temAr: true,
     src: "assets/models/logos/logo.glb",
     corFundo: "radial-gradient(#949494, #d3d3d3)",
     fnaf: "l",
@@ -17,7 +17,7 @@ var logo = {
 }
 
 var logomwd = {
-    driveId: "12BtoQF1U6PNR39VCAtzhfB5DEYR5S-Bi",
+    temAr: true,
     src: "assets/models/logos/logomwd.glb",
     corFundo: "radial-gradient(#4e7abd, #0000b3)",
     fnaf: "l",
