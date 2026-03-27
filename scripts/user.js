@@ -38,7 +38,7 @@ document.querySelector("#editar-btn").addEventListener("click", async function (
     }, 500);
 
     irTelaConfigUser("Editar");
-    imagemCarregada.src = dadosUser.semFoto ? "assets/images/avatar.avif" : await pegarArquivo(dadosUser.imagemId, "avif")
+    imagemCarregada.src = dadosUser.semFoto ? "assets/images/avatar.avif" : dadosUser.imagemUrl
     imagemCarregada.onload = function () {
         setTimeout(() => {
             clearTimeout(timeoutCarregamento)
@@ -111,7 +111,7 @@ function irTelaDadosUser(username) {
             dadosUserImg.style.objectFit = dadosUser.preencher ? "cover" : "contain"
             myUserBtnImg.style.objectFit = dadosUser.preencher ? "cover" : "contain"
 
-            dadosUserImg.src = dadosUser.semFoto ? "assets/images/avatar.avif" : await pegarArquivo(dadosUser.imagemId, "avif")
+            dadosUserImg.src = dadosUser.semFoto ? "assets/images/avatar.avif" : dadosUser.imagemUrl
             myUserBtnImg.src = dadosUserImg.src
         } else {
             menuLogado.style.display = "none";
@@ -123,14 +123,10 @@ function irTelaDadosUser(username) {
 
             dadosUserUsername.innerHTML = `<span class='arroba'>@</span>${res.data.username}`
 
-            /*
-            
-            */
-
             dadosUserImg.style.objectFit = res.data.preencher ? "cover" : "contain"
             myUserBtnImg.style.objectFit = res.data.preencher ? "cover" : "contain"
 
-            dadosUserImg.src = !res.data.imagemId ? "assets/images/avatar.avif" : await pegarArquivo(res.data.imagemId, "avif")
+            dadosUserImg.src = res.data.imagemUrl ? res.data.imagemUrl : "assets/images/avatar.avif"
         }
 
         dadosUserImg.onload = function () {
@@ -243,18 +239,7 @@ olho.addEventListener("click", function () {
 
 
 
-async function pegarArquivo(id, tipop) {
-    var tipo = tipop == "avif" ? "image/avif" : "model/gltf-binary"
-    try {
-        const res = await axios.get(`${API_URL}/pegarArquivo/${id}`, { responseType: 'arraybuffer' });
-        const blob = new Blob([res.data], { type: tipo });
-        const url = window.URL.createObjectURL(blob);
-        console.log('URL Blob: ', url);
-        return url;
-    } catch (error) {
-        console.error('Erro ao acessar o arquivo:', error);
-    }
-}
+
 
 function resetarInputs() {
     formulario.reset();
@@ -326,7 +311,7 @@ async function exibirUsers() {
          <p class="users pointers" data-index="${i}">
             <span class="img-users">
                 <img src="assets/images/favicon/192x192.png" class="loader-img">
-                <img src="${user.imagemId ? await pegarArquivo(user.imagemId, "avif") : "assets/images/avatar.avif"}" class="img-users-img">
+                <img src="${user.imagemUrl ? await user.imagemUrl : "assets/images/avatar.avif"}" class="img-users-img">
             </span>
             <span class="username"><span class="arroba">@</span>${user.username}</span>
             <span class="material-symbols-rounded">open_in_new</span>
@@ -478,14 +463,14 @@ async function cadastrarUser() {
         console.log(res.data);
         setTimeout(() => { alerta(res.data.msg); }, 100);
         if (res.data.resultado) {
-            console.log("res.data.resultado.imagemId: " + res.data.resultado.imagemId);
+            console.log("res.data.resultado.imagemUrl: " + res.data.resultado.imagemUrl);
             dadosUser.id = res.data.resultado._id
             console.log("res.data.resultado._id: " + res.data.resultado._id)
             setTimeout(() => {
                 localStorage.setItem("email", JSON.stringify(dadosUser.email));
                 localStorage.setItem("password", JSON.stringify(dadosUser.password));
             }, 100);
-            dadosUser.imagemId = res.data.resultado.imagemId
+            dadosUser.imagemUrl = res.data.resultado.imagemUrl
 
             praEncontrarDourado.forEach(async () => {
                 numSort = Math.floor(Math.random() * document.querySelectorAll(".geral").length);
@@ -571,9 +556,9 @@ async function entrarUser() {
                     }
                 }, 100);
 
-                dadosUser.imagemId = res.data.userData.imagemId;
+                dadosUser.imagemUrl = res.data.userData.imagemUrl;
                 dadosUser.preencher = JSON.parse(res.data.userData.preencher)
-                dadosUser.semFoto = dadosUser.imagemId === ""
+                dadosUser.semFoto = dadosUser.imagemUrl === ""
 
                 axios.put(`${API_URL}/users/atualizarDado/${dadosUser.id}`, {
                     vistos: dadosUser.vistos
@@ -652,7 +637,7 @@ async function excluirConta() {
         const res = await axios.delete(`${API_URL}/users/excluir`, {
             data: {
                 username: dadosUser.username,
-                imagemId: dadosUser.imagemId
+                imagemUrl: dadosUser.imagemUrl
             }
         });
         console.log("username: " + dadosUser.username)
@@ -697,7 +682,7 @@ async function editarUser() {
     const formData = new FormData();
     formData.append("oldUsername", dadosUser.username);
     formData.append("oldEmail", dadosUser.email);
-    formData.append("oldImagemId", dadosUser.imagemId)
+    formData.append("oldimagemUrl", dadosUser.imagemUrl)
     formData.append("username", inputUsername.value);
     formData.append("email", inputEmail.value);
     formData.append("password", inputPassword.value);
@@ -710,8 +695,8 @@ async function editarUser() {
         console.log(res.data);
         setTimeout(() => { alerta(res.data.msg); }, 100);
         if (res.data.resultado) {
-            console.log("res.data.resultado.imagemId: " + res.data.resultado.imagemId);
-            dadosUser.imagemId = res.data.resultado.imagemId
+            console.log("res.data.resultado.imagemUrl: " + res.data.resultado.imagemUrl);
+            dadosUser.imagemUrl = res.data.resultado.imagemUrl
             setTimeout(() => {
                 localStorage.setItem("email", JSON.stringify(dadosUser.email));
                 localStorage.setItem("password", JSON.stringify(dadosUser.password));
