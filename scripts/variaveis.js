@@ -100,7 +100,7 @@ function limparDadosUser() {
         fnafsl: {
             noite: 0,
         },
-        imagemId: "",
+        imagemUrl: "",
         semFoto: true,
         preencher: false,
     }
