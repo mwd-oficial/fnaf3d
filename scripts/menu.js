@@ -1430,6 +1430,6 @@ function fecharUserDiv() {
     userDiv.style.opacity = 0
     if (isCelular && focusInput) exitFullscreen()
     focusInput = false
-    if (!dadosUser.imagemId) semFoto = true
+    if (!dadosUser.imagemUrl) semFoto = true
     setTimeout(() => userDiv.style.display = "none", 250);
 }
