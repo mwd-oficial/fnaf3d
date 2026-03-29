@@ -23,6 +23,7 @@ var moeda3d = {
 }
 
 var purpleGuy = {
+    temAr: true,
     nome: "Purple Guy",
     src: "assets/models/extras/pra-comprar/purple-guy.glb",
     corFundo: "radial-gradient(#855FAE, #000)",
@@ -127,6 +128,7 @@ var purpleGuy = {
 
 
 var goldenFreddy = {
+    temAr: true,
     nome: "Golden Freddy",
     src: "assets/models/extras/pra-encontrar/fnaf1/golden-freddy.glb",
     corFundo: "radial-gradient(#4E4A03, #000)",
@@ -168,6 +170,7 @@ var goldenFreddy = {
 
 
 var poster = {
+    temAr: true,
     nome: "Pôster",
     src: "assets/models/extras/pra-encontrar/fnaf1/poster.glb",
     corFundo: "radial-gradient(#222, #000)",
@@ -193,6 +196,7 @@ var poster = {
 // Fnaf 2
 
 var mascaraFreddy = {
+    temAr: true,
     nome: "Máscara Freddy",
     src: "assets/models/extras/pra-encontrar/fnaf2/mascara-freddy.glb",
     corFundo: "radial-gradient(#815020, #000)",
@@ -234,6 +238,7 @@ var mascaraFreddy = {
 // Fnaf sl
 
 var lolbit = {
+    temAr: true,
     nome: "Lolbit",
     src: "assets/models/extras/pra-encontrar/fnafsl/lolbit.glb",
     corFundo: "radial-gradient(#C1691F, #C1691F, #000)",
@@ -264,6 +269,7 @@ var lolbit = {
 }
 
 var bonnet = {
+    temAr: true,
     nome: "Bonnet",
     src: "assets/models/extras/pra-encontrar/fnafsl/bonnet.glb",
     corFundo: "radial-gradient(#B14AAF, #000)",
@@ -317,6 +323,7 @@ var bonnet = {
 // Fnaf sb
 
 var headChefBot = {
+    temAr: true,
     nome: "Head Chef Bot",
     src: "assets/models/extras/pra-encontrar/fnafsb/head-chef-bot.glb",
     corFundo: "radial-gradient(#E5AA3F, #000)",
@@ -345,6 +352,7 @@ var headChefBot = {
 }
 
 var blob = {
+    temAr: true,
     nome: "Blob",
     src: "assets/models/extras/pra-encontrar/fnafsb/blob.glb",
     corFundo: "radial-gradient(#1F1F1E, #000)",
@@ -393,6 +401,7 @@ var blob = {
 };
 
 var burntrap = {
+    temAr: true,
     nome: "Burntrap (William Afton)",
     src: "assets/models/extras/pra-encontrar/fnafsb/burntrap.glb",
     corFundo: "radial-gradient(#440075, #000)",
@@ -456,6 +465,7 @@ var burntrap = {
 
 
 var pizzaria = {
+    temAr: true,
     nome: "Freddy Fazbear's Pizza",
     src: "assets/models/extras/pra-encontrar/filme/pizzaria.glb",
     corFundo: "radial-gradient(#787577, #000)",
@@ -538,6 +548,7 @@ var springBonniePixel = {
 }
 
 var balloonBoyFilme = {
+    temAr: true,
     nome: "Balloon Boy (filme)",
     src: "assets/models/extras/pra-encontrar/filme/balloon-boy-filme.glb",
     corFundo: "radial-gradient(#07285E, #A10E17)",
@@ -573,6 +584,7 @@ var balloonBoyFilme = {
 // Outros
 
 var ventilador = {
+    temAr: true,
     nome: "Ventilador",
     src: "assets/models/extras/pra-encontrar/outros/ventilador.glb",
     corFundo: "radial-gradient(#3F4143, #000)",

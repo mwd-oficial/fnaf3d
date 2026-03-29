@@ -85,7 +85,7 @@ Adventure Mendo
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Fnaf 1
 var adventureFreddy = {
-    driveId: "1NoUhVVEKgdOzTd2zi3slo83Zk1ODLryF",
+    temAr: true,
     src: "assets/models/fnafw/fnaf1/adventure-freddy.glb",
     corFundo: "radial-gradient(#B0582D, #000)",
     fnaf: "w",
@@ -100,6 +100,7 @@ var adventureFreddy = {
 }
 
 var adventureBonnie = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf1/adventure-bonnie.glb",
     corFundo: "radial-gradient(#3E57C9, #000)",
     fnaf: "w",
@@ -114,6 +115,7 @@ var adventureBonnie = {
 };
 
 var adventureChica = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf1/adventure-chica.glb",
     corFundo: "radial-gradient(#F4C92A, #6d590f)",
     fnaf: "w",
@@ -132,6 +134,7 @@ var adventureChica = {
 };
 
 var adventureFoxy = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf1/adventure-foxy.glb",
     corFundo: "radial-gradient(#A9101F, #000)",
     fnaf: "w",
@@ -147,6 +150,7 @@ var adventureFoxy = {
 
 var adventureGoldenFreddy = {
     src: "assets/models/fnafw/fnaf1/adventure-golden-freddy.glb",
+    temAr: true,
     corFundo: "radial-gradient(#C5A440, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf1/adventure-golden-freddy/",
@@ -165,6 +169,7 @@ var adventureGoldenFreddy = {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Fnaf 2
 var adventureToyFreddy = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf2/adventure-toy-freddy.glb",
     corFundo: "radial-gradient(#8F3B28, #000)",
     fnaf: "w",
@@ -179,6 +184,7 @@ var adventureToyFreddy = {
 };
 
 var adventureToyBonnie = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf2/adventure-toy-bonnie.glb",
     corFundo: "radial-gradient(#56AED9, #162c37)",
     fnaf: "w",
@@ -193,6 +199,7 @@ var adventureToyBonnie = {
 };
 
 var adventureToyChica = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf2/adventure-toy-chica.glb",
     corFundo: "radial-gradient(#E9CA16, #5f5209)",
     fnaf: "w",
@@ -211,6 +218,7 @@ var adventureToyChica = {
 };
 
 var adventureMangle = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf2/adventure-mangle.glb",
     corFundo: "radial-gradient(#e5b4db, #EE67D1)",
     fnaf: "w",
@@ -225,6 +233,7 @@ var adventureMangle = {
 };
 
 var adventureBalloonBoy = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf2/adventure-balloon-boy.glb",
     corFundo: "radial-gradient(#003196, #E2332D)",
     fnaf: "w",
@@ -242,6 +251,7 @@ var adventureBalloonBoy = {
 };
 
 var adventurePuppet = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf2/adventure-puppet.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "w",
@@ -258,6 +268,7 @@ var adventurePuppet = {
 
 var adventureWitheredFreddy = {
     src: "assets/models/fnafw/fnaf2/adventure-withered-freddy.glb",
+    temAr: true,
     corFundo: "radial-gradient(#8D5C49, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf2/adventure-withered-freddy/",
@@ -272,6 +283,7 @@ var adventureWitheredFreddy = {
 
 var adventureWitheredBonnie = {
     src: "assets/models/fnafw/fnaf2/adventure-withered-bonnie.glb",
+    temAr: true,
     corFundo: "radial-gradient(#515779, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf2/adventure-withered-bonnie/",
@@ -286,6 +298,7 @@ var adventureWitheredBonnie = {
 
 var adventureWitheredChica = {
     src: "assets/models/fnafw/fnaf2/adventure-withered-chica.glb",
+    temAr: true,
     corFundo: "radial-gradient(#F5CA2F, #5f5209)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf2/adventure-withered-chica/",
@@ -304,6 +317,7 @@ var adventureWitheredChica = {
 
 var adventureWitheredFoxy = {
     src: "assets/models/fnafw/fnaf2/adventure-withered-foxy.glb",
+    temAr: true,
     corFundo: "radial-gradient(#872524, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf2/adventure-withered-foxy/",
@@ -322,6 +336,7 @@ var adventureWitheredFoxy = {
 // Fnaf 3
 var adventurePhantomFreddy = {
     src: "assets/models/fnafw/fnaf3/adventure-phantom-freddy.glb",
+    temAr: true,
     corFundo: "radial-gradient(#525D39, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf3/adventure-phantom-freddy/",
@@ -336,6 +351,7 @@ var adventurePhantomFreddy = {
 
 var adventurePhantomChica = {
     src: "assets/models/fnafw/fnaf3/adventure-phantom-chica.glb",
+    temAr: true,
     corFundo: "radial-gradient(#415443, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf3/adventure-phantom-chica/",
@@ -349,6 +365,7 @@ var adventurePhantomChica = {
 };
 
 var adventurePhantomFoxy = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf3/adventure-phantom-foxy.glb",
     corFundo: "radial-gradient(#664840, #000)",
     fnaf: "w",
@@ -364,6 +381,7 @@ var adventurePhantomFoxy = {
 
 var adventurePhantomMangle = {
     src: "assets/models/fnafw/fnaf3/adventure-phantom-mangle.glb",
+    temAr: true,
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf2/adventure-mangle/",
@@ -382,6 +400,7 @@ var adventurePhantomMangle = {
 
 var adventurePhantomBalloonBoy = {
     src: "assets/models/fnafw/fnaf3/adventure-phantom-balloon-boy.glb",
+    temAr: true,
     corFundo: "radial-gradient(#637143, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf3/adventure-phantom-balloon-boy/",
@@ -396,6 +415,7 @@ var adventurePhantomBalloonBoy = {
 
 var adventurePhantomPuppet = {
     src: "assets/models/fnafw/fnaf3/adventure-phantom-puppet.glb",
+    temAr: true,
     corFundo: "radial-gradient(#3E4930, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf3/adventure-phantom-puppet/",
@@ -409,6 +429,7 @@ var adventurePhantomPuppet = {
 };
 
 var adventureSpringtrap = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf3/adventure-springtrap.glb",
     corFundo: "radial-gradient(#8E9340, #000)",
     fnaf: "w",
@@ -428,6 +449,7 @@ var adventureSpringtrap = {
 // Fnaf 4
 var adventureNightmareFreddy = {
     src: "assets/models/fnafw/fnaf4/adventure-nightmare-freddy.glb",
+    temAr: true,
     corFundo: "radial-gradient(#9C624C, #000)",
     fnaf: "w",
     temCursor: true,
@@ -443,6 +465,7 @@ var adventureNightmareFreddy = {
 
 var adventureNightmareBonnie = {
     src: "assets/models/fnafw/fnaf4/adventure-nightmare-bonnie.glb",
+    temAr: true,
     corFundo: "radial-gradient(#3C4C71, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf4/adventure-nightmare-bonnie/",
@@ -457,6 +480,7 @@ var adventureNightmareBonnie = {
 
 var adventureNightmareChica = {
     src: "assets/models/fnafw/fnaf4/adventure-nightmare-chica.glb",
+    temAr: true,
     corFundo: "radial-gradient(#ECB256, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf4/adventure-nightmare-chica/",
@@ -471,6 +495,7 @@ var adventureNightmareChica = {
 
 var adventureNightmareFoxy = {
     src: "assets/models/fnafw/fnaf4/adventure-nightmare-foxy.glb",
+    temAr: true,
     corFundo: "radial-gradient(#A5413F, #000)",
     fnaf: "w",
     temCursor: true,
@@ -487,6 +512,7 @@ var adventureNightmareFoxy = {
 
 var adventureNightmareFredbear = {
     src: "assets/models/fnafw/fnaf4/adventure-nightmare-fredbear.glb",
+    temAr: true,
     corFundo: "radial-gradient(#EDC168, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf4/adventure-nightmare-fredbear/",
@@ -500,6 +526,7 @@ var adventureNightmareFredbear = {
 };
 
 var adventureNightmare = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf4/adventure-nightmare.glb",
     corFundo: "radial-gradient(#292929, #000)",
     fnaf: "w",
@@ -515,6 +542,7 @@ var adventureNightmare = {
 
 var adventureJackOBonnie = {
     src: "assets/models/fnafw/fnaf4/adventure-jack-o-bonnie.glb",
+    temAr: true,
     corFundo: "radial-gradient(#90553F, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf4/adventure-jack-o-bonnie/",
@@ -528,6 +556,7 @@ var adventureJackOBonnie = {
 };
 
 var adventureJackOChica = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf4/adventure-jack-o-chica.glb",
     corFundo: "radial-gradient(#C07135, #000)",
     fnaf: "w",
@@ -543,6 +572,7 @@ var adventureJackOChica = {
 
 var adventureNightmareBalloonBoy = {
     src: "assets/models/fnafw/fnaf4/adventure-nightmare-balloon-boy.glb",
+    temAr: true,
     corFundo: "radial-gradient(#C72C32, #552B74)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf4/adventure-nightmare-balloon-boy/",
@@ -556,6 +586,7 @@ var adventureNightmareBalloonBoy = {
 };
 
 var adventurePlushtrap = {
+    temAr: true,
     src: "assets/models/fnafw/fnaf4/adventure-plushtrap.glb",
     corFundo: "radial-gradient(#91883F, #000)",
     fnaf: "w",
@@ -571,6 +602,7 @@ var adventurePlushtrap = {
 
 var adventureNightmarionne = {
     src: "assets/models/fnafw/fnaf4/adventure-nightmarionne.glb",
+    temAr: true,
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "w",
     srcImg: "assets/images/fnafw/fnaf4/adventure-nightmarionne/",
@@ -584,6 +616,7 @@ var adventureNightmarionne = {
 };
 
 var adventureFuntimeFoxy = {
+    temAr: true,
     src: "assets/models/fnafw/adventure-funtime-foxy.glb",
     corFundo: "radial-gradient(#C73B7C, #000)",
     fnaf: "w",

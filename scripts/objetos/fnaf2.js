@@ -1,5 +1,6 @@
 // Five Nights at Freddy's 2
 var toyFreddy = {
+    temAr: true,
     src: "assets/models/fnaf2/toy-freddy.glb",
     corFundo: "radial-gradient(#994B2A, #000)",
     fnaf: "2",
@@ -60,6 +61,7 @@ var toyFreddy = {
 }
 
 var toyBonnie = {
+    temAr: true,
     src: "assets/models/fnaf2/toy-bonnie.glb",
     corFundo: "radial-gradient(#6AA2EA, #000)",
     fnaf: "2",
@@ -133,6 +135,7 @@ var toyBonnie = {
 }
 
 var toyChica = {
+    temAr: true,
     src: "assets/models/fnaf2/toy-chica.glb",
     corFundo: "radial-gradient(#FFE794, #856D1A)",
     fnaf: "2",
@@ -202,6 +205,7 @@ var toyChica = {
 }
 
 var toyCupcake = {
+    temAr: true,
     src: "assets/models/fnaf2/toy-cupcake.glb",
     corFundo: "radial-gradient(#fff, #DD47D2)",
     fnaf: "2",
@@ -217,6 +221,7 @@ var toyCupcake = {
 }
 
 var mangle = {
+    temAr: true,
     src: "assets/models/fnaf2/mangle.glb",
     corFundo: "radial-gradient(#f89cb5, #ca6882, #9c5164)",
     fnaf: "2",
@@ -299,6 +304,7 @@ var mangle = {
 }
 
 var balloonBoy = {
+    temAr: true,
     src: "assets/models/fnaf2/balloon-boy.glb",
     corFundo: "radial-gradient(#000050, #500000)",
     fnaf: "2",
@@ -359,6 +365,7 @@ var balloonBoy = {
 }
 
 var puppet = {
+    temAr: true,
     src: "assets/models/fnaf2/puppet.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "2",
@@ -414,6 +421,7 @@ var puppet = {
 }
 
 var witheredFreddy = {
+    temAr: true,
     src: "assets/models/fnaf2/withered-freddy.glb",
     corFundo: "radial-gradient(#8B412D, #000)",
     fnaf: "2",
@@ -477,6 +485,7 @@ var witheredFreddy = {
 }
 
 var witheredBonnie = {
+    temAr: true,
     src: "assets/models/fnaf2/withered-bonnie.glb",
     corFundo: "radial-gradient(#3D3374, #000)",
     fnaf: "2",
@@ -544,6 +553,7 @@ var witheredBonnie = {
 }
 
 var witheredChica = {
+    temAr: true,
     src: "assets/models/fnaf2/withered-chica.glb",
     corFundo: "radial-gradient(#CCAB52, #000)",
     fnaf: "2",
@@ -611,6 +621,7 @@ var witheredChica = {
 }
 
 var witheredFoxy = {
+    temAr: true,
     src: "assets/models/fnaf2/withered-foxy.glb",
     corFundo: "radial-gradient(#D74037, #000)",
     fnaf: "2",
@@ -668,6 +679,7 @@ var witheredFoxy = {
 }
 
 var witheredGoldenFreddy = {
+    temAr: true,
     src: "assets/models/fnaf2/withered-golden-freddy.glb",
     corFundo: "radial-gradient(#593906, #000)",
     fnaf: "2",

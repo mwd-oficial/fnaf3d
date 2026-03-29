@@ -25,7 +25,7 @@ if (isCelular) {
 
     document.querySelector("#tela-cheia > p").innerHTML = "Para uma melhor experiência, <br> toque para ativar a tela cheia"
 
-    nomeModelo.style.width = "calc(100vw - 3* 65px)"
+    nomeModelo.style.width = "calc(100vw - 3 * 65px)"
 
     userDiv.classList.add("celular")
     tutorialDescricaoContent.classList.add("celular")
@@ -283,7 +283,7 @@ fecharAbaCel.addEventListener("touchstart", function () {
 })
 
 var timeoutAlerta
-function alerta(txt) {
+function alerta(txt, temp) {
     alertaDiv.innerHTML = txt
 
     alertaDiv.style.top = isCelular ? "25px" : "50px"
@@ -296,7 +296,7 @@ function alerta(txt) {
         alertaDiv.style.top = isCelular ? "-25px" : "-50px"
         alertaDiv.style.transform = "translateX(-50%) scale(0.75)"
         alertaDiv.style.opacity = 0
-    }, 5000);
+    }, temp ? temp : 5000);
 }
 
 

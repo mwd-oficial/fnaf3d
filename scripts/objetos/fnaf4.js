@@ -1,5 +1,6 @@
 // Five Nights at Freddy's 4
 var nightmareFreddy = {
+    temAr: true,
     src: "assets/models/fnaf4/nightmare-freddy.glb",
     corFundo: "radial-gradient(#2C2320, #000)",
     fnaf: "4",
@@ -33,6 +34,7 @@ var nightmareFreddy = {
 }
 
 var freddles = {
+    temAr: true,
     src: "assets/models/fnaf4/freddles.glb",
     corFundo: "radial-gradient(#5A4D4A, #000)",
     fnaf: "4",
@@ -71,6 +73,7 @@ var freddles = {
     descricao: "Os Freddles são pequenas criaturas que aparecem em Five Nights at Freddy's 4 como parte das mecânicas de jogo envolvendo Nightmare Freddy. Eles são versões miniaturizadas de Nightmare Freddy, com pelagem marrom e olhos brancos que se destacam na escuridão. <br><br> Durante o jogo, os Freddles começam a se acumular na cama do jogador, e se não forem espantados a tempo, eles invocarão Nightmare Freddy, resultando em um jumpscare. <br><br> Eles representam uma ameaça constante que requer vigilância e ação rápida por parte do jogador para evitar um desfecho terrível. Os Freddles são uma das poucas entidades na série que parecem agir em grupo, o que adiciona uma camada extra de tensão e estratégia ao jogo.",
 }
 var nightmareBonnie = {
+    temAr: true,
     src: "assets/models/fnaf4/nightmare-bonnie.glb",
     corFundo: "radial-gradient(#2D323F, #000)",
     fnaf: "4",
@@ -121,6 +124,7 @@ var nightmareBonnie = {
 }
 
 var nightmareChica = {
+    temAr: true,
     src: "assets/models/fnaf4/nightmare-chica.glb",
     corFundo: "radial-gradient(#836127, #000)",
     fnaf: "4",
@@ -170,6 +174,7 @@ var nightmareChica = {
 }
 
 var nightmareCupcake = {
+    temAr: true,
     src: "assets/models/fnaf4/nightmare-cupcake.glb",
     corFundo: "radial-gradient(#981E5C, #000)",
     fnaf: "4",
@@ -197,6 +202,7 @@ var nightmareCupcake = {
 }
 
 var nightmareFoxy = {
+    temAr: true,
     src: "assets/models/fnaf4/nightmare-foxy.glb",
     corFundo: "radial-gradient(#632826, #000)",
     fnaf: "4",
@@ -250,6 +256,7 @@ var nightmareFoxy = {
 }
 
 var nightmareFredbear = {
+    temAr: true,
     src: "assets/models/fnaf4/nightmare-fredbear.glb",
     corFundo: "radial-gradient(#D18625, #000)",
     fnaf: "4",
@@ -342,6 +349,7 @@ var nightmareFredbear = {
 }
 
 var nightmare = {
+    temAr: true,
     src: "assets/models/fnaf4/nightmare.glb",
     corFundo: "radial-gradient(#101010, #000)",
     fnaf: "4",
@@ -412,6 +420,7 @@ var nightmare = {
 }
 
 var jackOBonnie = {
+    temAr: true,
     src: "assets/models/fnaf4/jack-o-bonnie.glb",
     corFundo: "radial-gradient(#765024, #000)",
     fnaf: "4",
@@ -456,6 +465,7 @@ var jackOBonnie = {
 }
 
 var jackOChica = {
+    temAr: true,
     src: "assets/models/fnaf4/jack-o-chica.glb",
     corFundo: "radial-gradient(#69411C, #000)",
     fnaf: "4",
@@ -512,6 +522,7 @@ var jackOChica = {
 }
 
 var nightmareMangle = {
+    temAr: true,
     src: "assets/models/fnaf4/nightmare-mangle.glb",
     corFundo: "radial-gradient(#7B2651, #000)",
     fnaf: "4",
@@ -533,6 +544,7 @@ var nightmareMangle = {
 }
 
 var nightmareBalloonBoy = {
+    temAr: true,
     src: "assets/models/fnaf4/nightmare-balloon-boy.glb",
     corFundo: "radial-gradient(#E84036, #300E2D)",
     fnaf: "4",
@@ -595,6 +607,7 @@ var nightmareBalloonBoy = {
 }
 
 var plushtrap = {
+    temAr: true,
     src: "assets/models/fnaf4/plushtrap.glb",
     corFundo: "radial-gradient(#B0A45D, #000)",
     fnaf: "4",
@@ -658,6 +671,7 @@ var plushtrap = {
 }
 
 var nightmarionne = {
+    temAr: true,
     src: "assets/models/fnaf4/nightmarionne.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "4",

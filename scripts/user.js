@@ -113,6 +113,20 @@ function irTelaDadosUser(username) {
 
             dadosUserImg.src = dadosUser.semFoto ? "assets/images/avatar.avif" : dadosUser.imagemUrl
             myUserBtnImg.src = dadosUserImg.src
+
+            if (dadosUser.vistos.length === modelos.length) {
+                dadosUserImgDiv.style.backgroundImage = "radial-gradient(#efbf04, #efbf04)"
+                dadosUserImgDiv.style.padding = "30px"
+                labelImagem.style.backgroundImage = "radial-gradient(#efbf04, #efbf04)"
+                labelImagem.style.padding = "30px"
+                myUserBtn.style.border = "3px solid #efbf04"
+            } else {
+                dadosUserImgDiv.style.backgroundImage = "radial-gradient(#0000, #0000)"
+                dadosUserImgDiv.style.padding = "0px"
+                labelImagem.style.backgroundImage = "radial-gradient(#0000, #0000)"
+                labelImagem.style.padding = "0px"
+                myUserBtn.style.border = "3px solid #333"
+            }
         } else {
             menuLogado.style.display = "none";
             menuNaoLogado.style.display = "none";
@@ -123,10 +137,18 @@ function irTelaDadosUser(username) {
 
             dadosUserUsername.innerHTML = `<span class='arroba'>@</span>${res.data.username}`
 
-            dadosUserImg.style.objectFit = res.data.preencher ? "cover" : "contain"
-            myUserBtnImg.style.objectFit = res.data.preencher ? "cover" : "contain"
+            dadosUserImg.style.objectFit = JSON.parse(res.data.preencher) ? "cover" : "contain"
+            myUserBtnImg.style.objectFit = JSON.parse(res.data.preencher) ? "cover" : "contain"
 
             dadosUserImg.src = res.data.imagemUrl ? res.data.imagemUrl : "assets/images/avatar.avif"
+
+            if (res.data.vistos.length === modelos.length) {
+                dadosUserImgDiv.style.backgroundImage = "radial-gradient(#efbf04, #efbf04)"
+                dadosUserImgDiv.style.padding = "30px"
+            } else {
+                dadosUserImgDiv.style.backgroundImage = "radial-gradient(#0000, #0000)"
+                dadosUserImgDiv.style.padding = "0px"
+            }
         }
 
         dadosUserImg.onload = function () {
@@ -186,7 +208,6 @@ function irTelaConfigUser(acao) {
     }, 500);
 }
 
-
 inputImagem.addEventListener('change', function (event) {
     const input = event.target;
     const file = input.files[0];
@@ -194,21 +215,19 @@ inputImagem.addEventListener('change', function (event) {
     const tamanho = file.size / (1024 * 1024); // Conversão de bytes para megabytes
 
     if (tamanho > 4) {
-        alerta(`A imagem deve pesar menos que 4 MB. Tamanho atual: ${tamanho.toFixed(2)} MB`)
+        alerta(`A imagem deve pesar menos que 4 MB. Tamanho atual: ${tamanho.toFixed(2)} MB`, 10000)
         return
     }
 
     if (file) {
         carregamentoImgConfig.style.display = "flex";
         avatarBtn.style.display = "flex";
-        document.querySelector("#hover-label-imagem").style.opacity = 0;
 
         reader.onload = function () {
             setTimeout(() => {
                 carregamentoImgConfig.style.display = "none";
                 urlImagem = reader.result;
                 imagemCarregada.src = urlImagem;
-                dadosUser.semFoto = false
             }, 10);
         }
 
@@ -293,6 +312,12 @@ function sairConta() {
         document.querySelectorAll(".pra-encontrar-dourado ~ p")[iPraEncontrarDourado].innerHTML = "???"
     })
 
+    dadosUserImgDiv.style.backgroundImage = "radial-gradient(#0000, #0000)"
+    dadosUserImgDiv.style.padding = "0px"
+    labelImagem.style.backgroundImage = "radial-gradient(#0000, #0000)"
+    labelImagem.style.padding = "0px"
+    myUserBtn.style.border = "3px solid #333"
+
     botaoDourado.style.display = "none"
 
     ucnBtn.style.display = "none"
@@ -309,9 +334,9 @@ async function exibirUsers() {
         const res = await axios.get(`${API_URL}/users`);
         const usersHTMLPromises = res.data.map(async (user, i) => `
          <p class="users pointers" data-index="${i}">
-            <span class="img-users">
+            <span class="img-users" style="${user.vistos && user.vistos.length === modelos.length ? 'border: 3px solid #efbf04;' : ''}">
                 <img src="assets/images/favicon/192x192.png" class="loader-img">
-                <img src="${user.imagemUrl ? await user.imagemUrl : "assets/images/avatar.avif"}" class="img-users-img">
+                <img src="${user.imagemUrl ? user.imagemUrl : "assets/images/avatar.avif"}" class="img-users-img">
             </span>
             <span class="username"><span class="arroba">@</span>${user.username}</span>
             <span class="material-symbols-rounded">open_in_new</span>
@@ -365,7 +390,7 @@ verMais.onclick = () => {
             if (vendoMais) {
                 verMais.innerHTML = "Ver mais"
                 user.style.opacity = 0;
-                listaUsers.scrollTo({top: 0, behavior: "smooth"});
+                listaUsers.scrollTo({ top: 0, behavior: "smooth" });
                 setTimeout(() => {
                     user.style.display = "none"
                     listaUsers.style.overflowY = "hidden";
@@ -375,7 +400,7 @@ verMais.onclick = () => {
                 user.style.display = "flex";
                 setTimeout(() => {
                     listaUsers.style.overflowY = "scroll";
-                    listaUsers.scrollBy({top: 35, behavior: "smooth"});
+                    listaUsers.scrollBy({ top: 35, behavior: "smooth" });
                     user.style.opacity = 1
                 }, 1);
             }
@@ -430,6 +455,8 @@ formulario.addEventListener("submit", async function (event) {
 })
 
 async function cadastrarUser() {
+    if (inputImagem.files[0]) dadosUser.semFoto = false
+    
     const formData = new FormData();
     formData.append("username", inputUsername.value);
     formData.append("email", inputEmail.value);
@@ -592,7 +619,7 @@ async function entrarUser() {
                     })
                 }
 
-                botaoDouradof()
+                //botaoDouradof()
 
                 if (dadosUser.ucnDesbloqueado) ucnBtn.style.display = "flex"
 
@@ -679,6 +706,8 @@ async function excluirConta() {
 };
 
 async function editarUser() {
+    if (inputImagem.files[0]) dadosUser.semFoto = false
+
     const formData = new FormData();
     formData.append("oldUsername", dadosUser.username);
     formData.append("oldEmail", dadosUser.email);
@@ -704,8 +733,8 @@ async function editarUser() {
             setTimeout(() => irTelaDadosUser(dadosUser.username), 100);
         }
     } catch (erro) {
-        console.error('Erro ao tentar cadastrar: ', erro);
-        setTimeout(() => { alerta("Erro ao tentar cadastrar"); }, 100);
+        console.error('Erro ao tentar editar: ', erro);
+        setTimeout(() => { alerta("Erro ao tentar editar"); }, 100);
     } finally {
         carregamentoForm.style.display = "none";
     }

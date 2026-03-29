@@ -96,7 +96,7 @@ var freddy = {
 
 
 var bonnie = {
-    driveId: "1_IXZqJ4O4zRUup0rGi5Ro3Er2Yq4sejP",
+    temAr: true,
     src: "assets/models/fnaf1/bonnie.glb",
     corFundo: "radial-gradient(#2D3A75, #000)",
     fnaf: "1",
@@ -181,7 +181,7 @@ var bonnie = {
 
 
 var chica = {
-    driveId: "1rVC8iIGcUVxLDQNq6lnCSUFodDQHAVNy",
+    temAr: true,
     src: "assets/models/fnaf1/chica.glb",
     corFundo: "radial-gradient(#DCC863, #856d1a)",
     fnaf: "1",
@@ -282,7 +282,7 @@ var chica = {
 
 
 var mrCupcake = {
-    driveId: "1oNWFvTiHLGmChArD3RaXA1ZPzWUZC_qm",
+    temAr: true,
     src: "assets/models/fnaf1/mr-cupcake.glb",
     corFundo: "radial-gradient(#f89cb5, #ca6882, #9c5164)",
     fnaf: "1",
@@ -301,7 +301,7 @@ var mrCupcake = {
 
 
 var foxy = {
-    driveId: "1VPCrduPSmaGDNmnee4AgZK6SHefIfizx",
+    temAr: true,
     src: "assets/models/fnaf1/foxy.glb",
     corFundo: "radial-gradient(#D25A37, #000)",
     fnaf: "1",

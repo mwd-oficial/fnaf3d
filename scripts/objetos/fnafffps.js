@@ -1,6 +1,7 @@
 // Freddy Fazbear's Pizzeria Simulator
 
 var trashAndTheGang = {
+    temAr: true,
     src: "assets/models/fnafffps/trash-and-the-gang.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "ffps",
@@ -30,6 +31,7 @@ var trashAndTheGang = {
 }
 
 var helpy = {
+    temAr: true,
     src: "assets/models/fnafffps/helpy.glb",
     corFundo: "radial-gradient(#E5E5E5, #000)",
     fnaf: "ffps",
@@ -52,6 +54,7 @@ var helpy = {
 };
 
 var happyFrog = {
+    temAr: true,
     src: "assets/models/fnafffps/happy-frog.glb",
     corFundo: "radial-gradient(#6CBC41, #000)",
     fnaf: "ffps",
@@ -68,6 +71,7 @@ var happyFrog = {
 
 
 var mrHippo = {
+    temAr: true,
     src: "assets/models/fnafffps/mr-hippo.glb",
     corFundo: "radial-gradient(#9644B4, #000)",
     fnaf: "ffps",
@@ -83,6 +87,7 @@ var mrHippo = {
 };
 
 var pigpatch = {
+    temAr: true,
     src: "assets/models/fnafffps/pigpatch.glb",
     corFundo: "radial-gradient(#EF6F87, #000)",
     fnaf: "ffps",
@@ -98,6 +103,7 @@ var pigpatch = {
 };
 
 var neddBear = {
+    temAr: true,
     src: "assets/models/fnafffps/nedd-bear.glb",
     corFundo: "radial-gradient(#8A4834, #000)",
     fnaf: "ffps",
@@ -113,6 +119,7 @@ var neddBear = {
 };
 
 var orvilleElephant = {
+    temAr: true,
     src: "assets/models/fnafffps/orville-elephant.glb",
     corFundo: "radial-gradient(#F7A45E, #000)",
     fnaf: "ffps",
@@ -128,6 +135,7 @@ var orvilleElephant = {
 };
 
 var rockstarFreddy = {
+    temAr: true,
     src: "assets/models/fnafffps/rockstar-freddy.glb",
     corFundo: "radial-gradient(#BA6D3B, #000)",
     fnaf: "ffps",
@@ -143,6 +151,7 @@ var rockstarFreddy = {
 };
 
 var rockstarBonnie = {
+    temAr: true,
     src: "assets/models/fnafffps/rockstar-bonnie.glb",
     corFundo: "radial-gradient(#7E8ADE, #000)",
     fnaf: "ffps",
@@ -157,6 +166,7 @@ var rockstarBonnie = {
 };
 
 var rockstarChica = {
+    temAr: true,
     src: "assets/models/fnafffps/rockstar-chica.glb",
     corFundo: "radial-gradient(#E9BE52, #000)",
     fnaf: "ffps",
@@ -171,6 +181,7 @@ var rockstarChica = {
 };
 
 var rockstarFoxy = {
+    temAr: true,
     src: "assets/models/fnafffps/rockstar-foxy.glb",
     corFundo: "radial-gradient(#A40C1B, #000)",
     fnaf: "ffps",
@@ -186,6 +197,7 @@ var rockstarFoxy = {
 };
 
 var musicMan = {
+    temAr: true,
     src: "assets/models/fnafffps/music-man.glb",
     corFundo: "radial-gradient(#E9789A, #000)",
     fnaf: "ffps",
@@ -201,6 +213,7 @@ var musicMan = {
 };
 
 var elChip = {
+    temAr: true,
     src: "assets/models/fnafffps/el-chip.glb",
     corFundo: "radial-gradient(#4C3C30, #000)",
     fnaf: "ffps",
@@ -216,6 +229,7 @@ var elChip = {
 };
 
 var funtimeChica = {
+    temAr: true,
     src: "assets/models/fnafffps/funtime-chica.glb",
     corFundo: "radial-gradient(#A02D38, #000)",
     fnaf: "ffps",
@@ -239,6 +253,7 @@ var funtimeChica = {
 };
 
 var moltenFreddy = {
+    temAr: true,
     src: "assets/models/fnafffps/molten-freddy.glb",
     corFundo: "radial-gradient(#7F4123, #000)",
     fnaf: "ffps",
@@ -307,6 +322,7 @@ var moltenFreddy = {
 };
 
 var scrapBaby = {
+    temAr: true,
     src: "assets/models/fnafffps/scrap-baby.glb",
     corFundo: "radial-gradient(#984731, #000)",
     fnaf: "ffps",
@@ -360,6 +376,7 @@ var scrapBaby = {
 };
 
 var scraptrap = {
+    temAr: true,
     src: "assets/models/fnafffps/scraptrap.glb",
     corFundo: "radial-gradient(#444900, #000)",
     fnaf: "ffps",
@@ -417,6 +434,7 @@ var scraptrap = {
 };
 
 var lefty = {
+    temAr: true,
     src: "assets/models/fnafffps/lefty.glb",
     corFundo: "radial-gradient(#20211D, #000)",
     fnaf: "ffps",

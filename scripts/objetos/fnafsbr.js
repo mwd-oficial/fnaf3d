@@ -1,6 +1,7 @@
 // Five Nights at Freddy's: Security Breach - Ruin
 
 var prototypeGlamrockFreddy = {
+    temAr: true,
     src: "assets/models/fnafsbr/prototype-glamrock-freddy.glb",
     corFundo: "radial-gradient(#E6773A, #000)",
     fnaf: "sbr",
@@ -55,6 +56,7 @@ var prototypeGlamrockFreddy = {
 }
 
 var ruinedGlamrockChica = {
+    temAr: true,
     src: "assets/models/fnafsbr/ruined-glamrock-chica.glb",
     corFundo: "radial-gradient(#8E5967, #000)",
     fnaf: "sbr",
@@ -102,6 +104,7 @@ var ruinedGlamrockChica = {
 }
 
 var ruinedRoxanneWolf = {
+    temAr: true,
     src: "assets/models/fnafsbr/ruined-roxanne-wolf.glb",
     corFundo: "radial-gradient(#7127B1, #000)",
     fnaf: "sbr",
@@ -190,6 +193,7 @@ var ruinedRoxanneWolf = {
 }
 
 var ruinedMontgomeryGator = {
+    temAr: true,
     src: "assets/models/fnafsbr/ruined-montgomery-gator.glb",
     corFundo: "radial-gradient(#7E787B, #000)",
     fnaf: "sbr",
@@ -232,6 +236,7 @@ var ruinedMontgomeryGator = {
 }
 
 var eclipse = {
+    temAr: true,
     src: "assets/models/fnafsbr/eclipse.glb",
     corFundo: "radial-gradient(#9F9FD5, #000)",
     fnaf: "sbr",
@@ -296,6 +301,7 @@ var eclipse = {
 }
 
 var ruinedMiniMusicMan1 = {
+    temAr: true,
     src: "assets/models/fnafsbr/ruined-mini-music-man1.glb",
     corFundo: "radial-gradient(#E9789A, #000)",
     fnaf: "sbr",
@@ -381,6 +387,7 @@ var ruinedMiniMusicMan1 = {
 }
 
 var ruinedMiniMusicMan2 = {
+    temAr: true,
     src: "assets/models/fnafsbr/ruined-mini-music-man2.glb",
     corFundo: "radial-gradient(#E9789A, #000)",
     fnaf: "sbr",
@@ -487,6 +494,7 @@ var ruinedMiniMusicMan2 = {
 }
 
 var shatteredBot = {
+    temAr: true,
     src: "assets/models/fnafsbr/shattered-bot.glb",
     corFundo: "radial-gradient(#6979A1, #000)",
     fnaf: "sbr",
@@ -501,6 +509,7 @@ var shatteredBot = {
 }
 
 var maskBot = {
+    temAr: true,
     src: "assets/models/fnafsbr/mask-bot.glb",
     corFundo: "radial-gradient(#896302, #000)",
     fnaf: "sbr",
@@ -549,6 +558,7 @@ var maskBot = {
 }
 
 var cassie = {
+    temAr: true,
     src: "assets/models/fnafsbr/cassie.glb",
     corFundo: "radial-gradient(#990F18, #000)",
     fnaf: "sbr",
@@ -586,6 +596,7 @@ var cassie = {
 }
 
 var entity = {
+    temAr: true,
     src: "assets/models/fnafsbr/entity.glb",
     corFundo: "radial-gradient(#12254D, #000)",
     fnaf: "sbr",
@@ -669,6 +680,7 @@ var entity = {
 }
 
 var mimic = {
+    temAr: true,
     src: "assets/models/fnafsbr/mimic.glb",
     corFundo: "radial-gradient(#302526, #000)",
     fnaf: "sbr",

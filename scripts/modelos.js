@@ -201,12 +201,15 @@ function defineModelo(iModelo) {
     }
     atualizarPointers()
 
-    var encontrou = false
-    dadosUser.vistos.forEach(visto => {
-        if (visto == modelos[iModelo].src) encontrou = true
-    })
-    if (!encontrou) dadosUser.vistos.push(modelos[iModelo].src)
+    var encontrou = dadosUser.vistos.includes(modelos[iModelo].src)
+    if (!encontrou) {
+        dadosUser.vistos.push(modelos[iModelo].src)
+        if (logado && dadosUser.vistos.length === modelos.length) {
+            alerta("Parabéns! Você platinou todo o site ao zerar todos os jogos, conseguir todas as moedas 3D e depois ver todos os modelos!", 10000)
+        }
+    }
     if (aindaNaoVistoInput.classList.contains("active")) atualizarVistos()
+
 
     iModeloVar = iModelo
 
@@ -414,7 +417,7 @@ function carregarModelo(iModelo) {
 
         setTimeout(() => {
             let target = modelViewer.getCameraTarget();
-            if (target.x > 2 || target.z > 2) modelViewer.disablePan = true
+            if (target.x > 2 || target.z > 2 || target.x < -2 || target.z < -2) modelViewer.disablePan = true
             else modelViewer.disablePan = false
 
             let viuAlerta = false

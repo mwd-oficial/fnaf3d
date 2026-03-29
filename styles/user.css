@@ -127,8 +127,8 @@
                 align-items: center;
                 gap: 50px;
 
-                & #dados-user-img {
-                    background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
+                & #dados-user-img-div {
+                    background-image: radial-gradient(#0000, #0000);
                     backdrop-filter: blur(10px);
                     box-shadow: 0px 0px 10px 0px #000;
                     width: 500px;
@@ -136,10 +136,18 @@
                     border-radius: 50%;
                     overflow: hidden;
 
-                    & img {
-                        height: 100%;
+                    & #dados-user-img {
+                        background-image: radial-gradient(#333, #000);
                         width: 100%;
-                        object-fit: cover;
+                        height: 100%;
+                        border-radius: 50%;
+
+                        & img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            border-radius: 50%;
+                        }
                     }
                 }
 
@@ -323,6 +331,7 @@
                             width: 100%;
                             height: 100%;
                             object-fit: contain;
+                            border-radius: 50%;
                         }
 
                         & #hover-label-imagem {
@@ -347,6 +356,17 @@
 
                         &.efeito-hover:hover #hover-label-imagem {
                             opacity: 1;
+                        }
+                    }
+
+                    & #label-imagem {
+                        background-image: radial-gradient(#0000, #0000);
+
+                        & #imagem-carregada-div {
+                            background-image: radial-gradient(#333, #000);
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
                         }
                     }
 
@@ -389,7 +409,7 @@
                         margin-left: 25px;
                     }
 
-                    & + p {
+                    &+p {
                         width: 50% !important;
                         color: #f00;
                         text-align: center;
@@ -403,7 +423,7 @@
                             color: #f00;
                         }
 
-                        & + p {
+                        &+p {
                             display: block;
                         }
                     }

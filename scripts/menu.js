@@ -180,6 +180,26 @@ function irTopo() {
 }
 irTopoDiv.addEventListener("click", irTopo)
 
+aIndice.forEach((a, index) => {
+    a.addEventListener("click", function (e) {
+        e.preventDefault()
+
+        if (index >= 23) {
+            animacoesContainer.style.display = "none"
+            setTimeout(() => {
+                animacoesContainer.style.display = "flex"
+            }, 20);
+            if (index == 25) {
+                document.querySelector("#usuarios-cadastrados-div").scrollIntoView({ behavior: 'smooth', block: 'start' })
+                return
+            }
+        }
+        setTimeout(() => {
+            nomeFnaf[index].scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 10);
+    })
+})
+
 
 
 // descrição/tutorial
@@ -312,12 +332,13 @@ async function atualizarInteracoes(btn, array, estado, msg) {
 document.querySelector("#skybox-p").onclick = () => efeitoSkybox(!skyboxInput.classList.contains("active"))
 skyboxInput.onclick = () => efeitoSkybox(!skyboxInput.classList.contains("active"))
 function efeitoSkybox(estado) {
+    moeda3dImg.style.opacity = 0.035
     if (estado) {
         skyboxInput.classList.add("active");
         if (temSkybox) {
             modelViewer.skyboxImage = `assets/images/fnaf${modelos[iModeloVar].fnaf}/fnaf${modelos[iModeloVar].fnaf}hdr.avif`
             modelViewer.environmentImage = "assets/images/branco.avif"
-        } else { 
+        } else {
             modelViewer.skyboxImage = ""
             modelViewer.environmentImage = "neutral"
         }
@@ -339,8 +360,10 @@ function efeitoDegrade() {
     if (degradeInput.classList.contains("active")) {
         document.body.style.backgroundImage = modelos[iModeloVar].corFundo
         efeitoSkybox(false)
+        moeda3dImg.style.opacity = 0.035
     } else {
         document.body.style.backgroundImage = ""
+        moeda3dImg.style.opacity = 0
     }
 }
 
@@ -465,6 +488,13 @@ function tutorialBotoes() {
         case 3:
             if (audiosAberto) abaAudios()
             audiosContainer.style.zIndex = 10
+            moeda3dImg.style.opacity = 1
+            moeda3dImg.style.zIndex = 2010
+            tutorialBotoesContentP.innerHTML = "Essa é a moeda 3D que aparece cada vez que um modelo é carregado. Ela fica escondida, então terá que encontrá-la. (Nem tente burlar com o fundo preto.) <br><br> (Clique)"
+            break
+        case 4:
+            moeda3dImg.style.opacity = 0.035
+            moeda3dImg.style.zIndex = 1
             arBtn.style.zIndex = 2010
             arBtn.style.opacity = 1
             tutorialBotoesContent.style.width = "100%"
@@ -474,7 +504,7 @@ function tutorialBotoes() {
                 tutorialBotoesContent.style.transform = "translate(-50%, -50%)"
             }
             break
-        case 4:
+        case 5:
             arBtn.style.zIndex = 20
             if (!isCelular) arBtn.style.opacity = 0.5
             tutorialBotoesContentP.innerHTML = "No lado esquerdo, você pode ver a descrição do modelo, imagens, vídeos e ler comentários. Caso logado, dar like e dislike, favoritar e comentar<br><br>No lado direito, você pode ver o tutorial de como interagir com o modelo e os efeitos disponíveis<br><br>(Clique)"
@@ -482,19 +512,19 @@ function tutorialBotoes() {
             tutorialBotoesDiv.style.backdropFilter = "none"
             if (!tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
             break
-        case 5:
+        case 6:
             if (tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
             tutorialBotoesContentP.innerHTML = "Aqui você pode ver todos os modelos disponíveis (e extras para desbloquear) <br><br> (Clique)"
             if (!divMenu.classList.contains("active")) abrirFecharMenu()
             break
-        case 6:
+        case 7:
             menuContent.scrollTo({
                 top: listaUsers.getBoundingClientRect().top + menuContent.scrollTop - 100,
                 behavior: 'smooth'
             })
             tutorialBotoesContentP.innerHTML = "E também outros usuários cadastrados <br><br> (Clique)"
             break
-        case 7:
+        case 8:
             menuContent.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -505,7 +535,7 @@ function tutorialBotoes() {
             tutorialBotoesContentP.style.backdropFilter = "none"
             tutorialBotoesDiv.style.backdropFilter = "blur(10px) brightness(0.5)"
             break
-        case 8:
+        case 9:
             if (jogosBtn.classList.contains("active")) abaJogos()
             menuJogos.style.zIndex = 101
             document.querySelectorAll("#pesquisa-nao-visto-div > div").forEach(el => el.classList.add("nao-clique"))
@@ -515,19 +545,19 @@ function tutorialBotoes() {
             myUserBtn.style.opacity = 0.25
             tutorialBotoesContentP.innerHTML = "Aqui você pode pesquisar modelos ou usuários (colocando o @ antes do nome) <br><br> (Clique)"
             break
-        case 9:
+        case 10:
             pesquisaDiv.style.opacity = 0.25
             aindaNaoVistoDiv.style.opacity = 1
             myUserBtn.style.opacity = 0.25
             tutorialBotoesContentP.innerHTML = "Aqui para ver os modelos que ainda não viu <br><br> (Clique)"
             break
-        case 10:
+        case 11:
             pesquisaDiv.style.opacity = 0.25
             aindaNaoVistoDiv.style.opacity = 0.25
             myUserBtn.style.opacity = 1
             tutorialBotoesContentP.innerHTML = "E aqui para acessar as suas informações<br><br> (Clique)"
             break
-        case 11:
+        case 12:
             pesquisaNaoVistoDiv.style.zIndex = 101
             pesquisaDiv.style.opacity = 1
             aindaNaoVistoDiv.style.opacity = 1
@@ -537,7 +567,7 @@ function tutorialBotoes() {
             tutorialBotoesContentP.style.backdropFilter = "blur(10px) brightness(0.5)"
             tutorialBotoesDiv.style.backdropFilter = "none"
             break
-        case 12:
+        case 13:
             if (userDiv.style.display == "flex") fecharUserDiv()
             if (divMenu.classList.contains("active")) abrirFecharMenu()
             if (tutorialDescricaoDiv.classList.contains("active")) abrirFecharTutorial()
@@ -549,6 +579,8 @@ function tutorialBotoes() {
             animacoesContainer.style.zIndex = 10
             audiosContainer.style.pointerEvents = "all"
             audiosContainer.style.zIndex = 10
+            moeda3dImg.style.opacity = 0.035
+            moeda3dImg.style.zIndex = 1
             arBtn.style.pointerEvents = "all"
             arBtn.style.zIndex = 20
             menuJogos.style.zIndex = 101
@@ -588,7 +620,7 @@ function pularTutorialf() {
         quantidadeMoedas3dDiv.addEventListener("mouseover", quantidadeMoedas3d)
     }
         */
-    passoTutorial = 12
+    passoTutorial = 13
     tutorialBotoes()
 }
 
@@ -1431,5 +1463,12 @@ function fecharUserDiv() {
     if (isCelular && focusInput) exitFullscreen()
     focusInput = false
     if (!dadosUser.imagemUrl) semFoto = true
-    setTimeout(() => userDiv.style.display = "none", 250);
+    setTimeout(() => {
+        userDiv.style.display = "none"
+        if (logado) {
+            irTelaDadosUser(dadosUser.username)
+        } else {
+            irTelaDadosUser()
+        }
+    }, 250);
 }

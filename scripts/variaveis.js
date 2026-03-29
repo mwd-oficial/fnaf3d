@@ -31,6 +31,7 @@ var telaDadosUser = document.querySelector("#tela-dados-user")
 var telaConfigUser = document.querySelector("#tela-config-user")
 var menuNaoLogado = document.querySelector("#menu-nao-logado")
 var menuLogado = document.querySelector("#menu-logado")
+var dadosUserImgDiv = document.querySelector("#dados-user-img-div")
 var dadosUserImg = document.querySelector("#dados-user-img > img")
 var dadosUserUsername = document.querySelector("#dados-user-username")
 var dadosUserFavoritos = document.querySelector("#dados-user-favoritos")
@@ -53,7 +54,8 @@ var carregamentoImgDados = document.querySelector("#carregamento-img-dados")
 var carregamentoImgConfig = document.querySelector("#carregamento-img-config")
 var carregamentoForm = document.querySelector("#carregamento-form")
 var avatarBtn = document.querySelector("#avatar-btn")
-var imagemCarregada = document.querySelector("#label-imagem > img");
+var labelImagem = document.querySelector("#label-imagem");
+var imagemCarregada = document.querySelector("#imagem-carregada-div > img");
 var urlImagem, semFoto = true, peloLocalStorage = false
 
 var imgAnimatronic = document.querySelectorAll(".img-animatronic")
@@ -176,6 +178,8 @@ var menuJogos = document.querySelector("#menu-jogos")
 var jogosBtn = document.querySelector("#jogos-btn")
 var imgJogos = document.querySelector("#img-jogos")
 var menuJogosImg = document.querySelectorAll("#img-jogos img")
+var indiceTitulo = document.querySelector("#indice-titulo")
+var aIndice = document.querySelectorAll(".a-indice")
 var srcJogos = [
     "jogos/fnaf1/fnaf1.html",
     "jogos/fnaf2/fnaf2.html",
@@ -209,7 +213,6 @@ var nenhumResul = document.querySelector("#nenhum-resul")
 
 var aindaNaoVistoDiv = document.querySelector("#ainda-nao-visto-div")
 var aindaNaoVistoInput = document.querySelector("#ainda-nao-visto-input")
-var vistosArray = []
 
 
 

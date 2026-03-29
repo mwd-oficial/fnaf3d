@@ -1,5 +1,6 @@
 // Five Nights at Freddy's 3
 var phantomFreddy = {
+    temAr: true,
     src: "assets/models/fnaf3/phantom-freddy.glb",
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
@@ -38,6 +39,7 @@ var phantomFreddy = {
 }
 
 var phantomChica = {
+    temAr: true,
     src: "assets/models/fnaf3/phantom-chica.glb",
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
@@ -64,6 +66,7 @@ var phantomChica = {
 }
 
 var phantomFoxy = {
+    temAr: true,
     src: "assets/models/fnaf3/phantom-foxy.glb",
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
@@ -89,6 +92,7 @@ var phantomFoxy = {
 }
 
 var phantomMangle = {
+    temAr: true,
     src: "assets/models/fnaf3/phantom-mangle.glb",
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
@@ -152,6 +156,7 @@ var phantomMangle = {
 }
 
 var phantomBalloonBoy = {
+    temAr: true,
     src: "assets/models/fnaf3/phantom-balloon-boy.glb",
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
@@ -206,6 +211,7 @@ var phantomBalloonBoy = {
 }
 
 var phantomPuppet = {
+    temAr: true,
     src: "assets/models/fnaf3/phantom-puppet.glb",
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",
@@ -233,6 +239,7 @@ var phantomPuppet = {
 }
 
 var springtrap = {
+    temAr: true,
     src: "assets/models/fnaf3/springtrap.glb",
     corFundo: "radial-gradient(#122209, #000)",
     fnaf: "3",

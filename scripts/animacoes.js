@@ -50,8 +50,12 @@ function comecarAnimacao(iModelo, iAnimacao) {
 
     setTimeout(() => {
         let target = modelViewer.getCameraTarget();
-        if (target.x > 2 || target.z > 2) modelViewer.disablePan = true
+        if (target.x > 2 || target.z > 2 || target.x < -2 || target.z < -2) modelViewer.disablePan = true
         else modelViewer.disablePan = false
+
+        console.log("target.z: " + target.z)
+        console.log("target.x: " + target.x)
+        console.log("modelViewer.disablePan: " + modelViewer.disablePan)
 
         let viuAlerta = false
         modelViewer.onpointerdown = (e) => {

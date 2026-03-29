@@ -1,5 +1,5 @@
 var prototypeBonnie = {
-    driveId: "1XcQEzykql6lANOoyqmhgdEfPNhzN4LWu",
+    temAr: true,
     src: "assets/models/fnafsotm/prototype-bonnie.glb",
     corFundo: "radial-gradient(#675E52, #000)",
     fnaf: "sotm",

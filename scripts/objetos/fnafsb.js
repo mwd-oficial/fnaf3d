@@ -1,6 +1,7 @@
 // Five Nights at Freddy's: Security Breach
 
 var glamrockFreddy = {
+    temAr: true,
     src: "assets/models/fnafsb/glamrock-freddy.glb",
     corFundo: "radial-gradient(#E5A632, #000)",
     fnaf: "sb",
@@ -145,6 +146,7 @@ var glamrockFreddy = {
 }
 
 var glamrockChica = {
+    temAr: true,
     src: "assets/models/fnafsb/glamrock-chica.glb",
     corFundo: "radial-gradient(#B9007C, #000)",
     fnaf: "sb",
@@ -253,6 +255,7 @@ var glamrockChica = {
 };
 
 var roxanneWolf = {
+    temAr: true,
     src: "assets/models/fnafsb/roxanne-wolf.glb",
     corFundo: "radial-gradient(#8C54D0, #000)",
     fnaf: "sb",
@@ -366,6 +369,7 @@ var roxanneWolf = {
 };
 
 var montgomeryGator = {
+    temAr: true,
     src: "assets/models/fnafsb/montgomery-gator.glb",
     corFundo: "radial-gradient(#5D9D17, #000)",
     fnaf: "sb",
@@ -500,6 +504,7 @@ var montgomeryGator = {
 };
 
 var shatteredGlamrockChica = {
+    temAr: true,
     src: "assets/models/fnafsb/shattered-glamrock-chica.glb",
     corFundo: "radial-gradient(#B9007C, #000)",
     fnaf: "sb",
@@ -573,6 +578,7 @@ var shatteredGlamrockChica = {
 };
 
 var shatteredRoxanneWolf = {
+    temAr: true,
     src: "assets/models/fnafsb/shattered-roxanne-wolf.glb",
     corFundo: "radial-gradient(#8C54D0, #000)",
     fnaf: "sb",
@@ -673,6 +679,7 @@ var shatteredRoxanneWolf = {
 };
 
 var shatteredMontgomeryGator = {
+    temAr: true,
     src: "assets/models/fnafsb/shattered-montgomery-gator.glb",
     corFundo: "radial-gradient(#5D9D17, #000)",
     fnaf: "sb",
@@ -731,6 +738,7 @@ var shatteredMontgomeryGator = {
 };
 
 var sun = {
+    temAr: true,
     src: "assets/models/fnafsb/sun.glb",
     corFundo: "radial-gradient(#F8D1AC, #BD8343)",
     fnaf: "sb",
@@ -831,6 +839,7 @@ var sun = {
 };
 
 var moon = {
+    temAr: true,
     src: "assets/models/fnafsb/moon.glb",
     corFundo: "radial-gradient(#02137C, #000)",
     fnaf: "sb",
@@ -951,6 +960,7 @@ var moon = {
 };
 
 var glamrockEndo = {
+    temAr: true,
     src: "assets/models/fnafsb/glamrock-endo.glb",
     corFundo: "radial-gradient(#3E3B3C, #000)",
     fnaf: "sb",
@@ -1038,6 +1048,7 @@ var glamrockEndo = {
 };
 
 var djMusicMan = {
+    temAr: true,
     src: "assets/models/fnafsb/dj-music-man.glb",
     corFundo: "radial-gradient(#F78BE4, #000)",
     fnaf: "sb",
@@ -1089,6 +1100,7 @@ var djMusicMan = {
 };
 
 var miniMusicMan = {
+    temAr: true,
     src: "assets/models/fnafsb/mini-music-man.glb",
     corFundo: "radial-gradient(#E9789A, #000)",
     fnaf: "sb",
@@ -1137,6 +1149,7 @@ var miniMusicMan = {
 };
 
 var staffBot = {
+    temAr: true,
     src: "assets/models/fnafsb/staff-bots/staff-bot.glb",
     corFundo: "radial-gradient(#97AAD2, #000)",
     fnaf: "sb",
@@ -1189,6 +1202,7 @@ var staffBot = {
 };
 
 var securityBot = {
+    temAr: true,
     src: "assets/models/fnafsb/staff-bots/security-bot.glb",
     corFundo: "radial-gradient(#767F8A, #000)",
     fnaf: "sb",
@@ -1210,6 +1224,7 @@ var securityBot = {
 };
 
 var mapBot = {
+    temAr: true,
     src: "assets/models/fnafsb/staff-bots/map-bot.glb",
     corFundo: "radial-gradient(#755007, #000)",
     fnaf: "sb",
@@ -1251,6 +1266,7 @@ var mapBot = {
 };
 
 var partyBot = {
+    temAr: true,
     src: "assets/models/fnafsb/staff-bots/party-bot.glb",
     corFundo: "radial-gradient(#4B259C, #000)",
     fnaf: "sb",
@@ -1282,6 +1298,7 @@ var partyBot = {
 };
 
 var chefBot = {
+    temAr: true,
     src: "assets/models/fnafsb/staff-bots/chef-bot.glb",
     corFundo: "radial-gradient(#717171, #000)",
     fnaf: "sb",
@@ -1308,6 +1325,7 @@ var chefBot = {
 };
 
 var serverBot = {
+    temAr: true,
     src: "assets/models/fnafsb/staff-bots/server-bot.glb",
     corFundo: "radial-gradient(#810B1A, #000)",
     fnaf: "sb",
@@ -1322,6 +1340,7 @@ var serverBot = {
 };
 
 var sewerBot = {
+    temAr: true,
     src: "assets/models/fnafsb/staff-bots/sewer-bot.glb",
     corFundo: "radial-gradient(#2C2F26, #000)",
     fnaf: "sb",
@@ -1349,6 +1368,7 @@ var sewerBot = {
 
 var nightmarionneBot = {
     src: "assets/models/fnafsb/staff-bots/nightmarionne-bot.glb",
+    temAr: true,
     corFundo: "radial-gradient(#453830, #000)",
     fnaf: "sb",
     srcImg: "assets/images/fnafsb/staff-bots/nightmarionne-bot/",
@@ -1374,6 +1394,7 @@ var nightmarionneBot = {
 };
 
 var cautionBot = {
+    temAr: true,
     src: "assets/models/fnafsb/caution-bot.glb",
     corFundo: "radial-gradient(#C8AB29, #000)",
     fnaf: "sb",
@@ -1388,6 +1409,7 @@ var cautionBot = {
 };
 
 var gregory = {
+    temAr: true,
     src: "assets/models/fnafsb/gregory.glb",
     corFundo: "radial-gradient(#1F396A, #000)",
     fnaf: "sb",
@@ -1445,6 +1467,7 @@ var gregory = {
 };
 
 var vanessa = {
+    temAr: true,
     src: "assets/models/fnafsb/vanessa.glb",
     corFundo: "radial-gradient(#fff, #000)",
     fnaf: "sb",
@@ -1522,6 +1545,7 @@ var vanessa = {
 };
 
 var vanny = {
+    temAr: true,
     src: "assets/models/fnafsb/vanny.glb",
     corFundo: "radial-gradient(#9F9E98, #000)",
     fnaf: "sb",

@@ -1,6 +1,7 @@
 // Five Nights at Freddy's: Sister Location
 
 var circusBaby = {
+    temAr: true,
     src: "assets/models/fnafsl/circus-baby.glb",
     corFundo: "radial-gradient(#7D1726, #000)",
     fnaf: "sl",
@@ -66,6 +67,7 @@ var circusBaby = {
 }
 
 var funtimeFreddy = {
+    temAr: true,
     src: "assets/models/fnafsl/funtime-freddy.glb",
     corFundo: "radial-gradient(#B96FA3, #000)",
     fnaf: "sl",
@@ -135,6 +137,7 @@ var funtimeFreddy = {
 }
 
 var bonBon = {
+    temAr: true,
     src: "assets/models/fnafsl/bon-bon.glb",
     corFundo: "radial-gradient(#0D47A5, #000)",
     fnaf: "sl",
@@ -191,6 +194,7 @@ var bonBon = {
 }
 
 var ballora = {
+    temAr: true,
     src: "assets/models/fnafsl/ballora.glb",
     corFundo: "radial-gradient(#443F7F, #000)",
     fnaf: "sl",
@@ -242,6 +246,7 @@ var ballora = {
 }
 
 var funtimeFoxy = {
+    temAr: true,
     src: "assets/models/fnafsl/funtime-foxy.glb",
     corFundo: "radial-gradient(#905380, #000)",
     fnaf: "sl",
@@ -290,6 +295,7 @@ var funtimeFoxy = {
 }
 
 var ennard = {
+    temAr: true,
     src: "assets/models/fnafsl/ennard.glb",
     corFundo: "radial-gradient(#609EC1, #000)",
     fnaf: "sl",
@@ -352,6 +358,7 @@ var ennard = {
 }
 
 var bidybab = {
+    temAr: true,
     src: "assets/models/fnafsl/bidybab.glb",
     corFundo: "radial-gradient(#CFB7A7, #000)",
     fnaf: "sl",
@@ -394,6 +401,7 @@ var bidybab = {
 }
 
 var minireena = {
+    temAr: true,
     src: "assets/models/fnafsl/minireena.glb",
     corFundo: "radial-gradient(#CAA272, #000)",
     fnaf: "sl",
