@@ -60,7 +60,7 @@ function comecarAnimacao(iModelo, iAnimacao) {
         let viuAlerta = false
         modelViewer.onpointerdown = (e) => {
             if (e.pointerType === 'mouse' && e.button === 2) {
-                if ((target.x > 2 || target.z > 2) && !viuAlerta) {
+                if ((target.x > 2 || target.z > 2 || target.x < -2 || target.z < -2) && !viuAlerta) {
                     alerta("Não é possível mudar o ponto central dessa animação.")
                     viuAlerta = true
                 }
@@ -68,7 +68,7 @@ function comecarAnimacao(iModelo, iAnimacao) {
         }
         modelViewer.ontouchstart = (e) => {
             if (e.touches.length === 2) {
-                if ((target.x > 2 || target.z > 2) && !viuAlerta) {
+                if ((target.x > 2 || target.z > 2 || target.x < -2 || target.z < -2) && !viuAlerta) {
                     alerta("Não é possível mudar o ponto central dessa animação.")
                     viuAlerta = true
                 }

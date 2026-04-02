@@ -10,6 +10,11 @@
     src: url(../../../assets/fonts/titulo.woff2);
 }
 
+@font-face {
+    font-family: 'pixel';
+    src: url(../../../assets/fonts/pixel.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -88,42 +93,6 @@ body {
             inset 0px 0px 200px 50px #000,
             inset 0px 0px 200px 50px #000;
     }
-
-    & #div-logo {
-        position: relative;
-        width: 150px;
-        height: 150px;
-        font-family: 'logo', sans-serif;
-        animation: anima-logo 2s linear infinite;
-
-        & img {
-            width: 100%;
-            height: 100%;
-            animation: anima-freddy-logo 2s linear infinite;
-        }
-
-        & #p-fnaf-logo {
-            position: absolute;
-            top: 30%;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 100%;
-            color: #60ffaf;
-            font-size: 30px;
-            animation: anima-fnaf-logo 2s linear infinite;
-        }
-
-        & #p-3d-logo {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #ebee2a;
-            font-size: 50px;
-            animation: anima-3d-logo 2s linear infinite;
-        }
-    }
 }
 
 progress {
@@ -146,7 +115,61 @@ progress::-webkit-progress-value {
     border-radius: 1000px 0 0 1000px;
 }
 
+
+
+.div-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    font-family: 'logo', sans-serif;
+    animation: anima-logo 2s linear infinite;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        animation: anima-freddy-logo 2s linear infinite;
+    }
+
+    & .p-fnaf-logo {
+        position: absolute;
+        top: 30%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        color: #60ffaf;
+        font-size: 30px;
+        animation: anima-fnaf-logo 2s linear infinite;
+    }
+
+    & .p-3d-logo {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #ebee2a;
+        font-size: 50px;
+        animation: anima-3d-logo 2s linear infinite;
+    }
+}
+
 @keyframes anima-logo {
+
+    0%,
+    100% {
+        filter: brightness(0.5);
+        transform: scale(1) translate(-50%, -50%);
+    }
+
+    50% {
+        filter: brightness(1);
+        transform: scale(1.025) translate(-50%, -50%);
+    }
+}
+
+@keyframes anima-logo-tela-carregamento {
 
     0%,
     100% {
@@ -303,7 +326,7 @@ progress::-webkit-progress-value {
         object-fit: cover;
     }
 
-    #barra {
+    & #barra {
         position: absolute;
         left: 0;
         width: 100vw;
@@ -312,7 +335,7 @@ progress::-webkit-progress-value {
         animation: barra 20s linear infinite;
     }
 
-    .barras {
+    & .barras {
         position: absolute;
         left: 0;
         width: 100vw;
@@ -333,11 +356,11 @@ progress::-webkit-progress-value {
 
     & #menu-div {
         position: absolute;
-        top: 50px;
+        top: 10vh;
         left: 100px;
 
         & #titulo {
-            font-size: 40px;
+            font-size: clamp(20px, 4vmin, 40px);
 
             & span {
                 opacity: 0;
@@ -351,24 +374,24 @@ progress::-webkit-progress-value {
             gap: 20px;
 
             & span {
-                font-size: 50px;
+                font-size: clamp(30px, 4.5vmin, 50px);
             }
 
             & span:first-of-type {
-                font-size: 40px;
+                font-size: clamp(20px, 4vmin, 40px);
                 opacity: 0;
             }
         }
 
         & #continue-noite {
-            font-size: 20px;
+            font-size: clamp(5px, 3vmin, 20px);
             margin-left: 75px;
             opacity: 0;
         }
 
         & #comecar-novo-jogo {
-            font-size: 20px;
-            margin-left: 75px;
+            font-size: clamp(5px, 4vmin, 20px);
+            margin-left: 50px;
         }
 
         & #sexta-noite {
@@ -396,8 +419,8 @@ progress::-webkit-progress-value {
 
     & .btn-inicial {
         display: inline-block;
-        font-size: 40px;
-        margin-top: 25px;
+        font-size: clamp(20px, 4vmin, 40px);
+        margin-top: 1vh;
         cursor: pointer;
 
         & .setas {
@@ -433,10 +456,59 @@ progress::-webkit-progress-value {
     }
 }
 
-
-model-viewer {
+.model-viewer-div {
     position: absolute;
     display: none;
+}
+
+model-viewer {
     width: 100%;
     height: 100%;
+}
+
+
+.barras-noite {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    background-color: #fff;
+    pointer-events: none;
+    display: none;
+}
+
+
+
+#tela-jornal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../../assets/images/fnaf1/jogo/jornal.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition-duration: 3s;
+    display: none;
+    z-index: 2;
+}
+
+#tela-noite {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    font-family: 'pixel', Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    display: none;
+    
+    & #noite-div-p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, calc(-50% - 75px));
+        text-align: center;
+        transition-duration: 1s;
+
+        & p {
+            margin: 20px 0;
+        }
+    }
 }

@@ -222,7 +222,6 @@ var ballora = {
             src: "SK_Ballora|AS_SL_BG_Ballora_WalkPirouette_Spin_SK_Ballora",
             nome: "Dançando",
             alvoCamera: "0m 1.175m 0m",
-            estatico: true,
         },
     },
     audios: {
@@ -359,7 +358,7 @@ var ennard = {
 
 var bidybab = {
     temAr: true,
-    src: "assets/models/fnafsl/bidybab.glb",
+    src: "assets/models/fnafsl/bidybab-teste.glb",
     corFundo: "radial-gradient(#CFB7A7, #000)",
     fnaf: "sl",
     temCursor: true,
@@ -367,9 +366,49 @@ var bidybab = {
     swiperDescricao: [
         "Botão de Bidybab para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 600m",
-    orbitaCameraMinima: "0 0 600m",
-    alvoCamera: "0m 100m 0m",
+    orbitaCameraMaxima: "0 0 4m",
+    orbitaCameraMinima: "0 0 3m",
+    animacoes: {
+        posicaoInicial: {
+            src: "SK_Bidybab.ao|AS_SL_O_BidyBab_VentPose03",
+            nome: "Posição inicial",
+            alvoCamera: "0m 0.5m 0m",
+            estatico: true,
+        },
+        jumpscare: {
+            src: "SK_Bidybab.ao|AS_Bidybab_Jumpscare",
+            nome: "Jumpscare",
+            alvoCamera: "0.4m -0.15m 0m",
+            rotacao: 90,
+        },
+        olhandoParaCima: {
+            src: "SK_Bidybab.ao|AS_SL_O_BidyBab_ClosetPose01",
+            nome: "Olhando para cima",
+            alvoCamera: "0m 0m 0m",
+            estatico: true,
+        },
+        sentado: {
+            src: "SK_Bidybab.ao|AS_SL_O_BidyBab_ClosetPoseRight01",
+            nome: "Sentado",
+            alvoCamera: "0m 0m 0m",
+            estatico: true,
+        },
+        caindo: {
+            src: "SK_Bidybab.ao|AS_SL_O_BidyBab_VentCrawl_Start",
+            nome: "Caindo",
+            alvoCamera: "0m 0m 0m",
+        },
+        engatinhando: {
+            src: "SK_Bidybab.ao|AS_SL_BG_BidyBab_Idle",
+            nome: "Engatinhando",
+            alvoCamera: "0m 0.25m 0.15m",
+        },
+        engatinhando2: {
+            src: "SK_Bidybab.ao|AS_SL_BG_BidyBab_Crawl_Run",
+            nome: "Engatinhando 2",
+            alvoCamera: "0m 0.25m 0.15m",
+        },
+    },
     audios: {
         jumpscare: {
             src: "assets/audios/fnafsl/jumpscare.ogg",

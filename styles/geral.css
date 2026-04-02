@@ -272,7 +272,7 @@ body {
     height: 100vh;
     background-image: radial-gradient(var(--cor-interna), var(--cor-externa));
     backdrop-filter: blur(10px);
-    z-index: 10000;
+    z-index: 8500;
     opacity: 0;
     transition-duration: .125s;
     display: none;

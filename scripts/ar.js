@@ -42,17 +42,21 @@ arBtn.addEventListener("click", async function () {
                 return
             }
         } else {
-            url = modelos[iModeloVar].blobUrl
-            modeloPronto = true
+            console.log("é estatico, apenas 1 animação")
             try {
-                await axios.post(`${API_URL}/ar/cadastrar`, {
+                const res = await axios.post(`${API_URL}/ar/cadastrar`, {
                     username: dadosUser.username || "Anônimo",
                     src: modelos[iModeloVar].src,
                     nome: nomeModelo.innerHTML,
                     timestamp: timestamp
                 });
+                setTimeout(() => {
+                    url = res.data.blobUrl
+                    modeloPronto = true
+                }, 1000);
             } catch (e) {
                 console.log("Um erro ocorreu ao tentar cadastrar modelo estático.")
+                return
             }
         }
     } else {

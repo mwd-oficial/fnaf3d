@@ -1,11 +1,15 @@
 // Configurações iniciais
-let freddyCarregado = false
 const telaCarregamentoSite = document.querySelector("#tela-carregamento-site")
 const progressBar = document.querySelector("#progress-bar")
 let aparecerAviso = true
 const telaViraCel = document.querySelector("#tela-vira-cel")
 const telaCheia = document.getElementById("tela-cheia")
 const imagemGeral = document.querySelectorAll("img")
+// Pegar noite do banco de dados
+let noiteAtual = 1
+
+const elementsJogo = document.querySelectorAll(".elements-jogo")
+elementsJogo.forEach(el => el.style.display = "none")
 
 
 const isCelular = navigator.userAgentData != undefined && navigator.userAgentData.mobile
@@ -21,7 +25,7 @@ let progressoInterval = setInterval(function () {
 }, 1);
 
 freddy.el.onload = () => {
-    freddyCarregado = true
+    freddy.loader.style.display = "none"
 
     const material = freddy.el.model.materials[0];
     setInterval(() => {
@@ -51,22 +55,16 @@ freddy.el.onload = () => {
 }
 
 window.onload = () => {
-    let intervalo = setInterval(() => {
-        if (freddyCarregado) {
-            this.clearInterval(intervalo)
-            progressBar.value = 100
-            setTimeout(() => {
-                telaCarregamentoSite.style.display = "none"
-                if (!document.fullscreenElement) {
-                    telaCheia.style.display = "flex"
-                } else {
-                    if (aparecerAviso) aparecerAvisof()
-                }
-            }, 500);
+    progressBar.value = 100
+    setTimeout(() => {
+        telaCarregamentoSite.style.display = "none"
+        if (!document.fullscreenElement) {
+            telaCheia.style.display = "flex"
+        } else {
+            if (aparecerAviso) aparecerAvisof()
         }
     }, 500);
 }
-
 window.onresize = verificaOrientacao
 function verificaOrientacao() {
     let portrait = window.innerHeight > window.innerWidth
@@ -79,6 +77,7 @@ function verificaOrientacao() {
 
 // API tela cheia
 function launchFullscreen(element) {
+
     telaCheia.style.display = "none"
     if (element.requestFullscreen) {
         element.requestFullscreen();
@@ -89,6 +88,9 @@ function launchFullscreen(element) {
     } else if (element.msRequestFullscreen) { // IE/Edge
         element.msRequestFullscreen();
     }
+
+    // Tirar isso depois!!!!!!!!!!!!!
+    //telaCheia.style.display = "none";
 }
 
 function exitFullscreen() {
@@ -127,11 +129,14 @@ document.onfullscreenchange = () => {
 document.onvisibilitychange = () => {
     if (document.visibilityState === 'hidden') {
         // if (!midiaPausada) {
-        //     pausarMidia()
+        //     pausarAudios()
+        //     pausarIntervals()
+        //     pausarTimeouts()
+        //     pausarRelogio()     
         // }
     } else {
         // if (document.fullscreenElement) {
-        //     despausarMidia()
+        //     despausarAudios()
         // }
     }
 }
@@ -143,6 +148,17 @@ for (let i = 0; i < imagemGeral.length; i++) {
         return false;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -179,6 +195,9 @@ const glitchTelaInicial = document.querySelector("#glitch-tela-inicial")
 const menu = document.querySelector("#menu")
 const simNaoDiv = document.querySelector("#sim-nao-div")
 
+const telaJornal = document.querySelector("#tela-jornal")
+const telaNoite = document.querySelector("#tela-noite")
+
 function aparecerAvisof() {
     navigator.vibrate(0)
 
@@ -203,7 +222,7 @@ function fecharAviso() {
     executarConfig(freddy, "telaInicial")
     setTimeout(() => {
         aviso.style.display = "none"
-        freddy.el.style.display = "block"
+        freddy.elDiv.style.display = "block"
         telaInicial.style.display = "block"
         chiado.play()
         if (isCelular) {
@@ -259,7 +278,6 @@ document.querySelectorAll(".barras").forEach(barra => {
     }, sortTime * 1000);
 })
 
-
 btnInicial.forEach((btn, i) => {
     btn.onmouseover = () => {
         if (!isCelular) {
@@ -289,14 +307,6 @@ btnInicial.forEach((btn, i) => {
 
 })
 
-window.onkeydown = (event) => {
-    if (!isCelular && telaInicial.style.display == "block" && event.key === "Enter") {
-        for (let i = 0; i < setas.length; i++) {
-            if (setas[i].style.opacity == 1) executarAcao(btnInicial[i].id)
-        }
-    }
-}
-
 function executarAcao(id) {
     setas.forEach(seta => seta.style.opacity = 0)
     if (id == "novo-jogo") {
@@ -304,24 +314,24 @@ function executarAcao(id) {
             menu.style.display = "none"
             simNaoDiv.style.display = "block"
         } else {
-            alert("sim executado")
+            irTelaJornal()
         }
     }
     if (id == "sim") {
-        alert("sim executado")
+        irTelaJornal()
     }
     if (id == "nao") {
         simNaoDiv.style.display = "none"
         menu.style.display = "block"
     }
     if (id == "continue") {
-        alert("continue executado")
+        iniciarNoite(noiteAtual)
     }
     if (id == "sexta-noite") {
         alert("sexta noite executado")
     }
-    if (id == "noite-personalizavel") {
-        alert("noite personalizavel executado")
+    if (id == "custom-night") {
+        alert("custom night executado")
     }
     if (id == "opcoes") {
         alert("opcoes executado")
@@ -333,23 +343,37 @@ function executarAcao(id) {
 
 
 function executarConfig(animatronicp, estadop) {
-    let animatronic = animatronicp.el
     let estado = animatronicp[estadop]
-    animatronic.style.top = estado.top
-    animatronic.style.right = estado.right
-    animatronic.style.width = estado.width
-    animatronic.style.height = estado.height
-    animatronic.style.filter = estado.filter
-    animatronic.animationName = estado.animationName
-    animatronic.cameraTarget = estado.cameraTarget
-    animatronic.cameraOrbit = estado.cameraOrbit
-    animatronic.maxCameraOrbit = estado.maxCameraOrbit
-    animatronic.minCameraOrbit = estado.minCameraOrbit
+    animatronicp.elDiv.style.top = estado.top
+    animatronicp.elDiv.style.right = estado.right
+    animatronicp.elDiv.style.width = estado.width
+    animatronicp.elDiv.style.height = estado.height
+    animatronicp.el.style.filter = estado.filter
+    animatronicp.el.animationName = estado.animationName
+    animatronicp.el.cameraTarget = estado.cameraTarget
+    animatronicp.el.cameraOrbit = estado.cameraOrbit
+    animatronicp.el.maxCameraOrbit = estado.maxCameraOrbit
+    animatronicp.el.minCameraOrbit = estado.minCameraOrbit
     estado.configEx()
 }
 
 
-
+function irTelaJornal() {
+    telaJornal.style.opacity = 0
+    telaJornal.style.display = "block";
+    setTimeout(() => telaJornal.style.opacity = 1, 1)
+    setTimeout(() => {
+        telaInicial.style.display = "none"
+        freddy.elDiv.style.display = "none"
+        setTimeout(() => {
+            telaJornal.style.opacity = 0
+            setTimeout(() => {
+                telaJornal.style.display = "none"
+                iniciarNoite(noiteAtual)
+            }, 3000)
+        }, 3000)
+    }, 3000)
+}
 
 
 
@@ -371,4 +395,6 @@ if (isCelular) {
     setas[0].style.opacity = 0
     continueNoite.style.opacity = 1
     document.querySelector("#menu-celular").style.display = "flex"
+
+    continueNoite.style.marginLeft = "50px"
 }

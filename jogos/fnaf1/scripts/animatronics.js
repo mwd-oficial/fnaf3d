@@ -1,5 +1,7 @@
 let freddy = {
+    elDiv: document.querySelector("#freddy-div"),
     el: document.querySelector("#freddy"),
+    loader: document.querySelector("#freddy-div > .div-logo"),
     telaInicial: {
         top: "0",
         right: "-25%",
@@ -21,19 +23,33 @@ let freddy = {
 }
 
 let bonnie = {
+    elDiv: document.querySelector("#bonnie-div"),
     el: document.querySelector("#bonnie"),
+    loader: document.querySelector("#bonnie-div > .div-logo"),
 }
 
 let chica = {
+    elDiv: document.querySelector("#chica-div"),
     el: document.querySelector("#chica"),
+    loader: document.querySelector("#freddy-div > .div-logo"),
 }
 
 let mrCupcake = {
+    elDiv: document.querySelector("#mr-cupcake-div"),
     el: document.querySelector("#mr-cupcake"),
+    loader: document.querySelector("#mr-cupcake-div > .div-logo"),
+}
+
+let foxy = {
+    elDiv: document.querySelector("#foxy-div"),
+    el: document.querySelector("#foxy"),
+    loader: document.querySelector("#foxy-div > .div-logo"),
 }
 
 let goldenFreddy = {
+    elDiv: document.querySelector("#golden-freddy-div"),
     el: document.querySelector("#golden-freddy"),
+    loader: document.querySelector("#golden-freddy-div > .div-logo"),
 }
 
-let animatronics = [freddy, bonnie, chica, mrCupcake, goldenFreddy]
+let animatronics = [freddy, bonnie, chica, mrCupcake, foxy, goldenFreddy]

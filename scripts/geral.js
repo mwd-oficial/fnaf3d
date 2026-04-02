@@ -1,5 +1,5 @@
 // TIRAR ISSO DEPOIS!!!!
-/*
+
 aviso.style.display = "none"
 telaInicial.style.display = "flex"
 document.querySelector("#conteudo").style.display = "block"
@@ -10,7 +10,7 @@ divLogoBtn.style.opacity = 1
 tutorialVisto = true
 menuJogos.style.pointerEvents = "all"
 arBtn.style.pointerEvents = "all"
-*/
+
 ////////////////////////////////////
 
 isCelular = (navigator.userAgentData !== undefined && navigator.userAgentData.mobile) || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -416,6 +416,7 @@ document.querySelector("#iniciar-btn").addEventListener("click", async function 
     setTimeout(() => {
         // Tive que criar um model viewer novo para carregá-lo novamente ao retornar a página inicial
         modelViewer = document.createElement("model-viewer")
+        modelViewer.cameraTarget = "0m 0m 0m"
         modelViewer.cameraControls = true
         modelViewer.autoRotateDelay = "0"
         modelViewer.autoRotate = true
@@ -443,7 +444,7 @@ document.querySelector("#iniciar-btn").addEventListener("click", async function 
 
         setTimeout(() => {
             //cliqueModelo(btnModelos[0], 0)
-            cliqueModelo(btnModelos[0], 0)
+            cliqueModelo(btnModelos[46], 46)
             clearTimeout(timeoutVoltar)
         }, 100);
     }, 1);

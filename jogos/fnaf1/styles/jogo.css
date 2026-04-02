@@ -1,0 +1,13 @@
+#office {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#ventilador {
+    position: absolute;
+    left: 84.8vw;
+    top: 42.2vh;
+    width: 134px;
+}
