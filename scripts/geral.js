@@ -1,5 +1,5 @@
 // TIRAR ISSO DEPOIS!!!!
-
+/*
 aviso.style.display = "none"
 telaInicial.style.display = "flex"
 document.querySelector("#conteudo").style.display = "block"
@@ -10,7 +10,7 @@ divLogoBtn.style.opacity = 1
 tutorialVisto = true
 menuJogos.style.pointerEvents = "all"
 arBtn.style.pointerEvents = "all"
-
+*/
 ////////////////////////////////////
 
 isCelular = (navigator.userAgentData !== undefined && navigator.userAgentData.mobile) || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -444,7 +444,7 @@ document.querySelector("#iniciar-btn").addEventListener("click", async function 
 
         setTimeout(() => {
             //cliqueModelo(btnModelos[0], 0)
-            cliqueModelo(btnModelos[46], 46)
+            cliqueModelo(btnModelos[0], 0)
             clearTimeout(timeoutVoltar)
         }, 100);
     }, 1);

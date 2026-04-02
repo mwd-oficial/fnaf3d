@@ -358,7 +358,7 @@ var ennard = {
 
 var bidybab = {
     temAr: true,
-    src: "assets/models/fnafsl/bidybab-teste.glb",
+    src: "assets/models/fnafsl/bidybab.glb",
     corFundo: "radial-gradient(#CFB7A7, #000)",
     fnaf: "sl",
     temCursor: true,
@@ -366,13 +366,13 @@ var bidybab = {
     swiperDescricao: [
         "Botão de Bidybab para seu modelo 3D",
     ],
-    orbitaCameraMaxima: "0 0 4m",
-    orbitaCameraMinima: "0 0 3m",
+    orbitaCameraMaxima: "0 0 3m",
+    orbitaCameraMinima: "0 0 2m",
     animacoes: {
         posicaoInicial: {
             src: "SK_Bidybab.ao|AS_SL_O_BidyBab_VentPose03",
             nome: "Posição inicial",
-            alvoCamera: "0m 0.5m 0m",
+            alvoCamera: "0.05m 0.5m 0m",
             estatico: true,
         },
         jumpscare: {
@@ -384,29 +384,32 @@ var bidybab = {
         olhandoParaCima: {
             src: "SK_Bidybab.ao|AS_SL_O_BidyBab_ClosetPose01",
             nome: "Olhando para cima",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "-55.125m 0.5m -12.8m",
+            rotacao: 120,
             estatico: true,
         },
         sentado: {
             src: "SK_Bidybab.ao|AS_SL_O_BidyBab_ClosetPoseRight01",
             nome: "Sentado",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "-54.85m 0.35m 14.65m",
+            rotacao: 90,
             estatico: true,
         },
         caindo: {
             src: "SK_Bidybab.ao|AS_SL_O_BidyBab_VentCrawl_Start",
             nome: "Caindo",
-            alvoCamera: "0m 0m 0m",
+            alvoCamera: "7.55m 1.5m 0m",
+            rotacao: 90,
         },
         engatinhando: {
             src: "SK_Bidybab.ao|AS_SL_BG_BidyBab_Idle",
             nome: "Engatinhando",
-            alvoCamera: "0m 0.25m 0.15m",
+            alvoCamera: "0.05m 0.3m 0.15m",
         },
         engatinhando2: {
             src: "SK_Bidybab.ao|AS_SL_BG_BidyBab_Crawl_Run",
             nome: "Engatinhando 2",
-            alvoCamera: "0m 0.25m 0.15m",
+            alvoCamera: "0.05m 0.3m 0.15m",
         },
     },
     audios: {
